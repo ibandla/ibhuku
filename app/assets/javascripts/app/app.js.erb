@@ -2,11 +2,13 @@ var ibhuku = angular.module('ibhuku', ['ui.router']);
 
 ibhuku.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/home');
-    
+    $urlRouterProvider.otherwise('/404');
+    $urlRouterProvider.when('', '/home');
     $stateProvider
         
         // HOME STATES AND NESTED VIEWS ========================================
+         
+
         .state('home', {
             url: '/home',
             controller:'HomeController',
@@ -39,10 +41,45 @@ ibhuku.config(function($stateProvider, $urlRouterProvider) {
             controller:'AuthController',
             templateUrl: '<%= path_to_asset("app/views/signup.html") %>'
         })
+
+            .state('product', {
+            url: '/product',
+            controller:'ProductController',
+            templateUrl: '<%= path_to_asset("app/views/product.html") %>'
+        })
+
+              .state('products', {
+            url: '/products',
+            controller:'ProductsController',
+            templateUrl: '<%= path_to_asset("app/views/products.html") %>'
+        })
+
+                .state('checkout', {
+            url: '/checkout',
+            controller:'CheckoutController',
+            templateUrl: '<%= path_to_asset("app/views/checkout.html") %>'
+        })
+
+
+                  .state('404', {
+            url: '/404',
+            controller:'404Controller',
+            templateUrl: '<%= path_to_asset("app/views/404.html") %>'
+        })
+
+                    .state('about', {
+            url: '/about',
+            controller:'AboutController',
+            templateUrl: '<%= path_to_asset("app/views/about.html") %>'
+        })
+
+                      .state('contact', {
+            url: '/contact',
+            controller:'ContactController',
+            templateUrl: '<%= path_to_asset("app/views/contact.html") %>'
+        });
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('about', {
-            // we'll get to this in a bit       
-        });
+       
         
 });

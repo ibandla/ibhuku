@@ -1,5 +1,5 @@
 <div class="container">
-	<h6 class="dress"><a href="index.html">Home</a> <i> </i> Lorem Ipsum </h6>
+	<h6 class="dress"><a ui-sref="home">Home</a> <i> </i> Lorem Ipsum </h6>
 </div>
 <div class="back">
 	<h2>LOREM IPSUM</h2>
@@ -113,7 +113,7 @@
 							</div>
 					<div class="product-go">
 						<div class=" fashion-grid">
-									<a href="#"><img class="img-responsive " src="images/be.jpg" alt=""></a>
+									<a href="#"><%= image_tag "be.jpg", :class => "img-responsive" ,:alt=>"" %></a>
 									
 								</div>
 							<div class=" fashion-grid1">
@@ -127,7 +127,7 @@ amet consectetuer  </a></h6>
 							</div>
 							<div class="product-go">
 						<div class=" fashion-grid">
-									<a href="#"><img class="img-responsive " src="images/be1.jpg" alt=""></a>
+									<a href="#"><%= image_tag "be1.jpg", :class => "img-responsive" ,:alt=>"" %></a>
 									
 								</div>
 							<div class="fashion-grid1">
@@ -141,7 +141,7 @@ amet consectetuer </a></h6>
 							</div>
 							<div class="product-go">
 						<div class=" fashion-grid">
-									<a href="#"><img class="img-responsive " src="images/be2.jpg" alt=""></a>
+									<a href="#"><%= image_tag "be2.jpg", :class => "img-responsive" ,:alt=>"" %></a>
 									
 								</div>
 							<div class=" fashion-grid1">
@@ -161,7 +161,7 @@ amet consectetuer </a></h6>
 							</div>
 				</div>
 <div class=" per1">
-				<img class="img-responsive" src="images/pro.jpg" alt="">
+				<%= image_tag "pro.jpg", :class => "img-responsive" ,:alt=>"" %>
 				<div class="six1">
 					<h4>DISCOUNT</h4>
 					<p>Up to</p>
@@ -175,21 +175,21 @@ amet consectetuer </a></h6>
 						<ul id="etalage">
 							<li>
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image img-responsive" src="images/si1.jpg" alt="" >
-									<img class="etalage_source_image img-responsive" src="images/si1.jpg" alt="" >
+								<%= image_tag "si1.jpg", :class => "etalage_thumb_image img-responsive" ,:alt=>"" %>
+								<%= image_tag "si1.jpg", :class => "etalage_source_image img-responsive " ,:alt=>"" %>
 								</a>
 							</li>
 							<li>
-								<img class="etalage_thumb_image img-responsive" src="images/si2.jpg" alt="" >
-								<img class="etalage_source_image img-responsive" src="images/si2.jpg" alt="" >
+								<%= image_tag "si2.jpg", :class => "etalage_thumb_image img-responsive" ,:alt=>"" %>
+								<%= image_tag "si2.jpg", :class => "etalage_source_image img-responsive " ,:alt=>"" %>
 							</li>
 							<li>
-								<img class="etalage_thumb_image img-responsive" src="images/si.jpg" alt=""  >
-								<img class="etalage_source_image img-responsive" src="images/si.jpg" alt="" >
+								<%= image_tag "si.jpg", :class => "etalage_thumb_image img-responsive" ,:alt=>"" %>
+								<%= image_tag "si.jpg", :class => "etalage_source_image img-responsive " ,:alt=>"" %>
 							</li>
 						    <li>
-								<img class="etalage_thumb_image img-responsive" src="images/si1.jpg"  alt="" >
-								<img class="etalage_source_image img-responsive" src="images/si1.jpg" alt="" >
+								<%= image_tag "si1.jpg", :class => "etalage_thumb_image img-responsive" ,:alt=>"" %>
+								<%= image_tag "si1.jpg", :class => "etalage_source_image img-responsive " ,:alt=>"" %>
 							</li>
 						</ul>
 
@@ -292,7 +292,8 @@ aliquip ex ea commodo consequat.</p>
 <li data-content="television" class="selected">
 	<div class="comments-top-top">
 				<div class="top-comment-left">
-					<img class="img-responsive" src="images/co.png" alt="">
+				<%= image_tag "co.png", :class => "img-responsive" ,:alt=>"" %>
+				
 				</div>
 				<div class="top-comment-right">
 					<h6><a href="#">Hendri</a> - September 3, 2014</h6>
@@ -320,7 +321,8 @@ aliquip ex ea commodo consequat.</p>
 		        	
 		        		<div class="col-md-4 chain-grid  simpleCart_shelfItem">
 		        			<div class="grid-span-1">
-	   		     		<a  href="single.html"><img class="img-responsive " src="images/pr.jpg" alt=" ">
+	   		     		<a  ui-sref="product">
+	   		     		<%= image_tag "pr.jpg", :class => "img-responsive" ,:alt=>"" %>
 	   		     			<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -331,7 +333,7 @@ aliquip ex ea commodo consequat.</p>
 	   		     		</a>
 	   		     	</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -357,7 +359,7 @@ aliquip ex ea commodo consequat.</p>
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr1.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr1.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -367,7 +369,7 @@ aliquip ex ea commodo consequat.</p>
 	   		     		</div></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -392,7 +394,7 @@ aliquip ex ea commodo consequat.</p>
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr2.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr2.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -402,7 +404,7 @@ aliquip ex ea commodo consequat.</p>
 	   		     		</div></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -435,7 +437,7 @@ aliquip ex ea commodo consequat.</p>
 			</div>
 		</div>
 			<!---->
-			<div class="bottom-grid1">
+			<!-- <div class="bottom-grid1"> -->
 					
 					<!-- <div class="fit1">
 						<h3>HAPPY SHOPPING</h3>

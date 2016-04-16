@@ -1,5 +1,5 @@
 <div class="container">
-	<h6 class="dress"><a href="index.html">Home</a> <i> </i> Dress &amp; T-shirt </h6>
+	<h6 class="dress"><a ui-sref="home">Home</a> <i> </i> Dress &amp; T-shirt </h6>
 </div>
 <div class="back">
 	<h2>PRODUCTS</h2>
@@ -24,12 +24,9 @@
                 </a></li>
 				
           </ul>
-		  <a  class="go" href="single.html">GO</a>
+		  <a  class="go" ui-sref="product">GO</a>
 		  	<div class="clearfix"> </div>
-<!---->
- <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
-      <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 
 <script type='text/javascript'>//<![CDATA[ 
 $(window).load(function(){
@@ -57,38 +54,38 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 		 <ul class="menu">
 		<li class="item1"><a href="#">Men </a>
 			<ul class="cute">
-				<li class="subitem1"><a href="single.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="single.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="single.html">Automatic Fails </a></li>
+				<li class="subitem1"><a ui-sref="product">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="product">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="product">Automatic Fails </a></li>
 			</ul>
 		</li>
 		<li class="item2"><a href="#">Women </a>
 			<ul class="cute">
-				<li class="subitem1"><a href="single.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="single.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="single.html">Automatic Fails </a></li>
+				<li class="subitem1"><a ui-sref="product">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="product">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="product">Automatic Fails </a></li>
 			</ul>
 		</li>
 		<li class="item3"><a href="#">Kids</a>
 			<ul class="cute">
-				<li class="subitem1"><a href="single.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="single.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="single.html">Automatic Fails</a></li>
+				<li class="subitem1"><a ui-sref="product">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="product">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="product">Automatic Fails</a></li>
 			</ul>
 		</li>
 		<li class="item4"><a href="#">Accesories</a>
 			<ul class="cute">
-				<li class="subitem1"><a href="single.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="single.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="single.html">Automatic Fails</a></li>
+				<li class="subitem1"><a ui-sref="product">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="product">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="product">Automatic Fails</a></li>
 			</ul>
 		</li>
 				
 		<li class="item4"><a href="#">Shoes</a>
 			<ul class="cute">
-				<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-				<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-				<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+				<li class="subitem1"><a ui-sref="products">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="products">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="products">Automatic Fails </a></li>
 			</ul>
 		</li>
 	</ul>
@@ -118,7 +115,7 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 		
 					<div class="fit-top">
 						<h6 class="shop-top">LOREM IPSUM</h6>
-						<a href="single.html" class="shop-now">SHOP NOW</a>
+						<a ui-sref="product" class="shop-now">SHOP NOW</a>
 <div class="clearfix"> </div>
 	</div>
 				</div>	 
@@ -154,11 +151,11 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 							</div>
 					<div class="product-go">
 						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="images/be.jpg" alt=""></a>
+									<a ui-sref="product"><%= image_tag "be.jpg", :class => "img-responsive" ,:alt=>"" %></a>
 									
 								</div>
 							<div class=" fashion-grid1">
-								<h6 class="best2"><a href="single.html" >Lorem ipsum dolor sit
+								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
 amet consectetuer  </a></h6>
 								
 								<span class=" price-in1"> $40.00</span>
@@ -168,11 +165,11 @@ amet consectetuer  </a></h6>
 							</div>
 							<div class="product-go">
 						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="images/be1.jpg" alt=""></a>
+									<a ui-sref="product"><%= image_tag "be1.jpg", :class => "img-responsive" ,:alt=>"" %></a>
 									
 								</div>
 							<div class="fashion-grid1">
-								<h6 class="best2"><a href="single.html" >Lorem ipsum dolor sit
+								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
 amet consectetuer </a></h6>
 								
 								<span class=" price-in1"> $40.00</span>
@@ -182,11 +179,11 @@ amet consectetuer </a></h6>
 							</div>
 							<div class="product-go">
 						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="images/be2.jpg" alt=""></a>
+									<a ui-sref="product"><%= image_tag "be2.jpg", :class => "img-responsive" ,:alt=>"" %></a>
 									
 								</div>
 							<div class=" fashion-grid1">
-								<h6 class="best2"><a href="single.html" >Lorem ipsum dolor sit
+								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
 amet consectetuer </a></h6>
 								<ul class="star-footer">
 									<li><a href="#"><i> </i></a></li>
@@ -202,7 +199,7 @@ amet consectetuer </a></h6>
 							</div>
 				</div>
 <div class=" per1">
-				<a href="single.html" ><img class="img-responsive" src="images/pro.jpg" alt="">
+				<a ui-sref="product" ><%= image_tag "pro.jpg", :class => "img-responsive" ,:alt=>"" %>
 				<div class="six1">
 					<h4>DISCOUNT</h4>
 					<p>Up to</p>
@@ -233,7 +230,7 @@ amet consectetuer </a></h6>
 		        	<div class="top-product">
 		        		<div class="col-md-4 chain-grid  simpleCart_shelfItem">
 		        			<div class="grid-span-1">
-	   		     		<a  href="single.html"><img class="img-responsive " src="images/pr.jpg" alt=" ">
+	   		     		<a  ui-sref="product"><%= image_tag "pr.jpg", :class => "img-responsive" ,:alt=>"" %>
 	   		     			<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -244,7 +241,7 @@ amet consectetuer </a></h6>
 	   		     		</a>
 	   		     	</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -270,7 +267,7 @@ amet consectetuer </a></h6>
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr1.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr1.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -280,7 +277,7 @@ amet consectetuer </a></h6>
 	   		     		</div></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -305,7 +302,7 @@ amet consectetuer </a></h6>
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr2.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr2.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -315,7 +312,7 @@ amet consectetuer </a></h6>
 	   		     		</div></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -344,7 +341,7 @@ amet consectetuer </a></h6>
 					
 		        		<div class="col-md-4 chain-grid simpleCart_shelfItem">
 						<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr7.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr7.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -354,7 +351,7 @@ amet consectetuer </a></h6>
 	   		     		</div><span>NEW</span></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -380,7 +377,7 @@ amet consectetuer </a></h6>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					
 					<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr4.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr4.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -390,7 +387,7 @@ amet consectetuer </a></h6>
 	   		     		</div></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -415,7 +412,7 @@ amet consectetuer </a></h6>
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr5.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr5.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -425,7 +422,7 @@ amet consectetuer </a></h6>
 	   		     		</div></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -454,7 +451,7 @@ amet consectetuer </a></h6>
 				
 		        		<div class="col-md-4 chain-grid simpleCart_shelfItem">
 						<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr6.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr6.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -464,7 +461,7 @@ amet consectetuer </a></h6>
 	   		     		</div><span>NEW</span></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -489,7 +486,7 @@ amet consectetuer </a></h6>
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr7.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr7.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -500,7 +497,7 @@ amet consectetuer </a></h6>
 						<span>NEW</span></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -525,7 +522,7 @@ amet consectetuer </a></h6>
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					<div class="grid-span-1">
-	   		     		<a href="single.html"><img class="img-responsive " src="images/pr.jpg" alt=" ">
+	   		     		<a ui-sref="product"><%= image_tag "pr.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -536,7 +533,7 @@ amet consectetuer </a></h6>
 						<span>NEW</span></a>
 	   		     		</div>
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a href="single.html">WOO JACKET #1</a></h6>
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
@@ -597,7 +594,7 @@ amet consectetuer </a></h6>
 								<span>Free Shipping</span>
 								<p>on all orders over $99</p>
 							</div>
-							<a class="learn-in" href="single.html">Learn More</a>
+							<a class="learn-in" ui-sref="product">Learn More</a>
 							<div class="clearfix"> </div>
 						</div>
 			
@@ -610,7 +607,7 @@ amet consectetuer </a></h6>
 								<span>Crazy Sale!</span>
 								<p>on selected items</p>
 							</div>
-							<a class="learn-in1" href="single.html">Learn More</a>
+							<a class="learn-in1" ui-sref="product">Learn More</a>
 							<div class="clearfix"> </div>
 						</div>
 			</div>
