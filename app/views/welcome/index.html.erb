@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 <title>Amberegul A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
 <%= stylesheet_link_tag("frontend.css") %> 
-
+<%= javascript_include_tag("frontend.js") %> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Amberegul Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -21,9 +21,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 </head>
-<body> 
+ <body ng-app="ibhuku">
 <!--header-->	
-<div class="header">
+<div class="header" id="mainheader">
 	<div class="header-top">
 		<div class="container">
 			<div class="header-top-in">
@@ -33,8 +33,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li ><span ><i class="tele-in"> </i>0 462 261 61 61</span></li>			
 				</ul>
 				<ul class=" support-right">
-					<li ><a href="#login" ><i class="men"> </i>Login</a></li>
-					<li ><a href="#signup" ><i class="tele"> </i>Create an Account</a></li>			
+					<li ><a  ui-sref="login" ><i class="men"> </i>Login</a></li>
+					<li ><a  ui-sref="signup" ><i class="tele"> </i>Create an Account</a></li>			
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-nav">
 				<!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li><a  href="index.html">Home</a></li>
+			<li><a ui-sref="home">Home</a></li>
 			
 			<li class="active grid"><a  href="#">Pages</a>
 				<div class="megapanel">
@@ -179,17 +179,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 						<div class="right"><button> </button></div>
 				</div>
-						<script type="text/javascript">
-							$('.search').hide();
-							$('button').click(function (){
-							$('.search').show();
-							$('.text').focus();
-							}
-							);
-							$('.close-in').click(function(){
-							$('.search').hide();
-							});
-						</script>
 
 					<!---->
 					<div class="cart box_1">
@@ -210,8 +199,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 		</div>
 		</div>
-
-	<div class="banner">
+ <div id="thebanner" class="banner">
+	
 		<div class="banner-top">
 	         <h2>THIS IS AMBEREGUL</h2>
 	         <p>This theme for high selling <span>fashion such as
@@ -227,558 +216,19 @@ women, accessories, etc.</span></p>
  	</div>	
 
 </div>
-<!---->
-<div class="content">
-	<div class="container">
-		<div class="content-top">
-			<div class="col-md-9">
-				<div class="col-top">
-					<div class="col-md-6 black">
-						<a href="single.html"><div class="shoe" >
-							<h3>WOMEN SHOES</h3>
-						</div>
-						<%= image_tag "sh.png" %></a>
-					</div>
-					<div class="col-md-6 black-in">
-						<a href="single.html"><div class="shoe bag" >
-							<h3>WOMEN BAGS</h3>
-						</div>
-						<%= image_tag "ba.png" %></a>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-top-bottom">
-					<h3 class="menber">MEMBER DISCOUNT</h3>
-					<a href="single.html" class="now-in">SHOP NOW</a>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-3 per">
-				<a href="single.html"><%= image_tag "pi1.jpg" , :class => "img-responsive" ,:alt=>"" %>
-				<div class="six">
-					<h4>FASHION</h4>
-					<p>Get up to</p>
-					<span>60%</span>
-				</div></a>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<!---->
-		<div class="sap_tabs">
-			<label class="line"> </label>
-			<h2>LATES ARRIVAL</h2>	
-						 <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-						  <ul class="resp-tabs-list">
-						  	  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>WOMENS</span></li>
-							  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>MENS</span></li>
-							  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>SHOES</span></li>
-							  <div class="clearfix"></div>
-						  </ul>				  	 
-							<div class="resp-tabs-container">
-							    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-									<div class="tab_img">
-									  <div class="img-top simpleCart_shelfItem">
-										
-					   		  			  <%= image_tag "pi2.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											
-								              <div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 
-												 	<div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-										
-										</div>
-										<div class="img-top simpleCart_shelfItem">
-										  
-					   		  			  <%= image_tag "pi3.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											<div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 
-												<div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-											  <div class="col-in">
-											  	<p>NEW</p>
-											  </div>
-											 </div>
-											  <div class="img-top simpleCart_shelfItem">
-										  
-					   		  			 <%= image_tag "pi4.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											<div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 
-												 <div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-											 <div class="col-in col-in-1">
-											  	<p>SALE <span>30%</span></p>
-											  </div>
-											</div>
-											<div class="clearfix"></div>
-							     </div>	
-									 	        					 
-						  </div>
-							    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-									<div class="tab_img">
-									  <div class="img-top simpleCart_shelfItem">
-										
-					   		  			 <%= image_tag "pi9.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											
-								              <div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 
-												 <div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-										
-										</div>
-										<div class="img-top simpleCart_shelfItem">
-										  
-					   		  			 <%= image_tag "PI8.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											<div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 
-												 <div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-											  <div class="col-in">
-											  	<p>NEW</p>
-											  </div>
-											 </div>
-											  <div class="img-top simpleCart_shelfItem">
-										  
-					   		  			<%= image_tag "pi10.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											<div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 <div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-											 <div class="col-in col-in-1">
-											  	<p>SALE <span>30%</span></p>
-											  </div>
-											</div>
-											<div class="clearfix"></div>
-							     </div>	
-									 	        					 
-						  </div>
-						    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-									<div class="tab_img">
-									  <div class="img-top simpleCart_shelfItem">
-										
-					   		  			  <%= image_tag "pi5.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											
-								              <div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 
-												 <div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-										
-										</div>
-										<div class="img-top simpleCart_shelfItem">
-										  
-					   		  			  <%= image_tag "pi6.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											<div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 
-												 	<div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-											  <div class="col-in">
-											  	<p>NEW</p>
-											  </div>
-											 </div>
-											  <div class="img-top simpleCart_shelfItem">
-										  
-					   		  			<%= image_tag "pi7.jpg" , :class => "img-responsive" ,:alt=>"" %>
-											<div class="tab_desc">
-												 <ul class="round-top">
-												 	<li><a href="#"><i> </i></a></li>
-												 	<li><a href="#"><i class="round"> </i></a></li>
-												 </ul>
-												 
-												 	<div class="agency ">
-													<div class="agency-left">
-														<h6 class="jean">BAJU JEANS</h6>
-														<span class="dollor item_price">$50.00</span>
-														<div class="clearfix"> </div>
-													</div>
-													<div class="agency-right">
-														<ul class="social">
-															<li><a href="#"><i class="item_add"> </i></a></li>
-															<li><a href="#"><i class="text"> </i></a></li>
-														</ul>
-														<ul class="social-in">
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i> </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-															<li><a href="#"><i > </i></a></li>
-														</ul>
-														<div class="clearfix"> </div>
-													</div>
-												 </div>
-											  </div>
-											 <div class="col-in col-in-1">
-											  	<p>SALE <span>30%</span></p>
-											  </div>
-											</div>
-											<div class="clearfix"></div>
-							     </div>	
-									 	        					 
-						  </div>		
-                  </div>
-          </div>
-         </div>
-		<!---->
-	</div>
-	<!---->
-		<div class="content-bottom">
-			<div class="container">
-				<p>Design is a funny word. Some people think 
-design means how it looks. But of course, if you dig deeper 
-it’s really how it works.</p>
-<label class="line1"> </label>
-<span>Steve Jobs</span>
-			</div>
-		</div>
-		<!---->
-		<div class="content-bottom-top">
-			<div class="container">
-					<h3>Latest News</h3>
-					<div class="blog-in">
-						<div class="col-md-8">
-						
-							<div class="wmuSlider example1">
-					<div class="wmuSliderWrapper">
-						<article style="position: absolute; width: 100%; opacity: 0;"> 
-					  			<div class="blog-in-top">
-								<div class="col-md-6 van">
-								<a href="single.html"><%= image_tag "bl.jpg" , :class => "img-responsive" ,:alt=>"" %></a>
-								</div>
-								<div class="col-md-6 on-para">
-									<div class="col-on">
-										<h4>Iniloh Judulnya</h4>
-										<span>Saturday, 23/08/2014</span>
-									</div>
-									<p>Lorem ipsum dolor sit <span>amet, consectetuer adipiscing elit, 
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-magna aliquam erat volutpat ....</span></p>
-<a href="single.html" class="sed">Readmore</a>
-<div class="clearfix"> </div>
-								</div>	
-							<div class="clearfix"> </div>
-							</div>
-							<div class="blog-in-bottom">
-								<div class="col-md-6 van-in">
-									<h5>Discount Up to</h5>
-								<span>60%</span>
-								</div>
-								<div class="col-md-6 on-para">
-									<div class="col-on">
-										<h4>Iniloh Judulnya</h4>
-										<span>Saturday, 23/08/2014</span>
-									</div>
-									<p>Lorem ipsum dolor sit <span>amet, consectetuer adipiscing elit, 
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-magna aliquam erat volutpat ....</span></p>
-<a href="single.html" class="sed">Readmore</a>
-<div class="clearfix"> </div>
-								</div>	
-							<div class="clearfix"> </div>
-							</div>
-						</article>
-						<article style="position: absolute; width: 100%; opacity: 0;"> 
-					  			<div class="blog-in-top">
-								<div class="col-md-6 van">
-								<a href="single.html"> <%= image_tag "bl2.jpg" , :class => "img-responsive" ,:alt=>"" %></a>
-								</div>
-								<div class="col-md-6 on-para">
-									<div class="col-on">
-										<h4>Iniloh Judulnya</h4>
-										<span>Saturday, 23/08/2014</span>
-									</div>
-									<p>Lorem ipsum dolor sit <span>amet, consectetuer adipiscing elit, 
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-magna aliquam erat volutpat ....</span></p>
-<a href="single.html" class="sed">Readmore</a>
-<div class="clearfix"> </div>
-								</div>	
-							<div class="clearfix"> </div>
-							</div>
-							<div class="blog-in-bottom">
-								<div class="col-md-6 van-in in-bus">
-									<h5>Discount Up to</h5>
-								<span>60%</span>
-								</div>
-								<div class="col-md-6 on-para">
-									<div class="col-on">
-										<h4>Iniloh Judulnya</h4>
-										<span>Saturday, 23/08/2014</span>
-									</div>
-									<p>Lorem ipsum dolor sit <span>amet, consectetuer adipiscing elit, 
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-magna aliquam erat volutpat ....</span></p>
-<a href="single.html" class="sed">Readmore</a>
-<div class="clearfix"> </div>
-								</div>	
-							<div class="clearfix"> </div>
-							</div>	
-						</article>
-						<article style="position: absolute; width: 100%; opacity: 0;"> 
-				   				<div class="blog-in-top">
-								<div class="col-md-6 van">
-								<a href="single.html">  <%= image_tag "bl.jpg" , :class => "img-responsive" ,:alt=>"" %></a>
-								</div>
-								<div class="col-md-6 on-para">
-									<div class="col-on">
-										<h4>Iniloh Judulnya</h4>
-										<span>Saturday, 23/08/2014</span>
-									</div>
-									<p>Lorem ipsum dolor sit <span>amet, consectetuer adipiscing elit, 
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-magna aliquam erat volutpat ....</span></p>
-<a href="single.html" class="sed">Readmore</a>
-<div class="clearfix"> </div>
-								</div>	
-							<div class="clearfix"> </div>
-							</div>
-							<div class="blog-in-bottom">
-								<div class="col-md-6 van-in">
-									<h5>Discount Up to</h5>
-								<span>60%</span>
-								</div>
-								<div class="col-md-6 on-para">
-									<div class="col-on">
-										<h4>Iniloh Judulnya</h4>
-										<span>Saturday, 23/08/2014</span>
-									</div>
-									<p>Lorem ipsum dolor sit <span>amet, consectetuer adipiscing elit, 
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-magna aliquam erat volutpat ....</span></p>
-<a href="single.html" class="sed">Readmore</a>
-<div class="clearfix"> </div>
-								</div>	
-							<div class="clearfix"> </div>
-							</div>	   		 	
-						</article>
-			</div>
-		</div>
-		<!---->
-		 
-			  <script>
-       			$('.example1').wmuSlider({
-					 pagination : false,
-				});         
-   		     </script> 	
 
-						</div>
-						<div class="col-md-4 amet">
-							<div class="grid-per">
-							<a href="single.html"> <%= image_tag "bl1.jpg" , :class => "img-responsive" ,:alt=>"" %>
-							<div class="six-per">
-					<h4>Get up to</h4>
-					<span>60%</span>
-					<p>Lorem ipsum dolor amet, consectetuer elit
-adipiscing , sed diam nonummy nibh euismod
-tincidunt ut laoreet dolore magna erat
-aliquam volutpat.</p>
-					
-				</div></a>
-						</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-			</div>
-		</div>
-		<!---->
-			<div class="container">
-				<div class="bottom-grid">
-					 <%= image_tag "back1.jpg" , :class => "img-responsive" ,:alt=>"" %>
-					<div class="fit">
-						<h6>Best fit for women’s feet</h6>
-						<p>TRY TO WALK IN OUR SHOES</p>
-					</div>
-				</div>
-			</div>
-		<!---->
+
+
+
+ <div class="content" ui-view></div>
+
+
+
+ 
+	
+	
+		
+		
 </div>
 <!---->
 	<div class="footer">
@@ -889,21 +339,39 @@ It is based on Bootstrap.</p>
 <!---->
 </body>
 
-<%= javascript_include_tag("frontend.js") %> 
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<!--//slider-script-->
 
-		    <script type="text/javascript">
-			    $(document).ready(function () {
-			        $('#horizontalTab').easyResponsiveTabs({
-			            type: 'default', //Types: default, vertical, accordion           
-			            width: 'auto', //auto or any width like 600px
-			            fit: true   // 100% fit in a container
-			        });
-			    });
-				
-</script>	
+<script type="application/x-javascript"> 
+ addEventListener("load", function() 
+ 	{ 
+ 		setTimeout(hideURLbar, 0);
 
+ 		 }, false); 
+ function hideURLbar(){ 
+ 	window.scrollTo(0,1);
+  } 
 
+  </script>
+<script>
+$(document).ready(function(){
+	$(".megamenu").megamenu();
+});
+ $(document).ready(function () {
+     $('#horizontalTab').easyResponsiveTabs({
+         type: 'default', //Types: default, vertical, accordion           
+         width: 'auto', //auto or any width like 600px
+         fit: true   // 100% fit in a container
+     });
+ });			    
+
+ $('.search').hide();
+ $('button').click(function ()
+ 	{
+ 		$('.search').show();
+ 		$('.text').focus();
+ 	});
+ $('.close-in').click(function()
+ 	{
+ 		$('.search').hide();
+ 	});
+						</script>
 </html>

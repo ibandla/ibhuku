@@ -10,5 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree ./angular
 //= require_tree ./frontend_template
+//= require angular/modules
+//= require_tree ./app

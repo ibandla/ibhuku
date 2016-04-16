@@ -1,0 +1,48 @@
+var ibhuku = angular.module('ibhuku', ['ui.router']);
+
+ibhuku.config(function($stateProvider, $urlRouterProvider) {
+    
+    $urlRouterProvider.otherwise('/home');
+    
+    $stateProvider
+        
+        // HOME STATES AND NESTED VIEWS ========================================
+        .state('home', {
+            url: '/home',
+            controller:'HomeController',
+            templateUrl: '<%= path_to_asset("app/views/home.html") %>'
+        })
+
+         .state('home.list', {
+        url: '/list',
+        templateUrl: '<%= path_to_asset("app/views/partial-home-list.html") %>',
+        controller: function($scope) {
+            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+        }
+    })
+
+    // nested list with just some random string data
+    .state('home.paragraph', {
+        url: '/paragraph',
+        template: 'I could sure use a drink right now.'
+    })
+
+
+         .state('login', {
+            url: '/login',
+            controller:'AuthController',
+            templateUrl: '<%= path_to_asset("app/views/login.html") %>'
+        })
+
+          .state('signup', {
+            url: '/signup',
+            controller:'AuthController',
+            templateUrl: '<%= path_to_asset("app/views/signup.html") %>'
+        })
+        
+        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+        .state('about', {
+            // we'll get to this in a bit       
+        });
+        
+});
