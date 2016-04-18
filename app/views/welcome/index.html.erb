@@ -1,11 +1,4 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
+
 <head>
 <title>Amberegul A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
 <%= stylesheet_link_tag("frontend.css") %>
@@ -20,7 +13,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//fonts-->
 
 
-</head>
+
+
+
+
+
  <body ng-app="ibhuku">
 <!--header-->
 <div ng-include="'<%= path_to_asset("app/views/navbar.html") %>'"></div>
@@ -147,9 +144,12 @@ It is based on Bootstrap.</p>
 </body>
 
 
+
+<%= javascript_include_tag("frontend.js") %>
 <script type="application/x-javascript">
  addEventListener("load", function()
  	{
+
  		setTimeout(hideURLbar, 0);
 
  		 }, false);
@@ -157,8 +157,7 @@ It is based on Bootstrap.</p>
  	window.scrollTo(0,1);
   }
 
-  </script>
-<script>
+
 $(document).ready(function(){
 	$(".megamenu").megamenu();
 });
@@ -181,4 +180,3 @@ $(document).ready(function(){
  		$('.search').hide();
  	});
 						</script>
-</html>
