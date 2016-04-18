@@ -1,7 +1,7 @@
  ibhuku.controller('ContactController', function($scope,banner) {
-    
-    banner.deactivate();
+
+    // banner.deactivate();
    $scope.hello = "Hello World!";
-     
-    
+
+
 });

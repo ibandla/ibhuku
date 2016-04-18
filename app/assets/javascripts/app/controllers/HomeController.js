@@ -1,6 +1,6 @@
- ibhuku.controller('HomeController', function($scope,banner) {   
+ ibhuku.controller('HomeController', function($scope,banner) {
 
- 		banner.activate();
-   
-    
+ 	// 	banner.activate();
+
+
 });
