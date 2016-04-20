@@ -10,6 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree ./frontend_template
+//= require frontend_template/jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require frontend_template/jquery-ui
+//= require frontend_template/main
+//= require frontend_template/megamenu
+//= require frontend_template/simpleCart
+//= require frontend_template/easyResponsiveTabs
+//= require frontend_template/jqueryetalage
+//= require frontend_template/jquerywmuSlider
+//= require frontend_template/jquereasydropdown
 //= require angular/modules
 //= require_tree ./app
