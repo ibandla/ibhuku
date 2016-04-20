@@ -13,7 +13,7 @@ require 'mina/git'
 set :domain, 'ibhuku.tk'
 set :deploy_to, '/var/www/ibhuku'
 set :repository, 'https://github.com/ibandla/ibhuku.git'
-set :branch, 'master'
+set :branch, 'test'
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
