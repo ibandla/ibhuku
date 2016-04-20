@@ -1,0 +1,29 @@
+<body ng-app="ibhuku">
+<!--header-->
+<div ng-include="'<%= path_to_asset("app/views/navbar.html") %>'"></div>
+
+<div class="content" ui-view></div>
+
+<div ng-include="'<%= path_to_asset("app/views/footer.html") %>'"></div>
+
+</body>
+<script type="application/x-javascript">
+ addEventListener("load", function()
+ 	{
+	 setTimeout(hideURLbar, 0);
+	 }, false);
+	function hideURLbar(){
+		window.scrollTo(0,1);
+	}
+
+$(document).ready(function(){
+	$(".megamenu").megamenu();
+});
+ $(document).ready(function () {
+     $('#horizontalTab').easyResponsiveTabs({
+         type: 'default', //Types: default, vertical, accordion
+         width: 'auto', //auto or any width like 600px
+         fit: true   // 100% fit in a container
+     });
+ });
+						</script>
