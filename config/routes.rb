@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  mount_devise_token_auth_for 'User', at: 'auth'
   devise_for :admins
-  devise_for :users
   root 'welcome#index'
   resources :ebooks, only: [:index, :new, :create, :destroy]
   get "ebooks/index"
