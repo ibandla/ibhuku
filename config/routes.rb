@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
   resources :ebooks, only: [:index, :new, :create, :destroy]
   root "ebooks#index"
   get 'ebooks/new'
