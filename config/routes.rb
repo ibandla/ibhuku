@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
-  root 'welcome#home'
+  root 'welcome#index'
   resources :ebooks, only: [:index, :new, :create, :destroy]
   get "ebooks/index"
   get 'ebooks/new'

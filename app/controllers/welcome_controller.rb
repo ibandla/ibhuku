@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
    layout 'frontend'
-  def home
+  def index
   end
 end

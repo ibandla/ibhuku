@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require frontend_template/jquery
+//= require frontend_template/jquery-ui
 //= require jquery_ujs
 //= require turbolinks
-//= require frontend_template/jquery-ui
 //= require frontend_template/main
 //= require frontend_template/megamenu
 //= require frontend_template/simpleCart
