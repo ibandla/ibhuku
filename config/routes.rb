@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
+  root 'welcome#home'
   resources :ebooks, only: [:index, :new, :create, :destroy]
-  root "ebooks#index"
+  get "ebooks/index"
   get 'ebooks/new'
 
   get 'ebooks/create'
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
