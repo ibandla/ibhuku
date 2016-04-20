@@ -31,25 +31,6 @@ ActiveRecord::Schema.define(version: 20160420090401) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
-  create_table "bookpdfs", force: :cascade do |t|
-    t.string   "book_title", limit: 255
-    t.string   "author",     limit: 255
-    t.float    "price",      limit: 24
-    t.binary   "pdf",        limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  create_table "books", force: :cascade do |t|
-    t.string   "book_title",  limit: 255
-    t.string   "book_author", limit: 255
-    t.string   "description", limit: 255
-    t.integer  "price",       limit: 4
-    t.binary   "book",        limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
   create_table "ebooks", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.string   "author",      limit: 255
