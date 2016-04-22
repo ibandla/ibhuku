@@ -2,39 +2,39 @@
 	<h6 class="dress"><a href="index.html">Home</a> <i> </i> Register </h6>
 </div>
 <div class="back">
-	<h2>REGISTER</h2>
+	<h2>REGISTER{{test}}</h2>
 </div>
 		<!---->
 		<div class="container">
 		<div class="register">
-		<h3>PERSONAL INFORMATION</h3>
-		  	  <form> 
+		<h3>INFORMATION</h3>
+		  	  <form ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
 				
 					
 					<div class="mation">
-					<div>
-						<span>First Name</span>
-						<input type="text"> 
-					</div>
-					<div>
-						<span>Last Name</span>
-						<input type="text"> 
-					 </div>
 					 <div>
 						 <span>Email Address</span>
-						 <input type="text">
+						 <!--<input type="text">-->
+						 <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
 						 </div>
 						 <div>
 							<span>Password</span>
-								<input type="text">						 
+							<input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control"/>
+							<!--<input type="text">-->					 
 					</div>
-					 </div>
-				     <input type="submit" value="submit">
-				</form>
+					  <div class="form-group">
+					    <label>password confirmation</label>
+					    <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control"/>
+					  </div>
+										 </div>
+				     <!--<input type="submit" value="submit">-->
+				      <button type="submit" ng-model="handleRegBtnClick" class="btn btn-primary btn-lg">Submit</button>
 				
+				</form>
 				
 		   </div>
 			</div>
+			
 			<!---->
 				<!-- 	<div class="bottom-grid1">
 					

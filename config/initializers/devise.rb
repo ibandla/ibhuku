@@ -12,11 +12,21 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-
+  config.mailer_sender = 'noreply.ibhuku@gmail.com'
+  # config.action_mailer.raise_delivery_errors = true
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
-
+#   config.action_mailer.delivery_method = :smtp
+# config.action_mailer.default_url_options = { :host => 'ibhuku.app' }
+# config.action_mailer.smtp_settings = {
+# address: "smtp.gmail.com",
+# port: 587,
+# domain: "gmail",
+# authentication: "plain",
+# enable_starttls_auto: true,
+# user_name: "noreply.ibhuku@gmail.com",
+# password: "ibandlas"
+# }
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
