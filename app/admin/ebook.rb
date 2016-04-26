@@ -9,7 +9,6 @@ ActiveAdmin.register Ebook do
             f.input :pdf 
         end
         f.submit
-        f.show
     end
 end            
 
