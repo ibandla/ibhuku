@@ -4,14 +4,13 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'welcome#index'
-  # before_action :authenticate_admin_user!
   resources :ebooks, only: [:index, :new, :create, :destroy]
-  get "ebooks/index"
-  get 'ebooks/new'
+  # get "ebooks/index"
+  # get 'ebooks/new'
 
-  get 'ebooks/create'
+  # get 'ebooks/create'
 
-  get 'ebooks/destroy'
+  # get 'ebooks/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
