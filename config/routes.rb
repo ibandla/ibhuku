@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'welcome#index'
-  resources :ebooks, only: [:index, :new, :create, :destroy]
+
+  # before_action :authenticate_admin_user!
+  # resources :ebooks, only: [:index, :new, :create, :destroy]
   # get "ebooks/index"
   # get 'ebooks/new'
 
