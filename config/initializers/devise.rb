@@ -6,27 +6,17 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
+
   # config.secret_key = '24e6712146a3e3de929cba99ca40c962475b14b112990751753c176125476ad8b0b8931b02dfb7ba5d6fcfa5931b101ab91e57851e3542d619afff2144f1cfc5'
 
-  # ==> Mailer Configuration
-  # Configure the e-mail address which will be shown in Devise::Mailer,
-  # note that it will be overwritten if you use your own mailer class
-  # with default "from" parameter.
   config.mailer_sender = 'noreply.ibhuku@gmail.com'
-  # config.action_mailer.raise_delivery_errors = true
+
+
+ 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
-#   config.action_mailer.delivery_method = :smtp
-# config.action_mailer.default_url_options = { :host => 'ibhuku.app' }
-# config.action_mailer.smtp_settings = {
-# address: "smtp.gmail.com",
-# port: 587,
-# domain: "gmail",
-# authentication: "plain",
-# enable_starttls_auto: true,
-# user_name: "noreply.ibhuku@gmail.com",
-# password: "ibandlas"
-# }
+
+
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be

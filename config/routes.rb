@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   mount_devise_token_auth_for 'User', at: 'auth'
-  devise_for :admins
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root 'welcome#index'
+  # before_action :authenticate_admin_user!
   resources :ebooks, only: [:index, :new, :create, :destroy]
   get "ebooks/index"
   get 'ebooks/new'
