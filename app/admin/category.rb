@@ -1,5 +1,15 @@
 ActiveAdmin.register Category do
-
+    permit_params :name, :description
+    
+    #filter options
+    filter :name
+    
+    #columns displayed on Categories page
+    index do
+    column :name
+    column :description
+  end
+    
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
