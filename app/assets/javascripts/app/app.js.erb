@@ -13,8 +13,8 @@ ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,Notificat
             startRight: 10,
             verticalSpacing: 20,
             horizontalSpacing: 20,
-            positionX: 'left',
-            positionY: 'bottom'
+            positionX: 'center',
+            positionY: 'top'
         });
     $stateProvider
 
@@ -109,34 +109,8 @@ ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,Notificat
             controller:'ContactController',
             templateUrl: '<%= path_to_asset("app/views/contact.html") %>'
         });
-
-
-
+        
+       
+        
 });
 
-
-
-ibhuku.run(function($rootScope, $location,Notification) {
-    $rootScope.$on('auth:login-success', function(ev, user) {
-    $location.path('/home');
-    $rootScope.signedIn = true;
-    Notification.primary('Welcome '+user.email);
-  });
-
-    $rootScope.$on('auth:login-error', function(ev, user) {
-        $rootScope.signedIn = false;
-    Notification.error({message: 'Incorrect Login', delay: 1000});
-  });
-
-    $rootScope.$on('auth:session-expired', function(ev) {
-         $rootScope.signedIn = false;
-  Notification.primary('Session has expired');
-});
-
-    $rootScope.$on('auth:logout-success', function(ev) {
-        $rootScope.signedIn = false;
-    Notification.primary('goodbye');
-});
-
-
-});

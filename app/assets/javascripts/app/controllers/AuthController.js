@@ -3,23 +3,11 @@
     banner.deactivate();
 
     $scope.handleRegBtnClick = function() {
-      $auth.submitRegistration($scope.registrationForm)
-        .then(function(resp) {
-           $state.go('login');
-        })
-        .catch(function(resp) {
-        $scope.test = "No";
-        });
+      $auth.submitRegistration($scope.registrationForm);
     };
 
     $scope.handleLoginBtnClick = function() {
-      $auth.submitLogin($scope.loginForm)
-        .then(function(resp) {
-          $state.go('home');
-        })
-        .catch(function(resp) {
-          // handle error response
-        });
+      $auth.submitLogin($scope.loginForm);
     };
 
     $scope.handlePwdResetBtnClick = function() {
@@ -43,15 +31,7 @@
     };
 
 
-    $scope.handleSignOutBtnClick = function() {
-      $auth.signOut()
-        .then(function(resp) {
-          // handle success response
-        })
-        .catch(function(resp) {
-          // handle error response
-        });
-    };
+   
 
 
 });
