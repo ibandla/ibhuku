@@ -8,8 +8,16 @@
 					<li ><span ><i class="tele-in"> </i>+254 702 4329 20</span></li>
 				</ul>
 				<ul class=" support-right">
-					<li ><a  ui-sref="login" ><i class="men"> </i>Login</a></li>
-					<li ><a  ui-sref="signup" ><i class="tele"> </i>Create an Account</a></li>
+				<li ng-hide="signedIn"><a  ui-sref="login" ><i class="men"> </i>Login</a></li>
+				<li ng-hide="signedIn"><a  ui-sref="signup" ><i class="tele"> </i>Create an Account</a>
+
+			    <li ng-show="signedIn"><a ui-sref="home" ><i class="men"> </i>{{ user.email }}</a></li>
+			    <li ng-show="signedIn"><a ng-click="logout()"><i class="men"> </i>Log Out</a></li>
+
+				</li>
+
+				
+
 				</ul>
 				<div class="clearfix"> </div>
 			</div>

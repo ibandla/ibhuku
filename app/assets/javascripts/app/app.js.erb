@@ -1,11 +1,21 @@
-var ibhuku = angular.module('ibhuku', ['ui.router','ng-token-auth']);
+var ibhuku = angular.module('ibhuku', ['ui.router','ng-token-auth','ui-notification']);
 
-ibhuku.config(function($stateProvider, $urlRouterProvider,$authProvider) {
+
+ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,NotificationProvider) {
     $authProvider.configure({
             apiUrl: location.protocol + "//" + location.host
         });
     $urlRouterProvider.otherwise('/404');
     $urlRouterProvider.when('', '/home');
+     NotificationProvider.setOptions({
+            delay: 10000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'left',
+            positionY: 'bottom'
+        });
     $stateProvider
         
        .state('home', {
@@ -32,13 +42,23 @@ ibhuku.config(function($stateProvider, $urlRouterProvider,$authProvider) {
          .state('login', {
             url: '/login',
             controller:'AuthController',
-            templateUrl: '<%= path_to_asset("app/views/login.html") %>'
+            templateUrl: '<%= path_to_asset("app/views/login.html") %>',
+              onEnter: function($state, $auth) {
+                $auth.validateUser().then(function (){
+                    $state.go('home');
+                })
+            }
         })
 
           .state('signup', {
             url: '/signup',
             controller:'AuthController',
-            templateUrl: '<%= path_to_asset("app/views/signup.html") %>'
+            templateUrl: '<%= path_to_asset("app/views/signup.html") %>',
+             onEnter: function($state, $auth) {
+                $auth.validateUser().then(function (){
+                    $state.go('home');
+                })
+            }
         })
 
             .state('product', {
@@ -78,6 +98,33 @@ ibhuku.config(function($stateProvider, $urlRouterProvider,$authProvider) {
             templateUrl: '<%= path_to_asset("app/views/contact.html") %>'
         });
         
+       
+        
+});
+
+
+
+ibhuku.run(function($rootScope, $location,Notification) {
+    $rootScope.$on('auth:login-success', function(ev, user) {
+    $location.path('/home');
+    $rootScope.signedIn = true;
+    Notification.primary('Welcome '+user.email);
+  });
+
+    $rootScope.$on('auth:login-error', function(ev, user) {
+        $rootScope.signedIn = false;
+    Notification.error({message: 'Incorrect Login', delay: 1000});
+  });    
+
+    $rootScope.$on('auth:session-expired', function(ev) {
+         $rootScope.signedIn = false;
+  Notification.primary('Session has expired');
+});
+
+    $rootScope.$on('auth:logout-success', function(ev) {
+        $rootScope.signedIn = false;
+    Notification.primary('goodbye');
+});
        
         
 });

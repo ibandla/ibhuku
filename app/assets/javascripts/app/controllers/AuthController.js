@@ -1,12 +1,12 @@
- ibhuku.controller('AuthController', function($scope,banner,$auth) {
+ ibhuku.controller('AuthController', function($scope,banner,$auth,$state,Notification) {
 
     banner.deactivate();
   
-    $scope.test = "w";
+   
     $scope.handleRegBtnClick = function() {
       $auth.submitRegistration($scope.registrationForm)
         .then(function(resp) {
-          alert("Yes");
+           $state.go('login');
         })
         .catch(function(resp) {
         $scope.test = "No";
@@ -16,6 +16,17 @@
     $scope.handleLoginBtnClick = function() {
       $auth.submitLogin($scope.loginForm)
         .then(function(resp) {
+          $state.go('home');
+        })
+        .catch(function(resp) {
+          // handle error response
+        });
+    };
+
+
+    $scope.handleSignOutBtnClick = function() {
+      $auth.signOut()
+        .then(function(resp) {
           // handle success response
         })
         .catch(function(resp) {
@@ -24,5 +35,5 @@
     };
 
 
-
 });
+
