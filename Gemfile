@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'devise','~> 3.2'
 gem 'activeadmin'
+gem 'active_skin'
 gem 'devise_token_auth'
 gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
