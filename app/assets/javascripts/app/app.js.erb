@@ -7,7 +7,7 @@ ibhuku.config(function($stateProvider, $urlRouterProvider,$authProvider) {
     $urlRouterProvider.otherwise('/404');
     $urlRouterProvider.when('', '/home');
     $stateProvider
-        
+
        .state('home', {
             url: '/home',
             controller:'HomeController',
@@ -40,6 +40,18 @@ ibhuku.config(function($stateProvider, $urlRouterProvider,$authProvider) {
             controller:'AuthController',
             templateUrl: '<%= path_to_asset("app/views/signup.html") %>'
         })
+
+        .state('reset', {
+           url: '/reset',
+           controller:'AuthController',
+           templateUrl: '<%= path_to_asset("app/views/reset.html") %>'
+       })
+
+       .state('update', {
+          url: '/update',
+          controller:'AuthController',
+          templateUrl: '<%= path_to_asset("app/views/update.html") %>'
+      })
 
             .state('product', {
             url: '/product',
@@ -77,7 +89,7 @@ ibhuku.config(function($stateProvider, $urlRouterProvider,$authProvider) {
             controller:'ContactController',
             templateUrl: '<%= path_to_asset("app/views/contact.html") %>'
         });
-        
-       
-        
+
+
+
 });
