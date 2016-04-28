@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   # before_action :authenticate_admin_user!
-  # resources :ebooks, only: [:index, :new, :create, :destroy]
+  resources :ebooks, only: [:index, :new, :create, :destroy]
   # get "ebooks/index"
   # get 'ebooks/new'
 
