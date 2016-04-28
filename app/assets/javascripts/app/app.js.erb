@@ -17,7 +17,7 @@ ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,Notificat
             positionY: 'top'
         });
     $stateProvider
-        
+
        .state('home', {
             url: '/home',
             controller:'HomeController',
@@ -61,6 +61,18 @@ ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,Notificat
             }
         })
 
+        .state('reset', {
+           url: '/reset',
+           controller:'AuthController',
+           templateUrl: '<%= path_to_asset("app/views/reset.html") %>'
+       })
+
+       .state('update', {
+          url: '/update',
+          controller:'AuthController',
+          templateUrl: '<%= path_to_asset("app/views/update.html") %>'
+      })
+
             .state('product', {
             url: '/product',
             controller:'ProductController',
@@ -101,3 +113,4 @@ ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,Notificat
        
         
 });
+
