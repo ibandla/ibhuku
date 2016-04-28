@@ -1,5 +1,10 @@
 ActiveAdmin.register User do
-    # actions :all, :except => [:new, :create]
+  actions :all, :except => [:new, :create]
+  index do
+    column :name
+    column :email
+    column :create_at
+  end
 
 
 # See permitted parameters documentation:
