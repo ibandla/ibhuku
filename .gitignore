@@ -14,3 +14,4 @@
 *.env
 Procfile
 config/database.yml
+config/database.yml
