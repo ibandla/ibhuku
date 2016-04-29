@@ -34,6 +34,7 @@ ibhuku.run(function($rootScope, $location,Notification) {
        
     $rootScope.$on('auth:registration-email-success', function(ev, message) {
      Notification.success("A registration email was sent to " + message.email);
+     $location.path('/home');
 });
 
 });
