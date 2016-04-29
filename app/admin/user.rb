@@ -3,9 +3,12 @@ ActiveAdmin.register User do
   index do
     column :name
     column :email
-    column :create_at
+    column :created_at
   end
-
+  
+  filter :name
+  filter :email
+  filter :created_at
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
