@@ -14,7 +14,11 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
+<<<<<<< HEAD
   password: blanchard
+=======
+  password: 12345
+>>>>>>> ActiveAdmin
   socket: /var/run/mysqld/mysqld.sock
 
 development:
