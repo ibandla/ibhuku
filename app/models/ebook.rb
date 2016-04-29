@@ -1,6 +1,6 @@
 class Ebook < ActiveRecord::Base
-  has_many :categorizations
-  has_many :categories, :through => :categorizations
+  has_and_belongs_to_many :categories
+
   mount_uploader :pdf, PdfUploader
   validates :title, presence: true
   # attr_accessor :title, :price, :description, :pdf, :author
