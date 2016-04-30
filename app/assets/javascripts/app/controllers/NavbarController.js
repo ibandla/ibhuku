@@ -1,6 +1,6 @@
 ibhuku.controller('NavbarController', function($scope,$state,$auth,Notification,$rootScope) {
 
-	$scope.loggedin= $rootScope.signedIn;
+
 	$scope.logout = function () {
 		$auth.signOut();
 	}
