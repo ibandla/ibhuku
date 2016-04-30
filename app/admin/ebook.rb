@@ -20,7 +20,7 @@ ActiveAdmin.register Ebook do
         f.inputs "Ebook" do
             f.input :title
             f.input :author
-            f.input :category_id, :as => :select, :collection => Category.all.collect {|category| [category.name, category.id] }           
+            f.input :category_ids, as: :tags, collection: Category.all        
             f.input :description
             f.input :price
             f.input :pdf 
