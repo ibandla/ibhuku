@@ -1,4 +1,4 @@
-var ibhuku = angular.module('ibhuku', ['ui.router','ng-token-auth','ui-notification']);
+var ibhuku = angular.module('ibhuku', ['ui.router','ngCart','ng-token-auth','ui-notification']);
 
 
 ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,NotificationProvider) {
@@ -33,13 +33,11 @@ ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,Notificat
     })
 
     // nested list with just some random string data
-    .state('home.paragraph', {
+        .state('home.paragraph', {
         url: '/paragraph',
         template: 'I could sure use a drink right now.'
-    })
-
-
-         .state('login', {
+        })
+        .state('login', {
             url: '/login',
             controller:'AuthController',
             templateUrl: '<%= path_to_asset("app/views/login.html") %>',
@@ -78,33 +76,32 @@ ibhuku.config(function($stateProvider,$urlRouterProvider,$authProvider,Notificat
             controller:'ProductController',
             templateUrl: '<%= path_to_asset("app/views/product.html") %>'
         })
-
               .state('products', {
             url: '/products',
             controller:'ProductsController',
             templateUrl: '<%= path_to_asset("app/views/products.html") %>'
         })
-
-                .state('checkout', {
+              .state('checkout', {
             url: '/checkout',
             controller:'CheckoutController',
             templateUrl: '<%= path_to_asset("app/views/checkout.html") %>'
         })
-
-
+              .state('cart', {
+            url: '/cart',
+            controller:'CartController',
+            templateUrl: '<%= path_to_asset("app/views/cart.html") %>'
+        })
                   .state('404', {
             url: '/404',
             controller:'404Controller',
             templateUrl: '<%= path_to_asset("app/views/404.html") %>'
         })
-
-                    .state('about', {
+                  .state('about', {
             url: '/about',
             controller:'AboutController',
             templateUrl: '<%= path_to_asset("app/views/about.html") %>'
         })
-
-                      .state('contact', {
+                  .state('contact', {
             url: '/contact',
             controller:'ContactController',
             templateUrl: '<%= path_to_asset("app/views/contact.html") %>'
