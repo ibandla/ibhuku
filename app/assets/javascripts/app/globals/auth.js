@@ -31,4 +31,15 @@ ibhuku.run(function($rootScope, $location,Notification) {
      $location.path('/home');
 });
 
+    $rootScope.$on('auth:password-reset-request-success', function(ev, data) {
+     Notification.success("Password reset instructions were sent to " + data.email);
+     $location.path('/home');
+});
+
+    $rootScope.$on('auth:password-reset-request-error', function(ev, resp) {
+    Notification.error("Password reset request failed: " + resp.errors[0]);
+});
+
+  
+
 });
