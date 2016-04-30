@@ -1,6 +1,5 @@
- ibhuku.controller('AuthController', function($scope,banner,$auth,$state,Notification) {
+ ibhuku.controller('AuthController', function($scope,$auth) {
 
-    banner.deactivate();
 
     $scope.handleRegBtnClick = function() {
       $auth.submitRegistration($scope.registrationForm);
@@ -11,27 +10,10 @@
     };
 
     $scope.handlePwdResetBtnClick = function() {
-      $auth.requestPasswordReset($scope.pwdResetForm)
-        .then(function(resp) {
-          // handle success response
-        })
-        .catch(function(resp) {
-          // handle error response
-        });
+      $auth.requestPasswordReset($scope.pwdResetForm);      
     };
 
     $scope.handleUpdatePasswordBtnClick = function() {
-      $auth.updatePassword($scope.updatePasswordForm)
-        .then(function(resp) {
-          // handle success response
-        })
-        .catch(function(resp) {
-          // handle error response
-        });
+      $auth.updatePassword($scope.updatePasswordForm);
     };
-
-
-   
-
-
 });

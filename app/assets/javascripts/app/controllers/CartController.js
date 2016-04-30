@@ -1,7 +1,5 @@
- ibhuku.controller('CartController', function($scope,banner) {
+ ibhuku.controller('CartController', function($scope) {
 
-    banner.deactivate();
-   $scope.hello = "Hello World!";
-
+     $scope.hello = "Hello World!";
 
 });
