@@ -1,0 +1,622 @@
+<div class="container">
+	<h6 class="dress"><a ui-sref="home">Home</a> <i> </i> Dress &amp; T-shirt </h6>
+</div>
+<div class="back">
+	<h2>PRODUCTS</h2>
+</div>
+		<!---->
+		<div class="product">
+			<div class="container">
+				<div class="col-md-3 product-price">
+					  <div class="price-grid">
+					    <div class="of-left">
+						<h3 class="cate cate-on">PRICE</h3>
+					</div>
+	  <ul class="dropdown-menu1">
+            <li><a href="#">
+                <p>
+                      <label for="amount" class="amount">Range:</label>
+                     <input type="text" id="amount" style="border: 0; color: #ff5d56; font-weight: bold;" />
+                         
+						  </p>
+                
+                   <div id="slider-range"></div>
+                </a></li>
+				
+          </ul>
+		  <a  class="go" ui-sref="product">GO</a>
+		  	<div class="clearfix"> </div>
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+ $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [ 100, 400 ],
+            slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            }
+ });
+$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+});//]]>  
+
+</script>
+
+
+<!---->
+		</div>
+				<div class=" rsidebar span_1_of_left">
+					<div class="of-left">
+						<h3 class="cate">CATEGORIES</h3>
+					</div>
+		 <ul class="menu">
+		<li class="item1"><a href="#">Men </a>
+			<ul class="cute">
+				<li class="subitem1"><a ui-sref="product">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="product">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="product">Automatic Fails </a></li>
+			</ul>
+		</li>
+		<li class="item2"><a href="#">Women </a>
+			<ul class="cute">
+				<li class="subitem1"><a ui-sref="product">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="product">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="product">Automatic Fails </a></li>
+			</ul>
+		</li>
+		<li class="item3"><a href="#">Kids</a>
+			<ul class="cute">
+				<li class="subitem1"><a ui-sref="product">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="product">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="product">Automatic Fails</a></li>
+			</ul>
+		</li>
+		<li class="item4"><a href="#">Accesories</a>
+			<ul class="cute">
+				<li class="subitem1"><a ui-sref="product">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="product">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="product">Automatic Fails</a></li>
+			</ul>
+		</li>
+				
+		<li class="item4"><a href="#">Shoes</a>
+			<ul class="cute">
+				<li class="subitem1"><a ui-sref="products">Cute Kittens </a></li>
+				<li class="subitem2"><a ui-sref="products">Strange Stuff </a></li>
+				<li class="subitem3"><a ui-sref="products">Automatic Fails </a></li>
+			</ul>
+		</li>
+	</ul>
+					</div>
+				<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
+<!---->
+	<div class="product-middle">
+		
+					<div class="fit-top">
+						<h6 class="shop-top">LOREM IPSUM</h6>
+						<a ui-sref="product" class="shop-now">SHOP NOW</a>
+<div class="clearfix"> </div>
+	</div>
+				</div>	 
+						<div class="sellers">
+							<div class="of-left-in">
+								<h3 class="tag">TAGS</h3>
+							</div>
+								<div class="tags">
+									<ul>
+										<li><a href="#">design</a></li>
+										<li><a href="#">fashion</a></li>
+										<li><a href="#">lorem</a></li>
+										<li><a href="#">dress</a></li>
+										<li><a href="#">fashion</a></li>
+										<li><a href="#">dress</a></li>
+										<li><a href="#">design</a></li>
+										<li><a href="#">dress</a></li>
+										<li><a href="#">design</a></li>
+										<li><a href="#">fashion</a></li>
+										<li><a href="#">lorem</a></li>
+										<li><a href="#">dress</a></li>
+										
+										<div class="clearfix"> </div>
+									</ul>
+								
+								</div>
+								
+		</div>
+				<!---->
+				<div class="product-bottom">
+					<div class="of-left-in">
+								<h3 class="best">BEST SELLERS</h3>
+							</div>
+					<div class="product-go">
+						<div class=" fashion-grid">
+									<a ui-sref="product"><%= image_tag "be.jpg", :class => "img-responsive" ,:alt=>"" %></a>
+									
+								</div>
+							<div class=" fashion-grid1">
+								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
+amet consectetuer  </a></h6>
+								
+								<span class=" price-in1"> $40.00</span>
+							</div>
+								
+							<div class="clearfix"> </div>
+							</div>
+							<div class="product-go">
+						<div class=" fashion-grid">
+									<a ui-sref="product"><%= image_tag "be1.jpg", :class => "img-responsive" ,:alt=>"" %></a>
+									
+								</div>
+							<div class="fashion-grid1">
+								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
+amet consectetuer </a></h6>
+								
+								<span class=" price-in1"> $40.00</span>
+							</div>
+								
+							<div class="clearfix"> </div>
+							</div>
+							<div class="product-go">
+						<div class=" fashion-grid">
+									<a ui-sref="product"><%= image_tag "be2.jpg", :class => "img-responsive" ,:alt=>"" %></a>
+									
+								</div>
+							<div class=" fashion-grid1">
+								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
+amet consectetuer </a></h6>
+								<ul class="star-footer">
+									<li><a href="#"><i> </i></a></li>
+									<li><a href="#"><i> </i></a></li>
+									<li><a href="#"><i> </i></a></li>
+									<li><a href="#"><i> </i></a></li>
+									<li><a href="#"><i> </i></a></li>
+								</ul>
+								<span class=" price-in1"><small>$70.00</small> $40.00</span>
+							</div>
+								
+							<div class="clearfix"> </div>
+							</div>
+				</div>
+<div class=" per1">
+				<a ui-sref="product" ><%= image_tag "pro.jpg", :class => "img-responsive" ,:alt=>"" %>
+				<div class="six1">
+					<h4>DISCOUNT</h4>
+					<p>Up to</p>
+					<span>60%</span>
+				</div></a>
+			</div>
+				</div>
+				
+		
+			<!---->
+			
+				<!---->
+				<div class="col-md-9 product-price1">
+					<div class="mens-toolbar">
+						<p class="showing">Showing 1–9 of 21 results</p>
+	                 <div class="sort">
+			            <select>
+			                  <option value=""> Sorting By Rate</option>
+			                    <option value="">Sorting By Color </option>
+			                    <option value="">Sorting By Price </option>
+			            </select>
+			          
+	    		     </div>
+    	      
+                	<div class="clearfix"></div>		
+		        </div>
+		        <div class="product-right-top" ng-controller="CartCtrl">
+		        	<div class="top-product">
+		        		<div class="col-md-4 chain-grid  simpleCart_shelfItem">
+		        			<div class="grid-span-1">
+	   		     		<a  ui-sref="product"><%= image_tag "pr.jpg", :class => "img-responsive" ,:alt=>"" %>
+	   		     			<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div>
+	   		     		</a>
+	   		     	</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">KES 75.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+								<ngcart-addtocart id="1" name="WOO JACKET #1" price="75.00" data="image"></ngcart-addtocart>
+	   		     		</div>
+	   		     		
+	   		     	</div>
+	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
+					<div class="grid-span-1">
+	   		     		<a ui-sref="product"><%= image_tag "pr1.jpg", :class => "img-responsive" ,:alt=>"" %>
+						<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #2</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">KES 77.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<ngcart-addtocart id="2" name="WOO JACKET #2" price="77.00" data="image"></ngcart-addtocart>
+
+
+	   		     		</div>
+	   		     	</div>
+	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
+					<div class="grid-span-1">
+	   		     		<a ui-sref="product"><%= image_tag "pr2.jpg", :class => "img-responsive" ,:alt=>"" %>
+						<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #3</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">KES 79.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<ngcart-addtocart id="3" name="WOO JACKET #3" price="79.00" data="image"></ngcart-addtocart>
+	   		     		</div>
+	   		     	</div>
+	   		     	<div class="clearfix"> </div>
+		        	</div>
+		        	<div class="top-product">
+					
+		        		<div class="col-md-4 chain-grid simpleCart_shelfItem">
+						<div class="grid-span-1">
+	   		     		<a ui-sref="product"><%= image_tag "pr7.jpg", :class => "img-responsive" ,:alt=>"" %>
+						<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div><span>NEW</span></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">$ 75.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<div class="cart-add">
+								<a class="add1 item_add" href="#">ADD TO CART <i> </i></a>
+								<a class="add2" href="#"><i> </i></a>
+								<div class="clearfix"> </div>
+							</div>
+	   		     		</div>
+	   		     	</div>
+	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
+					
+					<div class="grid-span-1">
+	   		     		<a ui-sref="product"><%= image_tag "pr4.jpg", :class => "img-responsive" ,:alt=>"" %>
+						<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">$ 75.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<div class="cart-add">
+								<a class="add1 item_add" href="#">ADD TO CART <i> </i></a>
+								<a class="add2" href="#"><i> </i></a>
+								<div class="clearfix"> </div>
+							</div>
+	   		     		</div>
+	   		     	</div>
+	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
+					<div class="grid-span-1">
+	   		     		<a ui-sref="product"><%= image_tag "pr5.jpg", :class => "img-responsive" ,:alt=>"" %>
+						<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">$ 75.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<div class="cart-add">
+								<a class="add1 item_add" href="#">ADD TO CART <i> </i></a>
+								<a class="add2" href="#"><i> </i></a>
+								<div class="clearfix"> </div>
+							</div>
+	   		     		</div>
+	   		     	</div>
+	   		     	<div class="clearfix"> </div>
+		        	</div>
+		        	<div class="top-product">
+				
+		        		<div class="col-md-4 chain-grid simpleCart_shelfItem">
+						<div class="grid-span-1">
+	   		     		<a ui-sref="product"><%= image_tag "pr6.jpg", :class => "img-responsive" ,:alt=>"" %>
+						<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div><span>NEW</span></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">$ 75.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<div class="cart-add">
+								<a class="add1 item_add" href="#">ADD TO CART <i> </i></a>
+								<a class="add2" href="#"><i> </i></a>
+								<div class="clearfix"> </div>
+							</div>
+	   		     		</div>
+	   		     	</div>
+	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
+					<div class="grid-span-1">
+	   		     		<a ui-sref="product"><%= image_tag "pr7.jpg", :class => "img-responsive" ,:alt=>"" %>
+						<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div>
+						<span>NEW</span></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">$ 75.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<div class="cart-add">
+								<a class="add1 item_add" href="#">ADD TO CART <i> </i></a>
+								<a class="add2" href="#"><i> </i></a>
+								<div class="clearfix"> </div>
+							</div>
+	   		     		</div>
+	   		     	</div>
+	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
+					<div class="grid-span-1">
+	   		     		<a ui-sref="product"><%= image_tag "pr.jpg", :class => "img-responsive" ,:alt=>"" %>
+						<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+										
+							</ul>
+	   		     		</div>
+						<span>NEW</span></a>
+	   		     		</div>
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">WOO JACKET #1</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">$ 75.00</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+							<div class="cart-add">
+								<a class="add1 item_add" href="#">ADD TO CART <i> </i></a>
+								<a class="add2" href="#"><i> </i></a>
+								<div class="clearfix"> </div>
+							</div>
+	   		     		</div>
+	   		     	</div>
+	   		     	<div class="clearfix"> </div>
+		        	</div>
+		        </div>
+
+		        <!-- end of products -->
+
+		        <ul class="start">
+					<li><a href="#"><i> </i></a></li>
+					<li><span>1</span></li>
+					<li class="arrow"><a href="#">2</a></li>
+					<li class="arrow"><a href="#">3</a></li>
+					
+					
+					<li><a href="#"><i class="next"> </i></a></li>
+				</ul>
+				<div class="clearfix"> </div>
+				</div>
+				
+			<div class="clearfix"> </div>
+			
+				<div class="shipping">
+					<div class="col-md-3 col-md1">
+						<div class=" phone">
+						
+							<div class="num">
+								<span>8(802)234-5678</span>
+								<p>Monday - Saturday: 8am - 5pm PST</p>
+							</div>
+							<i class="phone-in"> </i>
+							<div class="clearfix"> </div>
+						</div>
+					
+					</div>
+					<div class="col-md-5 col-md2">
+						<div class=" phone1">
+					
+							<i class="phone-in1"> </i>
+							<div class="num1">
+								<span>Free Shipping</span>
+								<p>on all orders over $99</p>
+							</div>
+							<a class="learn-in" ui-sref="product">Learn More</a>
+							<div class="clearfix"> </div>
+						</div>
+			
+					</div>
+					<div class="col-md-4 col-md3">
+						<div class=" phone2">
+					
+							
+							<div class="num2">
+								<span>Crazy Sale!</span>
+								<p>on selected items</p>
+							</div>
+							<a class="learn-in1" ui-sref="product">Learn More</a>
+							<div class="clearfix"> </div>
+						</div>
+			</div>
+			<div class="clearfix"> </div>
+			</div>
+					
+				</div>
+				
+			<!---->
+		
+		</div>
+	<!-- 	<div class="bottom-grid1">
+					
+					<div class="fit1">
+						<h3>HAPPY SHOPPING</h3>
+						<p>Lorem Ipsum sit amet consectuer adipiscing elit
+sed diam nonummy nibh euismod</p>
+					</div>
+				</div> -->

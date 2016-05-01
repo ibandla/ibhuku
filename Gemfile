@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'activeadmin_addons'
 gem 'devise','~> 3.2'
+gem 'font-awesome-rails'
 # gem 'activeadmin'
 # gem 'activeadmin'
 gem 'activeadmin', github: 'activeadmin'
