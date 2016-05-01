@@ -1,7 +1,8 @@
-app.run(function($rootScope, $location,Notification) {
+app.run(function($rootScope, $location,Notification,ngCart) {
     $rootScope.$on('auth:login-success', function(ev, user) {
     $location.path('/home');
     Notification.primary('Welcome '+user.email);
+    ngCart.empty();
   });
 
     $rootScope.$on('auth:login-error', function(ev,reason) {

@@ -128,21 +128,24 @@ angular.module('ngCart', ['ngCart.directives'])
         };
 
         this.removeItem = function (index) {
+            var newitem = this.$cart.items[index];
             this.$cart.items.splice(index, 1);
-            $rootScope.$broadcast('ngCart:itemRemoved', {});
+            $rootScope.$broadcast('ngCart:itemRemoved', newitem);
             $rootScope.$broadcast('ngCart:change', {});
 
         };
 
         this.removeItemById = function (id) {
             var cart = this.getCart();
+            var newitem;
             angular.forEach(cart.items, function (item, index) {
                 if  (item.getId() === id) {
+                     newitem = cart.items[index];
                     cart.items.splice(index, 1);
                 }
             });
             this.setCart(cart);
-            $rootScope.$broadcast('ngCart:itemRemoved', {});
+            $rootScope.$broadcast('ngCart:itemRemoved', newitem);
             $rootScope.$broadcast('ngCart:change', {});
         };
 

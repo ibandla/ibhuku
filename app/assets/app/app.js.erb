@@ -23,21 +23,6 @@ app.config(function($stateProvider,$urlRouterProvider,$authProvider,Notification
             controller:'HomeCtrl',
             templateUrl: '<%= path_to_asset("views/home.html") %>'
         })
-
-    //      .state('home.list', {
-    //     url: '/list',
-    //     templateUrl: '<%= path_to_asset("views/partial-home-list.html") %>',
-    //     controller: function($scope) {
-    //         $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-    //     }
-    // })
-
-    // nested list with just some random string data
-        // .state('home.paragraph', {
-        // url: '/paragraph',
-        // template: 'I could sure use a drink right now.'
-        // })
-
         .state('login', {
             url: '/login',
             controller:'AuthCtrl',
@@ -111,6 +96,11 @@ app.config(function($stateProvider,$urlRouterProvider,$authProvider,Notification
             url: '/contact',
             controller:'ContactCtrl',
             templateUrl: '<%= path_to_asset("views/contact.html") %>'
+        })
+                   .state('purchases', {
+            url: '/purchases',
+            controller:'PurchasesCtrl',
+            templateUrl: '<%= path_to_asset("views/purchases.html") %>'
         })
         
        
