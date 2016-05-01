@@ -1,3 +1,4 @@
+//Example of factory
 angular
   .module('ibhuku')
   .factory('banner', function() {

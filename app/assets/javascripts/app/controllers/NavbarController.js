@@ -1,17 +1,19 @@
-ibhuku.controller('NavbarController', function($scope,$state,$auth,Notification,$rootScope) {
+ibhuku.controller('NavbarController', function($scope,$auth,$location) {
 
-
+	 $scope.$watch(function() { return $location.path(); }, function(newVal, oldVal) {
+      
+       if(newVal=='/home')
+		{
+			$scope.header = 'header';
+			$scope.banner = true;
+		}else{
+			$scope.header = 'header-product';
+			$scope.banner = false;
+		};
+    });	
+		
 	$scope.logout = function () {
 		$auth.signOut();
 	}
-	// $scope.signedIn =if($auth.validateUser();
-	  
- 	//  $scope.signedIn = Auth.isAuthenticated;
-  // $scope.logout = Auth.logout;
-
-  // Auth.currentUser().then(function (user){
-  //   $scope.user = user;
-  // });
-
-
+	
 });

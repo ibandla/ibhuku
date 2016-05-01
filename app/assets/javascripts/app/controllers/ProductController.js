@@ -1,6 +1,5 @@
- ibhuku.controller('ProductController', function($scope,banner) {
+ ibhuku.controller('ProductController', function($scope) {
 
-    banner.deactivate();
    $scope.hello = "Hello World!";
 
 
