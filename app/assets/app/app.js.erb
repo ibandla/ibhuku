@@ -1,13 +1,11 @@
-var app = angular.module('myApp', ['ui.router','ng-token-auth','ui-notification','ngCart']);
+var app = angular.module('myApp', ['ui.router','ng-token-auth','ui-notification','ngCart','restmod']);
 
 app.config(function($stateProvider,$httpProvider,$urlRouterProvider,$authProvider,NotificationProvider) {
     $authProvider.configure({
-            apiUrl: '/api',
-            storage: 'localStorage'
+            apiUrl: '/api'
         });
     $urlRouterProvider.otherwise('/404');
     $urlRouterProvider.when('', '/home');
-    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
      NotificationProvider.setOptions({
             delay: 10000,
             startTop: 20,

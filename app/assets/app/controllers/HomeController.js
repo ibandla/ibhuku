@@ -1,5 +1,7 @@
- app.controller ('HomeCtrl', function($scope, $http) {
+ app.controller ('HomeCtrl', function($scope, $http,Cart) {
     	
-    $scope.test = "s";
+    test = Cart.$find(2);
+    $scope.test = test.$fetch();
+
 
 });
