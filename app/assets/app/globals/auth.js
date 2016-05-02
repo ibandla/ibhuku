@@ -2,7 +2,6 @@ app.run(function($rootScope, $location,Notification,ngCart) {
     $rootScope.$on('auth:login-success', function(ev, user) {
     $location.path('/home');
     Notification.primary('Welcome '+user.email);
-    ngCart.empty();
   });
 
     $rootScope.$on('auth:login-error', function(ev,reason) {
@@ -20,7 +19,6 @@ app.run(function($rootScope, $location,Notification,ngCart) {
     $rootScope.$on('auth:registration-email-error', function(ev, reason) {
       var errmsg = reason.errors['full_messages'][0];
       Notification.error({message: errmsg , delay: 10000});
-    // Notification.error("Registration failed: " + errmsg);
 });
 
     $rootScope.$on('auth:email-confirmation-success', function(ev, user) {

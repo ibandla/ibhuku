@@ -2,6 +2,7 @@ app.run(function($rootScope, $location,Notification) {
 
     $rootScope.$on('ngCart:itemAdded', function(ev, ngCartItem) {
     Notification.success(ngCartItem.getName() + ' added to cart.');
+    
   });
 
     $rootScope.$on('ngCart:itemRemoved', function(ev,ngCartItem) {  

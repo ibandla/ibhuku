@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429074622) do
+ActiveRecord::Schema.define(version: 20160502135421) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -63,6 +63,17 @@ ActiveRecord::Schema.define(version: 20160429074622) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "cart_items", force: :cascade do |t|
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "ebook_id",   limit: 4, null: false
+    t.integer  "user_id",    limit: 4, null: false
+  end
+
+  add_index "cart_items", ["ebook_id"], name: "index_cart_items_on_ebook_id", using: :btree
+  add_index "cart_items", ["user_id", "ebook_id"], name: "index_cart_items_on_user_id_and_ebook_id", unique: true, using: :btree
+  add_index "cart_items", ["user_id"], name: "index_cart_items_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -135,4 +146,6 @@ ActiveRecord::Schema.define(version: 20160429074622) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
+  add_foreign_key "cart_items", "ebooks"
+  add_foreign_key "cart_items", "users"
 end
