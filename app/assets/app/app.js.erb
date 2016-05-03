@@ -1,9 +1,13 @@
-var app = angular.module('myApp', ['ui.router','ng-token-auth','ui-notification','ngCart','restmod']);
+var app = angular.module('myApp', ['ui.router','ng-token-auth','ui-notification','ngCart','rails']);
+
+$(document).on('ready page:load', function(arguments) {
+  angular.bootstrap(document.body, ['myApp'])
+});
 
 app.config(function($stateProvider,$httpProvider,$urlRouterProvider,$authProvider,NotificationProvider) {
-    $authProvider.configure({
-            apiUrl: '/api'
-        });
+    // $authProvider.configure({
+    //         apiUrl: '/api'
+    //     });
     $urlRouterProvider.otherwise('/404');
     $urlRouterProvider.when('', '/home');
      NotificationProvider.setOptions({

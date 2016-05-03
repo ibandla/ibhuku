@@ -1,3 +1,6 @@
-app.factory('Cart', function(restmod) {
-    return restmod.model('/api/cart');
+app.factory('Cart', function(railsResourceFactory) {
+      return railsResourceFactory({
+        url: '/api/cart',
+        name: 'cart'
+    });
 });

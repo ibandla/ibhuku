@@ -1,5 +1,5 @@
- class Api::CartController < ApplicationController
- 	 skip_before_filter :verify_authenticity_token
+ class Api::CartController < Api::ApiController
+ 	 # skip_before_filter :verify_authenticity_token
  	 before_action :authenticate_user!
  	 respond_to :json 	 
     	

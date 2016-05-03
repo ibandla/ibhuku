@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'angular_rails_csrf'
 gem 'composite_primary_keys', '>= 8.0.0', '< 9.0.0'
 group :development, :test do
   gem 'rspec-rails'

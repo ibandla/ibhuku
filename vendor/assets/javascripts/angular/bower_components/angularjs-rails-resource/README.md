@@ -1,6 +1,34 @@
+# bower-angularjs-rails-resource
+
+This repo is for distribution on `bower`. The source for this module is in the
+[main AngularJS Rails Resource repo](https://github.com/FineLinePrototyping/angularjs-rails-resource).
+Please file issues and pull requests against that repo.
+
+## Install
+
+Install with `bower`:
+
+```shell
+bower install angularjs-rails-resource
+```
+
+Add a `<script>` to your `index.html`:
+
+```html
+<script src="/bower_components/angularjs-rails-resource/angularjs-rails-resource.js"></script>
+```
+
+To add a resource extension, add additional `<script>` tags:
+
+```html
+<script src="/bower_components/angularjs-rails-resource/extensions/snapshots.js"></script>
+```
+
+## License
+
 The MIT License
 
-Copyright (c) 2013 Ignacio Baixas <ignacio@platan.us>
+Copyright (c) 2012 - 2013 [FineLine Prototyping, Inc.](http://www.finelineprototyping.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160502135421) do
   add_index "cart_items", ["user_id"], name: "index_cart_items_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
+    t.integer  "category_id", limit: 4
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
@@ -95,11 +96,12 @@ ActiveRecord::Schema.define(version: 20160502135421) do
   end
 
   create_table "ebook_catrgories", id: false, force: :cascade do |t|
-    t.string  "category_id", limit: 255
+    t.integer "category_id", limit: 4
     t.integer "ebook_id",    limit: 4
   end
 
   create_table "ebooks", force: :cascade do |t|
+    t.string   "ebook_id",    limit: 255
     t.string   "title",       limit: 255
     t.string   "author",      limit: 255
     t.text     "description", limit: 65535

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require frontend_template/jquery
 //= require frontend_template/jquery-ui
 //= require frontend_template/main

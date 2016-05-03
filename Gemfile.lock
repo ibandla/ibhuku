@@ -61,6 +61,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    angular_rails_csrf (1.0.4)
+      rails (>= 3, < 5)
     angularjs-rails-resource (2.0.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
@@ -272,6 +274,7 @@ DEPENDENCIES
   active_bootstrap_skin
   activeadmin!
   activeadmin_addons
+  angular_rails_csrf
   angularjs-rails-resource (~> 2.0.0)
   bootstrap-sass
   byebug

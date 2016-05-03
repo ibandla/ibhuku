@@ -5,4 +5,4 @@
 //= require ./bower_components/ng-token-auth/dist/ng-token-auth
 //= require ./bower_components/angular-ui-notification/dist/angular-ui-notification.min
 //= require ./bower_components/ngcart/dist/ngCart
-//= require ./bower_components/angular-restmod/dist/angular-restmod-bundle.min
+//= require ./bower_components/angularjs-rails-resource/angularjs-rails-resource

@@ -19,7 +19,7 @@
     "angular-hint": "^0.3.8",
     "ngCart": "ngcart#^1.0.0",
     "components-font-awesome": "^4.6.1",
-    "angular-restmod": "^1.1.11"
+    "angularjs-rails-resource": "^2.2.0"
   },
   "resolutions": {
     "angular": ">=1.4 <=1.5.3"
