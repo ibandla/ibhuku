@@ -15,11 +15,11 @@
 			
 				<ul class=" support-right">
 
-				<li ng-hide="signedIn()"><a  ui-sref="login" ><i class="men"> </i>Login</a></li>
-				<li ng-hide="signedIn()"><a  ui-sref="signup" ><i class="tele"> </i>Create an Account</a>
+				<li ng-hide="user.signedIn"><a  ui-sref="login" ><i class="men"> </i>Login</a></li>
+				<li ng-hide="user.signedIn"><a  ui-sref="signup" ><i class="tele"> </i>Create an Account</a>
 
-			    <li ng-show="signedIn()"><a ui-sref="profile" ><i class="men"> </i>{{ user.email }}</a></li>
-			    <li ng-show="signedIn()"><a href="" ng-click="logout()"><i class="men"> </i>Log Out</a></li>
+			    <li ng-show="user.signedIn"><a ui-sref="profile" ><i class="men"> </i>{{ user.email }}</a></li>
+			    <li ng-show="user.signedIn"><a href="" ng-click="logout()"><i class="men"> </i>Log Out</a></li>
 
 				</li>
 
@@ -42,7 +42,7 @@
 				<ul class="bigmenu megamenu skyblue">
 			<li><a ui-sref="home">Home</a></li>
 			<li><a ui-sref="products">Products</a></li>
-			<li><a ng-show="signedIn()" ui-sref="purchases">My Purchases</a></li>
+			<li><a ng-show="user.signedIn" ui-sref="purchases">My Purchases</a></li>
 			<li><a ui-sref="contact">Contact</a></li>
 			<li><a ui-sref="about">About Us</a></li>
 				
@@ -96,7 +96,7 @@
             <ul class="sidebar-nav">
                <li><a ui-sref="home">Home</a></li>
 			<li><a ui-sref="products">Products</a></li>
-			<li><a ng-show="signedIn()" ui-sref="purchases">My Purchases</a></li>
+			<li><a ng-show="user.signedIn" ui-sref="purchases">My Purchases</a></li>
 			<li><a ui-sref="contact">Contact</a></li>
 			<li><a ui-sref="about">About Us</a></li>
             </ul>

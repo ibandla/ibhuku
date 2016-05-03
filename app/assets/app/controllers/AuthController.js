@@ -1,29 +1,19 @@
- app.controller('AuthCtrl', function($scope,$state,Auth) {
+ app.controller('AuthCtrl', function($scope,$auth) {
 
-     $scope.login = function() {
-    Auth.login($scope.user).then(function(){
-      $state.go('home');
-    });
-  };
 
-  $scope.register = function() {
-    Auth.register($scope.user).then(function(){
-      $state.go('home');
-    });
-  };
-    // $scope.handleRegBtnClick = function() {
-    //   $auth.submitRegistration($scope.registrationForm);
-    // };
+    $scope.handleRegBtnClick = function() {
+      $auth.submitRegistration($scope.registrationForm);
+    };
 
-    // $scope.handleLoginBtnClick = function() {
-    //   $auth.submitLogin($scope.loginForm);
-    // };
+    $scope.handleLoginBtnClick = function() {
+      $auth.submitLogin($scope.loginForm);
+    };
 
-    // $scope.handlePwdResetBtnClick = function() {
-    //   $auth.requestPasswordReset($scope.pwdResetForm);      
-    // };
+    $scope.handlePwdResetBtnClick = function() {
+      $auth.requestPasswordReset($scope.pwdResetForm);      
+    };
 
-    // $scope.handleUpdatePasswordBtnClick = function() {
-    //   $auth.updatePassword($scope.updatePasswordForm);
-    // };
+    $scope.handleUpdatePasswordBtnClick = function() {
+      $auth.updatePassword($scope.updatePasswordForm);
+    };
 });

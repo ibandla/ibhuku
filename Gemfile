@@ -20,6 +20,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'face_of_active_admin'
 gem 'bootstrap-sass'
 gem 'active_bootstrap_skin'
+gem 'devise_token_auth'
+gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use mysql as the database for Active Record

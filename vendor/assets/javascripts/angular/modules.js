@@ -6,4 +6,3 @@
 //= require ./bower_components/angular-ui-notification/dist/angular-ui-notification.min
 //= require ./bower_components/ngcart/dist/ngCart
 //= require ./bower_components/angular-restmod/dist/angular-restmod-bundle.min
-//= require ./bower_components/AngularDevise/lib/devise
