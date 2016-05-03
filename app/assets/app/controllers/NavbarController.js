@@ -1,6 +1,23 @@
-app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window) {
+app.controller('NavbarCtrl', function($rootScope,$scope,Auth,$location,$window) {
 
-	
+	 $scope.signedIn = Auth.isAuthenticated;
+  	 $scope.logout = Auth.logout;
+  	  Auth.currentUser().then(function (user){
+    $scope.user = user;
+  });
+
+  	  $scope.$on('devise:new-registration', function (e, user){
+    $scope.user = user;
+  });
+
+  $scope.$on('devise:login', function (e, user){
+    $scope.user = user;
+  });
+
+  $scope.$on('devise:logout', function (e, user){
+    $scope.user = {};
+  });
+  
 	 $scope.$watch(function() { return $location.path(); }, function(newVal, oldVal) {
       
        if(newVal=='/home')
@@ -23,8 +40,6 @@ app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window)
 		};
     });	
 		
-	$scope.logout = function () {
-		$auth.signOut();
-	}
+	
 	 
 });
