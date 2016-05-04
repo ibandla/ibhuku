@@ -17,18 +17,18 @@
                 <p>
                       <label for="amount" class="amount">Range:</label>
                      <input type="text" id="amount" style="border: 0; color: #ff5d56; font-weight: bold;" />
-                         
+
 						  </p>
-                
+
                    <div id="slider-range"></div>
                 </a></li>
-				
+
           </ul>
 		  <a  class="go" ui-sref="product">GO</a>
 		  	<div class="clearfix"> </div>
 
 
-<script type='text/javascript'>//<![CDATA[ 
+<script type='text/javascript'>//<![CDATA[
 $(window).load(function(){
  $( "#slider-range" ).slider({
             range: true,
@@ -40,7 +40,7 @@ $(window).load(function(){
  });
 $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 
-});//]]>  
+});//]]>
 
 </script>
 
@@ -80,7 +80,7 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 				<li class="subitem3"><a ui-sref="product">Automatic Fails</a></li>
 			</ul>
 		</li>
-				
+
 		<li class="item4"><a href="#">Shoes</a>
 			<ul class="cute">
 				<li class="subitem1"><a ui-sref="products">Cute Kittens </a></li>
@@ -107,18 +107,18 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 			            $(this).next().stop(true,true).slideUp('normal');
 			        }
 			    });
-			
+
 			});
 		</script>
 <!---->
 	<div class="product-middle">
-		
+
 					<div class="fit-top">
 						<h6 class="shop-top">LOREM IPSUM</h6>
 						<a ui-sref="product" class="shop-now">SHOP NOW</a>
 <div class="clearfix"> </div>
 	</div>
-				</div>	 
+				</div>
 						<div class="sellers">
 							<div class="of-left-in">
 								<h3 class="tag">TAGS</h3>
@@ -137,12 +137,12 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 										<li><a href="#">fashion</a></li>
 										<li><a href="#">lorem</a></li>
 										<li><a href="#">dress</a></li>
-										
+
 										<div class="clearfix"> </div>
 									</ul>
-								
+
 								</div>
-								
+
 		</div>
 				<!---->
 				<div class="product-bottom">
@@ -152,35 +152,35 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + 
 					<div class="product-go">
 						<div class=" fashion-grid">
 									<a ui-sref="product"><%= image_tag "be.jpg", :class => "img-responsive" ,:alt=>"" %></a>
-									
+
 								</div>
 							<div class=" fashion-grid1">
 								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
 amet consectetuer  </a></h6>
-								
+
 								<span class=" price-in1"> $40.00</span>
 							</div>
-								
+
 							<div class="clearfix"> </div>
 							</div>
 							<div class="product-go">
 						<div class=" fashion-grid">
 									<a ui-sref="product"><%= image_tag "be1.jpg", :class => "img-responsive" ,:alt=>"" %></a>
-									
+
 								</div>
 							<div class="fashion-grid1">
 								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
 amet consectetuer </a></h6>
-								
+
 								<span class=" price-in1"> $40.00</span>
 							</div>
-								
+
 							<div class="clearfix"> </div>
 							</div>
 							<div class="product-go">
 						<div class=" fashion-grid">
 									<a ui-sref="product"><%= image_tag "be2.jpg", :class => "img-responsive" ,:alt=>"" %></a>
-									
+
 								</div>
 							<div class=" fashion-grid1">
 								<h6 class="best2"><a ui-sref="product" >Lorem ipsum dolor sit
@@ -194,7 +194,7 @@ amet consectetuer </a></h6>
 								</ul>
 								<span class=" price-in1"><small>$70.00</small> $40.00</span>
 							</div>
-								
+
 							<div class="clearfix"> </div>
 							</div>
 				</div>
@@ -207,10 +207,10 @@ amet consectetuer </a></h6>
 				</div></a>
 			</div>
 				</div>
-				
-		
+
+
 			<!---->
-			
+
 				<!---->
 				<div class="col-md-9 product-price1">
 					<div class="mens-toolbar">
@@ -221,10 +221,10 @@ amet consectetuer </a></h6>
 			                    <option value="">Sorting By Color </option>
 			                    <option value="">Sorting By Price </option>
 			            </select>
-			          
+
 	    		     </div>
-    	      
-                	<div class="clearfix"></div>		
+
+                	<div class="clearfix"></div>
 		        </div>
 		        <div class="product-right-top" ng-controller="CartCtrl">
 		        	<div class="top-product">
@@ -235,7 +235,7 @@ amet consectetuer </a></h6>
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div>
 	   		     		</a>
@@ -259,7 +259,7 @@ amet consectetuer </a></h6>
 							</div>
 								<ngcart-addtocart id="1" name="WOO JACKET #1" price="75.00" data="image"></ngcart-addtocart>
 	   		     		</div>
-	   		     		
+
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
 					<div class="grid-span-1">
@@ -268,7 +268,7 @@ amet consectetuer </a></h6>
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div></a>
 	   		     		</div>
@@ -301,7 +301,7 @@ amet consectetuer </a></h6>
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div></a>
 	   		     		</div>
@@ -328,7 +328,7 @@ amet consectetuer </a></h6>
 	   		     	<div class="clearfix"> </div>
 		        	</div>
 		        	<div class="top-product">
-					
+
 		        		<div class="col-md-4 chain-grid simpleCart_shelfItem">
 						<div class="grid-span-1">
 	   		     		<a ui-sref="product"><%= image_tag "pr7.jpg", :class => "img-responsive" ,:alt=>"" %>
@@ -336,7 +336,7 @@ amet consectetuer </a></h6>
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div><span>NEW</span></a>
 	   		     		</div>
@@ -365,14 +365,14 @@ amet consectetuer </a></h6>
 	   		     		</div>
 	   		     	</div>
 	   		     	<div class="col-md-4 chain-grid simpleCart_shelfItem">
-					
+
 					<div class="grid-span-1">
 	   		     		<a ui-sref="product"><%= image_tag "pr4.jpg", :class => "img-responsive" ,:alt=>"" %>
 						<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div></a>
 	   		     		</div>
@@ -407,7 +407,7 @@ amet consectetuer </a></h6>
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div></a>
 	   		     		</div>
@@ -438,7 +438,7 @@ amet consectetuer </a></h6>
 	   		     	<div class="clearfix"> </div>
 		        	</div>
 		        	<div class="top-product">
-				
+
 		        		<div class="col-md-4 chain-grid simpleCart_shelfItem">
 						<div class="grid-span-1">
 	   		     		<a ui-sref="product"><%= image_tag "pr6.jpg", :class => "img-responsive" ,:alt=>"" %>
@@ -446,7 +446,7 @@ amet consectetuer </a></h6>
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div><span>NEW</span></a>
 	   		     		</div>
@@ -481,7 +481,7 @@ amet consectetuer </a></h6>
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div>
 						<span>NEW</span></a>
@@ -517,7 +517,7 @@ amet consectetuer </a></h6>
 	   		     			<ul >
 										<li><i> </i></li>
 										<li><i class="white1"> </i></li>
-										
+
 							</ul>
 	   		     		</div>
 						<span>NEW</span></a>
@@ -557,19 +557,19 @@ amet consectetuer </a></h6>
 					<li><span>1</span></li>
 					<li class="arrow"><a href="#">2</a></li>
 					<li class="arrow"><a href="#">3</a></li>
-					
-					
+
+
 					<li><a href="#"><i class="next"> </i></a></li>
 				</ul>
 				<div class="clearfix"> </div>
 				</div>
-				
+
 			<div class="clearfix"> </div>
-			
+
 				<div class="shipping">
 					<div class="col-md-3 col-md1">
 						<div class=" phone">
-						
+
 							<div class="num">
 								<span>8(802)234-5678</span>
 								<p>Monday - Saturday: 8am - 5pm PST</p>
@@ -577,11 +577,11 @@ amet consectetuer </a></h6>
 							<i class="phone-in"> </i>
 							<div class="clearfix"> </div>
 						</div>
-					
+
 					</div>
 					<div class="col-md-5 col-md2">
 						<div class=" phone1">
-					
+
 							<i class="phone-in1"> </i>
 							<div class="num1">
 								<span>Free Shipping</span>
@@ -590,12 +590,12 @@ amet consectetuer </a></h6>
 							<a class="learn-in" ui-sref="product">Learn More</a>
 							<div class="clearfix"> </div>
 						</div>
-			
+
 					</div>
 					<div class="col-md-4 col-md3">
 						<div class=" phone2">
-					
-							
+
+
 							<div class="num2">
 								<span>Crazy Sale!</span>
 								<p>on selected items</p>
@@ -606,14 +606,14 @@ amet consectetuer </a></h6>
 			</div>
 			<div class="clearfix"> </div>
 			</div>
-					
+
 				</div>
-				
+
 			<!---->
-		
+
 		</div>
 	<!-- 	<div class="bottom-grid1">
-					
+
 					<div class="fit1">
 						<h3>HAPPY SHOPPING</h3>
 						<p>Lorem Ipsum sit amet consectuer adipiscing elit
