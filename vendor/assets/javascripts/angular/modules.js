@@ -3,6 +3,6 @@
 //= require ./bower_components/angular-cookie/angular-cookie
 //= require ./bower_components/ng-token-auth/dist/ng-token-auth
 //= require ./bower_components/angular-ui-notification/dist/angular-ui-notification.min
-//= require ./bower_components/ngcart/dist/ngCart
+//= require ./cart
 //= require ./bower_components/lodash/dist/lodash
 //= require ./bower_components/restangular/src/restangular
