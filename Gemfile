@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
-gem 'angular_rails_csrf'
-gem 'mini_magick', '~> 4.3'
-gem 'rmagick'   
+gem 'angular_rails_csrf'   
 gem 'cloudinary'
 
 gem 'composite_primary_keys', '>= 8.0.0', '< 9.0.0'
