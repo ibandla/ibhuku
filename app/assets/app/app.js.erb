@@ -10,7 +10,7 @@ app.config(function($stateProvider,$httpProvider,$urlRouterProvider,$authProvide
     //     });
     $urlRouterProvider.otherwise('/404');
     $urlRouterProvider.when('', '/home');
-     RestangularProvider.setBaseUrl('http://ibhuku.app:3000/api');
+     RestangularProvider.setBaseUrl('/api');
             
    
      NotificationProvider.setOptions({
