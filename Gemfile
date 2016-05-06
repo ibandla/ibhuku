@@ -2,6 +2,14 @@ source 'https://rubygems.org'
 gem 'angular_rails_csrf'
 gem 'puma'   
 gem 'cloudinary'
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
+
 
 gem 'composite_primary_keys', '>= 8.0.0', '< 9.0.0'
 group :development, :test do
