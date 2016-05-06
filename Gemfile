@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-gem 'angular_rails_csrf'   
+gem 'angular_rails_csrf'
+gem 'puma'   
 gem 'cloudinary'
 
 gem 'composite_primary_keys', '>= 8.0.0', '< 9.0.0'
