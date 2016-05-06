@@ -1,15 +1,18 @@
-var app = angular.module('myApp', ['ui.router','ng-token-auth','ui-notification','ngCart','rails']);
+var app = angular.module('myApp', ['ui.router','ng-token-auth','ui-notification','restangular','ngCart']);
 
 $(document).on('ready page:load', function(arguments) {
   angular.bootstrap(document.body, ['myApp'])
 });
 
-app.config(function($stateProvider,$httpProvider,$urlRouterProvider,$authProvider,NotificationProvider) {
+app.config(function($stateProvider,$httpProvider,$urlRouterProvider,$authProvider,RestangularProvider,NotificationProvider) {
     // $authProvider.configure({
     //         apiUrl: '/api'
     //     });
     $urlRouterProvider.otherwise('/404');
     $urlRouterProvider.when('', '/home');
+     RestangularProvider.setBaseUrl('http://ibhuku.app:3000/api');
+            
+   
      NotificationProvider.setOptions({
             delay: 10000,
             startTop: 20,

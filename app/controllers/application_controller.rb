@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
 
   
   
-  rescue_from ActiveRecord::RecordNotFound, :with=> :record_not_found
-  rescue_from NameError, :with=> :error_occurred
-  rescue_from ActiveRecord::ActiveRecordError, :with => :error_occurred
-  rescue_from ActionController::RoutingError, :with=> :error_occurred
+  # rescue_from ActiveRecord::RecordNotFound, :with=> :record_not_found
+  # rescue_from NameError, :with=> :error_occurred
+  # rescue_from ActiveRecord::ActiveRecordError, :with => :error_occurred
+  # rescue_from ActionController::RoutingError, :with=> :error_occurred
 
   
   protected

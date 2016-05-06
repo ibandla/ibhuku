@@ -1,8 +1,21 @@
-app.run(function($rootScope, $location,Notification,ngCart) {
+app.run(function($rootScope, $location,Notification,ngCart,Cart) {
     $rootScope.$on('auth:login-success', function(ev, user) {
     $location.path('/home');
     Notification.primary('Welcome '+user.email);
+    Cart.restore();
   });
+
+    $rootScope.$on('auth:validation-success', function(ev, user) {
+    Notification.primary('Welcome '+user.email);
+      Cart.restore();
+  });
+
+    $rootScope.$on('auth:validation-error', function(ev) {
+       $location.path('/home');
+       ngCart.empty();
+  });
+
+    
 
     $rootScope.$on('auth:login-error', function(ev,reason) {
     var errmsg = reason.errors[0];
@@ -10,11 +23,13 @@ app.run(function($rootScope, $location,Notification,ngCart) {
   });    
 
     $rootScope.$on('auth:session-expired', function(ev) {
-  Notification.error('Session has expired');
+  alert('Session has expired');
+  ngCart.empty();
 });
 
     $rootScope.$on('auth:logout-success', function(ev) {
     Notification.primary('Goodbye');
+    ngCart.empty();
 });
     $rootScope.$on('auth:registration-email-error', function(ev, reason) {
       var errmsg = reason.errors['full_messages'][0];

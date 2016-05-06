@@ -1,0 +1,43 @@
+app.factory('Cart', function(Restangular,$rootScope,ngCart) {
+   
+    function add(item) {
+        var basecart = Restangular.all('cart');
+        var cartitem = {ebook_id: parseInt(item.getId())};
+        basecart.post(cartitem);
+    }
+
+    function empty() {
+       var basecart = Restangular.one('cart','all');      
+       basecart.remove();
+       ngCart.empty();
+    }
+
+    function remove(item) {
+       var basecart = Restangular.one('cart', parseInt(item.getId()));      
+       basecart.remove();
+    }
+
+    function restore() {
+      var basecart = Restangular.all('cart');
+      basecart.getList().then(function(cartitems) {
+         angular.forEach(cartitems,function(value,index){
+
+  ngCart.addItem(value[1]['id'],value[1]['title'],value[1]['price'],1,['<%= path_to_asset("f1.jpg") %>',value[1]['author']]) 
+
+            })
+      });
+
+       angular.forEach( ngCart.getItems(),function(value,index){
+        add(value);
+      });
+
+    }
+    
+    return {
+      add: add,
+      empty: empty,
+      remove: remove,
+      restore: restore
+    }
+
+  });
