@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160502135421) do
     t.text     "description", limit: 65535
     t.float    "price",       limit: 24
     t.string   "pdf",         limit: 255
+    t.string   "ebook_image", limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end

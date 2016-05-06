@@ -1,5 +1,5 @@
 ActiveAdmin.register Ebook do
-    permit_params :title, :author, :description, :price, :pdf, :category_id
+    permit_params :title, :author, :description, :price, :pdf, :category_id,:ebook_image,:remote_ebook_image_url
 
 
     index do
@@ -8,8 +8,9 @@ ActiveAdmin.register Ebook do
         column :author
         column :price
         column :category_id
-        actions
+        actions   
     end
+
 
     filter :title
     filter :author
@@ -23,7 +24,12 @@ ActiveAdmin.register Ebook do
             f.input :category_id, as: :select, collection: Category.all        
             f.input :description
             f.input :price
+            f.input :ebook_image, :as => :file, :hint => image_tag(f.object.ebook_image.url(:thumb))
+            f.input :ebook_image_cache ,as: :hidden    
+            # f.input :remote_ebook_image_url, "or image URL:"          
             f.input :pdf
+            f.input :pdf_cache ,as: :hidden    
+
         end
         f.submit
 
@@ -43,3 +49,4 @@ end
 #   permitted << :other if resource.something?
 #   permitted
 # end
+                                                                            

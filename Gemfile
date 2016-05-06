@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 gem 'angular_rails_csrf'
+gem 'mini_magick', '~> 4.3'
+gem 'rmagick'   
+gem 'cloudinary'
+
 gem 'composite_primary_keys', '>= 8.0.0', '< 9.0.0'
 group :development, :test do
   gem 'rspec-rails'
 end
-
 group :test do
   gem 'shoulda-matchers'
   gem 'rspec-activemodel-mocks'

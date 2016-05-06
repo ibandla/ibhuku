@@ -8,6 +8,7 @@ class CreateEbooks < ActiveRecord::Migration
       t.text :description
       t.float :price
       t.string :pdf
+      t.string :ebook_image
 
       t.timestamps null: false
     end
