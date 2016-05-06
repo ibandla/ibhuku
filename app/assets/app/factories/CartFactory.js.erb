@@ -1,5 +1,9 @@
 app.factory('Cart', function(Restangular,$rootScope,ngCart) {
    
+    function all() {
+        return Restangular.all('cart').getList().$object;
+    }
+
     function add(item) {
         var basecart = Restangular.all('cart');
         var cartitem = {ebook_id: parseInt(item.getId())};
@@ -35,6 +39,7 @@ app.factory('Cart', function(Restangular,$rootScope,ngCart) {
     
     return {
       add: add,
+      all: all,
       empty: empty,
       remove: remove,
       restore: restore

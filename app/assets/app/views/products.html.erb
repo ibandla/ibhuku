@@ -45,11 +45,12 @@
 
 		        <!-- sort by -->
 
-
+	
 		        <div class="product-right-top" ng-controller="CartCtrl">
 		        	<div class="top-product">
 
 		        	<!-- one product -->
+		        <div ng-repeat="(key, ebook) in ebooks">
 		        		<div class="col-md-4 chain-grid  simpleCart_shelfItem">
 		        			<div class="grid-span-1">
 	   		     		<a  ui-sref="product"><%= image_tag "pr.jpg", :class => "img-responsive" ,:alt=>"" %>
@@ -81,6 +82,8 @@
 							</div>
 								<ngcart-addtocart id=1 name="Ass" price="201.00" data="image"></ngcart-addtocart>
 	   		     		</div>
+
+	   		     	</div>
 
 	   		     	</div>
 

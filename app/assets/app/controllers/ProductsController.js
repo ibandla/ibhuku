@@ -1,6 +1,6 @@
- app.controller('ProductsCtrl', function($scope) {
+ app.controller('ProductsCtrl', function($scope,Ebook) {
 
-   $scope.hello = "Hello World!";
+  	$scope.ebooks = Ebook.all();
 
 
 });
