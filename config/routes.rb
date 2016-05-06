@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
-     resources :cart, only: [:show, :create, :destroy]
+     resources :cart, only: [:index, :create, :destroy, :show], param: :ebook_id
   end
 
   mount_devise_token_auth_for 'User', at: 'api/auth'
