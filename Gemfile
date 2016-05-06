@@ -1,7 +1,19 @@
 source 'https://rubygems.org'
 
+gem 'composite_primary_keys', '>= 8.0.0', '< 9.0.0'
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'rspec-activemodel-mocks'
+  gem 'rspec-its'
+end
+gem 'angularjs-rails-resource', '~> 2.0.0'
 gem 'activeadmin_addons'
 gem 'devise','~> 3.2'
+gem 'font-awesome-rails'
 # gem 'activeadmin'
 # gem 'activeadmin'
 gem 'activeadmin', github: 'activeadmin'

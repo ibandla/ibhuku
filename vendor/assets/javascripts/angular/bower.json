@@ -1,0 +1,27 @@
+{
+  "name": "ibhuku",
+  "homepage": "https://github.com/ibandla/ibhuku",
+  "description": "ibhukufront",
+  "main": "ibhuku",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": ">=1.4 <=1.5.3",
+    "angular-ui-router": "^0.2.18",
+    "angular-ui-notification": "^0.2.0",
+    "ng-token-auth": "^0.0.29",
+    "angular-hint": "^0.3.8",
+    "ngCart": "ngcart#^1.0.0",
+    "components-font-awesome": "^4.6.1",
+    "angular-restmod": "^1.1.11"
+  },
+  "resolutions": {
+    "angular": ">=1.4 <=1.5.3"
+  }
+}

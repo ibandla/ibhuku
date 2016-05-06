@@ -1,7 +1,7 @@
-<body ng-app="ibhuku">
-<div ng-include="'<%= path_to_asset("app/views/navbar.html") %>'"></div>
+<body ng-app="myApp">
+<div ng-include="'<%= path_to_asset("views/navbar.html") %>'"></div>
 <div class="content" ui-view></div>
-<div ng-include="'<%= path_to_asset("app/views/footer.html") %>'"></div>
+<div ng-include="'<%= path_to_asset("views/footer.html") %>'"></div>
 <script type="application/x-javascript">
 	 addEventListener("load", function()
  	{
@@ -12,15 +12,21 @@
 	}
 
 $(document).ready(function(){
-	$(".megamenu").megamenu();
+	// $(".megamenu").megamenu();
 });
  $(document).ready(function () {
      $('#horizontalTab').easyResponsiveTabs({
-         type: 'default', //Types: default, vertical, accordion
+         type: 'horizontal', //Types: default, vertical, accordion
          width: 'auto', //auto or any width like 600px
          fit: true   // 100% fit in a container
      });
  });	
 </script>
-<script src='<%= path_to_asset("app/scripts/main.js") %>' type="application/x-javascript"></script>
+<script type="text/javascript">
+	// $(document).on 'page:load', ->
+ //  $('[ng-app]').each ->
+ //    module = $(this).attr('ng-app')
+ //    angular.bootstrap(this, [module])
+</script>
+<script src='<%= path_to_asset("scripts/main.js") %>' type="application/x-javascript"></script>
 </body>

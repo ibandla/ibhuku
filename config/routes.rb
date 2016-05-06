@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  mount_devise_token_auth_for 'User', at: 'auth'
+  namespace :api, defaults: {format: :json} do
+     resources :cart, only: [:show, :create, :destroy]
+  end
+
+  mount_devise_token_auth_for 'User', at: 'api/auth'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'welcome#index'
