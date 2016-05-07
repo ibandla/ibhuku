@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: secret
+  password: blanchard
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,5 +50,3 @@ test:
 production:
   <<: *default
   database: ibhuku_production
-  username: ibhuku
-  password: <%= ENV['IBHUKU_DATABASE_PASSWORD'] %>
