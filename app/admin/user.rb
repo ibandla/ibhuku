@@ -1,17 +1,4 @@
 ActiveAdmin.register User do
-<<<<<<< HEAD
-=======
-  actions :all, :except => [:new, :create]
-  index do
-    column :name
-    column :email
-    column :created_at
-  end
-  
-  filter :name
-  filter :email
-  filter :created_at
->>>>>>> refs/remotes/origin/cart
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -26,5 +13,15 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-
+  actions :all, :except => [:new, :create]
+  index do
+    column :name
+    column :email
+    column :created_at
+  end
+  
+  filter :name
+  filter :email
+  filter :created_at
+  
 end
