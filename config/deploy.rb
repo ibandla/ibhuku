@@ -65,41 +65,6 @@ namespace :deploy do
     end
   end
 
-  desc 'Reload the database with seed data'
-  task :seed do
-    on roles(:db) do
-      run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
-    end
-  end
-
-  desc 'Drop the database'
-  task :drop do
-    on roles(:db) do
-      run "cd #{current_path}; bundle exec rake db:drop RAILS_ENV=#{rails_env}"
-    end
-  end
-
-  desc 'Create the database'
-  task :create do
-    on roles(:db) do
-      run "cd #{current_path}; bundle exec rake db:create RAILS_ENV=#{rails_env}"
-    end
-  end
-
-  desc 'Perform Migrations'
-  task :migrate do
-    on roles(:db) do
-      run "cd #{current_path}; bundle exec rake db:migrate RAILS_ENV=#{rails_env}"
-    end
-  end    
-
-  desc 'Reset the schema'
-  task :reset do
-    on roles(:db) do
-      run "cd #{current_path}; bundle exec rake db:reset RAILS_ENV=#{rails_env}"
-    end
-  end  
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
