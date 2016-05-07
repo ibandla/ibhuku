@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 
   # protect_from_forgery with: :null_session
+  before_action :configure_permitted_parameters, if: :devise_controller?
   
   protect_from_forgery with: :exception,if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session,if: Proc.new { |c| c.request.format == 'application/json' }
-
   
   
   # rescue_from ActiveRecord::RecordNotFound, :with=> :record_not_found
@@ -30,5 +30,9 @@ class ApplicationController < ActionController::Base
 	  render json: {error: "Invalid Record, Action Could not Continue"}.to_json, status: 420
 	  return
 	end
+
+	def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:title_id])
+  	end
 
 end
