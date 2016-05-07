@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'ngannotate-rails'
 gem 'angular_rails_csrf'
 gem 'puma'   
 gem 'cloudinary'
@@ -9,8 +10,6 @@ group :development do
     gem 'capistrano-bundler', require: false
     gem 'capistrano3-puma',   require: false
 end
-
-
 gem 'composite_primary_keys', '>= 8.0.0', '< 9.0.0'
 group :development, :test do
   gem 'rspec-rails'
@@ -24,8 +23,6 @@ gem 'angularjs-rails-resource', '~> 2.0.0'
 gem 'activeadmin_addons'
 gem 'devise','~> 3.2'
 gem 'font-awesome-rails'
-# gem 'activeadmin'
-# gem 'activeadmin'
 gem 'activeadmin', github: 'activeadmin'
 gem 'face_of_active_admin'
 gem 'bootstrap-sass'
