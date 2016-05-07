@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.site_title = "Ibhuku"
-
+  
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
@@ -119,13 +119,13 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = false
   #
   # You can disable the menu item for the comments index page:
   # config.show_comments_in_menu = false
   #
   # You can change the name under which comments are registered:
-  # config.comments_registration_name = 'AdminComment'
+  config.comments_registration_name = 'AdminComment'
   #
   # You can change the order for the comments and you can change the column
   # to be used for ordering
@@ -246,7 +246,7 @@ ActiveAdmin.setup do |config|
   # Pagination is enabled by default for all resources.
   # You can control the default per page count for all resources here.
   #
-  # config.default_per_page = 30
+  config.default_per_page = 30
   #
   # You can control the max per page count too.
   #
@@ -258,5 +258,5 @@ ActiveAdmin.setup do |config|
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #
-  # config.filters = true
+  config.filters = true
 end

@@ -1,4 +1,6 @@
 class EbooksController < ApplicationController
+  before_action :authenticate_admin_user!
+
   def index
     @ebooks = Ebook.all
   end
@@ -24,6 +26,6 @@ class EbooksController < ApplicationController
   end
   private
     def ebook_params
-      params.require(:ebook).permit(:title, :pdf, :author, :description, :price)
+      params.require(:ebook).permit(:title, :pdf, :author, :description, :price,:ebook_image,:remote_ebook_image_url)
     end
 end

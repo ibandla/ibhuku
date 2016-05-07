@@ -1,0 +1,11 @@
+<div class="cart box_1">
+						<a ui-sref="cart">
+						<h3> <div class="total">
+							<span style="color:white;">{{cartcolor}}{{ ngCart.totalCost() | currency:"KES " }}
+							</span>
+							</div>
+							<%= image_tag "cart.png" %></h3>
+						</a>
+						<p><a ui-sref="cart" class="simpleCart_empty" style="color:white;">{{ ngCart.getTotalItems() }}&nbsp;<ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+						<div class="clearfix"> </div>
+					</div>

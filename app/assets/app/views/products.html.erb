@@ -1,0 +1,129 @@
+<div class="container">
+	<h6 class="dress"><a ui-sref="home">Home</a> <i> </i> Dress &amp; T-shirt </h6>
+</div>
+<div class="back">
+	<h2>PRODUCTS</h2>
+</div>
+		<!---->
+		<div class="product">
+			<div class="container">
+
+				<div class="col-md-3 product-price">
+					  <div ng-include="'<%= path_to_asset("views/pricerange.html") %>'"></div>
+		<!-- here2 -->
+				<div ng-include="'<%= path_to_asset("views/categories.html") %>'"></div>
+	<!-- here2 -->
+			
+	
+						
+				<!--here-->
+				<div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div>
+			<!-- here -->
+
+				</div>
+
+
+			<!---->
+
+				<!---->
+				<div class="col-md-9 product-price1">
+
+			<!-- sort by -->
+					<div class="mens-toolbar">
+						<p class="showing">Showing 1–9 of 21 results</p>
+	                 <div class="sort">
+			            <select>
+			                  <option value=""> Sorting By Rate</option>
+			                    <option value="">Sorting By Color </option>
+			                    <option value="">Sorting By Price </option>
+			            </select>
+
+	    		     </div>
+
+                	<div class="clearfix"></div>
+		        </div>
+
+		        <!-- sort by -->
+
+	
+		        <div class="product-right-top" ng-controller="CartCtrl">
+		        	<div class="top-product">
+
+		        	<!-- one product -->
+		     
+		   <div class="col-md-4 chain-grid  simpleCart_shelfItem"  ng-repeat="(key, ebook) in ebooks">
+		        			<div class="grid-span-1">
+	   		     		<a  ui-sref="product">
+	   		    <img src="{{ebook.ebook_image.standard.url}}" alt="" class="img-responsive">
+	   		     			<div class="link">
+	   		     			<ul >
+										<li><i> </i></li>
+										<li><i class="white1"> </i></li>
+
+							</ul>
+	   		     		</div>
+	   		     		</a>
+	   		     	</div>
+
+	   		     		<div class="grid-chain-bottom ">
+	   		     			<h6><a ui-sref="product">{{checkcart(ebook.id)}}{{ebook.title}}</a></h6>
+	   		     			<div class="star-price">
+	   		     				<div class="price-at">
+		   		     				<ul class="star-footer">
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+										<li><a href="#"><i> </i></a></li>
+									</ul>
+									</div>
+									<div class="price-at-bottom ">
+										<span class="item_price">KES {{ebook.price}}</span>
+									</div>
+	   		     				<div class="clearfix"> </div>
+							</div>
+								<ngcart-addtocart show="{{checkcart(ebook.id)}}" id={{ebook.id}} name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+	   		     		</div>
+
+	   		     	</div>
+
+	   		     	
+
+	   		     	<!-- one product -->
+
+
+	   		     	
+
+		        <!-- end of products -->
+
+		        <ul class="start">
+					<li><a href="#"><i> </i></a></li>
+					<li><span>1</span></li>
+					<li class="arrow"><a href="#">2</a></li>
+					<li class="arrow"><a href="#">3</a></li>
+
+
+					<li><a href="#"><i class="next"> </i></a></li>
+				</ul>
+				<div class="clearfix"> </div>
+				</div>
+
+			<div class="clearfix"> </div>
+
+		<div ng-include="'<%= path_to_asset("views/productfooter.html") %>'"></div>
+
+				
+
+				</div>
+
+			<!---->
+
+		</div>
+	<!-- 	<div class="bottom-grid1">
+
+					<div class="fit1">
+						<h3>HAPPY SHOPPING</h3>
+						<p>Lorem Ipsum sit amet consectuer adipiscing elit
+sed diam nonummy nibh euismod</p>
+					</div>
+				</div> -->

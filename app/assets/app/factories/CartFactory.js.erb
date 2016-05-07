@@ -1,0 +1,53 @@
+app.factory('Cart', function(Restangular,$rootScope,ngCart,$timeout) {
+   
+    function all() {
+        return Restangular.all('cart').getList().$object;
+    }
+
+    function add(item) {
+        var basecart = Restangular.all('cart');
+        var cartitem = {ebook_id: parseInt(item.getId())};
+        basecart.post(cartitem);
+    }
+
+    function empty() {
+       var basecart = Restangular.one('cart','all');      
+       basecart.remove();
+       ngCart.empty();
+    }
+
+    function remove(item) {
+       var basecart = Restangular.one('cart', parseInt(item.getId()));      
+       basecart.remove();
+    }
+
+    function restore() {
+      var basecart = Restangular.all('cart');
+      basecart.getList().then(function(cartitems) {
+         angular.forEach(cartitems,function(value,index){
+
+  ngCart.addItem(value[1]['id'],value[1]['title'],value[1]['price'],1,[value[1]['ebook_image']['thumb']['url'],value[1]['author']]) 
+  
+  // angular.element('#work'+value[1]['id']).triggerHandler('click');
+
+  //  $timeout(function() {
+  //   angular.element('#work1').triggerHandler('click');
+  // }, 100);
+            })
+      });
+
+       angular.forEach( ngCart.getItems(),function(value,index){
+        add(value);
+      });
+
+    }
+    
+    return {
+      add: add,
+      all: all,
+      empty: empty,
+      remove: remove,
+      restore: restore
+    }
+
+  });

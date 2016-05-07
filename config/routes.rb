@@ -1,20 +1,29 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  namespace :api, defaults: {format: :json} do
+     resources :cart, only: [:index, :create, :destroy], param: :ebook_id
+     resources :ebooks, only: [:index, :show], param: :ebook_id
+  end
+
+  mount_devise_token_auth_for 'User', at: 'api/auth'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  root 'welcome#index'
+
+  # before_action :authenticate_admin_user!
   resources :ebooks, only: [:index, :new, :create, :destroy]
-  root "ebooks#index"
-  get 'ebooks/new'
+  # get "ebooks/index"
+  # get 'ebooks/new'
 
-  get 'ebooks/create'
+  # get 'ebooks/create'
 
-  get 'ebooks/destroy'
+  # get 'ebooks/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

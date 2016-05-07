@@ -1,6 +1,37 @@
 source 'https://rubygems.org'
+gem 'angular_rails_csrf'
+gem 'puma'   
+gem 'cloudinary'
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
+
+
+gem 'composite_primary_keys', '>= 8.0.0', '< 9.0.0'
+group :development, :test do
+  gem 'rspec-rails'
+end
+group :test do
+  gem 'shoulda-matchers'
+  gem 'rspec-activemodel-mocks'
+  gem 'rspec-its'
+end
+gem 'angularjs-rails-resource', '~> 2.0.0'
+gem 'activeadmin_addons'
 gem 'devise','~> 3.2'
-gem 'activeadmin'
+gem 'font-awesome-rails'
+# gem 'activeadmin'
+# gem 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
+gem 'face_of_active_admin'
+gem 'bootstrap-sass'
+gem 'active_bootstrap_skin'
+gem 'devise_token_auth'
+gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use mysql as the database for Active Record
@@ -23,7 +54,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'bootstrap-sass', '~> 2.3.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,0 +1,115 @@
+var app = angular.module('myApp', ['ui.router','ng-token-auth','ui-notification','restangular','ngCart']);
+
+$(document).on('ready page:load', function(arguments) {
+  angular.bootstrap(document.body, ['myApp'])
+});
+
+app.config(function($stateProvider,$httpProvider,$urlRouterProvider,$authProvider,RestangularProvider,NotificationProvider) {
+    // $authProvider.configure({
+    //         apiUrl: '/api'
+    //     });
+    $urlRouterProvider.otherwise('/404');
+    $urlRouterProvider.when('', '/home');
+     RestangularProvider.setBaseUrl('/api');
+            
+   
+     NotificationProvider.setOptions({
+            delay: 10000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'center',
+            positionY: 'top'
+        });
+    $stateProvider
+
+       .state('home', {
+            url: '/home',
+            controller:'HomeCtrl',
+            templateUrl: '<%= path_to_asset("views/home.html") %>'
+        })
+        .state('login', {
+            url: '/login',
+            controller:'AuthCtrl',
+            templateUrl: '<%= path_to_asset("views/login.html") %>',
+              onEnter: function($state, $auth) {
+                $auth.validateUser().then(function (){
+                    $state.go('home');
+                })
+            }
+        })
+
+          .state('signup', {
+            url: '/signup',
+            controller:'AuthCtrl',
+            templateUrl: '<%= path_to_asset("views/signup.html") %>',
+             onEnter: function($state, $auth) {
+                $auth.validateUser().then(function (){
+                    $state.go('home');
+                })
+            }
+        })
+
+        .state('reset', {
+           url: '/reset',
+           controller:'AuthCtrl',
+           templateUrl: '<%= path_to_asset("views/reset.html") %>'
+       })
+
+       .state('update', {
+          url: '/update',
+          controller:'AuthCtrl',
+          templateUrl: '<%= path_to_asset("views/update.html") %>'
+      })
+
+            .state('product', {
+            url: '/product',
+            controller:'ProductCtrl',
+            templateUrl: '<%= path_to_asset("views/product.html") %>'
+        })
+              .state('products', {
+            url: '/products',
+            controller:'ProductsCtrl',
+            templateUrl: '<%= path_to_asset("views/products.html") %>'
+        })
+              .state('checkout', {
+            url: '/checkout',
+            controller:'CheckoutCtrl',
+            templateUrl: '<%= path_to_asset("views/checkout.html") %>'
+        })
+              .state('cart', {
+            url: '/cart',
+            controller:'CartCtrl',
+            templateUrl: '<%= path_to_asset("views/cart.html") %>'
+        })
+                  .state('404', {
+            url: '/404',
+            controller:'404Ctrl',
+            templateUrl: '<%= path_to_asset("views/404.html") %>'
+        })
+                  .state('about', {
+            url: '/about',
+            controller:'AboutCtrl',
+            templateUrl: '<%= path_to_asset("views/about.html") %>'
+        })
+                  .state('profile', {
+            url: '/about',
+            controller:'ProfileCtrl',
+            templateUrl: '<%= path_to_asset("views/profile.html") %>'
+        })
+                  .state('contact', {
+            url: '/contact',
+            controller:'ContactCtrl',
+            templateUrl: '<%= path_to_asset("views/contact.html") %>'
+        })
+                   .state('purchases', {
+            url: '/purchases',
+            controller:'PurchasesCtrl',
+            templateUrl: '<%= path_to_asset("views/purchases.html") %>'
+        })
+        
+       
+        
+});
+

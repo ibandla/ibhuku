@@ -11,22 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426165134) do
-
-  create_table "active_admin_comments", force: :cascade do |t|
-    t.string   "namespace",     limit: 255
-    t.text     "body",          limit: 65535
-    t.string   "resource_id",   limit: 255,   null: false
-    t.string   "resource_type", limit: 255,   null: false
-    t.integer  "author_id",     limit: 4
-    t.string   "author_type",   limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+ActiveRecord::Schema.define(version: 20160502135421) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -46,17 +31,7 @@ ActiveRecord::Schema.define(version: 20160426165134) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "ebooks", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.string   "author",      limit: 255
-    t.text     "description", limit: 65535
-    t.float    "price",       limit: 24
-    t.string   "pdf",         limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
@@ -71,7 +46,82 @@ ActiveRecord::Schema.define(version: 20160426165134) do
     t.datetime "updated_at",                                      null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "ebook_id",   limit: 4, null: false
+    t.integer  "user_id",    limit: 4, null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "cart_items", ["ebook_id"], name: "fk_rails_476f1c8dfb", using: :btree
+  add_index "cart_items", ["user_id", "ebook_id"], name: "index_cart_items_on_user_id_and_ebook_id", unique: true, using: :btree
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "ebooks", force: :cascade do |t|
+    t.integer  "category_id", limit: 4
+    t.integer  "int_id",      limit: 4
+    t.string   "ebook_id",    limit: 255
+    t.string   "title",       limit: 255
+    t.string   "author",      limit: 255
+    t.text     "description", limit: 65535
+    t.float    "price",       limit: 24
+    t.string   "pdf",         limit: 255
+    t.string   "ebook_image", limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
+  add_index "ebooks", ["int_id"], name: "index_ebooks_on_int_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "int_id",     limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "orders", ["int_id"], name: "index_orders_on_int_id", using: :btree
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "provider",               limit: 255,   default: "email", null: false
+    t.string   "uid",                    limit: 255,   default: "",      null: false
+    t.string   "encrypted_password",     limit: 255,   default: "",      null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,     default: 0,       null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "confirmation_token",     limit: 255
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email",      limit: 255
+    t.string   "firstname",              limit: 255
+    t.string   "lastname",               limit: 255
+    t.string   "phonenumber",            limit: 10
+    t.string   "email",                  limit: 255
+    t.text     "tokens",                 limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
+
+  add_foreign_key "cart_items", "ebooks"
+  add_foreign_key "cart_items", "users"
 end

@@ -1,0 +1,39 @@
+<div class="price-grid">
+					    <div class="of-left">
+						<h3 class="cate cate-on">PRICE</h3>
+					</div>
+	  <ul class="dropdown-menu1">
+            <li><a href="#">
+                <p>
+                      <label for="amount" class="amount">Range:</label>
+                     <input type="text" id="amount" style="border: 0; color: #ff5d56; font-weight: bold;" />
+
+						  </p>
+
+                   <div id="slider-range"></div>
+                </a></li>
+
+          </ul>
+		  <a  class="go" ui-sref="product">GO</a>
+		  	<div class="clearfix"> </div>
+
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+ $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [ 100, 400 ],
+            slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            }
+ });
+$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+});//]]>
+
+</script>
+
+
+<!---->
+		</div>
