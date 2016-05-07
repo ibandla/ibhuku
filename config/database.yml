@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: ibhuku_production
-  username: ibhuku
-  password: <%= ENV['IBHUKU_DATABASE_PASSWORD'] %>
+  username: root
+  password: blanchard
