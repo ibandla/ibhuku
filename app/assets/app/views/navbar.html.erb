@@ -18,8 +18,8 @@
 				<li ng-hide="user.signedIn"><a  ui-sref="login" ><i class="men"> </i>Login</a></li>
 				<li ng-hide="user.signedIn"><a  ui-sref="signup" ><i class="tele"> </i>Create an Account</a>
 
-			    <li ng-show="user.signedIn"><a ui-sref="profile" ><i class="men"> </i>{{ user.email }}</a></li>
-			    <li ng-show="user.signedIn"><a href="" ng-click="logout()"><i class="men"> </i>Log Out</a></li>
+			    <li ng-show="user.signedIn"><a ui-sref="profile" ><i class="men"> </i>{{ user.name }}</a></li>
+			    <li ng-show="user.signedIn"><a href="" ng-click="logout()"><i class="exit"> </i>Log Out</a></li>
 
 				</li>
 

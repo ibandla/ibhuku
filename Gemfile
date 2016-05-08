@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem "recaptcha", require: "recaptcha/rails", :github => 'ibandla/recaptcha'
 gem 'ngannotate-rails'
 gem 'angular_rails_csrf'
 gem 'puma'   
@@ -23,10 +24,9 @@ gem 'angularjs-rails-resource', '~> 2.0.0'
 gem 'activeadmin_addons'
 gem 'devise','~> 3.2'
 gem 'font-awesome-rails'
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin','~>1.0.0.pre2'
 gem 'face_of_active_admin'
 gem 'bootstrap-sass'
-gem 'active_bootstrap_skin'
 gem 'devise_token_auth'
 gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -53,7 +53,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.11'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
