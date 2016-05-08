@@ -12,14 +12,17 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: 5
+  pool: 5  
+  socket: /var/run/mysqld/mysqld.sock
   username: root
   password: secret
-  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
   database: ibhuku_development1
+  username: root
+  password: secret
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +30,8 @@ development:
 test:
   <<: *default
   database: ibhuku_test1
+  username: root
+  password: secret
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,5 +55,5 @@ test:
 production:
   <<: *default
   database: ibhuku_production
-  username: ibhuku
-  password: <%= ENV['IBHUKU_DATABASE_PASSWORD'] %>
+  username: root
+  password: blanchard

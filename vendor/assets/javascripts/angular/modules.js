@@ -5,4 +5,8 @@
 //= require ./bower_components/angular-ui-notification/dist/angular-ui-notification.min
 //= require ./cart
 //= require ./bower_components/lodash/dist/lodash
+//= require ./bower_components/underscore/underscore
 //= require ./bower_components/restangular/src/restangular
+//= require ./bower_components/angular-recaptcha/release/angular-recaptcha
+//= require ./bower_components/ui-select/dist/select
+//= require ./bower_components/angular-sanitize/angular-sanitize

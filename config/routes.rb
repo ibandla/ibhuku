@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
      resources :cart, only: [:index, :create, :destroy], param: :ebook_id
      resources :ebooks, only: [:index, :show], param: :ebook_id
+     resources :token, only: [:index]
+     resources :titles, only: [:index]
   end
 
-  mount_devise_token_auth_for 'User', at: 'api/auth'
+  mount_devise_token_auth_for 'User', at: 'api/auth', controllers: { registrations: "user/registrations"}
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'welcome#index'

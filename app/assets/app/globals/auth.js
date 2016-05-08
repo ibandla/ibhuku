@@ -1,12 +1,12 @@
 app.run(function($rootScope, $location,Notification,ngCart,Cart) {
     $rootScope.$on('auth:login-success', function(ev, user) {
     $location.path('/home');
-    Notification.primary('Welcome '+user.email);
+    Notification.primary('Welcome '+user.name);
     Cart.restore();
   });
 
     $rootScope.$on('auth:validation-success', function(ev, user) {
-    Notification.primary('Welcome '+user.email);
+    Notification.primary('Welcome '+user.name);
       Cart.restore();
   });
 
