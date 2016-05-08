@@ -1,7 +1,18 @@
- app.controller('AuthCtrl', function($scope,$auth) {
+ app.controller('AuthCtrl', function($scope,$auth,Title) {
 
+    $scope.titles = Title.all();
+    $scope.showsubmit = false;
 
+     $scope.setResponse = function (response) {
+        $scope.showsubmit = true;
+    };
+
+     $scope.cbExpiration = function() {
+        $scope.showsubmit = false;
+    };
+   
     $scope.handleRegBtnClick = function() {
+
       $auth.submitRegistration($scope.registrationForm);
     };
 

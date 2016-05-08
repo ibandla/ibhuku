@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception,if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session,if: Proc.new { |c| c.request.format == 'application/json' }
-
   
   
   # rescue_from ActiveRecord::RecordNotFound, :with=> :record_not_found
@@ -30,5 +29,10 @@ class ApplicationController < ActionController::Base
 	  render json: {error: "Invalid Record, Action Could not Continue"}.to_json, status: 420
 	  return
 	end
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  protected
+	def configure_permitted_parameters
+		devise_parameter_sanitizer.for(:sign_up)        << [:name,:title_id]
+  	end
 
 end
