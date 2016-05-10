@@ -31,8 +31,7 @@ ActiveAdmin.register Ebook do
             f.input :pdf_cache ,as: :hidden    
 
         end
-        f.submit
-
+        f.actions
     end
 
 end
