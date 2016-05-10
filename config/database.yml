@@ -21,7 +21,7 @@ development:
   <<: *default
   database: ibhuku_development1
   username: root
-  password: secret
+  password: homabay1993$
 
 
 # Warning: The database defined as "test" will be erased and
@@ -31,7 +31,7 @@ test:
   <<: *default
   database: ibhuku_test1
   username: root
-  password: secret
+  password: homabay1993$
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
