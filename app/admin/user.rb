@@ -12,12 +12,19 @@ ActiveAdmin.register User do
 #   permitted << :other if resource.something?
 #   permitted
 # end
+member_action :lock, method: :put do
+    resource.lock!
+    redirect_to resource_path, notice: "Locked!"
+  end
 
   actions :all, :except => [:new, :create]
   index do
     column :name
     column :email
-    column :created_at
+  end
+  
+  show do
+  attributes_table :name, :email
   end
   
   filter :name

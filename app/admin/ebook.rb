@@ -10,7 +10,9 @@ ActiveAdmin.register Ebook do
         column :category_id
         actions   
     end
-
+    show do
+        attributes_table :title, :author,:description,:price,:pdf,:category_id
+    end
 
     filter :title
     filter :author
