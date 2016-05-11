@@ -26,6 +26,6 @@ class EbooksController < ApplicationController
   end
   private
     def ebook_params
-      params.require(:ebook).permit(:title, :pdf, :author, :description, :price,:ebook_image,:remote_ebook_image_url)
+      params.require(:ebook).permit(:title, :pdf, :author, :description, :price,:ebook_image,:ISBN)
     end
 end

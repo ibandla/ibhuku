@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160508181715) do
     t.integer  "category_id", limit: 4
     t.integer  "int_id",      limit: 4
     t.string   "ebook_id",    limit: 255
+    t.string   "ISBN",        limit: 255
     t.string   "title",       limit: 255
     t.string   "author",      limit: 255
     t.text     "description", limit: 65535

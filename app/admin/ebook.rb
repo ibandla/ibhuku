@@ -1,5 +1,5 @@
 ActiveAdmin.register Ebook do
-    permit_params :title, :author, :description, :price, :pdf, :category_id,:ebook_image,:remote_ebook_image_url
+    permit_params :title, :author, :description, :price, :pdf, :category_id,:ebook_image,:ISBN
 
 
     index do
@@ -10,6 +10,19 @@ ActiveAdmin.register Ebook do
         column :category_id
         actions   
     end
+    controller do
+    def create
+      super do |format|
+        redirect_to admin_ebooks_url and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to admin_ebooks_url and return if resource.valid?
+      end
+    end
+  end   
     show do
         attributes_table :title, :author,:description,:price,:pdf,:category_id
     end
@@ -18,17 +31,18 @@ ActiveAdmin.register Ebook do
     filter :author
     filter :price
     filter :category
+    filter :ISBN
 
     form(:html => { :multipart => true }) do |f|
         f.inputs "Ebook" do
             f.input :title
             f.input :author
-            f.input :category_id, as: :select, collection: Category.all        
+            f.input :category_id, as: :select, collection: Category.all   
+            f.input :ISBN                 
             f.input :description
             f.input :price
             f.input :ebook_image, :as => :file, :hint => image_tag(f.object.ebook_image.url(:thumb))
             f.input :ebook_image_cache ,as: :hidden    
-            # f.input :remote_ebook_image_url, "or image URL:"          
             f.input :pdf
             f.input :pdf_cache ,as: :hidden    
 
