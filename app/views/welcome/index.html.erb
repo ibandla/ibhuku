@@ -2,10 +2,6 @@
 <div ng-include="'<%= path_to_asset("views/navbar.html") %>'"></div>
 <div class="content" ui-view></div>
 <div ng-include="'<%= path_to_asset("views/footer.html") %>'"></div>
-<script
-  src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
-  async defer
-></script>
-
+<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
 <script src='<%= path_to_asset("scripts/main.js") %>' type="application/x-javascript"></script>
 </body>
