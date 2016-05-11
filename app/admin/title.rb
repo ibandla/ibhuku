@@ -7,6 +7,20 @@ permit_params :name
 index do
 	column :name
 	end
+controller do
+    def create
+      super do |format|
+        redirect_to admin_titles_url and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to admin_categories_url and return if resource.valid?
+      end
+    end
+  end  
+	
 #
 # or
 #
