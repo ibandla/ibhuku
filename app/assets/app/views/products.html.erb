@@ -54,7 +54,7 @@
 		   <div class="col-md-4 chain-grid  simpleCart_shelfItem"  ng-repeat="(key, ebook) in ebooks | priceFilter:priceInfo">
 		        			<div class="grid-span-1">
 	   		     		<a  ui-sref="product">
-	   		    <img src="{{ebook.ebook_image.standard.url}}" alt="" class="img-responsive">
+	   		    <img ng-src="{{ebook.ebook_image.standard.url}}" alt="" class="img-responsive">
 	   		     			<div class="link">
 	   		     			<ul >
 										<li><i> </i></li>
@@ -66,7 +66,7 @@
 	   		     	</div>
 
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a ui-sref="product">{{checkcart(ebook.id)}}{{ebook.title}}</a></h6>
+	   		     			<h6><a ui-sref="product">{{ebook.title}}</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
