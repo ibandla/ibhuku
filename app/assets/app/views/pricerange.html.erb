@@ -2,17 +2,9 @@
 					    <div class="of-left">
 						<h3 class="cate cate-on">PRICE</h3>
 					</div>
-					<div class="col-sm-12 price-form">
-
-  
-      <input name="minPrice" id="minPrice" ng-model="priceInfo.min" ng-hide="true" ng-model-options="{ updateOn: 'change' }">
-  
-      <input name="maxPrice" id="maxPrice" ng-model="priceInfo.max" ng-hide="true" ng-model-options="{ updateOn: 'change' }">
-      
-
-</div>
-
-	  <ul class="dropdown-menu1">
+      <input name="minPrice" id="minPrice" ng-model="priceInfo.min" ng-hide="true" ng-model-options="{ updateOn: 'change' }">  
+      <input name="maxPrice" id="maxPrice" ng-model="priceInfo.max" ng-hide="true" ng-model-options="{ updateOn: 'change' }"> 
+      <ul class="dropdown-menu1">
             <li><a href="">
                 <p>
                       <label for="amount" class="amount">Range:</label>
@@ -24,11 +16,11 @@
                 </a></li>
 
           </ul>
-		<!--   <a  class="go" ui-sref="product">GO</a> -->
+		
 		  	<div class="clearfix"> </div>
 
 
-<script type='text/javascript'>//<![CDATA[
+<script type='text/javascript'>
 
  
  $(document).ready(function () {
@@ -51,7 +43,7 @@
   $("#maxPrice").val( $( "#slider-range" ).slider( "values", 1 )).trigger('change');
 $( "#amount" ).val( "KES " + $( "#slider-range" ).slider( "values", 0 ) + " - KES " + $( "#slider-range" ).slider( "values", 1 ) );
   
-});//]]>
+});
 
 </script>
 
