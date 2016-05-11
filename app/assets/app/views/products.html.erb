@@ -13,9 +13,9 @@
 		<!-- here2 -->
 				<div ng-include="'<%= path_to_asset("views/categories.html") %>'"></div>
 	<!-- here2 -->
-			
-	
-						
+
+
+
 				<!--here-->
 				<div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div>
 			<!-- here -->
@@ -45,13 +45,13 @@
 
 		        <!-- sort by -->
 
-	
+
 		        <div class="product-right-top" ng-controller="CartCtrl">
 		        	<div class="top-product">
 
 		        	<!-- one product -->
-		     
-		   <div class="col-md-4 chain-grid  simpleCart_shelfItem"  ng-repeat="(key, ebook) in ebooks">
+
+		   <div class="col-md-4 chain-grid  simpleCart_shelfItem"  ng-repeat="(key, ebook) in ebooks | priceFilter:priceInfo">
 		        			<div class="grid-span-1">
 	   		     		<a  ui-sref="product">
 	   		    <img src="{{ebook.ebook_image.standard.url}}" alt="" class="img-responsive">
@@ -87,12 +87,12 @@
 
 	   		     	</div>
 
-	   		     	
+
 
 	   		     	<!-- one product -->
 
 
-	   		     	
+
 
 		        <!-- end of products -->
 
@@ -112,7 +112,7 @@
 
 		<div ng-include="'<%= path_to_asset("views/productfooter.html") %>'"></div>
 
-				
+
 
 				</div>
 
