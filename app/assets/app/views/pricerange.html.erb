@@ -4,72 +4,53 @@
 					</div>
 					<div class="col-sm-12 price-form">
 
-  <div class="col-sm-12">
-    <div class="input-group">
-      <span class="input-group-addon">Min Price</span>
-      <select name="minPrice" id="minPrice" ng-model="priceInfo.min" class="form-control">
-        <option value="100">KES100</option>
-        <option value="200">KES200</option>
-        <option value="300">KES300</option>
-        <option value="400">KES400</option>
-        <option value="500">KES500</option>
-        <option value="600">KES600</option>
-        <option value="700">KES700</option>
-        <option value="800">KES800</option>
-        <option value="900">KES900</option>
-        <option value="1000">KES1,000</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="col-sm-12">
-    <div class="input-group">
-      <span class="input-group-addon">Max Price</span>
-      <select name="maxPrice" id="maxPrice" ng-model="priceInfo.max" class="form-control">
-        <option value="100">KES100</option>
-        <option value="200">KES200</option>
-        <option value="300">KES300</option>
-        <option value="400">KES400</option>
-        <option value="500">KES500</option>
-        <option value="600">KES600</option>
-        <option value="700">KES700</option>
-        <option value="800">KES800</option>
-        <option value="900">KES900</option>
-        <option value="1000">KES1,000</option>
-      </select>
-    </div>
-  </div>
+  
+      <input name="minPrice" id="minPrice" ng-model="priceInfo.min" ng-hide="true" ng-model-options="{ updateOn: 'change' }">
+  
+      <input name="maxPrice" id="maxPrice" ng-model="priceInfo.max" ng-hide="true" ng-model-options="{ updateOn: 'change' }">
+      
 
 </div>
 
-	  <!-- <ul class="dropdown-menu1">
-            <li><a href="#">
+	  <ul class="dropdown-menu1">
+            <li><a href="">
                 <p>
                       <label for="amount" class="amount">Range:</label>
                      <input type="text" id="amount" style="border: 0; color: #ff5d56; font-weight: bold;" />
 
 						  </p>
 
-                   <div id="slider-range"></div>
+                   <div  id="slider-range"></div>
                 </a></li>
 
           </ul>
-		  <a  class="go" ui-sref="product">GO</a>
-		  	<div class="clearfix"> </div> -->
+		<!--   <a  class="go" ui-sref="product">GO</a> -->
+		  	<div class="clearfix"> </div>
 
 
 <script type='text/javascript'>//<![CDATA[
-$(window).load(function(){
+
+ 
+ $(document).ready(function () {
  $( "#slider-range" ).slider({
             range: true,
             min: 0,
-            max: 500,
-            values: [ 100, 400 ],
-            slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            max: 1500,
+            values: [ 0, 1500 ],
+            click:function( event, ui ) {  $( "#amount" ).val( "KES " + ui.values[ 0 ] + " - KES " + ui.values[ 1 ] );
+            $("#minPrice").val( $( "#slider-range" ).slider( "values", 0 )).trigger('change');
+            $("#maxPrice").val( $( "#slider-range" ).slider( "values", 1 )).trigger('change');
+            },
+            slide: function( event, ui ) {  $( "#amount" ).val( "KES " + ui.values[ 0 ] + " - KES " + ui.values[ 1 ] );
+            $("#minPrice").val( $( "#slider-range" ).slider( "values", 0 )).trigger('change');
+            $("#maxPrice").val( $( "#slider-range" ).slider( "values", 1 )).trigger('change');
             }
  });
-$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 
+  $("#minPrice").val( $( "#slider-range" ).slider( "values", 0 )).trigger('change');
+  $("#maxPrice").val( $( "#slider-range" ).slider( "values", 1 )).trigger('change');
+$( "#amount" ).val( "KES " + $( "#slider-range" ).slider( "values", 0 ) + " - KES " + $( "#slider-range" ).slider( "values", 1 ) );
+  
 });//]]>
 
 </script>

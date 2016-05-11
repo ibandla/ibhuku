@@ -1,10 +1,10 @@
  app.controller('ProductsCtrl', function($scope,Ebook,ngCart) {
 
   	$scope.ebooks = Ebook.all();
-
+    $scope.test = 'Blaf';
     $scope.priceInfo = {
       min: 0,
-      max: 1000000
+      max: 1500
     }
 
     $scope.checkcart = function(id) {
