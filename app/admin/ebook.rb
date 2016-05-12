@@ -7,7 +7,7 @@ ActiveAdmin.register Ebook do
         column :title
         column :author
         column :price
-        column :category_id
+        column :category
         actions   
     end
     controller do
