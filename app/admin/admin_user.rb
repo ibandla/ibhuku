@@ -1,6 +1,14 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
 
+  index do
+  column :email
+  column :current_sign_in_at
+  column :sign_in_count
+  column :created_at
+  
+  end
+
 
   index do
     selectable_column
