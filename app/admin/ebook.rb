@@ -24,7 +24,7 @@ ActiveAdmin.register Ebook do
     end
   end   
     show do
-        attributes_table :title, :author,:description,:price,:pdf,:category_id
+        attributes_table :title, :author,:description,:price,:pdf,:category_id,:ebook_image_cache
     end
 
     filter :title
