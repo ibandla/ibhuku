@@ -16,6 +16,8 @@ ActiveAdmin.register Ebook do
         column :category
         actions   
     end
+    
+
     controller do
     def create
       super do |format|
@@ -30,7 +32,7 @@ ActiveAdmin.register Ebook do
     end
   end   
     show do
-        attributes_table :title, :author,:description,:price,:pdf,:category_id,:ebook_image_cache
+        attributes_table :title, :author,:description,:price,:category_id
     end
 
     filter :title
@@ -51,10 +53,18 @@ ActiveAdmin.register Ebook do
             f.input :ebook_image_cache ,as: :hidden    
             f.input :pdf
             f.input :pdf_cache ,as: :hidden    
-
         end
         f.actions
     end
+   index :as => :grid,columns: 10 do |ebook|
+    div do
+      a :href => admin_ebook_path(ebook) do
+        image_tag(ebook.ebook_image.url(:thumb),:width => 125, :height => 150)
+      end
+    end
+    a truncate(ebook.title), :href => admin_ebook_path(ebook)
+  end
+   
 
 end
 
