@@ -21,6 +21,7 @@ member_action :lock, method: :put do
   index do
     column :name
     column :email
+    actions
   end
   
   show do
