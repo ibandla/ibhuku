@@ -9,9 +9,9 @@
 
     $scope.checkcart = function(id) {
  		if(ngCart.getItemById(id)==false)
- 			return "block";
+ 			return "false";
  		else 
- 			return "none";
+ 			return "true";
   };
  	
      $scope.currencySymbol = 'KES';
