@@ -1,7 +1,13 @@
 ActiveAdmin.register Ebook do
     permit_params :title, :author, :description, :price, :pdf, :category_id,:ebook_image,:ISBN
 
-
+    
+    csv do
+      column :title
+      column :ISBN
+      column :author
+      column :price
+    end    
     index do
         selectable_column
         column :title
