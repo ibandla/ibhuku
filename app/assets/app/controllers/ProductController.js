@@ -1,8 +1,7 @@
-app.controller('ProductCtrl', function($scope) {
-
+app.controller('ProductCtrl', function($scope,$stateParams,Ebook) {	
 	
 
-   $scope.hello = "Hello World!";
+   $scope.ebook = Ebook.one($stateParams["ebookID"]);
 
 
 });

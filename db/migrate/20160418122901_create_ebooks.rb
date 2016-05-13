@@ -1,8 +1,7 @@
 class CreateEbooks < ActiveRecord::Migration
   def change
     create_table :ebooks do |t|
-      t.belongs_to :category, :int, index: true
-      t.string :ebook_id
+      t.belongs_to :category, index: true
       t.string :ISBN
       t.string :title
       t.string :author
