@@ -46,7 +46,7 @@
 		        <!-- sort by -->
 
 
-		        <div class="product-right-top" ng-controller="CartCtrl">
+		        <div class="product-right-top">
 		        	<div class="top-product">
 
 		        	<!-- one product -->
@@ -82,7 +82,8 @@
 									</div>
 	   		     				<div class="clearfix"> </div>
 							</div>
-								<ngcart-addtocart show="{{checkcart(ebook.id)}}" id={{ebook.id}} name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+								<ngcart-addtocart  quantity="1" quantity-max="1" show="{{checkcart(ebook.id)}}" id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+									
 	   		     		</div>
 
 	   		     	</div>
