@@ -10,6 +10,5 @@ else
   school_host = '41.89.6.209'
 end
 
-school_user = 'mnch'
-ssh_command = "ssh -p 13322 -W %h:%p #{school_user}@#{school_host}"
-set :ssh_options,     { forward_agent: true, user: 'cmakamara', proxy: Net::SSH::Proxy::Command.new('ssh -p 13322 mnch@41.89.6.209 -W %h:%p')}
+ssh_command = "ssh -p 13322 mnch@#{school_host} -W %h:%p"
+set :ssh_options, { forward_agent: true, user: 'cmakamara', proxy: Net::SSH::Proxy::Command.new(ssh_command)}
