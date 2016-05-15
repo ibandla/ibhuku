@@ -12,10 +12,7 @@ ActiveAdmin.register User do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-member_action :lock, method: :put do
-    resource.lock!
-    redirect_to resource_path, notice: "Locked!"
-  end
+
 
   actions :all, :except => [:new, :create]
   index do

@@ -14,13 +14,6 @@ class User < ActiveRecord::Base
           # commented out:
           # :omniauthable
   include DeviseTokenAuth::Concerns::User
-    # def account_active?
-    #   blocked_at.nil?
-    # end
-    # def active_for_authentication?
-    #   super && account_active?
-    # end
-    # def inactive_message
-    #   account_active? ? super : :locked
-    # end
+  
+  
 end
