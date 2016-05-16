@@ -25,3 +25,26 @@
     return ebooks;
  };
  });
+
+    // return function(ebooks, searchParams) {
+    //
+    //   // Empty array that will eventually contain
+    //   // the filtered data
+    //    var name = searchParams["query"];
+    //   var filtered = [];
+    //
+    //   angular.forEach(ebooks, function(ebook) {
+    //
+    //     if(name==ebook.title) {
+    //
+    //       filtered.push(ebook);
+    //
+    //     }
+    //
+    //   });
+    //
+    //   // Return the filtered array
+    //   return filtered;
+    // }
+
+  // });
