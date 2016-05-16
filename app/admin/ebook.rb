@@ -50,9 +50,9 @@ ActiveAdmin.register Ebook do
             f.input :description
             f.input :price
             f.input :ebook_image, :as => :file, :hint => image_tag(f.object.ebook_image.url(:thumb))
-            f.input :ebook_image_cache ,as: :hidden    
-            f.input :pdf
-            f.input :pdf_cache ,as: :hidden    
+            f.input :pdf, :hint => cl_image_tag(f.object.pdf.url, :format => :png,:width => 200, :height => 250,
+                 :crop => :fill, :page => 1)
+            # f.input :pdf_cache ,as: :hidden    
         end
         f.actions
     end
