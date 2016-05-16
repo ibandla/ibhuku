@@ -1,28 +1,27 @@
 // scripts/searchFilter.js
 
-  app.filter('saerchFilter', function() {
+  app.filter('searchFilter', function($filter) {
 
     // The filter needs to return a function
     // that does the actual filtering
-    return function(ebooks, searchParams) {
 
-      // Empty array that will eventually contain
-      // the filtered data
-      // var query = searchParams["query"];
-      var filtered = [];
+    return function(ebooks, searchParams){
 
-      angular.forEach(ebooks, function(ebook) {
+    var text = searchParams["query"];
 
-        if(query==ebook.title) {
+    if (!text || text.length === 0)
+      return ebooks;
 
-          filtered.push(ebook);
+    // split search text on space
+    var searchTerms = text.split(' ');
 
-        }
+    // search for single terms.
+    // this reduces the item list step by step
+    searchTerms.forEach(function(term) {
+      if (term && term.length)
+        ebooks = $filter('filter')(ebooks, term);
+    });
 
-      });
-
-      // Return the filtered array
-      return filtered;
-    }
-
-  });
+    return ebooks;
+ };
+ });
