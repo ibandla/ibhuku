@@ -1,10 +1,12 @@
 <div ng-controller="NavbarCtrl">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 <div class="{{header}}" id="mainheader">
-
+<style type="text/css">
 @media(min-width:768px) {
     p {
         margin: 0 0 35px;
-        font-size: 14px;
         line-height: 1.6;
     }
 }
@@ -80,6 +82,7 @@ a:focus {
     background-color: rgba(255,255,255,.3);
 }
 
+
 .navbar-custom .nav li.active a:hover {
     color: #fff;
 }
@@ -98,12 +101,16 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: rgba(86, 124, 255,.85);
+        background: rgba(0,0,0,.95);
     }
 }
 
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
+}
+.brand{
+    font-family: "Kaushan Script";
+    font-size: 26px;
 }
 </style>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -114,8 +121,8 @@ body {
         	<div class="header-top-in">
 
 				<ul class="support">
-					<li ><a href="mailto:ibhukuibanbla@gmail.com" ><i > </i>ibhukuibandla@gmail.com</a></li>
-					<li ><span ><i class="tele-in"> </i>+254 702 4329 20</span></li>
+					<!-- <li ><a href="mailto:ibhukuibanbla@gmail.com" ><i > </i>ibhukuibandla@gmail.com</a></li> -->
+					<li ><span class="brand" >IBHUKU</span></li>
 
 				</ul>
 
@@ -142,11 +149,7 @@ body {
 
 
 			</div>
-            <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="#page-top">
-                   <span>Ibhuku</span> 
-                </a>
-            </div>
+           
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
@@ -168,15 +171,15 @@ body {
 						<div class="right"><button> </button></div>
 				</div>
 				</li> -->
-			<li ng-controller="CartCtrl">	
+			<!-- <li ng-controller="CartCtrl">	 -->
 			<!-- <div ng-controller="CartCtrl"> -->
 
-							<ngcart-summary >
+							<!-- <ngcart-summary >
 							{{cartcolor}}
-							</ngcart-summary>
+							</ngcart-summary> -->
 
 					<!-- </div> -->
-					</li>
+					<!-- </li> -->
 		 </ul>
 
                <!--  </ul> -->
