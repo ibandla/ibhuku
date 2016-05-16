@@ -1,13 +1,12 @@
-server '52.23.207.23', port: 22, roles: [:web, :app, :db], primary: true
+server '10.21.210.27', port: 22, roles: [:web, :app, :db], primary: true
 
-set :user,            'ubuntu'
+set :user,            'cmakamara'
 set :application,     'ibhuku'
 set :repo_url,        'git@github.com:ibandla/ibhuku.git'
 set :puma_workers,    0
 set :puma_threads,    [4, 16]
+set :stage,           :school
 
-# Don't change these unless you know what you're doing
-set :stage,           :production
 set :pty,             true
 set :use_sudo,        false
 set :deploy_via,      :remote_cache
@@ -20,7 +19,17 @@ set :puma_error_log,  "#{release_path}/log/puma.access.log"
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
-set :ssh_options,     { forward_agent: true, user: fetch(:user)}
+
+
+if ENV['IN_SCHOOL']
+
+  school_host = '192.168.133.55'
+else 
+  school_host = '41.89.6.209'
+end
+
+ssh_command = "ssh -p 13322 deploy@#{school_host} -W %h:%p"
+set :ssh_options, { forward_agent: true, user: 'cmakamara', proxy: Net::SSH::Proxy::Command.new(ssh_command)}
 
 ## Defaults:
 # set :scm,           :git

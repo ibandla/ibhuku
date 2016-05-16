@@ -56,3 +56,11 @@ production:
   socket: /var/run/mysqld/mysqld.sock
   username: root
   password: blanchard
+
+school:
+  <<: *default
+  database: db82816
+  port: 3306
+  host: 192.168.170.15
+  username: 82816
+  password: Fezuyes3
