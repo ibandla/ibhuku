@@ -3,7 +3,7 @@ ActiveAdmin.register User do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :banned
+  permit_params :banned
 #
 # or
 #
@@ -13,30 +13,29 @@ permit_params :banned
 #   permitted
 # end
 
-  batch_action :banned do |ids|
-    User.find(ids).each do |user|
-      user.banned! :banned 
+  # batch_action :banned do |ids|
+  #   redirect_to collection_path, alert: "Selected Users were blocked"
+  # end
+actions :all, :except => [:new,:create,:destroy]
+  
+  form do |f|
+    f.inputs "User" do
+      f.input :banned, as: :select
+      f.actions
     end
-    redirect_to collection_path, alert: "user(s) have been blocked."
   end
-  actions :all, :except => [:new,:create,:destroy]
-  action_item :banned, only: :index do
-      link_to 'Block', root_path
-      end
-
-
   index do 
-  selectable_column
     column :name
     column :email
-    actions
-    
-      
+    column :banned 
+    actions  
   end
   
   show do
-  attributes_table :name, :email,:banned
+    attributes_table :name, :email,:banned
   end
+  
+  
   
   filter :name
   filter :email
