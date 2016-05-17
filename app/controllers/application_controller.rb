@@ -6,29 +6,16 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception,if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session,if: Proc.new { |c| c.request.format == 'application/json' }
-  
-  
-  # rescue_from ActiveRecord::RecordNotFound, :with=> :record_not_found
-  # rescue_from NameError, :with=> :error_occurred
-  # rescue_from ActiveRecord::ActiveRecordError, :with => :error_occurred
-  # rescue_from ActionController::RoutingError, :with=> :error_occurred
+  before_filter :banned?
 
+  def banned?
+    if current_user.present? && current_user.banned?
+      sign_out current_user
+      flash[:error] = "This account has been suspended...."
+      root_path
+    end
+  end
   
-  protected
-	def record_not_found(exception)
-	  render json: {error: exception.message}.to_json, status: 404
-	  return
-	end
-
-	def error_occurred(exception)
-	  render json: {error: exception.message}.to_json, status: 500
-	  return
-	end
-
-	def invalid_record(exception)
-	  render json: {error: "Invalid Record, Action Could not Continue"}.to_json, status: 420
-	  return
-	end
   before_action :configure_permitted_parameters, if: :devise_controller?
   protected
 	def configure_permitted_parameters

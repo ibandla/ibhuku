@@ -26,13 +26,9 @@ app.factory('Cart', function(Restangular,$rootScope,ngCart,$timeout) {
       basecart.getList().then(function(cartitems) {
          angular.forEach(cartitems,function(value,index){
 
-  ngCart.addItem(value[1]['id'],value[1]['title'],value[1]['price'],1,[value[1]['ebook_image']['thumb']['url'],value[1]['author']]) 
+  ngCart.addItem(value[1]['id'].toString(),value[1]['title'],value[1]['price'],1,[value[1]['ebook_image']['thumb']['url'],value[1]['author']]) 
   
-  // angular.element('#work'+value[1]['id']).triggerHandler('click');
-
-  //  $timeout(function() {
-  //   angular.element('#work1').triggerHandler('click');
-  // }, 100);
+  
             })
       });
 

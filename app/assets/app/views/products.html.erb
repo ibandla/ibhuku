@@ -46,14 +46,15 @@
 		        <!-- sort by -->
 
 
-		        <div class="product-right-top" ng-controller="CartCtrl">
+		        <div class="product-right-top">
 		        	<div class="top-product">
 
 		        	<!-- one product -->
-
-		   <div class="col-md-4 chain-grid  simpleCart_shelfItem"  ng-repeat="(key, ebook) in ebooks | priceFilter:priceInfo">
+			<nit-advanced-searchbox ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
+				{{searchParams["query"]}}
+			 <div class="col-md-4 chain-grid  simpleCart_shelfItem"  ng-repeat="(key, ebook) in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams ">
 		        			<div class="grid-span-1">
-	   		     		<a  ui-sref="product">
+	   		     		<a  ui-sref="product({ebookID:{{ebook.id}}})">
 	   		    <img ng-src="{{ebook.ebook_image.standard.url}}" alt="" class="img-responsive">
 	   		     			<div class="link">
 	   		     			<ul >
@@ -66,15 +67,15 @@
 	   		     	</div>
 
 	   		     		<div class="grid-chain-bottom ">
-	   		     			<h6><a ui-sref="product">{{ebook.title}}</a></h6>
+	   		     			<h6><a ui-sref="product({ebookID:{{ebook.id}}})">{{ebook.title}}</a></h6>
 	   		     			<div class="star-price">
 	   		     				<div class="price-at">
 		   		     				<ul class="star-footer">
-										<li><a href="#"><i> </i></a></li>
-										<li><a href="#"><i> </i></a></li>
-										<li><a href="#"><i> </i></a></li>
-										<li><a href="#"><i> </i></a></li>
-										<li><a href="#"><i> </i></a></li>
+										<li><a href=""><i> </i></a></li>
+										<li><a href=""><i> </i></a></li>
+										<li><a href=""><i> </i></a></li>
+										<li><a href=""><i> </i></a></li>
+										<li><a href=""><i> </i></a></li>
 									</ul>
 									</div>
 									<div class="price-at-bottom ">
@@ -82,7 +83,8 @@
 									</div>
 	   		     				<div class="clearfix"> </div>
 							</div>
-								<ngcart-addtocart show="{{checkcart(ebook.id)}}" id={{ebook.id}} name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+								<ngcart-addtocart  quantity="1" quantity-max="1" show="{{checkcart(ebook.id)}}" id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+
 	   		     		</div>
 
 	   		     	</div>

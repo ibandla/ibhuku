@@ -1,0 +1,45 @@
+{
+  "name": "angular-advanced-searchbox",
+  "version": "3.0.0",
+  "homepage": "https://github.com/dnauck/angular-advanced-searchbox",
+  "authors": [
+    "Daniel Nauck <d.nauck@nauck-it.de>"
+  ],
+  "description": "A directive for AngularJS providing a advanced visual search box",
+  "main": [
+    "dist/angular-advanced-searchbox.min.css",
+    "dist/angular-advanced-searchbox-tpls.js"
+  ],
+  "keywords": [
+    "search",
+    "angular",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "Gruntfile.js",
+    "package.json",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1",
+    "jquery": "2",
+    "bootstrap": "3",
+    "angular-bootstrap": "1"
+  },
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "1c489e09d7be3d0f1091907a3f40f0be17091ad1"
+  },
+  "_source": "https://github.com/dnauck/angular-advanced-searchbox.git",
+  "_target": "^3.0.0",
+  "_originalSource": "angular-advanced-searchbox",
+  "_direct": true
+}

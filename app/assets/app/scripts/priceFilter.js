@@ -1,4 +1,4 @@
-// scripts/cribsFilter.js
+// scripts/priceFilter.js
 
   app.filter('priceFilter', function() {
 
