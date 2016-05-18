@@ -1,6 +1,6 @@
  app.controller('ProductsCtrl', function($scope,Ebook,ngCart) {
 
-  	$scope.ebooks = Ebook.all();
+  	$scope.ebooks;/* = Ebook.all();*/
 
     $scope.searchParams ;
 

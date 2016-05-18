@@ -4,6 +4,7 @@ gem 'ngannotate-rails'
 gem 'angular_rails_csrf'
 gem 'puma'   
 gem 'cloudinary'
+gem 'clean_pagination'
 group :development do
     gem 'capistrano',         require: false
     gem 'capistrano-rvm',     require: false

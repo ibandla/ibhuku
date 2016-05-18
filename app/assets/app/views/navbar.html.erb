@@ -118,7 +118,7 @@ body {
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top navbar-bootsnipp animate" role="navigation">
         <div class="container">
         	<div class="header-top-in">
 
@@ -161,6 +161,7 @@ body {
 			<li><a ng-show="user.signedIn" ui-sref="purchases">My Purchases</a></li>
 			<li><a ui-sref="contact">Contact</a></li>
 			<li><a ui-sref="about">About Us</a></li>
+             <li class="hidden-xs"><a href="#toggle-search" class="animate"><span class="glyphicon glyphicon-search"></span></a></li>
 			<!-- <li><div class="search-in" >
 			<div class="search" >
 						<form action="search.html">
@@ -190,6 +191,14 @@ body {
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
+
+        <div class="bootsnipp-search animate">
+            <div class="container">
+                <form role="search">
+                   <nit-advanced-searchbox ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
+                </form>
+            </div>
+        </div>
     </nav>
 
     <div id="thebanner"  ng-show="showbanner" class="banner">
@@ -222,5 +231,30 @@ $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
 
 
+   </script>
+   <script type="text/javascript">
+       $(function() { 
+
+    $('a[href="#toggle-search"], .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn[type="reset"]').on('click', function(event) {
+        event.preventDefault();
+        // $('.navbar-bootsnipp .bootsnipp-search .input-group > input').val('');
+        $('.navbar-bootsnipp .bootsnipp-search').toggleClass('open');
+        $('a[href="#toggle-search"]').closest('li').toggleClass('active');
+
+        if ($('.navbar-bootsnipp .bootsnipp-search').hasClass('open')) {
+            /* I think .focus dosen't like css animations, set timeout to make sure input gets focus */
+            setTimeout(function() { 
+                $('.navbar-bootsnipp .bootsnipp-search .form-control').focus();
+            }, 100);
+        }           
+    });
+
+    $(document).on('keyup', function(event) {
+        if (event.which == 27 && $('.navbar-bootsnipp .bootsnipp-search').hasClass('open')) {
+            $('a[href="#toggle-search"]').trigger('click');
+        }
+    });
+    
+});
    </script>
    <script src="<%= path_to_asset("scripts/navbar.js") %>"></script>

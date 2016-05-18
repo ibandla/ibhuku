@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 20160516115543) do
     t.text     "tokens",                 limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "account_state"
     t.boolean  "banned"
   end
 
