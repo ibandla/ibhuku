@@ -1,4 +1,4 @@
-var app = angular.module('ibhuku', ['ui.router','ng-token-auth','ui-notification','restangular','ngCart','vcRecaptcha','ui.select', 'ngSanitize']);
+var app = angular.module('ibhuku', ['ui.router','ng-token-auth','ui-notification','restangular','bgf.paginateAnything','ngCart','vcRecaptcha','ui.select', 'ngSanitize','angular-advanced-searchbox']);
 $(document).on('ready page:load', function(arguments) {
   angular.bootstrap(document.body, ['ibhuku'])
 });
@@ -9,8 +9,8 @@ app.config(function($stateProvider,$httpProvider,uiSelectConfig,vcRecaptchaServi
     vcRecaptchaServiceProvider.setSiteKey('6LeBTh8TAAAAAPG4rK3wsWIAaQ2nccdfW2JhSBmN');
     vcRecaptchaServiceProvider.setTheme('light');
     vcRecaptchaServiceProvider.setSize('normal');
-    vcRecaptchaServiceProvider.setType('image'); 
-    uiSelectConfig.theme = 'select2';  
+    vcRecaptchaServiceProvider.setType('image');
+    uiSelectConfig.theme = 'select2';
     NotificationProvider.setOptions({
             delay: 10000,
             startTop: 20,
@@ -57,7 +57,7 @@ app.config(function($stateProvider,$httpProvider,uiSelectConfig,vcRecaptchaServi
           templateUrl: '<%= path_to_asset("views/update.html") %>'
       })
     .state('product', {
-            url: '/product',
+            url: '/product/{ebookID}',
             controller:'ProductCtrl',
             templateUrl: '<%= path_to_asset("views/product.html") %>'
         })

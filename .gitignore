@@ -20,3 +20,4 @@ config/database.yml
 *.pdf
 public/uploads/ebook/pdf/1/Task_1_-_Simple_Bank_Application.pdf
 public/uploads/ebook/pdf/1/Activty_1.pdf
+*.db

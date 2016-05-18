@@ -1,31 +1,37 @@
-<div ng-show="attrs.show" >
-     
+<!-- 
+<div ng-hide="attrs.id">
 
-    <div class="cart-add">
-<a class="add1 item_add" href="">ADD TO CART<i></i></a>
+ <div class="cart-add">
+<a class="add1 item_add" href="" ng-disabled="true">ADD TO CART<i></i></a>
 <div class="clearfix"> </div>
 </div>
+   
 
-<div>
-    <mark>
-        This item is in your cart. <a ng-click="ngCart.removeItem(id)" style="cursor: pointer;">Remove</a>
+</div> -->
+                <!-- <div class="clearfix"> </div> -->
+
+<!-- <div ng-show="attrs.id"> -->
+   <div class="cart-add">
+
+        <span ng-show="quantityMax" hidden>
+            <select name="quantity" id="quantity" ng-model="q"
+                    ng-options=" v for v in qtyOpt"></select>
+        </span>
+
+        <a class="add1 item_add" href=""
+           ng-click="ngCart.addItem(id, name, price, q, data)"
+           >ADD TO CART<i></i></a>
+                        <div class="clearfix"> </div>
+
+    </div>
+                    <div class="clearfix"> </div>
+                    <div>
+    <mark  ng-show="inCart()">
+        This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+        <!-- <div class="clearfix"> </div> -->
     </mark>
-	
-</div>
+    </div>
 
-</div>
-
-<div ng-hide="attrs.show">
-     
-
-    <div class="cart-add">
-<a class="add1 item_add" href="" ng-click="ngCart.addItem(id, name, price, 1, data)" >ADD TO CART</a>
-<a class="add2" href=""></a>
-<div class="clearfix"> </div>
-</div>
-
-
-</div>
-{{attrs.show}}
-
-
+    <!-- <div class="clearfix"> </div> -->
+<!-- </div> -->
+                <!-- <div class="clearfix"> </div> -->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508181715) do
+ActiveRecord::Schema.define(version: 20160516115543) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 20160508181715) do
 
   create_table "ebooks", force: :cascade do |t|
     t.integer  "category_id", limit: 4
-    t.integer  "int_id",      limit: 4
-    t.string   "ebook_id",    limit: 255
     t.string   "ISBN",        limit: 255
     t.string   "title",       limit: 255
     t.string   "author",      limit: 255
@@ -64,7 +62,6 @@ ActiveRecord::Schema.define(version: 20160508181715) do
   end
 
   add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
-  add_index "ebooks", ["int_id"], name: "index_ebooks_on_int_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -104,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160508181715) do
     t.text     "tokens",                 limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "banned"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

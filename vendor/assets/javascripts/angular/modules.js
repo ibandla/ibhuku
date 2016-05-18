@@ -10,3 +10,7 @@
 //= require ./bower_components/angular-recaptcha/release/angular-recaptcha
 //= require ./bower_components/ui-select/dist/select
 //= require ./bower_components/angular-sanitize/angular-sanitize
+//= require ./bower_components/angular-advanced-searchbox/dist/angular-advanced-searchbox-tpls
+//= require ./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js
+//= require ./bower_components/angular-animate/angular-animate.min.js
+//= require ./bower_components/angular-paginate-anything/dist/paginate-anything-tpls

@@ -5,13 +5,13 @@
 $skinTextColor: #1e2a33 !default;
 $skinTextActiveColor: #fff !default;
 $skinTextTable: #7f8c8d !default;
-$skinActiveColor: #001cee !default;
-$skinHeaderBck: #002744 !default;
+$skinActiveColor: #DC3D24 !default;
+$skinHeaderBck: #232B2B !default;
 $skinHeaderTextColor: #FFFFFF !default;
 $skinFontFamily: "Source Sans Pro", Helvetica, Arial, sans-serif !default;
 $panelHeaderBck: darken($skinHeaderBck, 10%) !default;
 $panelHeaderTextColor: #FFFFFF !default;
-$skinLogo: asset-url("face_of_active_admin/logo.jpg") no-repeat 0 0 !default;
+$skinLogo: asset-url("logo.jpg") no-repeat 0 0 !default;
 $skinLogoWidth: auto !default;
 
 // Low priority settings

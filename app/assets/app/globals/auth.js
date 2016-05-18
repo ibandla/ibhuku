@@ -37,7 +37,8 @@ app.run(function($rootScope, $location,Notification,ngCart,Cart) {
 });
 
     $rootScope.$on('auth:email-confirmation-success', function(ev, user) {
-    Notification.success("Welcome, "+user.email+". Your account has been verified.");
+    Notification.success("Welcome, "+user.name+". Your account has been verified.");
+    $location.url($location.path());
 });
        
     $rootScope.$on('auth:registration-email-success', function(ev, message) {
