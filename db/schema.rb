@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 20160516115543) do
 
   create_table "ebooks", force: :cascade do |t|
     t.integer  "category_id", limit: 4
-    t.integer  "int_id",      limit: 4
-    t.string   "ebook_id",    limit: 255
     t.string   "ISBN",        limit: 255
     t.string   "title",       limit: 255
     t.string   "author",      limit: 255
@@ -64,7 +62,6 @@ ActiveRecord::Schema.define(version: 20160516115543) do
   end
 
   add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
-  add_index "ebooks", ["int_id"], name: "index_ebooks_on_int_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
