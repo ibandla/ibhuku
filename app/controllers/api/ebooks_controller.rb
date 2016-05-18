@@ -8,7 +8,7 @@
         max_per_page = 8
 
         paginate Ebook.count, max_per_page do |limit, offset|
-        render json: Ebook.limit(limit).offset(offset)
+        render json: Ebook.select('category_id','ISBN','title','author','description','price','id','ebook_image').limit(limit).offset(offset)
       end
      end
     	

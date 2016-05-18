@@ -1,17 +1,34 @@
-<!-- 
-<div ng-hide="attrs.id">
+<div class="grid-span-1">
+                        <a  ui-sref="product({ebookID:{{id}}})">
+                <img ng-src="{{attrs.image}}" alt="" class="img-responsive">
+                            <div class="link">
+                            <ul >
+                                        <li><i> </i></li>
+                                        <li><i class="white1"> </i></li>
 
- <div class="cart-add">
-<a class="add1 item_add" href="" ng-disabled="true">ADD TO CART<i></i></a>
-<div class="clearfix"> </div>
-</div>
-   
+                            </ul>
+                        </div>
+                        </a>
+                    </div>
 
-</div> -->
-                <!-- <div class="clearfix"> </div> -->
-
-<!-- <div ng-show="attrs.id"> -->
-   <div class="cart-add">
+                        <div class="grid-chain-bottom ">
+                            <h6><a ui-sref="product({ebookID:{{id}}})">{{attrs.name}}</a></h6>
+                            <div class="star-price">
+                                <div class="price-at">
+                                    <ul class="star-footer">
+                                        <li><a href=""><i> </i></a></li>
+                                        <li><a href=""><i> </i></a></li>
+                                        <li><a href=""><i> </i></a></li>
+                                        <li><a href=""><i> </i></a></li>
+                                        <li><a href=""><i> </i></a></li>
+                                    </ul>
+                                    </div>
+                                    <div class="price-at-bottom ">
+                                        <span class="item_price">KES {{attrs.price}}</span>
+                                    </div>
+                                
+                            </div>
+   <div class="cart-add" ng-hide="inCart()">
 
         <span ng-show="quantityMax" hidden>
             <select name="quantity" id="quantity" ng-model="q"
@@ -24,14 +41,29 @@
                         <div class="clearfix"> </div>
 
     </div>
-                    <div class="clearfix"> </div>
-                    <div>
-    <mark  ng-show="inCart()">
-        This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
-        <!-- <div class="clearfix"> </div> -->
-    </mark>
+
+     <div class="cart-add" ng-show="inCart()">
+
+        <span ng-show="quantityMax" hidden>
+            <select name="quantity" id="quantity" ng-model="q"
+                    ng-options=" v for v in qtyOpt"></select>
+        </span>
+
+        <a class="add1 item_add" href=""
+           ng-click="ngCart.removeItemById(id)"
+           >REMOVE<i></i></a>
+                        <div class="clearfix"> </div>
+
     </div>
 
+                    <div class="clearfix"> </div>
+                    <div>
+  
+    </div>
+<!--   <p  ng-show="inCart()">
+        This item is in your cart. <a  style="cursor: pointer;">Remove</a>
+        <div class="clearfix"> </div>
+    </p> -->
     <!-- <div class="clearfix"> </div> -->
 <!-- </div> -->
                 <!-- <div class="clearfix"> </div> -->

@@ -2,7 +2,7 @@
 
   	$scope.ebooks;/* = Ebook.all();*/
 
-    $scope.searchParams ;
+    $scope.searchParams;
 
     $scope.availableSearchParams = [
           { key: "title", name: "Title", placeholder: "Title..." },
