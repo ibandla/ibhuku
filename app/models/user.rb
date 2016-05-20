@@ -15,8 +15,12 @@ class User < ActiveRecord::Base
           # commented out:
           # :omniauthable
   
-  def active_for_authentication?
-   super && !self.banned
+  def active_for_authentication?   
+      super && !self.blocked
+  end
+
+  def inactive_message
+   'Your account has been disabled.'
   end
   
 end

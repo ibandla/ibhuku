@@ -7,7 +7,7 @@ Rails.application.routes.draw do
      resources :titles, only: [:index]
   end
 
-  mount_devise_token_auth_for 'User', at: 'api/auth', controllers: { registrations: "user/registrations"}
+  mount_devise_token_auth_for 'User', at: 'api/auth', controllers: { registrations: "user/registrations", sessions:"user/sessions"}
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'welcome#index'

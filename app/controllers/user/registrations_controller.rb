@@ -6,8 +6,10 @@ class User::RegistrationsController < DeviseTokenAuth::RegistrationsController
       if verify_recaptcha
         true
       else
-        @error = ["Big Error","Blag Blag"]
-        render json:@error, status: 401
+        render json: {
+        status: 'error',
+        errors: {"full_messages":["You have not completed the captcha, you are mad - we will never let you through!!"]}
+      }, status: 422
       end 
     end
 end

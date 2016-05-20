@@ -3,8 +3,7 @@ ActiveAdmin.register User do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :banned
-#
+  permit_params :blocked
 # or
 #
 # permit_params do
@@ -20,7 +19,7 @@ actions :all, :except => [:new,:create,:destroy]
   
   form do |f|
     f.inputs "User" do
-      f.input :banned, as: :radio
+      f.input :blocked, as: :radio
       f.actions
     end
   end
@@ -32,7 +31,7 @@ actions :all, :except => [:new,:create,:destroy]
   end
   
   show do
-    attributes_table :name, :email,:banned
+    attributes_table :name, :email,:blocked
   end
   
   
