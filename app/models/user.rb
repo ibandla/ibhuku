@@ -1,5 +1,6 @@
 
 class User < ActiveRecord::Base
+  include DeviseTokenAuth::Concerns::User
 
   has_many :cart_items
   has_many :orders
@@ -13,7 +14,9 @@ class User < ActiveRecord::Base
           # ,:lockable
           # commented out:
           # :omniauthable
-  include DeviseTokenAuth::Concerns::User
   
+  def active_for_authentication?
+   super && !self.banned
+  end
   
 end

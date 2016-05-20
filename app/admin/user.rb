@@ -20,7 +20,7 @@ actions :all, :except => [:new,:create,:destroy]
   
   form do |f|
     f.inputs "User" do
-      f.input :banned, as: :select
+      f.input :banned, as: :radio
       f.actions
     end
   end
