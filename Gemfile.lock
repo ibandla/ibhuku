@@ -198,6 +198,8 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-throttle (0.4.0)
+      rack (>= 1.0.0)
     rails (4.2.6)
       actionmailer (= 4.2.6)
       actionpack (= 4.2.6)
@@ -335,6 +337,7 @@ DEPENDENCIES
   ngannotate-rails
   omniauth
   puma
+  rack-throttle
   rails (= 4.2.6)
   recaptcha!
   rspec-activemodel-mocks

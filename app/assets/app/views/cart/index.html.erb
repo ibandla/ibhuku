@@ -18,12 +18,12 @@
           </ul>
           <ul class="cart-header" ng-repeat="item in ngCart.getCart().items track by $index">
            <div class="close1" ng-click="ngCart.removeItem($index)"> </div>
-             <li class="ring-in"><a ui-sref="product" ><img src="{{item.getData()[0]}}" alt="" class="img-responsive"></a>
+             <li class="ring-in"><a ui-sref="ebook({ebookID:{{item.id}}})" ><img src="{{item.getData()[0]}}" alt="" class="img-responsive"></a>
             </li>
             <li><span>{{ item.getName() }}</span></li>
             <li><span>{{ item.getData()[1] }}</span></li>
             <li><span>{{ item.getTotal() | currency:"KES " }}</span></li>
-            <li> <a ui-sref="product" class="add-cart cart-check">VIEW ITEM</a></li>
+            <li> <a ui-sref="ebook({ebookID:{{item.id}}})" class="add-cart cart-check">VIEW ITEM</a></li>
             <div class="clearfix"> </div>
             </ul>
  <ul class=" cart-header1">
