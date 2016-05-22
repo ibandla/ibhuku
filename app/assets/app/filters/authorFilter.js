@@ -1,13 +1,13 @@
 // scripts/searchFilter.js
 
-  app.filter('titleFilter', function($filter) {
+  app.filter('authorFilter', function($filter) {
 
     // The filter needs to return a function
     // that does the actual filtering
 
     return function(ebooks, searchParams){
 
-    var text = searchParams["title"];
+    var text = searchParams["author"];
 
     if (!text || text.length === 0)
       return ebooks;
@@ -19,7 +19,7 @@
     // this reduces the item list step by step
     searchTerms.forEach(function(term) {
       if (term && term.length)
-        ebooks = $filter('filter')(ebooks, term);
+        ebooks = $filter('filter')(ebooks, {author: term});
     });
 
     return ebooks;

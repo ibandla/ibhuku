@@ -1,4 +1,4 @@
-var app = angular.module('ibhuku', ['ui.router','ng-token-auth','ui-notification','restangular','bgf.paginateAnything','ngCart','vcRecaptcha','ui.select', 'ngSanitize','angular-advanced-searchbox']);
+var app = angular.module('ibhuku', ['ui.router','ng-token-auth','ui-notification','ncy-angular-breadcrumb','restangular','bgf.paginateAnything','ngCart','vcRecaptcha','ui.select', 'ngSanitize','angular-advanced-searchbox']);
 $(document).on('ready page:load', function(arguments) {
   angular.bootstrap(document.body, ['ibhuku'])
 });
@@ -25,7 +25,10 @@ app.config(function($stateProvider,$httpProvider,uiSelectConfig,vcRecaptchaServi
     .state('home', {
             url: '/home',
             controller:'HomeCtrl',
-            templateUrl: '<%= path_to_asset("views/home.html") %>'
+            templateUrl: '<%= path_to_asset("views/home.html") %>',
+             ncyBreadcrumb: {
+                label: 'Home page'
+            }
         })
     .state('login', {
             url: '/login',
@@ -88,7 +91,7 @@ app.config(function($stateProvider,$httpProvider,uiSelectConfig,vcRecaptchaServi
             templateUrl: '<%= path_to_asset("views/about.html") %>'
         })
     .state('profile', {
-            url: '/about',
+            url: '/profile',
             controller:'ProfileCtrl',
             templateUrl: '<%= path_to_asset("views/profile.html") %>'
         })

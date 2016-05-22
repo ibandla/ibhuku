@@ -19,7 +19,7 @@
     // this reduces the item list step by step
     searchTerms.forEach(function(term) {
       if (term && term.length)
-        ebooks = $filter('filter')(ebooks, term);
+        ebooks = $filter('filter')(ebooks,term);
     });
 
     return ebooks;
