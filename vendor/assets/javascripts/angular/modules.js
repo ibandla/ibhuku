@@ -14,3 +14,7 @@
 //= require ./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js
 //= require ./bower_components/angular-animate/angular-animate.min.js
 //= require ./bower_components/angular-paginate-anything/dist/paginate-anything-tpls
+//= require ./bower_components/api-check/dist/api-check
+//= require ./bower_components/angular-breadcrumb/dist/angular-breadcrumb
+//= require ./bower_components/angular-formly/dist/formly
+//= require ./bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap
