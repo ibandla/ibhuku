@@ -17,3 +17,9 @@ test:
   api_secret: KzPBjVMkhqwwcIiVvpVZz284YPs
   enhance_image_tag: true
   static_image_support: false
+school:
+  cloud_name: tremidus
+  api_key: '236571757665743'
+  api_secret: KzPBjVMkhqwwcIiVvpVZz284YPs
+  enhance_image_tag: true
+  static_image_support: true
