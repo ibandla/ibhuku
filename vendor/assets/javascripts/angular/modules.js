@@ -12,9 +12,12 @@
 //= require ./bower_components/angular-sanitize/angular-sanitize
 //= require ./bower_components/angular-advanced-searchbox/dist/angular-advanced-searchbox-tpls
 //= require ./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js
+//= require ./bower_components/angular-aria/angular-aria
 //= require ./bower_components/angular-animate/angular-animate.min.js
 //= require ./bower_components/angular-paginate-anything/dist/paginate-anything-tpls
 //= require ./bower_components/api-check/dist/api-check
 //= require ./bower_components/angular-breadcrumb/dist/angular-breadcrumb
 //= require ./bower_components/angular-formly/dist/formly
-//= require ./bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap
+//= require ./bower_components/angular-material/angular-material
+//= require ./bower_components/angular-messages/angular-messages
+//= require ./bower_components/angular-formly-material/dist/formly-material

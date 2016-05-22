@@ -6,6 +6,7 @@ gem 'puma'
 gem 'cloudinary'
 gem 'clean_pagination'
 gem 'rack-throttle'
+gem 'sprockets-image_compressor'
 group :development do
     gem 'capistrano',         require: false
     gem 'capistrano-rvm',     require: false

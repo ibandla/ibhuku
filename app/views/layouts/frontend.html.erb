@@ -2,18 +2,13 @@
 <html>
 <head>
   <title>Ibhuku</title>
-  <%= stylesheet_link_tag    'frontend', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'ibhuku', 'data-turbolinks-track' => true %> 
+  <%= stylesheet_link_tag    'frontend', media: 'all', 'data-turbolinks-track' => true, async: !Rails.env.development? %>
+  <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true, async: !Rails.env.development? %>
+  <%= javascript_include_tag 'ibhuku', 'data-turbolinks-track' => true, async: !Rails.env.development? %> 
   <%= csrf_meta_tags %> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="Ibhuku,ebooks,books,Ibhuku online bookstore,Ibhuks,ebuks" />
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <base href="/">
 </head>
 <%= yield %>
