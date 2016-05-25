@@ -6,5 +6,5 @@
 
     // $scope.test = Restangular.all('cart').getList().$object;
 
-
+    $scope.test = $rootScope.user;
 });

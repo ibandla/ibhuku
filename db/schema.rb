@@ -95,13 +95,12 @@ ActiveRecord::Schema.define(version: 20160524172955) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
-    t.string   "name",                   limit: 255
+    t.string   "fullname",               limit: 255
     t.integer  "title_id",               limit: 4
     t.string   "email",                  limit: 255
     t.text     "tokens",                 limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "banned"
     t.boolean  "blocked",                              default: false,   null: false
     t.boolean  "resblock",                             default: false,   null: false
   end

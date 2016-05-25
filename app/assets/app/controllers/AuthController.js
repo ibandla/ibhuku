@@ -1,4 +1,5 @@
- app.controller('AuthCtrl', function($scope, $auth,Authform,$location) {
+
+ app.controller('AuthCtrl', function($scope,$auth,$rootScope,Authform,$location) {
 
 
      var reset = $location.search().reset_password_token;
@@ -7,6 +8,7 @@
      $scope.registrationForm = {};
      $scope.loginForm = {};
      $scope.passwordResetForm = {};
+     $scope.updateAccountForm = {};
      
       if (reset) {
          $scope.changePasswordForm.reset_password_token = reset;
@@ -18,7 +20,9 @@
      $scope.loginForm.fields = Authform.login();
      $scope.registrationForm.fields = Authform.register();
      $scope.passwordResetForm.fields = Authform.reset();
-
+     $scope.updateAccountForm.fields = Authform.updateprofile();
+     $scope.updateAccountForm.fullname = $rootScope.user.fullname;
+     $scope.updateAccountForm.title_id = $rootScope.user.title_id;
      $scope.showsubmit = false;
 
      $scope.setResponse = function(response) {
@@ -46,4 +50,8 @@
      $scope.handleUpdatePasswordBtnClick = function() {
          $auth.updatePassword($scope.updatePasswordForm);
      };
+
+      $scope.handleUpdateAccountBtnClick = function() {
+      $auth.updateAccount($scope.updateAccountForm);        
+    };
  });

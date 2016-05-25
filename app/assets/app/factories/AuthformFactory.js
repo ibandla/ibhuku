@@ -1,4 +1,4 @@
-app.factory('Authform', function(Title) {
+app.factory('Authform', function(Title,$rootScope) {
 
     var halfpassword = {
         className: 'col-md-6',
@@ -112,17 +112,21 @@ app.factory('Authform', function(Title) {
             required: true
         }
     };
+
+   
     var name = {
         className: "col-md-10",
-        key: 'name',
+        key: 'fullname',
         type: 'input',
         templateOptions: {
             label: 'Name',
             theme: "altThemeWide",
-            pattern: "[a-zA-Z]+",
+            pattern: "[a-zA-Z ]+",
+            patternValidationMessage: "No symbols allowed",
             required: true
         }
     };
+
 
 
 

@@ -24,19 +24,19 @@ actions :all, :except => [:new,:create,:destroy]
     end
   end
   index do 
-    column :name
+    column :fullname
     column :email
-    column :banned 
+    column :blocked 
     actions  
   end
   
   show do
-    attributes_table :name, :email,:blocked
+    attributes_table :fullname, :email,:blocked
   end
   
   
   
-  filter :name
+  filter :fullname
   filter :email
   filter :created_at
   

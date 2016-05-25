@@ -1,7 +1,10 @@
 app.run(function($rootScope, $auth, $location, Notification, ngCart, Cart) {
     $rootScope.$on('auth:login-success', function(ev, user) {
+        if($rootScope.redpage == undefined)
         $location.path('/home');
-        Notification.primary('Welcome ' + user.name);
+        else
+        $location.path($rootScope.redpage);
+        Notification.primary('Welcome ' + user.fullname);
         Cart.restore();
     });
 
@@ -40,6 +43,7 @@ app.run(function($rootScope, $auth, $location, Notification, ngCart, Cart) {
 
     $rootScope.$on('auth:logout-success', function(ev) {
         Notification.primary('Goodbye');
+        $location.path('/home');
         ngCart.empty();
     });
     $rootScope.$on('auth:registration-email-error', function(ev, reason) {
@@ -48,7 +52,7 @@ app.run(function($rootScope, $auth, $location, Notification, ngCart, Cart) {
     });
 
     $rootScope.$on('auth:email-confirmation-success', function(ev, user) {
-        Notification.success("Welcome, " + user.name + ". Your account has been verified.");
+        Notification.success("Welcome, " + user.fullname + ". Your account has been verified.");
         $location.url($location.path());
     });
 

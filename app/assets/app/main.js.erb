@@ -81,7 +81,9 @@ app.config(function($stateProvider,$mdThemingProvider,$httpProvider,uiSelectConf
                     if($location.search().reset_password_token != undefined) {Notification.primary('You have been logged in temporarily, please reset your password.');}
                 }                
                 else{
-                    $state.go('home');                
+                    $rootScope.redpage = ('/update');
+                    Notification.error('Please login first.');
+                    $state.go('login');                
                 }
             },
           onExit: function($rootScope,$auth,Notification,$location){
@@ -124,8 +126,20 @@ app.config(function($stateProvider,$mdThemingProvider,$httpProvider,uiSelectConf
         })
     .state('profile', {
             url: '/profile',
-            controller:'ProfileCtrl',
-            templateUrl: '<%= path_to_asset("views/profile.html") %>'
+            controller:'AuthCtrl',
+            templateUrl: '<%= path_to_asset("views/profile.html") %>',
+            onEnter:function($rootScope,$state,Notification) {
+
+                if($rootScope.user.signedIn){
+
+                    Notification.primary('You can change your title and name over here.');
+                }                
+                else{
+                    $rootScope.redpage = ('/profile');
+                    Notification.error('Please login first.');
+                    $state.go('login');                
+                }
+            }
         })
     .state('contact', {
             url: '/contact',
