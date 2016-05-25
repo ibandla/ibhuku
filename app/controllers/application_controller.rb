@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.for(:sign_up)        << [:name,:title_id]
   	end
 
+
+ 
+  rescue_from ActionController::RoutingError, with: -> { render_404  }  
+  def render_404
+     redirect_to "/#/404"
+  end
+
 end

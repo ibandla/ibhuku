@@ -1,0 +1,8 @@
+<p>Welcome <%= @resource.name %>!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p> Please confirm your account with this link, <%= link_to ('Confirm my account'), confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}).html_safe %>
+<p>	
+<%= link_to (confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}).to_s), confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}).html_safe %>
+</p>

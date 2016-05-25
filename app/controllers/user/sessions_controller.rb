@@ -4,20 +4,15 @@ class User::SessionsController < DeviseTokenAuth::SessionsController
     if current_user.blocked?
       render json: {
         success: false,
-        errors: [ "hahaha" ]
+        errors: [ "You have either been banned." ]
+      }, status: 401
+    elsif current_user.resblock?
+      render json: {
+        success: false,
+        errors: [ "You did not complete the password reset procedure please restart the process." ]
       }, status: 401
     else
       super
     end
-  end
-  protected
-  def after_sign_in_path_for(resource)
-    if resource.is_a?(User) && resource.blocked?
-      sign_out resource
-      flash[:error] = "This account has been suspended for violation of...."
-      root_path
-    else
-      super
-    end
-   end
+  end 
 end

@@ -10,10 +10,11 @@
       key: 'username',
       type: 'input',
       templateOptions: {
-        label: 'Username',
-        placeholder: 'johndoe',
+        type: "text",
+        label: "Username",
+        pattern: "[a-zA-Z]+",
         required: true,
-        description: 'Descriptive text'
+        description: 'Username'
       }
     },
     {

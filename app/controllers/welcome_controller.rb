@@ -3,7 +3,4 @@ class WelcomeController < ApplicationController
   def index
   end
   	
-  def redirect
-  	redirect("/?goto=%{path}")
-  end
 end

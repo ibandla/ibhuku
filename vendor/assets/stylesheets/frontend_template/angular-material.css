@@ -2078,7 +2078,9 @@ md-input-container {
   md-input-container input[type="color"] {
     /* remove default appearance from all input/textarea */
     -moz-appearance: none;
-    -webkit-appearance: none; }
+    -webkit-appearance: none;
+    width: 100%;
+     }
   md-input-container input[type="date"],
   md-input-container input[type="datetime-local"],
   md-input-container input[type="month"],
@@ -2179,6 +2181,7 @@ md-input-container {
     -webkit-order: 1;
         -ms-flex-order: 1;
             order: 1;
+            color:black !important;
     pointer-events: none;
     -webkit-font-smoothing: antialiased;
     padding-left: 3px;
@@ -3842,10 +3845,12 @@ md-select {
     speak: none;
     -webkit-transform: scaleY(0.6) scaleX(1);
             transform: scaleY(0.6) scaleX(1); }
+           
   .md-select-value.md-select-placeholder {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    color:black !important;
     -webkit-order: 1;
         -ms-flex-order: 1;
             order: 1;
@@ -3853,6 +3858,7 @@ md-select {
     -webkit-font-smoothing: antialiased;
     padding-left: 2px;
     z-index: 1; }
+    .md-
 
 md-select-menu {
   display: -webkit-flex;
