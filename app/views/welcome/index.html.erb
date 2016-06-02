@@ -1,6 +1,183 @@
 <body>
 <div ng-include="'<%= path_to_asset("views/navbar.html") %>'"></div>
-<div class="content" ui-view></div>
+<!-- <div class="content" ui-view>
+	
+</div> -->
+<link rel=apple-touch-icon href=apple-touch-icon.png>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,400italic,500,500italic,700,900" rel=stylesheet type=text/css>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet>
+<!-- <link rel=stylesheet href=assets/css/style.min.css title=main> -->
+<div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button mdl-layout--fixed-header">
+    <main class=mdl-layout__content>
+        <div class=ibhuku-section>
+            <div class=ibhuku-section__content>
+                <div class="mdl-grid mdl-grid--no-fullwidth">
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.1s>
+                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
+                            <div class="mdl-card__media ibhuku-card-product__media">
+                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-10-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-10-b-medium-notinclude.jpg></a>
+                                <div class="mdl-card__title ibhuku-card-product__title">
+                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>White Hat</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=posts.html rel=tag>Women</a>, <a href=posts.html rel=tag>Hats</a></span>
+                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 4.00 out of 5"><span style=width:80%><strong class=ibhuku-rating__stars>4.00</strong> out of 5</span></div>
+                                </div>
+                                <div class="ibhuku-card-product__badge ibhuku-product-badge">Sale</div>
+                            </div>
+                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£42</span></del><ins><span>£16</span></ins></strong>
+                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.2s>
+                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
+                            <div class="mdl-card__media ibhuku-card-product__media">
+                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-2-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-2-b-medium-notinclude.jpg></a>
+                                <div class="mdl-card__title ibhuku-card-product__title">
+                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>Bright Blue Sleeveless Dress</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=shop.html rel=tag>Women</a>, <a href=shop.html rel=tag>Dresses</a></span>
+                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 3.00 out of 5"><span style=width:60%><strong class=ibhuku-rating__stars>3.00</strong> out of 5</span></div>
+                                </div>
+                                <div class="ibhuku-card-product__badge ibhuku-product-badge">Sale</div>
+                            </div>
+                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£32</span></del><ins><span>£18</span></ins></strong>
+                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.3s>
+                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
+                            <div class="mdl-card__media ibhuku-card-product__media">
+                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-3-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-3-b-medium-notinclude.jpg></a>
+                                <div class="mdl-card__title ibhuku-card-product__title">
+                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>Two-Tone Tailored Jacket</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=shop.html rel=tag>Jackets</a></span>
+                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 4.00 out of 5"><span style=width:80%><strong class=ibhuku-rating__stars>4.00</strong> out of 5</span></div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£22</span></del><ins><span>£14</span></ins></strong>
+                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.4s>
+                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
+                            <div class="mdl-card__media ibhuku-card-product__media">
+                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-4-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-4-b-medium-notinclude.jpg></a>
+                                <div class="mdl-card__title ibhuku-card-product__title">
+                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>Etincelle Printed Top</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=shop.html rel=tag>Womens</a>, <a href=shop.html rel=tag>Tops</a></span>
+                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 5.00 out of 5"><span style=width:100%><strong class=ibhuku-rating__stars>5.00</strong> out of 5</span></div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£22</span></del><ins><span>£14</span></ins></strong>
+                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.1s>
+                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
+                            <div class="mdl-card__media ibhuku-card-product__media">
+                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-5-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-5-b-medium-notinclude.jpg></a>
+                                <div class="mdl-card__title ibhuku-card-product__title">
+                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>Striped Dress</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=shop.html rel=tag>Dresses</a>, <a href=shop.html rel=tag>Women</a></span>
+                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 5.00 out of 5"><span style=width:100%><strong class=ibhuku-rating__stars>5.00</strong> out of 5</span></div>
+                                </div>
+                                <div class="ibhuku-card-product__badge ibhuku-product-badge">Sale</div>
+                            </div>
+                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£35</span></del><ins><span>£20</span></ins></strong>
+                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.2s>
+                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
+                            <div class="mdl-card__media ibhuku-card-product__media">
+                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-29-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-29-b-medium-notinclude.jpg></a>
+                                <div class="mdl-card__title ibhuku-card-product__title">
+                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>Top Fancy</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=shop.html rel=tag>Women</a>, <a href=shop.html rel=tag>Tops</a></span>
+                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 3.00 out of 5"><span style=width:60%><strong class=ibhuku-rating__stars>3.00</strong> out of 5</span></div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£32</span></del><ins><span>£18</span></ins></strong>
+                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.3s>
+                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
+                            <div class="mdl-card__media ibhuku-card-product__media">
+                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-27-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-27-b-medium-notinclude.jpg></a>
+                                <div class="mdl-card__title ibhuku-card-product__title">
+                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>Embroidered Mesh Top</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=shop.html rel=tag>Womens</a>, <a href=shop.html rel=tag>Tops</a></span>
+                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 3.00 out of 5"><span style=width:60%><strong class=ibhuku-rating__stars>3.00</strong> out of 5</span></div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£42</span></del><ins><span>£24</span></ins></strong>
+                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.4s>
+                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
+                            <div class="mdl-card__media ibhuku-card-product__media">
+                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-24-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-24-b-medium-notinclude.jpg></a>
+                                <div class="mdl-card__title ibhuku-card-product__title">
+                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>Printed One-Piece Swimsuit</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=shop.html rel=tag>Swimsuits</a>, <a href=shop.html rel=tag>Womens</a></span>
+                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 5.00 out of 5"><span style=width:100%><strong class=ibhuku-rating__stars>5.00</strong> out of 5</span></div>
+                                </div>
+                                <div class="ibhuku-card-product__badge ibhuku-product-badge">Sale</div>
+                            </div>
+                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£29</span></del><ins><span>£19</span></ins></strong>
+                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--colored ibhuku-button-fab ibhuku-js-button-shopping-cart mdl-badge ibhuku-button-fab__badge" data-badge=0><i class=material-icons>shopping_cart</i></button>
+<div class="mdl-layout__drawer mdl-layout__drawer--right ibhuku-product-cart"><span class=mdl-layout-title>Cart</span>
+    <div class=ibhuku-layout__divider></div>
+    <div class=ibhuku-product-cart__body>
+        <ul class=ibhuku-list>
+            <li class=ibhuku-list__item>
+                <a href=single-product.html class=ibhuku-list__icon><img src=assets/images/products/product-1-b-extra-small-notinclude.jpg alt="product thumbnail"></a>
+                <div class=ibhuku-list__item-text><a href=single-product.html class=ibhuku-list__title>White Top</a> <span class=ibhuku-list__subtitle>£16.55</span></div>
+                <div class=ibhuku-list__item-secondary-action><a href=# title="Remove this item" class="mdl-button mdl-js-button mdl-button--accent mdl-button--icon"><i class=material-icons>close</i></a></div>
+            </li>
+            <li class=ibhuku-list__item>
+                <a href=single-product.html class=ibhuku-list__icon><img src=assets/images/products/product-2-b-extra-small-notinclude.jpg alt="product thumbnail"></a>
+                <div class=ibhuku-list__item-text><a href=single-product.html class=ibhuku-list__title>Summer Dress</a> <span class=ibhuku-list__subtitle>£49.99</span></div>
+                <div class=ibhuku-list__item-secondary-action><a href=# title="Remove this item" class="mdl-button mdl-js-button mdl-button--accent mdl-button--icon"><i class=material-icons>close</i></a></div>
+            </li>
+            <li class=ibhuku-list__item>
+                <a href=single-product.html class=ibhuku-list__icon><img src=assets/images/products/product-28-b-extra-small-notinclude.jpg alt="product thumbnail"></a>
+                <div class=ibhuku-list__item-text><a href=single-product.html class=ibhuku-list__title>Yellow office dress</a> <span class=ibhuku-list__subtitle><del>£39.99</del><ins>£29.99</ins></span></div>
+                <div class=ibhuku-list__item-secondary-action><a href=# title="Remove this item" class="mdl-button mdl-js-button mdl-button--accent mdl-button--icon"><i class=material-icons>close</i></a></div>
+            </li>
+            <li class=ibhuku-list__item>
+                <a href=single-product.html class=ibhuku-list__icon><img src=assets/images/products/product-23-b-extra-small-notinclude.jpg alt="product thumbnail"></a>
+                <div class=ibhuku-list__item-text><a href=single-product.html class=ibhuku-list__title>Black to black</a> <span class=ibhuku-list__subtitle>£36.99</span></div>
+                <div class=ibhuku-list__item-secondary-action><a href=# title="Remove this item" class="mdl-button mdl-js-button mdl-button--accent mdl-button--icon"><i class=material-icons>close</i></a></div>
+            </li>
+            <li class=ibhuku-list__item>
+                <a href=single-product.html class=ibhuku-list__icon><img src=assets/images/products/product-22-a-extra-small-notinclude.jpg alt="product thumbnail"></a>
+                <div class=ibhuku-list__item-text><a href=single-product.html class=ibhuku-list__title>Summer Outfit</a> <span class=ibhuku-list__subtitle>£49.99</span></div>
+                <div class=ibhuku-list__item-secondary-action><a href=# title="Remove this item" class="mdl-button mdl-js-button mdl-button--accent mdl-button--icon"><i class=material-icons>close</i></a></div>
+            </li>
+        </ul>
+        <div class=ibhuku-product-cart__actions>
+            <div class=ibhuku-layout__divider></div>
+            <h3 class=ibhuku-product-cart__total>Subtotal: $112.46</h3>
+            <div class=ibhuku-layout__divider></div>
+            <div class=mdl-grid>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-col-phone"><a href=cart.html class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent ibhuku-full-width">View Cart</a></div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-col-phone"><a href=checkout.html class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary ibhuku-full-width">Checkout</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id=side-cart-obfuscator class=mdl-layout__obfuscator></div>
+<!-- <script src=assets/js/theme.min.js></script> -->
+
 <div ng-include="'<%= path_to_asset("views/footer.html") %>'"></div>
 <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
 </body>

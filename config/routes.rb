@@ -11,7 +11,7 @@ Rails.application.routes.draw do
      resources :token, only: [:index]
      resources :titles, only: [:index]
   end
-  match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  match '/*path' => 'welcome#index', via:[:get,:post]
+  # match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
+  # match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
+  # match '/*path' => 'welcome#index', via:[:get,:post]
 end
