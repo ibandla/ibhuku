@@ -8,8 +8,6 @@ gem 'clean_pagination'
 gem 'rack-throttle'
 gem 'sprockets-image_compressor'
 gem "bower-rails", "~> 0.10.0"
-gem 'spree_digital', github: 'halo/spree_digital', branch: '3-0-stable'
-source 'https://rails-assets.org'
 
 spree_branch = '2-4-stable'
 
