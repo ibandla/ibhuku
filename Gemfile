@@ -7,6 +7,19 @@ gem 'cloudinary'
 gem 'clean_pagination'
 gem 'rack-throttle'
 gem 'sprockets-image_compressor'
+gem "bower-rails", "~> 0.10.0"
+gem 'spree_digital', github: 'halo/spree_digital', branch: '3-0-stable'
+source 'https://rails-assets.org'
+
+spree_branch = '2-4-stable'
+
+gem 'spree_core',        github: 'spree/spree',             branch: spree_branch
+gem 'spree_api',         github: 'spree/spree',             branch: spree_branch
+gem 'spree_backend',     github: 'spree/spree',             branch: spree_branch
+gem 'spree_sample',      github: 'spree/spree',             branch: spree_branch
+gem 'spree_gateway',     github: 'spree/spree_gateway',     branch: spree_branch
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: spree_branch
+gem 'sprangular',        github: 'sprangular/sprangular'
 group :development do
     gem 'capistrano',         require: false
     gem 'capistrano-rvm',     require: false

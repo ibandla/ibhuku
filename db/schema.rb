@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524172955) do
+ActiveRecord::Schema.define(version: 20160530220348) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -63,6 +63,11 @@ ActiveRecord::Schema.define(version: 20160524172955) do
 
   add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
 
+  create_table "executes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "int_id",     limit: 4
@@ -72,6 +77,11 @@ ActiveRecord::Schema.define(version: 20160524172955) do
 
   add_index "orders", ["int_id"], name: "index_orders_on_int_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
+  create_table "payments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "titles", force: :cascade do |t|
     t.string   "name",       limit: 255

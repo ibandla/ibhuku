@@ -5,6 +5,7 @@
 		<div class="product">
 			<div class="container">
 	<div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div>
+        <ngcart-checkout service="paypal" settings="{ url:'/checkout'}"></ngcart-checkout>
 			
 				<!---->
 				<div class="col-md-9 product-price1">
