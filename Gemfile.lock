@@ -5,8 +5,106 @@ GIT
     recaptcha (1.3.0)
       json
 
+GIT
+  remote: git://github.com/sprangular/sprangular.git
+  revision: 03e0b4765c2a161128da820097a3512496215372
+  specs:
+    sprangular (0.1.0)
+      active_model_serializers (~> 0.8.3)
+      coffee-rails
+      font-awesome-rails (~> 4.2)
+      jquery-rails
+      ngannotate-rails (= 0.15.4)
+      prerender_rails
+      rack-rewrite
+      rails
+      rails-assets-angular (= 1.3.9)
+      rails-assets-angular-animate
+      rails-assets-angular-i18n
+      rails-assets-angular-motion
+      rails-assets-angular-route
+      rails-assets-angular-sanitize
+      rails-assets-angular-strap
+      rails-assets-angular-translate
+      rails-assets-angularytics
+      rails-assets-bootstrap-additions
+      rails-assets-bootstrap-sass-official
+      rails-assets-underscore
+      rails-assets-underscore.string
+      sass-rails
+      slim-rails
+      spree_api (>= 2.4)
+      spree_auth_devise
+      spree_core (>= 2.4)
+      sprockets-rails (~> 2.2.0)
+
+GIT
+  remote: git://github.com/spree/spree.git
+  revision: ca62f5b628416c643803381c23e9eff61107aeee
+  branch: 3-0-stable
+  specs:
+    spree_api (3.0.9)
+      rabl (~> 0.11.6)
+      spree_core (= 3.0.9)
+      versioncake (~> 2.3.1)
+    spree_backend (3.0.9)
+      bootstrap-sass (~> 3.3)
+      jquery-rails (~> 4.1)
+      jquery-ui-rails (~> 5.0)
+      select2-rails (= 3.5.9.1)
+      spree_api (= 3.0.9)
+      spree_core (= 3.0.9)
+    spree_core (3.0.9)
+      activemerchant (~> 1.47.0)
+      acts_as_list (= 0.7.2)
+      awesome_nested_set (~> 3.0.1)
+      cancancan (~> 1.10.1)
+      carmen (~> 1.0.0)
+      deface (~> 1.0.0)
+      ffaker (~> 1.16)
+      font-awesome-rails (~> 4.0)
+      friendly_id (~> 5.1.0)
+      highline (~> 1.6.18)
+      json (~> 1.7)
+      kaminari (~> 0.15, >= 0.15.1)
+      monetize (~> 1.1)
+      paperclip (~> 4.3.0)
+      paranoia (~> 2.1.0)
+      premailer-rails
+      rails (~> 4.2.2)
+      ransack (~> 1.4.1)
+      responders
+      sprockets-rails
+      state_machines-activerecord (~> 0.2)
+      stringex
+      truncate_html (= 0.9.2)
+      twitter_cldr (~> 3.0)
+    spree_sample (3.0.9)
+      spree_core (= 3.0.9)
+
+GIT
+  remote: git://github.com/spree/spree_auth_devise.git
+  revision: 1ac9dcc33049b185a0dd884c832583feb4b91890
+  branch: 3-0-stable
+  specs:
+    spree_auth_devise (3.0.6)
+      devise (~> 3.5.4)
+      devise-encryptable (= 0.1.2)
+      json
+      multi_json
+      spree_core (~> 3.0.0)
+
+GIT
+  remote: git://github.com/spree/spree_gateway.git
+  revision: 3cb02b0b3a45be5f4ace9d9295ffb3c11864e605
+  branch: 3-0-stable
+  specs:
+    spree_gateway (3.0.0)
+      spree_core (~> 3.0.0)
+
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.6)
       actionpack (= 4.2.6)
@@ -27,6 +125,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.8.3)
+      activemodel (>= 3.0)
     activeadmin (1.0.0.pre2)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
@@ -40,13 +140,18 @@ GEM
       rails (>= 3.2, < 5.0)
       ransack (~> 1.3)
       sass-rails
-    activeadmin_addons (0.9.0)
+    activeadmin_addons (0.9.2)
       railties
       select2-rails (~> 3.5.9)
       xdan-datetimepicker-rails (~> 2.5.1)
     activejob (4.2.6)
       activesupport (= 4.2.6)
       globalid (>= 0.3.0)
+    activemerchant (1.47.0)
+      activesupport (>= 3.2.14, < 5.0.0)
+      builder (>= 2.1.2, < 4.0.0)
+      i18n (>= 0.6.9)
+      nokogiri (~> 1.4)
     activemodel (4.2.6)
       activesupport (= 4.2.6)
       builder (~> 3.1)
@@ -60,7 +165,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    airbrussh (1.0.1)
+    acts_as_list (0.7.2)
+      activerecord (>= 3.0)
+    addressable (2.4.0)
+    airbrussh (1.0.2)
       sshkit (>= 1.6.1, != 1.7.0)
     angular_rails_csrf (1.0.4)
       rails (>= 3, < 5)
@@ -68,8 +176,10 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
-    autoprefixer-rails (6.3.6)
+    autoprefixer-rails (6.3.6.2)
       execjs
+    awesome_nested_set (3.0.3)
+      activerecord (>= 4.0.0, < 5)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
@@ -82,7 +192,9 @@ GEM
       thor (~> 0.19)
     bower-rails (0.10.0)
     builder (3.2.2)
-    byebug (8.2.5)
+    byebug (9.0.5)
+    camertron-eprun (1.1.0)
+    cancancan (1.10.1)
     capistrano (3.5.0)
       airbrussh (>= 1.0.0)
       capistrano-harrow
@@ -92,7 +204,7 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-harrow (0.5.0)
+    capistrano-harrow (0.5.1)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -102,15 +214,23 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
-    carrierwave (0.11.0)
+    carmen (1.0.2)
+      activesupport (>= 3.0.0)
+    carrierwave (0.11.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
+    cldr-plurals-runtime-rb (1.0.1)
     clean_pagination (1.0.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
     cloudinary (1.1.6)
       aws_cf_signer
       rest-client
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -118,47 +238,65 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    colorize (0.7.7)
     composite_primary_keys (8.1.3)
       activerecord (~> 4.2.0)
-    concurrent-ruby (1.0.1)
+    concurrent-ruby (1.0.2)
+    css_parser (1.4.1)
+      addressable
     debug_inspector (0.0.2)
-    devise (3.5.8)
+    deface (1.0.2)
+      colorize (>= 0.5.8)
+      nokogiri (~> 1.6.0)
+      polyglot
+      rails (>= 3.1)
+    devise (3.5.10)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-encryptable (0.1.2)
+      devise (>= 2.1.0)
     devise_token_auth (0.1.37)
       devise (> 3.5.2, < 4.1)
       rails (< 6)
     diff-lcs (1.2.5)
+    domain_name (0.5.20160310)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
-    execjs (2.6.0)
-    face_of_active_admin (0.0.8)
+    execjs (2.7.0)
+    face_of_active_admin (0.0.15)
       font-awesome-sass (>= 4.5.0)
       rails (>= 3.2.0)
-    font-awesome-rails (4.6.1.0)
+    ffaker (1.32.1)
+    font-awesome-rails (4.6.3.0)
       railties (>= 3.2, < 5.1)
-    font-awesome-sass (4.5.0)
+    font-awesome-sass (4.6.2)
       sass (>= 3.2)
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    hashie (3.4.3)
+    hashie (3.4.4)
+    highline (1.6.21)
     htmlentities (4.3.4)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
-    jbuilder (2.4.1)
+    jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jquery-rails (4.1.1)
@@ -168,24 +306,29 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    kaminari (0.16.3)
+    kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mime-types (3.0)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0221)
+    mime-types (2.99.2)
+    mimemagic (0.3.0)
     mini_portile2 (2.0.0)
-    minitest (5.8.4)
-    multi_json (1.11.3)
+    minitest (5.9.0)
+    monetize (1.4.0)
+      money (~> 6.7)
+    money (6.7.1)
+      i18n (>= 0.6.4, <= 0.7.0)
+      sixarm_ruby_unaccent (>= 1.1.1, < 2)
+    multi_json (1.12.1)
     mysql2 (0.4.4)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.1.1)
-    ngannotate-rails (1.2.2)
+    netrc (0.11.0)
+    ngannotate-rails (0.15.4)
       execjs
       rails (>= 3.1)
     nokogiri (1.6.7.2)
@@ -194,16 +337,31 @@ GEM
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
     orm_adapter (0.5.0)
-    paypal-sdk-rest (1.4.5)
-      multi_json (~> 1.0)
-      uuidtools (~> 2.1)
-      xml-simple
-    pesapal (1.6.0)
-      htmlentities
+    paperclip (4.3.6)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+    paranoia (2.1.5)
+      activerecord (~> 4.0)
     polyamorous (1.3.0)
       activerecord (>= 3.0)
+    polyglot (0.3.5)
+    premailer (1.8.6)
+      css_parser (>= 1.3.6)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.9.2)
+      actionmailer (>= 3, < 6)
+      premailer (~> 1.7, >= 1.7.9)
+    prerender_rails (1.3.0)
+      activesupport
+      rack
     puma (3.4.0)
+    rabl (0.11.8)
+      activesupport (>= 2.3.14)
     rack (1.6.4)
+    rack-rewrite (1.5.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-throttle (0.4.0)
@@ -219,6 +377,27 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.6)
       sprockets-rails
+    rails-assets-angular (1.3.9)
+    rails-assets-angular-animate (1.3.9)
+      rails-assets-angular (= 1.3.9)
+    rails-assets-angular-i18n (1.5.6)
+    rails-assets-angular-motion (0.4.4)
+    rails-assets-angular-route (1.3.9)
+      rails-assets-angular (= 1.3.9)
+    rails-assets-angular-sanitize (1.3.9)
+      rails-assets-angular (= 1.3.9)
+    rails-assets-angular-strap (2.3.8)
+      rails-assets-angular (>= 1.2.21, < 2)
+    rails-assets-angular-translate (2.11.0)
+      rails-assets-angular (>= 1.2.26, < 1.6)
+    rails-assets-angularytics (0.4.0)
+      rails-assets-angular
+    rails-assets-bootstrap-additions (0.3.1)
+    rails-assets-bootstrap-sass-official (3.3.6)
+      rails-assets-jquery (>= 1.9.0)
+    rails-assets-jquery (2.2.4)
+    rails-assets-underscore (1.8.3)
+    rails-assets-underscore.string (3.3.4)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -233,18 +412,20 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.1.2)
-    ransack (1.7.0)
+    ransack (1.4.1)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       i18n
-      polyamorous (~> 1.2)
+      polyamorous (~> 1.1)
     rdoc (4.2.2)
       json (~> 1.4)
-    responders (2.1.2)
+    responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec-activemodel-mocks (1.0.3)
       activemodel (>= 3.0)
       activesupport (>= 3.0)
@@ -279,33 +460,65 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    select2-rails (3.5.10)
+    select2-rails (3.5.9.1)
       thor (~> 0.14)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    sixarm_ruby_unaccent (1.1.1)
+    slim (3.0.7)
+      temple (~> 0.7.6)
+      tilt (>= 1.3.3, < 2.1)
+    slim-rails (3.0.1)
+      actionmailer (>= 3.1, < 5.0)
+      actionpack (>= 3.1, < 5.0)
+      activesupport (>= 3.1, < 5.0)
+      railties (>= 3.1, < 5.0)
+      slim (~> 3.0)
     spring (1.7.1)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-image_compressor (0.3.0)
       sprockets
-    sprockets-rails (3.0.4)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
-      sprockets (>= 3.0.0)
+    sprockets-rails (2.2.4)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      sprockets (>= 2.8, < 4.0)
     sshkit (1.10.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    state_machines (0.4.0)
+    state_machines-activemodel (0.4.0)
+      activemodel (>= 4.1, < 5.1)
+      state_machines (>= 0.4.0)
+    state_machines-activerecord (0.4.0)
+      activerecord (>= 4.1, < 5.1)
+      state_machines-activemodel (>= 0.3.0)
+    stringex (2.6.0)
+    temple (0.7.7)
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (2.0.2)
+    tilt (2.0.4)
+    truncate_html (0.9.2)
     turbolinks (2.5.3)
       coffee-rails
+    twitter_cldr (3.3.0)
+      camertron-eprun
+      cldr-plurals-runtime-rb (~> 1.0.0)
+      json
+      tzinfo
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
-    uuidtools (2.1.5)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
+    versioncake (2.3.1)
+      actionpack (>= 3.2)
+      activesupport (>= 3.2)
+      railties (>= 3.2)
+      tzinfo
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -313,10 +526,9 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    xdan-datetimepicker-rails (2.5.1)
+    xdan-datetimepicker-rails (2.5.4)
       jquery-rails
       rails (>= 3.2.16)
-    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
@@ -349,11 +561,10 @@ DEPENDENCIES
   mysql2 (>= 0.3.13, < 0.5)
   ngannotate-rails
   omniauth
-  paypal-sdk-rest
-  pesapal
   puma
   rack-throttle
   rails (= 4.2.6)
+  rails-assets-angular!
   recaptcha!
   rspec-activemodel-mocks
   rspec-its
@@ -361,6 +572,13 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda-matchers
+  sprangular!
+  spree_api!
+  spree_auth_devise!
+  spree_backend!
+  spree_core!
+  spree_gateway!
+  spree_sample!
   spring
   sprockets-image_compressor
   turbolinks
