@@ -7,21 +7,23 @@ gem 'cloudinary'
 gem 'clean_pagination'
 gem 'rack-throttle'
 gem 'sprockets-image_compressor'
+gem 'sprockets'
 gem "bower-rails", "~> 0.10.0"
 # gem 'rails-assets-angular', '= 1.3.9'
 # gem 'spree_digital', github: 'halo/spree_digital', branch: '3-0-stable'
+gem 'stripe'
+
 source 'https://rails-assets.org' do
 gem 'rails-assets-angular'
+# spree_branch = '3-1-stable'
 
-spree_branch = '3-0-stable'
-
-gem 'spree_core',        github: 'spree/spree',             branch: spree_branch
-gem 'spree_api',         github: 'spree/spree',             branch: spree_branch
-gem 'spree_backend',     github: 'spree/spree',             branch: spree_branch
-gem 'spree_sample',      github: 'spree/spree',             branch: spree_branch
-gem 'spree_gateway',     github: 'spree/spree_gateway',     branch: spree_branch
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: spree_branch
-gem 'sprangular',        github: 'sprangular/sprangular'
+# gem 'spree_core',        github: 'spree/spree',             branch: spree_branch
+# gem 'spree_api',         github: 'spree/spree',             branch: spree_branch
+# gem 'spree_backend',     github: 'spree/spree',             branch: spree_branch
+# gem 'spree_sample',      github: 'spree/spree',             branch: spree_branch
+# gem 'spree_gateway',     github: 'spree/spree_gateway',     branch: spree_branch
+# gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: spree_branch
+# gem 'sprangular',        github: 'sprangular/sprangular'
 end
 group :development do
     gem 'capistrano',         require: false
