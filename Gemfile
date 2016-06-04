@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 gem "recaptcha", require: "recaptcha/rails", :github => 'ibandla/recaptcha'
 gem 'ngannotate-rails'
 gem 'angular_rails_csrf'
-gem 'puma'   
+gem 'puma'
 gem 'cloudinary'
 gem 'clean_pagination'
 gem 'rack-throttle'
 gem 'sprockets-image_compressor'
+gem 'pesapal'
 group :development do
     gem 'capistrano',         require: false
     gem 'capistrano-rvm',     require: false
