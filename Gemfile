@@ -8,6 +8,7 @@ gem 'clean_pagination'
 gem 'rack-throttle'
 gem 'sprockets-image_compressor'
 gem 'sprockets'
+gem 'dotenv-rails', :groups => [:development, :test]
 gem "bower-rails", "~> 0.10.0"
 # gem 'rails-assets-angular', '= 1.3.9'
 # gem 'spree_digital', github: 'halo/spree_digital', branch: '3-0-stable'
