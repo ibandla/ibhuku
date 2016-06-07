@@ -1,9 +1,0 @@
-development:
-  callback_url: 'http://0.0.0.0:3000/pesapal/callback'
-  consumer_key: '/SX+m/tApuydak68hBWfzVF/0hwTBPzO'
-  consumer_secret: '4nXWcqi/BmyTKlmOfw4DJmzzsWQ='
-
-production:
-  callback_url: 'http://1.2.3.4:3000/pesapal/callback'
-  consumer_key: '<YOUR_PROD_CONSUMER_KEY>'
-  consumer_secret: '<YOUR_PROD_CONSUMER_SECRET>'
