@@ -25,6 +25,7 @@
         <td><%= ebook.author %></td>
         <td><%= ebook.description%></td>
         <td><%= ebook.price %></td>
+        <td><%= ebook.Category.name %></td>
         <td><%= link_to "Download Ebook", ebook.pdf_url %></td>
         <td><%= button_to "Delete",  ebook, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{ebook.title}?" %></td>
       </tr>

@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails ibhuku: school" uuid="f91c0066-0a97-4593-b786-d9d8e6ac8547">
+    <database-info product="MySQL" version="5.0.51a-community-nt-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="db82816"/>
+    <table name="admin_users" schema="" catalog="db82816" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="encrypted_password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="reset_password_token" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reset_password_sent_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="remember_created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="sign_in_count" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="current_sign_in_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="last_sign_in_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="current_sign_in_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_sign_in_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="index_admin_users_on_email" unique="true" columns="email"/>
+      <index name="index_admin_users_on_reset_password_token" unique="true" columns="reset_password_token"/>
+    </table>
+    <table name="cart_items" schema="" catalog="db82816" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ebook_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_rails_476f1c8dfb" columns="ebook_id" ref-table="ebooks" ref-schema="" ref-catalog="db82816" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_fcb2cbf0bc" columns="user_id" ref-table="users" ref-schema="" ref-catalog="db82816" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="index_cart_items_on_user_id_and_ebook_id" unique="true" columns="user_id,ebook_id"/>
+      <index name="fk_rails_476f1c8dfb" unique="false" columns="ebook_id"/>
+    </table>
+    <table name="categories" schema="" catalog="db82816" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="ebooks" schema="" catalog="db82816" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="category_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ISBN" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="author" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="price" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="pdf" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ebook_image" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="index_ebooks_on_category_id" unique="false" columns="category_id"/>
+    </table>
+    <table name="orders" schema="" catalog="db82816" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="int_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="index_orders_on_int_id" unique="false" columns="int_id"/>
+      <index name="index_orders_on_user_id" unique="false" columns="user_id"/>
+    </table>
+    <table name="schema_migrations" schema="" catalog="db82816" type="TABLE">
+      <column name="version" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <index name="unique_schema_migrations" unique="true" columns="version"/>
+    </table>
+    <table name="titles" schema="" catalog="db82816" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="users" schema="" catalog="db82816" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="provider" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="J2VtYWlsJw=="/>
+      <column name="uid" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="encrypted_password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="reset_password_token" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="reset_password_sent_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="remember_created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="sign_in_count" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="current_sign_in_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="last_sign_in_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="current_sign_in_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_sign_in_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="confirmation_token" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="confirmed_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="confirmation_sent_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="unconfirmed_email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="title_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="tokens" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="created_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_rails_e9277efd4e" columns="title_id" ref-table="titles" ref-schema="" ref-catalog="db82816" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="index_users_on_reset_password_token" unique="true" columns="reset_password_token"/>
+      <index name="index_users_on_uid_and_provider" unique="true" columns="uid,provider"/>
+      <index name="fk_rails_e9277efd4e" unique="false" columns="title_id"/>
+      <index name="index_users_on_email" unique="false" columns="email"/>
+    </table>
+  </data-source>
+  <data-source name="Rails ibhuku: development" uuid="d1d36365-8b01-4ac0-b725-c7ae9e4f8ffa">
+    <database-info product="MySQL" version="5.6.30-0ubuntu0.15.10.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="ibhuku_development1"/>
+      <table id="2" parent="1" name="admin_users"/>
+      <table id="3" parent="1" name="cart_items"/>
+      <table id="4" parent="1" name="categories"/>
+      <table id="5" parent="1" name="ebooks"/>
+      <table id="6" parent="1" name="orders"/>
+      <table id="7" parent="1" name="schema_migrations"/>
+      <table id="8" parent="1" name="titles"/>
+      <table id="9" parent="1" name="users"/>
+      <column id="10" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="11" parent="2" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="12" parent="2" name="encrypted_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="13" parent="2" name="reset_password_token">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="14" parent="2" name="reset_password_sent_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="15" parent="2" name="remember_created_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="16" parent="2" name="sign_in_count">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="17" parent="2" name="current_sign_in_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="18" parent="2" name="last_sign_in_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="19" parent="2" name="current_sign_in_ip">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="20" parent="2" name="last_sign_in_ip">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="21" parent="2" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="22" parent="2" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="23" parent="2" name="index_admin_users_on_email">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="24" parent="2" name="index_admin_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="25" parent="2" name="index_admin_users_on_email">
+        <columns>email</columns>
+        <underlying-index>index_admin_users_on_email</underlying-index>
+      </key>
+      <key id="26" parent="2" name="index_admin_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <underlying-index>index_admin_users_on_reset_password_token</underlying-index>
+      </key>
+      <key id="27" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="28" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="29" parent="3" name="ebook_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="30" parent="3" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="31" parent="3" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="32" parent="3" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="33" parent="3" name="fk_rails_476f1c8dfb">
+        <columns>ebook_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="34" parent="3" name="index_cart_items_on_user_id_and_ebook_id">
+        <columns>user_id
+ebook_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="35" parent="3" name="index_cart_items_on_user_id_and_ebook_id">
+        <columns>user_id
+ebook_id</columns>
+        <underlying-index>index_cart_items_on_user_id_and_ebook_id</underlying-index>
+      </key>
+      <key id="36" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="37" parent="3" name="fk_rails_476f1c8dfb">
+        <columns>ebook_id</columns>
+        <ref-key>~.ebooks.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="38" parent="3" name="fk_rails_fcb2cbf0bc">
+        <columns>user_id</columns>
+        <ref-key>~.users.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="39" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="40" parent="4" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="41" parent="4" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="42" parent="4" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="43" parent="4" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <key id="44" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="45" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="46" parent="5" name="category_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="47" parent="5" name="ISBN">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="48" parent="5" name="title">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="49" parent="5" name="author">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="50" parent="5" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="51" parent="5" name="price">
+        <data-type>float</data-type>
+      </column>
+      <column id="52" parent="5" name="pdf">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="53" parent="5" name="ebook_image">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="54" parent="5" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="55" parent="5" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="56" parent="5" name="index_ebooks_on_category_id">
+        <columns>category_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="57" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="58" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="59" parent="6" name="user_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="60" parent="6" name="int_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="61" parent="6" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="62" parent="6" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="63" parent="6" name="index_orders_on_int_id">
+        <columns>int_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="64" parent="6" name="index_orders_on_user_id">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="65" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="66" parent="7" name="version">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="67" parent="7" name="unique_schema_migrations">
+        <columns>version</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="68" parent="7" name="unique_schema_migrations">
+        <columns>version</columns>
+        <underlying-index>unique_schema_migrations</underlying-index>
+      </key>
+      <column id="69" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="70" parent="8" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="71" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="72" parent="8" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <key id="73" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="74" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="75" parent="9" name="provider">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;email&apos;</default-expression>
+      </column>
+      <column id="76" parent="9" name="uid">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="77" parent="9" name="encrypted_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="78" parent="9" name="reset_password_token">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="79" parent="9" name="reset_password_sent_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="80" parent="9" name="remember_created_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="81" parent="9" name="sign_in_count">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="82" parent="9" name="current_sign_in_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="83" parent="9" name="last_sign_in_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="84" parent="9" name="current_sign_in_ip">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="85" parent="9" name="last_sign_in_ip">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="86" parent="9" name="confirmation_token">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="87" parent="9" name="confirmed_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="88" parent="9" name="confirmation_sent_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="89" parent="9" name="unconfirmed_email">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="90" parent="9" name="fullname">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="91" parent="9" name="title_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="92" parent="9" name="email">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="93" parent="9" name="tokens">
+        <data-type>text</data-type>
+      </column>
+      <column id="94" parent="9" name="created_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="95" parent="9" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="96" parent="9" name="blocked">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="97" parent="9" name="resblock">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="98" parent="9" name="fk_rails_e9277efd4e">
+        <columns>title_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="99" parent="9" name="index_users_on_email">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="100" parent="9" name="index_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="101" parent="9" name="index_users_on_uid_and_provider">
+        <columns>uid
+provider</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="102" parent="9" name="index_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <underlying-index>index_users_on_reset_password_token</underlying-index>
+      </key>
+      <key id="103" parent="9" name="index_users_on_uid_and_provider">
+        <columns>uid
+provider</columns>
+        <underlying-index>index_users_on_uid_and_provider</underlying-index>
+      </key>
+      <key id="104" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="105" parent="9" name="fk_rails_e9277efd4e">
+        <columns>title_id</columns>
+        <ref-key>~.titles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+  <data-source name="Rails ibhuku: test" uuid="08f64277-7f0a-4759-b132-3540f19f9d21">
+    <database-info product="MySQL" version="5.6.30-0ubuntu0.15.10.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="ibhuku_test1"/>
+      <table id="2" parent="1" name="admin_users"/>
+      <table id="3" parent="1" name="cart_items"/>
+      <table id="4" parent="1" name="categories"/>
+      <table id="5" parent="1" name="ebooks"/>
+      <table id="6" parent="1" name="orders"/>
+      <table id="7" parent="1" name="schema_migrations"/>
+      <table id="8" parent="1" name="titles"/>
+      <table id="9" parent="1" name="users"/>
+      <column id="10" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="11" parent="2" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="12" parent="2" name="encrypted_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="13" parent="2" name="reset_password_token">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="14" parent="2" name="reset_password_sent_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="15" parent="2" name="remember_created_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="16" parent="2" name="sign_in_count">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="17" parent="2" name="current_sign_in_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="18" parent="2" name="last_sign_in_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="19" parent="2" name="current_sign_in_ip">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="20" parent="2" name="last_sign_in_ip">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="21" parent="2" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="22" parent="2" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="23" parent="2" name="index_admin_users_on_email">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="24" parent="2" name="index_admin_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="25" parent="2" name="index_admin_users_on_email">
+        <columns>email</columns>
+        <underlying-index>index_admin_users_on_email</underlying-index>
+      </key>
+      <key id="26" parent="2" name="index_admin_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <underlying-index>index_admin_users_on_reset_password_token</underlying-index>
+      </key>
+      <key id="27" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="28" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="29" parent="3" name="ebook_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="30" parent="3" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="31" parent="3" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="32" parent="3" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="33" parent="3" name="fk_rails_476f1c8dfb">
+        <columns>ebook_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="34" parent="3" name="index_cart_items_on_user_id_and_ebook_id">
+        <columns>user_id
+ebook_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="35" parent="3" name="index_cart_items_on_user_id_and_ebook_id">
+        <columns>user_id
+ebook_id</columns>
+        <underlying-index>index_cart_items_on_user_id_and_ebook_id</underlying-index>
+      </key>
+      <key id="36" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="37" parent="3" name="fk_rails_476f1c8dfb">
+        <columns>ebook_id</columns>
+        <ref-key>~.ebooks.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="38" parent="3" name="fk_rails_fcb2cbf0bc">
+        <columns>user_id</columns>
+        <ref-key>~.users.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="39" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="40" parent="4" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="41" parent="4" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="42" parent="4" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="43" parent="4" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <key id="44" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="45" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="46" parent="5" name="category_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="47" parent="5" name="ISBN">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="48" parent="5" name="title">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="49" parent="5" name="author">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="50" parent="5" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="51" parent="5" name="price">
+        <data-type>float</data-type>
+      </column>
+      <column id="52" parent="5" name="pdf">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="53" parent="5" name="ebook_image">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="54" parent="5" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="55" parent="5" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="56" parent="5" name="index_ebooks_on_category_id">
+        <columns>category_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="57" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="58" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="59" parent="6" name="user_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="60" parent="6" name="int_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="61" parent="6" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="62" parent="6" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <index id="63" parent="6" name="index_orders_on_int_id">
+        <columns>int_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="64" parent="6" name="index_orders_on_user_id">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="65" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="66" parent="7" name="version">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="67" parent="7" name="unique_schema_migrations">
+        <columns>version</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="68" parent="7" name="unique_schema_migrations">
+        <columns>version</columns>
+        <underlying-index>unique_schema_migrations</underlying-index>
+      </key>
+      <column id="69" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="70" parent="8" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="71" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="72" parent="8" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <key id="73" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="74" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="75" parent="9" name="provider">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;email&apos;</default-expression>
+      </column>
+      <column id="76" parent="9" name="uid">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="77" parent="9" name="encrypted_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="78" parent="9" name="reset_password_token">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="79" parent="9" name="reset_password_sent_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="80" parent="9" name="remember_created_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="81" parent="9" name="sign_in_count">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="82" parent="9" name="current_sign_in_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="83" parent="9" name="last_sign_in_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="84" parent="9" name="current_sign_in_ip">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="85" parent="9" name="last_sign_in_ip">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="86" parent="9" name="confirmation_token">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="87" parent="9" name="confirmed_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="88" parent="9" name="confirmation_sent_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="89" parent="9" name="unconfirmed_email">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="90" parent="9" name="fullname">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="91" parent="9" name="title_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="92" parent="9" name="email">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="93" parent="9" name="tokens">
+        <data-type>text</data-type>
+      </column>
+      <column id="94" parent="9" name="created_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="95" parent="9" name="updated_at">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="96" parent="9" name="blocked">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="97" parent="9" name="resblock">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <index id="98" parent="9" name="fk_rails_e9277efd4e">
+        <columns>title_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="99" parent="9" name="index_users_on_email">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="100" parent="9" name="index_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="101" parent="9" name="index_users_on_uid_and_provider">
+        <columns>uid
+provider</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="102" parent="9" name="index_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <underlying-index>index_users_on_reset_password_token</underlying-index>
+      </key>
+      <key id="103" parent="9" name="index_users_on_uid_and_provider">
+        <columns>uid
+provider</columns>
+        <underlying-index>index_users_on_uid_and_provider</underlying-index>
+      </key>
+      <key id="104" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="105" parent="9" name="fk_rails_e9277efd4e">
+        <columns>title_id</columns>
+        <ref-key>~.titles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+</component>
