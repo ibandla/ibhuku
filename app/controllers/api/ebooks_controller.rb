@@ -19,7 +19,7 @@
 
      def show              
      	@ebook = Ebook.find(ebook_params[:ebook_id])
-		render json:@ebook, status: 200
+		render json:@ebook, status: 418
 	 end 
 
       private

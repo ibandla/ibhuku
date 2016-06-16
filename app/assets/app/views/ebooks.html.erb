@@ -1,0 +1,103 @@
+<<<<<<< Updated upstream
+=======
+<div class="back">
+	<!-- <h2>PRODUCTS</h2> -->
+</div>
+		<!---->
+		<div class="product">
+			<div class="container">
+
+				<div class="col-md-3 product-price">
+					  <div ng-include="'<%= path_to_asset("views/pricerange.html") %>'"></div>
+		<!-- here2 -->
+				<div ng-include="'<%= path_to_asset("views/categories.html") %>'"></div>
+	<!-- here2 -->
+
+
+
+				<!--here-->
+				<div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div>
+			<!-- here -->
+
+				</div>
+
+
+			<!---->
+
+				<!---->
+				<div class="col-md-9 product-price1">
+
+			<!-- sort by -->
+				<!-- 	<div class="mens-toolbar">
+						<p class="showing">Showing 1–9 of 21 results</p>
+	                 <div class="sort">
+			            <select>
+			                  <option value=""> Sorting By Rate</option>
+			                    <option value="">Sorting By Color </option>
+			                    <option value="">Sorting By Price </option>
+			            </select>
+
+	    		     </div>
+
+                	<div class="clearfix"></div>
+		        </div> -->
+
+		        <!-- sort by -->
+
+
+		        <div class="product-right-top">
+		        	<div class="top-product">
+
+		        	<!-- one product -->
+			<nit-advanced-searchbox ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
+
+			<div hidden="">
+				{{searchParams}}
+			</div>
+				
+			 <div class="col-md-3 chain-grid"  ng-repeat="(key, ebook) in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams ">
+		        			
+								<ngcart-addtocart  quantity="1" quantity-max="1" image="{{ebook.ebook_image.standard.url}}" id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+	   		     		</div>
+
+	   		     	</div>
+
+
+
+	   		     	<!-- one product -->
+
+
+
+
+		        <!-- end of products -->
+
+		      
+				<div class="clearfix"> </div>
+				</div>
+
+
+				<div> <bgf-pagination per-page="8"
+  collection="ebooks"
+  url="'api/ebooks'">
+</bgf-pagination></div>
+
+			<div class="clearfix"> </div>
+
+		<div ng-include="'<%= path_to_asset("views/ebookfooter.html") %>'"></div>
+
+
+
+				</div>
+
+			<!---->
+
+		</div>
+	<!-- 	<div class="bottom-grid1">
+
+					<div class="fit1">
+						<h3>HAPPY SHOPPING</h3>
+						<p>Lorem Ipsum sit amet consectuer adipiscing elit
+sed diam nonummy nibh euismod</p>
+					</div>
+				</div> -->
+>>>>>>> Stashed changes
