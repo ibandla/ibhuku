@@ -9,13 +9,11 @@
     </data-source>
     <data-source name="Rails ibhuku: development" uuid="d1d36365-8b01-4ac0-b725-c7ae9e4f8ffa">
       <user-name>root</user-name>
-      <user-password>df9bdf98df99df9edf9f</user-password>
       <schema-pattern>ibhuku_development1.*</schema-pattern>
       <default-schemas>ibhuku_development1.*</default-schemas>
     </data-source>
     <data-source name="Rails ibhuku: test" uuid="08f64277-7f0a-4759-b132-3540f19f9d21">
       <user-name>root</user-name>
-      <user-password>df9bdf98df99df9edf9f</user-password>
       <schema-pattern>ibhuku_test1.*</schema-pattern>
       <default-schemas>ibhuku_test1.*</default-schemas>
     </data-source>

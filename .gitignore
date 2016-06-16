@@ -21,3 +21,5 @@ config/database.yml
 public/uploads/ebook/pdf/1/Task_1_-_Simple_Bank_Application.pdf
 public/uploads/ebook/pdf/1/Activty_1.pdf
 *.db
+# Ignore application configuration
+/config/application.yml

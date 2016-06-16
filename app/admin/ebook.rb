@@ -32,26 +32,25 @@ ActiveAdmin.register Ebook do
     end
   end   
     show do
-        attributes_table :title, :author,:description,:price,:category_id
+        attributes_table :title, :author,:description,:price,:category
     end
 
     filter :title
     filter :author
     filter :price
-    filter :category
+    filter :category_id
     filter :ISBN
 
     form(:html => { :multipart => true }) do |f|
         f.inputs "Ebook" do
             f.input :title
             f.input :author
-            f.input :category_id, as: :select, collection: Category.all   
+            f.input :category_id, as: :select, collection: Category.all
             f.input :ISBN                 
             f.input :description
             f.input :price
             f.input :ebook_image, :as => :file, :hint => image_tag(f.object.ebook_image.url(:thumb))
-            f.input :pdf, :hint => cl_image_tag(f.object.pdf.url, :format => :png,:width => 200, :height => 250,
-                 :crop => :fill, :page => 1)
+            f.input :pdf ,:as => :file,:hint => cl_image_tag(f.object.pdf.url, :format => :png,:width => 200, :height => 250,:crop => :fill, :page => 1)
             # f.input :pdf_cache ,as: :hidden    
         end
         f.actions

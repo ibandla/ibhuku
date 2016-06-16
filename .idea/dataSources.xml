@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1010982914">
+  <component name="DataSourceManagerImpl" format="xml" hash="1786633251">
     <data-source source="LOCAL" name="Rails ibhuku: school" uuid="f91c0066-0a97-4593-b786-d9d8e6ac8547">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

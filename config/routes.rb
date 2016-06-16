@@ -1,8 +1,13 @@
 
 Rails.application.routes.draw do
 
+  
+
+  get 'charges/new'
+
+  get 'charges/create'
+
   root 'welcome#index'
-  resources :charges
 
   mount_devise_token_auth_for 'User', at: 'api/auth', controllers: { registrations: "user/registrations",passwords:"user/passwords", sessions:"user/sessions" , confirmations:"user/confirmations",token_validations:"user/token_validations"}
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -12,7 +17,7 @@ Rails.application.routes.draw do
      resources :ebooks, only: [:index, :show], param: :ebook_id
      resources :token, only: [:index]
      resources :titles, only: [:index]
-      resources :charges
+   resources :charges, only: [:create], param: :data
 
   end
   match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]

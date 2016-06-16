@@ -15,7 +15,8 @@ ActiveAdmin.register User do
   # batch_action :banned do |ids|
   #   redirect_to collection_path, alert: "Selected Users were blocked"
   # end
-actions :all, :except => [:new,:create,:destroy]
+actions :all
+# , :except => [:new,:create,:destroy]
   
   form do |f|
     f.inputs "User" do

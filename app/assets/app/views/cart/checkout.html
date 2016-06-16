@@ -1,6 +1,12 @@
 
 <div ng-if="service=='http' || service == 'log'">
     <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_GZzKl1LRSB5gqHohCizCZKrW"
+          data-description=""
+          data-amount="<%=@amount%>"
+          data-currency="kes"
+          data-locale="auto"></script>
 </div>
 
 

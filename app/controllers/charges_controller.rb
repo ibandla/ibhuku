@@ -1,25 +1,42 @@
 class ChargesController < ApplicationController
-	def new
-end
-
+	def new 
+    @user = current_user    
+    @amount = charge_params[:totalCost]
+  end
 def create
-  # Amount in cents
-  @amount = 500
+        render json: charge_params
+
+  @amount = charge_params[:totalCost]
 
   customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
-    :source  => params[:stripeToken]
+    :email => @user.email,
+    :card  => params[:stripeToken]
   )
 
   charge = Stripe::Charge.create(
-    :customer    => customer.id,
+    :customer    => @user.id,
     :amount      => @amount,
     :description => 'Rails Stripe customer',
     :currency    => 'kes'
   )
 
-rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_charge_path
-end
+      # this changes the status of the current cart to success 
+  @cart_item.update_status(current_cartitem)
+  session[:cart_item_id] = nil
+  redirect_to current_user, notice: 'You placed an order!'
+  if charge["paid"]
+  	@order = Order.new
+  	@order.new(order_params)
+  	if @order.save
+  		
+  	end
+  end
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to charges_path
+  end    
+  private
+    def charge_params
+      params.require(:data).permit(:tax,:taxRate,:subTotal,:totalCost,:items=> [ :id,:name,:price,:total]).merge(user_id: current_user.id)
+    end
 end

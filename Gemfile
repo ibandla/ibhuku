@@ -10,6 +10,7 @@ gem 'sprockets-image_compressor'
 gem 'sprockets'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem "bower-rails", "~> 0.10.0"
+gem "figaro"
 # gem 'rails-assets-angular', '= 1.3.9'
 # gem 'spree_digital', github: 'halo/spree_digital', branch: '3-0-stable'
 gem 'stripe'
@@ -52,9 +53,9 @@ gem 'bootstrap-sass'
 gem 'devise_token_auth'
 gem 'omniauth'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '~>4.2.6'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.13', '< 0.5'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
