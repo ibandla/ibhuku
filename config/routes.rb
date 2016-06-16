@@ -11,19 +11,8 @@ Rails.application.routes.draw do
      resources :token, only: [:index]
      resources :titles, only: [:index]
   end
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  # match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  # match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  # match '/*path' => 'welcome#index', via:[:get,:post]
-=======
   match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
   match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
   match '/*path' => 'welcome#index', via:[:get,:post]
->>>>>>> Stashed changes
-=======
-  match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  match '/*path' => 'welcome#index', via:[:get,:post]
->>>>>>> Stashed changes
+
 end
