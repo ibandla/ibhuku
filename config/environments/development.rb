@@ -28,6 +28,20 @@ user_name: "noreply.ibhuku@gmail.com",
 password: "ibandlas"
 }
 
+# # Sets environment to :development
+# pesapal = Pesapal::Merchant.new(:development)
+# #set order details
+# pesapal.order_details = { :amount => 1000,
+#                           :description => 'this is the transaction description',
+#                           :type => 'MERCHANT',
+#                           :reference => '808-707-606',
+#                           :first_name => 'Swaleh',
+#                           :last_name => 'Mdoe',
+#                           :email => 'user@example.com',
+#                           :phonenumber => '+254722222222',
+#                           :currency => 'KES'
+#                         }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

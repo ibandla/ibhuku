@@ -21,6 +21,22 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+  # # Sets environment to :production
+  # pesapal = Pesapal::Merchant.new(:production)
+  # #set order details
+  # pesapal.order_details = { :amount => 1000,
+  #                           :description => 'this is the transaction description',
+  #                           :type => 'MERCHANT',
+  #                           :reference => '808-707-606',
+  #                           :first_name => 'Swaleh',
+  #                           :last_name => 'Mdoe',
+  #                           :email => 'user@example.com',
+  #                           :phonenumber => '+254722222222',
+  #                           :currency => 'KES'
+  #                         }
+  # # generate transaction url
+  # order_url = pesapal.generate_order_url
+
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.action_mailer.default_url_options = { :host => 'ibhuku.tk' }
@@ -38,7 +54,7 @@ Rails.application.configure do
     user_name: "noreply.ibhuku@gmail.com",
     password: "ibandlas"
   }
-  
+
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.

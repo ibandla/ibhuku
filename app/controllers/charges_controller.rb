@@ -6,7 +6,10 @@ class ChargesController < ApplicationController
 def create
         render json: charge_params
 
-  @amount = charge_params[:totalCost]
+  @amount = charge_params[:totalCost]*100
+  # Amount in cents
+
+
 
   customer = Stripe::Customer.create(
     :email => @user.email,
