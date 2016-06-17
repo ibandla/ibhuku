@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609130232) do
+ActiveRecord::Schema.define(version: 20160617073354) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 20160609130232) do
   add_index "categorisations", ["category_id"], name: "index_categorisations_on_category_id", using: :btree
   add_index "categorisations", ["ebook_id"], name: "index_categorisations_on_ebook_id", using: :btree
 
+  create_table "categorizations", force: :cascade do |t|
+    t.integer  "category_id", limit: 4
+    t.integer  "ebook_id",    limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id", using: :btree
+  add_index "categorizations", ["ebook_id"], name: "index_categorizations_on_ebook_id", using: :btree
+
   create_table "controllers", force: :cascade do |t|
     t.string   "charges",    limit: 255
     t.datetime "created_at",             null: false
@@ -76,7 +86,6 @@ ActiveRecord::Schema.define(version: 20160609130232) do
   add_index "ebook_orders", ["order_id"], name: "index_ebook_orders_on_order_id", using: :btree
 
   create_table "ebooks", force: :cascade do |t|
-    t.integer  "category_id", limit: 4
     t.string   "ISBN",        limit: 255
     t.string   "title",       limit: 255
     t.string   "author",      limit: 255
@@ -88,8 +97,6 @@ ActiveRecord::Schema.define(version: 20160609130232) do
     t.datetime "updated_at",                null: false
   end
 
-  add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
-
   create_table "executes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -97,13 +104,11 @@ ActiveRecord::Schema.define(version: 20160609130232) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
-    t.integer  "int_id",     limit: 4
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.decimal  "total",                precision: 10, null: false
   end
 
-  add_index "orders", ["int_id"], name: "index_orders_on_int_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "payments", force: :cascade do |t|
@@ -152,6 +157,8 @@ ActiveRecord::Schema.define(version: 20160609130232) do
   add_foreign_key "cart_items", "users"
   add_foreign_key "categorisations", "categories"
   add_foreign_key "categorisations", "ebooks"
+  add_foreign_key "categorizations", "categories"
+  add_foreign_key "categorizations", "ebooks"
   add_foreign_key "ebook_orders", "ebooks"
   add_foreign_key "ebook_orders", "orders"
   add_foreign_key "users", "titles"
