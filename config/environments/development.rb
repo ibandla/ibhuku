@@ -18,6 +18,8 @@ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   config.action_mailer.delivery_method = :smtp
 
+  config.web_console.whitelisted_ips = '10.0.2.2','192.168.10.1'
+
 config.action_mailer.smtp_settings = {
 address: "smtp.gmail.com",
 port: 587,

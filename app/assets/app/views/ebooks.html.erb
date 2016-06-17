@@ -1,137 +1,95 @@
 
-<div class="back">
-	<!-- <h2>PRODUCTS</h2> -->
-</div>
-		<!---->
-		<div class="product">
-			<div class="container">
+        <!---->
+        <div class="product">
+            <div class="container">
 
-				<div class="col-md-3 product-price">
-					  <div ng-include="'<%= path_to_asset("views/pricerange.html") %>'"></div>
-		<!-- here2 -->
-				<div ng-include="'<%= path_to_asset("views/categories.html") %>'"></div>
-	<!-- here2 -->
+                <div class="col-md-3 product-price">
+                      <div ng-include="'<%= path_to_asset("views/pricerange.html") %>'"></div>
+        <!-- here2 -->
+                <div ng-include="'<%= path_to_asset("views/categories.html") %>'"></div>
+    <!-- here2 -->
 
 
 
-				<!--here-->
-				<div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div>
-			<!-- here -->
+                <!--here-->
+                <div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div>
+            <!-- here -->
 
-				</div>
-
-
-			<!---->
-
-				<!---->
-				<div class="col-md-9 product-price1">
-
-			<!-- sort by -->
-				<!-- 	<div class="mens-toolbar">
-						<p class="showing">Showing 1–9 of 21 results</p>
-	                 <div class="sort">
-			            <select>
-			                  <option value=""> Sorting By Rate</option>
-			                    <option value="">Sorting By Color </option>
-			                    <option value="">Sorting By Price </option>
-			            </select>
-
-	    		     </div>
-
-                	<div class="clearfix"></div>
-		        </div> -->
-
-		        <!-- sort by -->
-
-
-		        <div class="product-right-top">
-		        	<div class="top-product">
-
-		        	<!-- one product -->
-			<nit-advanced-searchbox ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
-
-			<div hidden="">
-				{{searchParams}}
-			</div>
-				
-
-			 <!-- <div class=""  ng-repeat="(key, ebook) in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams "> -->
-		        			
-							  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.4s>
-             
-    <main class=mdl-layout__content>
-        <div class=ibhuku-section>
-            <div class=ibhuku-section__content>
-                <div class="mdl-grid mdl-grid--no-fullwidth">
-                  
-                   
-                   
-                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone ibhuku-animation" data-os-animation=fadeIn data-os-animation-delay=0.4s>
-                        <div class="mdl-card mdl-shadow--2dp ibhuku-card-product">
-                            <div class="mdl-card__media ibhuku-card-product__media">
-                                <a href=single-product.html><img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-4-a-medium-notinclude.jpg> <img alt="some product" class=ibhuku-card-product__image src=assets/images/products/product-4-b-medium-notinclude.jpg></a>
-                                <div class="mdl-card__title ibhuku-card-product__title">
-                                    <h3 class="mdl-card__title-text ibhuku-card-product__title-text"><a href=single-product.html class=mdl-typography--font-light>Etincelle Printed Top</a></h3><span class="mdl-typography--text-uppercase mdl-typography--font-bold ibhuku-card-product__tags"><a href=shop.html rel=tag>Womens</a>, <a href=shop.html rel=tag>Tops</a></span>
-                                    <div class="ibhuku-rating ibhuku-card-product__rating ibhuku-card-product__rating--animated" title="Rated 5.00 out of 5"><span style=width:100%><strong class=ibhuku-rating__stars>5.00</strong> out of 5</span></div>
-                                </div>
-                            </div>
-                            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><del><span>£22</span></del><ins><span>£14</span></ins></strong>
-                                <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                   
                 </div>
+
+
+            <!---->
+
+                <!---->
+                <div class="col-md-9 product-price1">
+
+            <!-- sort by -->
+                <!--    <div class="mens-toolbar">
+                        <p class="showing">Showing 1–9 of 21 results</p>
+                     <div class="sort">
+                        <select>
+                              <option value=""> Sorting By Rate</option>
+                                <option value="">Sorting By Color </option>
+                                <option value="">Sorting By Price </option>
+                        </select>
+                     </div>
+                    <div class="clearfix"></div>
+                </div> -->
+
+                <!-- sort by -->
+
+
+                <div class="product-right-top">
+                    <div class="top-product">
+
+                    <!-- one product -->
+            <nit-advanced-searchbox ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
+
+            <div hidden="">
+                {{searchParams}}
             </div>
-        </div>
-    </main>
-                     
-                              </div>
-	   		     		<!-- </div> -->
-	   		     		<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--colored ibhuku-button-fab ibhuku-js-button-shopping-cart mdl-badge ibhuku-button-fab__badge" data-badge=0><i class=material-icons>shopping_cart</i></button>
+                
+             <div class="col-md-4 chain-grid"  ng-repeat="(key, ebook) in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams ">
+                            
+                                <ngcart-addtocart  quantity="1" quantity-max="1" image="{{ebook.ebook_image.standard.url}}" id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+                        </div>
 
-	   		     	</div>
-
-
-
-	   		     	<!-- one product -->
+                    </div>
 
 
 
-
-		        <!-- end of products -->
-
-		      
-				<div class="clearfix"> </div>
-				</div>
+                    <!-- one product -->
 
 
-				<div> <bgf-pagination per-page="8"
+
+
+                <!-- end of products -->
+
+              
+                <div class="clearfix"> </div>
+                </div>
+
+
+                <div> <bgf-pagination per-page="8"
   collection="ebooks"
   url="'api/ebooks'">
 </bgf-pagination></div>
 
-			<div class="clearfix"> </div>
+            <div class="clearfix"> </div>
 
-		<div ng-include="'<%= path_to_asset("views/ebookfooter.html") %>'"></div>
+        <div ng-include="'<%= path_to_asset("views/ebookfooter.html") %>'"></div>
 
 
 
-				</div>
+                </div>
 
-			<!---->
+            <!---->
 
-		</div>
-	<!-- 	<div class="bottom-grid1">
-
-					<div class="fit1">
-						<h3>HAPPY SHOPPING</h3>
-						<p>Lorem Ipsum sit amet consectuer adipiscing elit
+        </div>
+    <!--    <div class="bottom-grid1">
+                    <div class="fit1">
+                        <h3>HAPPY SHOPPING</h3>
+                        <p>Lorem Ipsum sit amet consectuer adipiscing elit
 sed diam nonummy nibh euismod</p>
-					</div>
-				</div> -->
-
-
-                <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button mdl-layout--fixed-header"></div>
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--colored ibhuku-button-fab ibhuku-js-button-shopping-cart mdl-badge ibhuku-button-fab__badge" data-badge=0><i class=material-icons>shopping_cart</i></button>
+                    </div>
+                </div> -->

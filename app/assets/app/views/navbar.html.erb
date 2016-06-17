@@ -1,5 +1,9 @@
 <div ng-controller="NavbarCtrl">
-    
+    <nav mfb-menu position="br" effect="zoomin" label="Cart Summary"
+     active-icon="ion-ios-cart" resting-icon="ion-ios-cart-outline"
+     toggling-method="click">
+  <button mfb-button icon="ion-android-open" ui-sref="cart" label="{{summary}}"></button>
+</nav>
 <div class="{{header}}" id="mainheader">
 <style type="text/css">
 

@@ -21,3 +21,5 @@
 //= require ./bower_components/angular-material/angular-material
 //= require ./bower_components/angular-messages/angular-messages
 //= require ./bower_components/angular-formly-material/dist/formly-material
+//= require ./bower_components/ng-material-floating-button/mfb/dist/lib/modernizr.touch
+//= require ./bower_components/ng-material-floating-button/src/mfb-directive

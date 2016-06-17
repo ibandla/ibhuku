@@ -1,5 +1,14 @@
-app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window) {
+app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window,ngCart) {
+    var it = "";
+  if(ngCart.getTotalItems() == 1){
+      it = "item";
+  }
+  else{
+    it = "items";
+  }
+  
 
+    $scope.summary =  'KES '+(ngCart.totalCost())+', '+(ngCart.getTotalItems()) + ' ' + it;
     $rootScope.ebooks = {};
 
     $rootScope.searchParams = {

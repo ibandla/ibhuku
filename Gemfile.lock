@@ -156,6 +156,7 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
+    ionicons-rails (2.0.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -333,6 +334,7 @@ DEPENDENCIES
   devise_token_auth
   face_of_active_admin
   font-awesome-rails
+  ionicons-rails
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)

@@ -9101,7 +9101,39 @@ if (1 == window.tplogs) try {
             var s = e(".mdl-navigation__link--submenu");
             e(s).click(function(t) {
                 e(this).toggleClass("is-open").siblings().removeClass("is-open"), t.preventDefault()
-            }),e("body").on("click", ".ibhuku-alert--action", function() {
+            }), e(".ibhuku-js-button-add-product").click(function() {
+                var t = this,
+                    n = e(t),
+                    i = "tada animated",
+                    s = "rubberBand animated";
+                t.pending || (t.pending = !0, n.addClass(i).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function() {
+                    n.removeClass(i), n.addClass("ibhuku-button-add-product--pending");
+                    var r = n.offset().top,
+                        a = n.offset().left,
+                        o = n.clone().offset({
+                            top: r,
+                            left: a
+                        }).addClass("ibhuku-button-add-product--clone").appendTo(e("body")),
+                        l = e(".ibhuku-js-button-shopping-cart"),
+                        d = l.offset().top + l.height() / 2 - o.height() / 2,
+                        u = l.offset().left + l.width() / 2 - o.width() / 2,
+                        c = Math.floor(Math.sqrt(Math.pow(r - d, 2) + Math.pow(a - u, 2))),
+                        h = 600 + Math.floor(c / 3);
+                    o.transition({
+                        top: d,
+                        left: u,
+                        easing: "easeInOutQuart",
+                        duration: h,
+                        complete: function() {
+                            o.remove(), t.pending = !1, l.addClass(s).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function() {
+                                l.removeClass(s);
+                                var e = parseInt(l.attr("data-badge")) + 1;
+                                l.attr("data-badge", e)
+                            }), n.removeClass("ibhuku-button-add-product--pending").addClass("ibhuku-button-add-product--added")
+                        }
+                    })
+                }))
+            }), e("body").on("click", ".ibhuku-alert--action", function() {
                 e(this).parent().animate({
                     opacity: 0
                 }, 500, function() {

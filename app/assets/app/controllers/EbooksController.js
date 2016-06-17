@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
- app.controller('EbooksCtrl', function($rootScope,$scope,Ebook,ngCart) {
-=======
-=======
->>>>>>> Stashed changes
+
  app.controller('EbooksCtrl', function($scope,Ebook,ngCart) {
 
   	$scope.ebooks;/* = Ebook.all();*/
@@ -20,24 +15,10 @@
           { key: "description", name: "Description", placeholder: "Description..." }
         ];
 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
     $scope.priceInfo = {
       min: 0,
       max: 1500
     }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
-
-
->>>>>>> Stashed changes
-=======
-
-
-
->>>>>>> Stashed changes
+    
 });
