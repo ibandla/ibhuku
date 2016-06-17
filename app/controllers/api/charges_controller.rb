@@ -6,6 +6,7 @@
 		@amount = charge_params[:totalCost]
 
 	end
+
      def create
 
      	render json: charge_params
@@ -19,6 +20,7 @@
 
   	charge = Stripe::Charge.create(
     	:customer    => @user.email,
+
     	:amount      => @amount,
     	:description => 'Rails Stripe customer',
     	:currency    => 'kes'

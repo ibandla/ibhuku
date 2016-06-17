@@ -1,6 +1,36 @@
-<div class="grid-span-1">
-                        <a  ui-sref="ebook({ebookID:{{id}}})">
-                <img ng-src="{{attrs.image}}" alt="" class="img-responsive">
+ <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" ng-src="{{attrs.image}}" ui-sref="ebook({ebookID:{{id}}})">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{attrs.name}}
+      <!-- <i class="material-icons right">more_vert</i></span> -->
+      <!-- <p><a ui-sref="ebook({ebookID:{{id}}})">View</a></p>
+       <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button> -->
+         <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><ins><span>KES {{attrs.price}}</span></ins></strong>
+                               
+
+                                <button ng-hide="inCart()" class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i ng-click="ngCart.addItem(id, name, price, 1, data)" class=material-icons>add_shopping_cart</i></button>
+
+                                <button  ng-show="inCart()" class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i ng-click="ngCart.removeItemById(id)" class=material-icons>remove_shopping_cart</i></button>
+
+
+                               
+                            </div>
+
+
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{attrs.name}}<i class="material-icons right">close</i></span>
+      <p>{{attrs.desc}}</p>
+    </div>
+  </div>
+
+
+
+<!-- <div class="grid-span-1">
+                        <a  >
+                <img  alt="" class="img-responsive">
                             <div class="link">
                             <ul >
                                         <li><i> </i></li>
@@ -59,7 +89,7 @@
                     <div class="clearfix"> </div>
                     <div>
   
-    </div>
+    </div> -->
 <!--   <p  ng-show="inCart()">
         This item is in your cart. <a  style="cursor: pointer;">Remove</a>
         <div class="clearfix"> </div>

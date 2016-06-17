@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Rails.application.routes.draw do
 
@@ -23,4 +24,5 @@ Rails.application.routes.draw do
   match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
   match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
   match '/*path' => 'welcome#index', via:[:get,:post]
+
 end

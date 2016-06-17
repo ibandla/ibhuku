@@ -1,3 +1,4 @@
+
  app.controller('EbooksCtrl', function($scope,Ebook,ngCart) {
 
   	$scope.ebooks;/* = Ebook.all();*/
@@ -14,11 +15,10 @@
           { key: "description", name: "Description", placeholder: "Description..." }
         ];
 
+
     $scope.priceInfo = {
       min: 0,
       max: 1500
     }
-
-
-
+    
 });
