@@ -5,6 +5,8 @@ class ChargesController < ApplicationController
   end
 def create
         render json: charge_params
+  
+  @user = current_user    
 
   @amount = charge_params[:totalCost]*100
   # Amount in cents

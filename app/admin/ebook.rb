@@ -38,7 +38,7 @@ ActiveAdmin.register Ebook do
     filter :title
     filter :author
     filter :price
-    filter :category_id
+    filter :category
     filter :ISBN
 
     form(:html => { :multipart => true }) do |f|
@@ -50,7 +50,8 @@ ActiveAdmin.register Ebook do
             f.input :description
             f.input :price
             f.input :ebook_image, :as => :file, :hint => image_tag(f.object.ebook_image.url(:thumb))
-            f.input :pdf ,:as => :file,:hint => cl_image_tag(f.object.pdf.url, :format => :png,:width => 200, :height => 250,:crop => :fill, :page => 1)
+            f.input :pdf ,:as => :file
+            # ,:  hint => cl_image_tag(f.object.pdf.url, :format => :png,:width => 200, :height => 250,:crop => :fill, :page => 1)
             # f.input :pdf_cache ,as: :hidden    
         end
         f.actions

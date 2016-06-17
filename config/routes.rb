@@ -17,7 +17,7 @@ Rails.application.routes.draw do
      resources :ebooks, only: [:index, :show], param: :ebook_id
      resources :token, only: [:index]
      resources :titles, only: [:index]
-   resources :charges, only: [:create], param: :data
+   resources :charges, only: [:create,:new], param: :data
 
   end
   match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
