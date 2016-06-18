@@ -1,56 +1,21 @@
-<div class="back">
-	<!-- <h2>CHECKOUT</h2> -->
-</div>
+
 		<!---->
 		<div class="product">
 			<div class="container">
-	<div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div>
-        <ngcart-checkout service="http" settings="{ url:'/api/charges/'}"></ngcart-checkout>
-			
-				<!---->
-				<div class="col-md-9 product-price1">
-				<div class="check-out">	 
-			
-		 <div class=" cart-items">
-			 <h3>My Shopping Bag (2)</h3>
-				
-				
-				  <div class="in-check" >
-		  <ul class="unit">
-			<li><span>Item</span></li>
-			<li><span>Product Name</span></li>		
-			<li><span>Unit Price</span></li>
-			<li><span>Stock Status</span></li>
-			<li> </li>
-			<div class="clearfix"> </div>
-		  </ul>
-		  <ul class="cart-header">
-		   <div class="close1"> </div>
-			<li class="ring-in"><a ui-sref="product" ><%= image_tag "f1.jpg", :class => "img-responsive" ,:alt=>"" %></a>
-			</li>
-			<li><span>Woo Dress</span></li>
-			<li><span>$ 60.00</span></li>
-			<li><span>In Stock</span></li>
-			<li> <a ui-sref="product" class="add-cart cart-check">ADD TO CART</a></li>
-			<div class="clearfix"> </div>
-			</ul>
- <ul class=" cart-header1">
-		   <div class="close2"> </div>
-			<li class="ring-in"><a ui-sref="product" ><%= image_tag "f2.jpg", :class => "img-responsive" ,:alt=>"" %></a>
-			</li>
-			<li><span>Woo Dress</span></li>
-			<li><span>$ 60.00</span></li>
-			<li><span>In Stock</span></li>
-			<li> <a ui-sref="product" class="add-cart cart-check">ADD TO CART</a></li>
-			<div class="clearfix"> </div>
-			</ul>
-		</div>
-			 </div>
-					  
-		 </div>
-		 
 
-				</div>
+					<div class="col-md-3 product-price">
+	
+	</div>
+				<!---->
+				<ngcart-cart></ngcart-cart>
+
+	<ngcart-checkout service="http" settings="{ url:'/api/charges/'}"></ngcart-checkout>
+	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_GZzKl1LRSB5gqHohCizCZKrW"
+          data-description=""
+          data-amount=""
+          data-currency="kes"
+          data-locale="auto"></script>
 				<div class="clearfix"> </div>
 			</div>
 		</div>

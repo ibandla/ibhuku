@@ -169,6 +169,7 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
+    ionicons-rails (2.0.0)
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -357,6 +358,7 @@ DEPENDENCIES
   face_of_active_admin
   figaro
   font-awesome-rails
+  ionicons-rails
   jbuilder (~> 2.0)
   jquery-rails
   mysql2

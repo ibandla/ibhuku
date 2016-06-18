@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem "recaptcha", require: "recaptcha/rails", :github => 'ibandla/recaptcha'
 gem 'ngannotate-rails'
+gem 'ionicons-rails'
 gem 'angular_rails_csrf'
 gem 'puma'
 gem 'cloudinary'

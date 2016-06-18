@@ -15,6 +15,7 @@ default: &default
   pool: 5
   username: root
   password: secret
+  
 development:
   <<: *default
   database: ibhuku_development1
