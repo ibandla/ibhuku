@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617065713) do
+ActiveRecord::Schema.define(version: 20160618125750) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 20160617065713) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "categorisations", force: :cascade do |t|
+    t.integer  "ebook_id",    limit: 4
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "categorisations", ["category_id"], name: "index_categorisations_on_category_id", using: :btree
+  add_index "categorisations", ["ebook_id"], name: "index_categorisations_on_ebook_id", using: :btree
+
   create_table "categorizations", force: :cascade do |t|
     t.integer  "category_id", limit: 4
     t.integer  "ebook_id",    limit: 4
@@ -76,7 +86,6 @@ ActiveRecord::Schema.define(version: 20160617065713) do
   add_index "ebook_orders", ["order_id"], name: "index_ebook_orders_on_order_id", using: :btree
 
   create_table "ebooks", force: :cascade do |t|
-    t.integer  "category_id", limit: 4
     t.string   "ISBN",        limit: 255
     t.string   "title",       limit: 255
     t.string   "author",      limit: 255
@@ -87,8 +96,6 @@ ActiveRecord::Schema.define(version: 20160617065713) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
-
-  add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
 
   create_table "executes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -108,6 +115,16 @@ ActiveRecord::Schema.define(version: 20160617065713) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "telegram_users", force: :cascade do |t|
+    t.integer  "telegram_id", limit: 4
+    t.string   "first_name",  limit: 255
+    t.string   "username",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "telegram_users", ["telegram_id"], name: "index_telegram_users_on_telegram_id", using: :btree
 
   create_table "titles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -148,6 +165,8 @@ ActiveRecord::Schema.define(version: 20160617065713) do
 
   add_foreign_key "cart_items", "ebooks"
   add_foreign_key "cart_items", "users"
+  add_foreign_key "categorisations", "categories"
+  add_foreign_key "categorisations", "ebooks"
   add_foreign_key "categorizations", "categories"
   add_foreign_key "categorizations", "ebooks"
   add_foreign_key "ebook_orders", "ebooks"

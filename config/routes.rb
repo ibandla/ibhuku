@@ -1,4 +1,4 @@
-Rails.application.routes.draw do 
+Rails.application.routes.draw do
 
   get 'charges/new'
   get 'charges/create'
@@ -12,10 +12,7 @@ Rails.application.routes.draw do
      resources :token, only: [:index]
      resources :titles, only: [:index]
      resources :charges, only: [:create,:new], param: :data
-
   end
-  match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  match '/*path' => 'welcome#index', via:[:get,:post]
+  post '202047446:AAHdxPmilyrI-hC3Qat0Igl0ZrncwpjYiFQ' => 'api/hook#webhook'
 
 end
