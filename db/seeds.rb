@@ -1,19 +1,8 @@
-# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-# Title.create!(name:'Mr')
-# Title.create!(name:'Ms')
-# Title.create!(name:'Mrs')
-# Category.create!(name:'Horror')
-Category.create!(name:'Fiction', description:"1")
-Category.create!(name: 'Classic', description:"1")
-Category.create!(name: 'Poetry', description:"1")
-Category.create!(name: 'Auto Biographies', description:"1")
-Category.create!(name: 'Biographies', description:"1")
-Category.create!(name: 'Cook Books', description:"1")
-Category.create!(name: 'Technology', description:"1")
-Category.create!(name: 'Psychology', description:"1")
-Category.create!(name: 'Medicine', description:"1")
-Category.create!(name: 'Engineering', description:"1")
-Category.create!(name: 'Programming', description:"1")
-Category.create!(name: 'Psychiatry', description:"1")
-Category.create!(name: 'Motivational', description:"1")
-Category.create!(name: 'Politics', description:"1")
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

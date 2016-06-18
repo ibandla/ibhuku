@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160617140942) do
 
+
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -126,6 +127,16 @@ ActiveRecord::Schema.define(version: 20160617140942) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "telegram_users", force: :cascade do |t|
+    t.integer  "telegram_id", limit: 4
+    t.string   "first_name",  limit: 255
+    t.string   "username",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "telegram_users", ["telegram_id"], name: "index_telegram_users_on_telegram_id", using: :btree
 
   create_table "titles", force: :cascade do |t|
     t.string   "name",       limit: 255
