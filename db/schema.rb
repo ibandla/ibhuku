@@ -76,8 +76,13 @@ ActiveRecord::Schema.define(version: 20160618125750) do
   add_index "ebook_orders", ["order_id"], name: "index_ebook_orders_on_order_id", using: :btree
 
   create_table "ebooks", force: :cascade do |t|
+<<<<<<< HEAD
     t.integer  "category_id", limit: 4
     t.string   "ISBN",        limit: 255
+=======
+    t.integer  "int_id",      limit: 4
+    t.string   "ebook_id",    limit: 255
+>>>>>>> db20cdb7c1710fe396c85285f2b5013411ee0a20
     t.string   "title",       limit: 255
     t.string   "author",      limit: 255
     t.text     "description", limit: 65535
@@ -88,7 +93,11 @@ ActiveRecord::Schema.define(version: 20160618125750) do
     t.datetime "updated_at",                null: false
   end
 
+<<<<<<< HEAD
   add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
+=======
+  add_index "ebooks", ["int_id"], name: "index_ebooks_on_int_id", using: :btree
+>>>>>>> db20cdb7c1710fe396c85285f2b5013411ee0a20
 
   create_table "executes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -141,12 +150,13 @@ ActiveRecord::Schema.define(version: 20160618125750) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
-    t.string   "fullname",               limit: 255
+    t.string   "name",                   limit: 255
     t.integer  "title_id",               limit: 4
     t.string   "email",                  limit: 255
     t.text     "tokens",                 limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "banned"
     t.boolean  "blocked",                              default: false,   null: false
     t.boolean  "resblock",                             default: false,   null: false
   end
@@ -156,8 +166,11 @@ ActiveRecord::Schema.define(version: 20160618125750) do
   add_index "users", ["title_id"], name: "fk_rails_e9277efd4e", using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
+<<<<<<< HEAD
   add_foreign_key "cart_items", "ebooks"
   add_foreign_key "cart_items", "users"
+=======
+>>>>>>> db20cdb7c1710fe396c85285f2b5013411ee0a20
   add_foreign_key "categorizations", "categories"
   add_foreign_key "categorizations", "ebooks"
   add_foreign_key "ebook_orders", "ebooks"
