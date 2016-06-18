@@ -30,11 +30,7 @@ def create
   session[:cart_item_id] = nil
   redirect_to current_user, notice: 'You placed an order!'
   if charge["paid"]
-  	@order = Order.new
-  	@order.new(order_params)
-  	if @order.save
-  		
-  	end
+   Order.create!(charge_params)
   end
   rescue Stripe::CardError => e
     flash[:error] = e.message

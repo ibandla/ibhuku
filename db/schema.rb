@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160617105231) do
-=======
-ActiveRecord::Schema.define(version: 20160617073354) do
->>>>>>> e82e53fec62827e6b785390bda5c64c7fe0ff9bb
+ActiveRecord::Schema.define(version: 20160617140942) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -99,8 +95,12 @@ ActiveRecord::Schema.define(version: 20160617073354) do
     t.string   "ebook_image", limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-<<<<<<< HEAD
     t.integer  "category_id", limit: 4
+  end
+
+  create_table "executes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -113,15 +113,6 @@ ActiveRecord::Schema.define(version: 20160617073354) do
   add_index "order_items", ["ebook_id"], name: "fk_rails_ee4edda6dc", using: :btree
   add_index "order_items", ["order_id"], name: "fk_rails_e3cb28f071", using: :btree
 
-=======
-  end
-
-  create_table "executes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
->>>>>>> e82e53fec62827e6b785390bda5c64c7fe0ff9bb
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",                          null: false
@@ -131,14 +122,11 @@ ActiveRecord::Schema.define(version: 20160617073354) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
-<<<<<<< HEAD
-=======
   create_table "payments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
->>>>>>> e82e53fec62827e6b785390bda5c64c7fe0ff9bb
   create_table "titles", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
@@ -184,10 +172,7 @@ ActiveRecord::Schema.define(version: 20160617073354) do
   add_foreign_key "categorizations", "ebooks"
   add_foreign_key "ebook_orders", "ebooks"
   add_foreign_key "ebook_orders", "orders"
-<<<<<<< HEAD
   add_foreign_key "order_items", "ebooks"
   add_foreign_key "order_items", "orders"
-=======
->>>>>>> e82e53fec62827e6b785390bda5c64c7fe0ff9bb
   add_foreign_key "users", "titles"
 end

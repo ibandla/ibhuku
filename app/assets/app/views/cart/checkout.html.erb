@@ -1,13 +1,35 @@
 
 <div ng-if="service=='http' || service == 'log'">
     <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key='pk_test_GZzKl1LRSB5gqHohCizCZKrW'
-          data-description=""
-          data-amount="<%=@cart_item%>"
-          data-currency="kes"
-          data-locale="auto"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
 
+<button id="customButton">Purchase</button>
+
+<script>
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_GZzKl1LRSB5gqHohCizCZKrW',
+    locale: 'auto',
+    token: function(token) {
+      // You can access the token ID with `token.id`.
+      // Get the token ID to your server-side code for use.
+    }
+  });
+
+  $('#customButton').on('click', function(e) {
+    // Open Checkout with further options:
+    handler.open({
+      name: 'Stripe.com',
+      description: '2 widgets',
+      amount: 2000
+    });
+    e.preventDefault();
+  });
+
+  // Close Checkout on page navigation:
+  $(window).on('popstate', function() {
+    handler.close();
+  });
+</script>
 </div>
 
 
