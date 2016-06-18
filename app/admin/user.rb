@@ -27,7 +27,7 @@ actions :all
   index do 
     column :fullname
     column :email
-    column :blocked 
+    bool_column :blocked
     actions  
   end
   
