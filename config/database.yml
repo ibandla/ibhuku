@@ -14,14 +14,9 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-<<<<<<< HEAD
-  password: 
-
-
-=======
   password: homabay1993$
   
->>>>>>> db20cdb7c1710fe396c85285f2b5013411ee0a20
+
 development:
   <<: *default
   database: ibhuku_development1
