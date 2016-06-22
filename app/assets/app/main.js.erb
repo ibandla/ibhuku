@@ -1,8 +1,8 @@
-var app = angular.module('ibhuku', ['ui.router','ng-token-auth','ui-notification','ncy-angular-breadcrumb','restangular','bgf.paginateAnything','ngCart','vcRecaptcha','ui.select', 'ngSanitize','angular-advanced-searchbox','ngMaterial','ngMessages','formly','ng-mfb','formlyMaterial']);
+var app = angular.module('ibhuku', ['ui.router','stripe.checkout','ng-token-auth','ui-notification','ncy-angular-breadcrumb','restangular','bgf.paginateAnything','ngCart','vcRecaptcha','ui.select', 'ngSanitize','angular-advanced-searchbox','ngMaterial','ngMessages','formly','ng-mfb','formlyMaterial']);
 $(document).on('ready page:load', function(arguments) {
   angular.bootstrap(document.body, ['ibhuku'])
 });
-app.config(function($stateProvider,$mdThemingProvider,$httpProvider,uiSelectConfig,vcRecaptchaServiceProvider,$urlRouterProvider,$authProvider,RestangularProvider,NotificationProvider,$locationProvider) {
+app.config(function($stateProvider,StripeCheckoutProvider,$mdThemingProvider,$httpProvider,uiSelectConfig,vcRecaptchaServiceProvider,$urlRouterProvider,$authProvider,RestangularProvider,NotificationProvider,$locationProvider) {
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('altTheme')
     .primaryPalette('red')
@@ -10,6 +10,9 @@ app.config(function($stateProvider,$mdThemingProvider,$httpProvider,uiSelectConf
      $mdThemingProvider.theme('altThemeWide')
     .primaryPalette('red')
     .accentPalette('orange');
+    StripeCheckoutProvider.defaults({
+            key: "pk_test_GZzKl1LRSB5gqHohCizCZKrW"
+          });
     $authProvider.configure({
       confirmationSuccessUrl:  location.protocol + "//" + location.host+'/home',
       passwordResetSuccessUrl: location.protocol + "//" + location.host+'/update'
@@ -107,7 +110,10 @@ app.config(function($stateProvider,$mdThemingProvider,$httpProvider,uiSelectConf
     .state('checkout', {
             url: '/checkout',
             controller:'CheckoutCtrl',
-            templateUrl: '<%= path_to_asset("views/checkout.html") %>'
+            templateUrl: '<%= path_to_asset("views/checkout.html") %>',
+            resolve: {
+                stripe: StripeCheckoutProvider.load
+              }
         })
     .state('cart', {
             url: '/cart',

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
      resources :charges, only: [:create,:new], param: :data
   end
   post '202047446:AAHdxPmilyrI-hC3Qat0Igl0ZrncwpjYiFQ' => 'api/hook#webhook'
-
+  match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
+  match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
+  match '/*path' => 'welcome#index', via:[:get,:post]
 end
 

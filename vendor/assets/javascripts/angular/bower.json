@@ -35,7 +35,8 @@
     "angular-material": "^1.0.9",
     "angular-formly-material": "^0.14.1",
     "angular-breadcrumb": "^0.4.1",
-    "ng-material-floating-button": "ng-mfb#^0.6.2"
+    "ng-material-floating-button": "ng-mfb#^0.6.2",
+    "angular-stripe-checkout": "^4.0.1"
   },
   "resolutions": {
     "angular": "1.5.5",
