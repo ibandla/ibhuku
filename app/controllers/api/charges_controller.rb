@@ -20,7 +20,6 @@
 
   	charge = Stripe::Charge.create(
     	:customer    => @user.email,
-
     	:amount      => @amount,
     	:description => 'Rails Stripe customer',
     	:currency    => 'kes'
@@ -31,6 +30,7 @@
   	session[:cart_item_id] = nil
   	redirect_to current_user, notice: 'You placed an order!'
   	if charge["paid"]
+	  	return "Success"
   		Order.create(user_id:current_user.id ,total:charge_params[:totalCost])
   		end
 
