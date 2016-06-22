@@ -7,16 +7,13 @@
 	
 	</div>
 				<!---->
-				<ngcart-cart></ngcart-cart>
+	
 
 	<ngcart-checkout service="http" settings="{ url:'/api/charges/'}"></ngcart-checkout>
 
-	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_GZzKl1LRSB5gqHohCizCZKrW"
-          data-description=""
-          data-amount=""
-          data-currency="kes"
-          data-locale="auto"></script>
+	  <h1>Stripe Checkout has been loaded</h1>
+      <button ng-click="doCheckout()">Buy</button>
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>

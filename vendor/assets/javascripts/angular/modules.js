@@ -23,3 +23,4 @@
 //= require ./bower_components/angular-formly-material/dist/formly-material
 //= require ./bower_components/ng-material-floating-button/mfb/dist/lib/modernizr.touch
 //= require ./bower_components/ng-material-floating-button/src/mfb-directive
+//= require ./bower_components/angular-stripe-checkout/angular-stripe-checkout.js
