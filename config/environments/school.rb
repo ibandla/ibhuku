@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.relative_url_root = "/ibandla"
+  config.relative_url_root = "ibandla"
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
@@ -24,7 +24,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.action_mailer.default_url_options = { :host => '10.210.21.27/ibandla' }
+  config.action_mailer.default_url_options = { :host => 'http://10.210.21.27/ibandla/' }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
 
