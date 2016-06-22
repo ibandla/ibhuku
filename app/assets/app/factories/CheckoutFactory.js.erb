@@ -1,0 +1,39 @@
+app.factory('Checkout', function(Restangular,$rootScope,ngCart,$log,$timeout) {
+   
+    function charge(token) {
+       // $log.debug(ngCart.getCart());
+     
+       var cart = {
+        data: {
+          taxRate: ngCart.getTaxRate(),
+          tax: ngCart.getTax(),
+          items: ngCart.getItems(),
+          subTotal: ngCart.getSubTotal(),
+          totalCost: ngCart.totalCost(),
+          stripeToken: token
+        }
+       }
+       $log.debug(cart);
+
+         var basecharge = Restangular.all('charges');
+         basecharge.post(cart);
+    
+    }
+    function all() {
+        return Restangular.all('cart').getList().$object;
+    }
+
+    function add(item) {
+        var basecart = Restangular.all('cart');
+        var cartitem = {ebook_id: parseInt(item.getId())};
+        basecart.post(cartitem);
+    }
+
+  
+    
+    return {
+      add: add,
+      charge: charge
+    }
+
+  });

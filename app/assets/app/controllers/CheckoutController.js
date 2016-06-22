@@ -1,15 +1,16 @@
- app.controller('CheckoutCtrl', function($scope,StripeCheckout,ngCart,$log) {
+ app.controller('CheckoutCtrl', function($rootScope,$scope,StripeCheckout,ngCart,$log,Checkout) {
 
    $scope.hello = "Hello World!";
 		 var handler = StripeCheckout.configure({
 		              name: "Custom Example",
 		              token: function(token, args) {
+		              	Checkout.charge(token.id);
 		                $log.debug("Got stripe token: " + token.id);
+
 		              }
 		          });
            $scope.doCheckout = function(token, args) {
-
-           
+                
             var options = {
               description: "Ten dollahs!",
               amount: 1000
