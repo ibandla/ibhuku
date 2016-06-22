@@ -183,6 +183,7 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    localtunnel (1.0.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -202,7 +203,6 @@ GEM
     ngannotate-rails (1.2.2)
       execjs
       rails (>= 3.1)
-    ngrok-tunnel (2.1.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -368,9 +368,9 @@ DEPENDENCIES
   ionicons-rails
   jbuilder (~> 2.0)
   jquery-rails
+  localtunnel
   mysql2
   ngannotate-rails
-  ngrok-tunnel
   omniauth
   puma
   rack-throttle
