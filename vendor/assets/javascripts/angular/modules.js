@@ -10,7 +10,7 @@
 //= require ./bower_components/angular-recaptcha/release/angular-recaptcha
 //= require ./bower_components/ui-select/dist/select
 //= require ./bower_components/angular-sanitize/angular-sanitize
-//= require ./bower_components/angular-advanced-searchbox/dist/angular-advanced-searchbox-tpls
+//= require ./bower_components/angular-advanced-searchbox/dist/angular-advanced-searchbox-tpls.min
 //= require ./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js
 //= require ./bower_components/angular-aria/angular-aria
 //= require ./bower_components/angular-animate/angular-animate.min.js
@@ -24,3 +24,4 @@
 //= require ./bower_components/ng-material-floating-button/mfb/dist/lib/modernizr.touch
 //= require ./bower_components/ng-material-floating-button/src/mfb-directive
 //= require ./bower_components/angular-stripe-checkout/angular-stripe-checkout.js
+//= require ./bower_components/angularUtils-pagination/dirPagination
