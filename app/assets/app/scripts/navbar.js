@@ -12,7 +12,7 @@ $(document).load(collapseNavbar);
 
    WebFontConfig = {
       google: {
-      families: ['Roboto+Slab:300,700,400','Lato:100,300,400,700,900','Roboto+Slab:400,100,300,700','Material+Icons','Kaushan+Script']
+      families: ['Raleway:100,200,300,400','Roboto+Slab:300,700,400','Lato:100,300,400,700,900','Roboto+Slab:400,100,300,700','Material+Icons','Kaushan+Script']
     }
    };
 

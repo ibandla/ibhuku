@@ -8,7 +8,6 @@ gem 'cloudinary'
 gem 'clean_pagination'
 gem 'localtunnel'
 gem 'tele_notify', '~> 0.1.1'
-gem 'rack-throttle'
 gem 'sprockets-image_compressor'
 gem 'sprockets'
 gem 'dotenv-rails', :groups => [:development, :test]

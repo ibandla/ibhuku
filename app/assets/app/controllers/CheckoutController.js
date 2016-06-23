@@ -2,7 +2,8 @@
 
    $scope.hello = "Hello World!";
 		 var handler = StripeCheckout.configure({
-		              name: "Custom Example",
+		              name: "Ibhuku",
+		               currency: "KES",
 		              token: function(token, args) {
 		              	Checkout.charge(token.id);
 		                $log.debug("Got stripe token: " + token.id);
@@ -12,10 +13,12 @@
            $scope.doCheckout = function(token, args) {
                 
             var options = {
-              description: "T",
+
               source: token
-              amount: ngCart.totalCost()
               currency: "kes"
+              description: "We will charge you "+ngCart.totalCost(),
+              amount: ngCart.totalCost()*100,
+             
             };
             // The default handler API is enhanced by having open()
             // return a promise. This promise can be used in lieu of or
