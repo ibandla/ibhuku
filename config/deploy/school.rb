@@ -75,12 +75,17 @@ namespace :deploy do
     end
   end
 
-desc 'Seed application'
-  task :seed do
-    on roles(:app), in: :sequence, wait: 5 do
-      invoke 'rake:[db:seed]'
+  desc 'Seed db'
+   task :seed do
+    on roles (:app) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          SSHKit.config.output_verbosity = Logger::DEBUG
+          rake ['db:seed']
+        end
     end
   end
+end
 
   desc 'Restart application'
   task :restart do

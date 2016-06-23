@@ -72,9 +72,24 @@ namespace :deploy do
     end
   end
 
+
+   desc 'Seed db'
+   task :seed do
+    on roles (:app) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          SSHKit.config.output_verbosity = Logger::DEBUG
+          rake ['db:seed']
+        end
+    end
+  end
+end
+
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
-  after  :finishing,    :cleanup
+  after  :finishing,    :cleanup  
+  after  :finishing,    :seed
   after  :finishing,    :restart
 end
 
