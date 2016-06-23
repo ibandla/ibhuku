@@ -8,7 +8,7 @@
 <script>
   var handler = StripeCheckout.configure({
     key: 'pk_test_GZzKl1LRSB5gqHohCizCZKrW',
-    locale: 'auto',
+    currency: "kes",
     token: function(token) {
       // You can access the token ID with `token.id`.
       // Get the token ID to your server-side code for use.
@@ -18,9 +18,9 @@
   $('#customButton').on('click', function(e) {
     // Open Checkout with further options:
     handler.open({
-      name: 'Stripe.com',
-      description: '2 widgets',
-      amount: 2000
+      name: 'Ibhuku',
+      description: 'Your books',
+      amount: '<%=@amount%>'
     });
     e.preventDefault();
   });

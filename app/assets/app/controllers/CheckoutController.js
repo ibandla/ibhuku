@@ -13,6 +13,9 @@
            $scope.doCheckout = function(token, args) {
                 
             var options = {
+
+              source: token,
+              currency: "KES",
               description: "We will charge you "+ngCart.totalCost(),
               amount: ngCart.totalCost()*100,
              
