@@ -82,6 +82,13 @@ namespace :deploy do
   end
 end
 
+desc 'Seed application'
+  task :seed do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'rake:[db:seed]'
+    end
+  end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -89,10 +96,13 @@ end
     end
   end
 
+
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :make_links
+  after  :finishing,    :seed
   after  :finishing,    :restart
 
 end
