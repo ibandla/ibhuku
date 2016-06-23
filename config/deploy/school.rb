@@ -78,7 +78,7 @@ namespace :deploy do
   task :make_links do
   on roles(:app) do
     execute "rm /var/www/html/ibandla/ibandla; rm /var/www/html/assets; ln -s /home/cmakamara/apps/ibhuku/shared/public/assets/ /var/www/html/; ln -s /home/cmakamara/apps/ibhuku/shared/public /var/www/html/ibandla/ibandla; "
-    execute "sed -i '18s/.*/config.relative_url_root = \"ibandla\"/'  /home/cmakamara/apps/ibhuku/current/config/environments/school.rb"
+    execute "sed -i '18s/.*/config.relative_url_root = \"/ibandla\"/'  /home/cmakamara/apps/ibhuku/current/config/environments/school.rb"
   end
 end
 
