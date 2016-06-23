@@ -14,8 +14,8 @@
                 
             var options = {
 
-              source: token
-              currency: "kes"
+              source: token,
+              currency: "KES",
               description: "We will charge you "+ngCart.totalCost(),
               amount: ngCart.totalCost()*100,
              
