@@ -12,17 +12,17 @@ app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window,
   
 
     
-	 // $scope.$watch(function() { return $location.path(); }, function(newVal, oldVal) {
+	 $scope.$watch(function() { return $location.path(); }, function(newVal, oldVal) {
       
-  //      if(newVal=='/home')
-		// {
-		// 	$scope.header = 'header';
-		// 	$scope.showbanner = true;
-		// }else{
-		// 	$scope.header = 'header-product';
-		// 	$scope.showbanner = false;
-		// };
-  //   });	
+       if(newVal=='/home')
+		{
+			$scope.header = 'header';
+			$scope.showbanner = true;
+		}else{
+			$scope.header = 'header-product';
+			$scope.showbanner = false;
+		};
+    });	
 		
 	$scope.logout = function () {
 		$auth.signOut();
