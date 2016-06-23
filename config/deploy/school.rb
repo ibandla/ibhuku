@@ -54,6 +54,7 @@ namespace :puma do
   before :start, :make_dirs
 end
 
+
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :check_revision do
@@ -73,6 +74,20 @@ namespace :deploy do
       invoke 'deploy'
     end
   end
+ desc 'Symbolic links'
+  task :make_links do
+  on roles(:app) do
+    execute "rm /var/www/html/ibandla/ibandla; rm /var/www/html/assets; ln -s /home/cmakamara/apps/ibhuku/shared/public/assets/ /var/www/html/; ln -s /home/cmakamara/apps/ibhuku/shared/public /var/www/html/ibandla/ibandla; "
+    execute "sed -i '18s/.*/config.relative_url_root = \"\/ibandla\"/'  /home/cmakamara/apps/ibhuku/current/config/environments/school.rb"
+  end
+end
+
+desc 'Seed application'
+  task :seed do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'rake:[db:seed]'
+    end
+  end
 
   desc 'Restart application'
   task :restart do
@@ -81,10 +96,15 @@ namespace :deploy do
     end
   end
 
+
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
+  after  :finishing,    :make_links
+  after  :finishing,    :seed
   after  :finishing,    :restart
+
 end
 
 # ps aux | grep puma    # Get puma pid
