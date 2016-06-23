@@ -15,7 +15,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.relative_url_root = "/ibandla"
-  config.action_controller.asset_host = "http://10.210.21.27"
+  config.action_controller.asset_host = "http://10.21.210.27"
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
@@ -24,7 +24,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.action_mailer.default_url_options = { :host => 'http://10.210.21.27/ibandla/' }
+  config.action_mailer.default_url_options = { :host => 'http://10.21.210.27/ibandla/' }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
 
