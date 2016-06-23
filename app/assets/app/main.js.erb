@@ -1,9 +1,9 @@
-var app = angular.module('ibhuku', ['ui.router','stripe.checkout','ng-token-auth','ui-notification','ncy-angular-breadcrumb','restangular','bgf.paginateAnything','ngCart','vcRecaptcha','ui.select', 'ngSanitize','angular-advanced-searchbox','ngMaterial','ngMessages','formly','ng-mfb','formlyMaterial']);
+var app = angular.module('ibhuku', ['ui.router','angularUtils.directives.dirPagination','stripe.checkout','ng-token-auth','ui-notification','ncy-angular-breadcrumb','restangular','bgf.paginateAnything','ngCart','vcRecaptcha','ui.select', 'ngSanitize','angular-advanced-searchbox','ngMaterial','ngMessages','formly','ng-mfb','formlyMaterial']);
 $(document).on('ready page:load', function(arguments) {
   angular.bootstrap(document.body, ['ibhuku'])
 });
-app.config(function($stateProvider,StripeCheckoutProvider,$mdThemingProvider,$httpProvider,uiSelectConfig,vcRecaptchaServiceProvider,$urlRouterProvider,$authProvider,RestangularProvider,NotificationProvider,$locationProvider) {
-    $locationProvider.html5Mode(true);
+app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProvider,$mdThemingProvider,$httpProvider,uiSelectConfig,vcRecaptchaServiceProvider,$urlRouterProvider,$authProvider,RestangularProvider,NotificationProvider,$locationProvider) {
+    // $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('altTheme')
     .primaryPalette('red')
     .accentPalette('orange');
@@ -20,6 +20,7 @@ app.config(function($stateProvider,StripeCheckoutProvider,$mdThemingProvider,$ht
     $urlRouterProvider.otherwise('/404');
     $urlRouterProvider.when('/', '/home');
     RestangularProvider.setBaseUrl('/api');
+    paginationTemplateProvider.setPath('<%= path_to_asset("views/paginate.tpl.html") %>');
     vcRecaptchaServiceProvider.setSiteKey('6LeBTh8TAAAAAPG4rK3wsWIAaQ2nccdfW2JhSBmN');
     vcRecaptchaServiceProvider.setTheme('light');
     vcRecaptchaServiceProvider.setSize('normal');
