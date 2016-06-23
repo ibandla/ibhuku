@@ -14,8 +14,8 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  # config.relative_url_root = "ibandla"
-
+  config.relative_url_root = "/ibandla"
+  config.action_controller.asset_host = "http://10.210.21.27"
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
