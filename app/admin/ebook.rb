@@ -12,7 +12,7 @@ ActiveAdmin.register Ebook do
         selectable_column
         column :title
         column :author
-        number_column :price ,as: :currency,unit: "Ksh"
+        number_column :price ,as: :currency,unit: "KES"
         column :category
         actions   
     end
@@ -38,7 +38,7 @@ ActiveAdmin.register Ebook do
         row :description
         row :price
         row :category
-        number_row :price, as: :currency,unit: "Ksh"
+        number_row :price, as: :currency,unit: "KES"
 end
     end
 

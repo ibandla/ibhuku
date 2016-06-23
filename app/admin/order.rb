@@ -9,14 +9,15 @@ ActiveAdmin.register Order do
 # or
 #
 permit_params do
-  permitted = [:total, :user_id]
+  permitted = [:charge_params[:items,:totalCost,:user_id]]
   
 
 end
  form(:html => { :multipart => true }) do |f|
         f.inputs "Order" do
             f.input :user, as: :select ,collection: User.all
-            f.input :total ,:value => number_to_currency(:total,precision: 3)
+            f.input :total 
+            f.input :ebook_orders, as: :tags, collection: EbookOrder.all
             # ,:  hint => cl_image_tag(f.object.pdf.url, :format => :png,:width => 200, :height => 250,:crop => :fill, :page => 1)
             # f.input :pdf_cache ,as: :hidden    
         end
@@ -24,8 +25,8 @@ end
     end
 index do
         
-        column :order
-        column :total,:value => number_to_currency(:total,precision: 3)
+        column :id
+        number_column :total ,as: :currency,unit: "KES"
         actions   
     end
 

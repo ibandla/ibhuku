@@ -12,8 +12,10 @@
            $scope.doCheckout = function(token, args) {
                 
             var options = {
-              description: "Ten dollahs!",
-              amount: 1000
+              description: "T",
+              source: token
+              amount: ngCart.totalCost()
+              currency: "kes"
             };
             // The default handler API is enhanced by having open()
             // return a promise. This promise can be used in lieu of or

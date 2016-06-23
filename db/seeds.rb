@@ -7,10 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-# Title.create!(name:'Mr')
-# Title.create!(name:'Ms')
-# Title.create!(name:'Mrs')
-# Category.create!(name:'Horror')
+
 Category.create!(name:'Fiction', description:"1")
 Category.create!(name: 'Classic', description:"1")
 Category.create!(name: 'Poetry', description:"1")
