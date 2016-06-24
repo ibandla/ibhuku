@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618125750) do
+ActiveRecord::Schema.define(version: 20160624081257) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -67,9 +67,10 @@ ActiveRecord::Schema.define(version: 20160618125750) do
   create_table "ebook_orders", force: :cascade do |t|
     t.integer  "order_id",   limit: 4
     t.integer  "ebook_id",   limit: 4
-    t.decimal  "price",                precision: 10
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.decimal  "price",                    precision: 10
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.text     "items",      limit: 65535
   end
 
   add_index "ebook_orders", ["ebook_id"], name: "index_ebook_orders_on_ebook_id", using: :btree
@@ -97,9 +98,10 @@ ActiveRecord::Schema.define(version: 20160618125750) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.decimal  "total",                precision: 10, null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.decimal  "total",                    precision: 10, null: false
+    t.text     "items",      limit: 65535
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
