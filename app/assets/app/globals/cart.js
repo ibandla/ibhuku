@@ -1,4 +1,4 @@
-app.run(function($rootScope, $location,Notification,Cart) {
+app.run(function($rootScope, $location,Notification,Cart,$state) {
 
     $rootScope.$on('ngCart:itemAdded', function(ev, ngCartItem) {
     Notification.success(ngCartItem.getName() + ' added to cart.');
@@ -16,5 +16,7 @@ app.run(function($rootScope, $location,Notification,Cart) {
   // Notification.primary('Cart Manipulated(dev notify)');
 });
 
+    $rootScope.state = $state.current.name;
 
 });
+

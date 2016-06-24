@@ -2,7 +2,12 @@
                 <div class="check-out">  
             
          <div class=" cart-items">
-             <h3>My Shopping Bag ({{ngCart.getTotalItems()}})</h3>
+  
+        
+             <h3 >My Shopping Bag ({{ngCart.getTotalItems()}})</h3>
+       
+     
+
 
            <div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
     Your cart is empty
@@ -18,12 +23,12 @@
           </ul>
           <ul class="cart-header" ng-repeat="item in ngCart.getCart().items track by $index">
            <div class="close1" ng-click="ngCart.removeItem($index)"> </div>
-             <li class="ring-in"><a ui-sref="ebook({ebookID:{{item.id}}})" ><img src="{{item.getData()[0]}}" alt="" class="img-responsive"></a>
+             <li class="ring-in"><a href="/ebook/{{item.getId()}}" ><img src="{{item.getData()[0]}}" alt="" class="img-responsive"></a>
             </li>
             <li><span>{{ item.getName() }}</span></li>
             <li><span>{{ item.getData()[1] }}</span></li>
             <li><span>{{ item.getTotal() | currency:"KES " }}</span></li>
-            <li> <a ui-sref="ebook({ebookID:{{item.id}}})" class="add-cart cart-check">VIEW ITEM</a></li>
+            <li> <a href="/ebook/{{item.getId()}}" class="add-cart cart-check">VIEW ITEM</a></li>
             <div class="clearfix"> </div>
             </ul>
  <ul class=" cart-header1">
@@ -35,7 +40,10 @@
             <li><span></span></li>
             <li><span>Total:</span></li>
             <li><span>{{ ngCart.totalCost() | currency:"KES " }}</span></li>
-            <li> <a ui-sref="checkout" class="add-cart cart-check">CHECKOUT</a></li>
+      <li> <a ui-sref="checkout" class="add-cart cart-check">CHECKOUT</a></li>
+
+      
+
             <div class="clearfix"> </div>
             </ul>
         </div>

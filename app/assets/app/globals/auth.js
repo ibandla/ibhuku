@@ -70,6 +70,8 @@ app.run(function($rootScope, $auth, $location, Notification, ngCart, Cart) {
         Notification.error("Password reset request failed: " + resp.errors[0]);
     });
 
+    $rootScope.here =  $location.path();
+
 
 
 });

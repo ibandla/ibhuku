@@ -114,7 +114,15 @@ app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProv
             templateUrl: '<%= path_to_asset("views/checkout.html") %>',
             resolve: {
                 stripe: StripeCheckoutProvider.load
-              }
+              },
+            onEnter: function($rootScope,$state,$location,Notification) {
+
+                if(!$rootScope.user.signedIn){
+                    $rootScope.redpage = ('/checkout');
+                    Notification.error('Please login or register first.');
+                    $state.go('login');                
+                }
+            }
         })
     .state('cart', {
             url: '/cart',
@@ -153,9 +161,5 @@ app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProv
             controller:'ContactCtrl',
             templateUrl: '<%= path_to_asset("views/contact.html") %>'
         })
-    .state('purchases', {
-            url: '/purchases',
-            controller:'PurchasesCtrl',
-            templateUrl: '<%= path_to_asset("views/purchases.html") %>'
-        })
+   
   });

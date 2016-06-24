@@ -27,7 +27,7 @@ angular.module('ngCart', ['ngCart.directives'])
 
     }])
 
-    .service('ngCart', ['$rootScope', 'ngCartItem', 'store', function ($rootScope, ngCartItem, store) {
+    .service('ngCart', ['$rootScope','$location', 'ngCartItem', 'store', function ($rootScope,$location,ngCartItem, store) {
 
         this.init = function(){
             this.$cart = {
@@ -329,8 +329,10 @@ angular.module('ngCart', ['ngCart.directives'])
         }
     }])
 
-    .controller('CartController',['$scope', 'ngCart', function($scope, ngCart) {
+    .controller('CartController',['$scope','$rootScope','$location','ngCart', function($scope,$rootScope,$location,ngCart) {
         $scope.ngCart = ngCart;
+        $rootScope.loc = $location.path();
+
 
     }])
 

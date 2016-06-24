@@ -3,26 +3,72 @@
 		<div class="product">
 			<div class="container">
 
-					<div class="col-md-3 product-price">
-	
-	</div>
+			
+
+			<div class="col-md-12 product-price1">
+                <div class="check-out">  
+            
+         <div class=" cart-items">
+  
+        
+             <h3 >Confirm your selection before purchase</h3>
+       
+     
+
+
+           <div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
+    Your cart is empty
+</div>     
+                
+<div class="ngCart cart in-check" ng-show="ngCart.getTotalItems() > 0">          <ul class="unit">
+            <li><span>Cover</span></li>
+            <li><span>Title</span></li>      
+            <li><span>Author</span></li>
+            <li><span>Price</span></li>
+            <li> </li>
+            <div class="clearfix"> </div>
+          </ul>
+          <ul class="cart-header" ng-repeat="item in ngCart.getCart().items track by $index">
+           <div class="close1" ng-click="ngCart.removeItem($index)"> </div>
+             <li class="ring-in"><a href="/ebook/{{item.getId()}}" ><img src="{{item.getData()[0]}}" alt="" class="img-responsive"></a>
+            </li>
+            <li><span>{{ item.getName() }}</span></li>
+            <li><span>{{ item.getData()[1] }}</span></li>
+            <li><span>{{ item.getTotal() | currency:"KES " }}</span></li>
+            <li> <a href="/ebook/{{item.getId()}}" class="add-cart cart-check">VIEW ITEM</a></li>
+            <div class="clearfix"> </div>
+            </ul>
+ <ul class=" cart-header1">
+           
+            <li class="ring-in">
+            </li>
+            <li><span></span></li>
+
+            <li><span></span></li>
+            <li><span>Total:</span></li>
+            <li><span>{{ ngCart.totalCost() | currency:"KES " }}</span></li>
+      <li> <a ng-click="doCheckout()" class="add-cart cart-check">BUY NOW</a></li>
+
+      
+
+            <div class="clearfix"> </div>
+            </ul>
+        </div>
+             </div>
+                      
+         </div>
+         
+
+                </div>
 				<!---->
 	
 
-	<ngcart-checkout service="http" settings="{ url:'/api/charges'}"></ngcart-checkout>
 
-	  <h1>Stripe Checkout has been loaded</h1>
-      <button ng-click="doCheckout()">Buy</button>
+
 
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-			<!---->
-				<div class="bottom-grid1">
-					
-					<div class="fit1">
-						<h3>HAPPY SHOPPING</h3>
-						<p>Lorem Ipsum sit amet consectuer adipiscing elit
-sed diam nonummy nibh euismod</p>
-					</div>
-				</div>
+
+
+			

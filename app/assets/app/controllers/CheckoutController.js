@@ -1,11 +1,15 @@
- app.controller('CheckoutCtrl', function($rootScope,$scope,StripeCheckout,ngCart,$log,Checkout) {
+ app.controller('CheckoutCtrl', function(Cart,Notification,$rootScope,$scope,StripeCheckout,ngCart,$log,Checkout) {
 
    $scope.hello = "Hello World!";
+   $scope.ngCart = ngCart;
+   $scope.items = ngCart.getCart().items;
+
 		 var handler = StripeCheckout.configure({
 		              name: "Ibhuku",
 		               currency: "KES",
 		              token: function(token, args) {
 		              	Checkout.charge(token.id);
+                    Cart.empty();
 		                $log.debug("Got stripe token: " + token.id);
 
 		              }
@@ -16,21 +20,16 @@
 
               source: token,
               currency: "KES",
-              description: "We will charge you "+ngCart.totalCost(),
+              description: "Thank you for your purchase, please enjoy!",
               amount: ngCart.totalCost()*100,
              
             };
-            // The default handler API is enhanced by having open()
-            // return a promise. This promise can be used in lieu of or
-            // in addition to the token callback (or you can just ignore
-            // it if you like the default API).
-            //
-            // The rejection callback doesn't work in IE6-7.
+           
             handler.open(options)
               .then(function(result) {
-                alert("Got Stripe token: " + result[0].id);
+             Notification.success('Purchase Made');             
               },function() {
-                alert("Stripe Checkout closed without making a sale :(");
+             Notification.success('Payment failed please try again');
               });
           };
    });
