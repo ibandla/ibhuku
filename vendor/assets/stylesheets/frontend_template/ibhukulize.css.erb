@@ -6040,11 +6040,11 @@ input.mdl-button[type=submit] {
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-    background: url(../../images/tick2696.html?embed) #e91e63
+    background: url(<%= asset_path 'tick2696.html?embed' %>) #e91e63
 }
 
 .mdl-checkbox.is-checked.is-disabled .mdl-checkbox__tick-outline {
-    background: url(../../images/tick2696.html?embed) rgba(0, 0, 0, .26)
+    background: url(<%= asset_path 'tick2696.html?embed' %>) rgba(0, 0, 0, .26)
 }
 
 .mdl-checkbox__label {
@@ -6824,8 +6824,8 @@ input.mdl-button[type=submit] {
 @supports (-webkit-appearance:none) {
     .mdl-progress:not(.mdl-progress__indeterminate):not(.mdl-progress__indeterminate)>.auxbar {
         background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), linear-gradient(to right, #e91e63, #e91e63);
-        -webkit-mask: url(../../images/buffer2696.html?embed);
-        mask: url(../../images/buffer2696.html?embed)
+        -webkit-mask: url(<%= asset_path 'buffer2696.html?embed' %>);
+        mask: url(<%= asset_path 'buffer2696.html?embed' %>)
     }
 }
 
@@ -16568,8 +16568,8 @@ html[xmlns] .flexslider .slides {
 
 @font-face {
     font-family: revicons;
-    src: url(../rs-plugin/fonts/revicons90c6.eot?5510888);
-    src: url(../rs-plugin/fonts/revicons90c6.eot?5510888#iefix) format("embedded-opentype"), url(../rs-plugin/fonts/revicons90c6.woff?5510888) format("woff"), url(../rs-plugin/fonts/revicons90c6.ttf?5510888) format("truetype"), url(../rs-plugin/fonts/revicons90c6.svg?5510888#revicons) format("svg");
+    src: url(<%= asset_path 'revicons90c6.eot?5510888' %>);
+    src: url(<%= asset_path 'revicons90c6.eot?5510888#iefix' %>) format("embedded-opentype"), url(<%= asset_path 'revicons90c6.woff?5510888' %>) format("woff"), url(<%= asset_path 'revicons90c6.ttf?5510888' %>) format("truetype"), url(<%= asset_path 'revicons90c6.svg?5510888#revicons' %>) format("svg");
     font-weight: 400;
     font-style: normal
 }
@@ -16846,11 +16846,11 @@ html[xmlns] .flexslider .slides {
 }
 
 .tp-carousel-wrapper {
-    cursor: url(../rs-plugin/assets/openhand.cur), move
+    cursor: url(<%= asset_path 'openhand.cur' %>), move
 }
 
 .tp-carousel-wrapper.dragged {
-    cursor: url(../rs-plugin/assets/closedhand.cur), move
+    cursor: url(<%= asset_path 'closedhand.cur' %>), move
 }
 
 .tp-caption {
@@ -17160,19 +17160,19 @@ img.tp-slider-alternative-image {
 }
 
 .tp-dottedoverlay.twoxtwo {
-    background: url(../rs-plugin/assets/gridtile.png)
+    background: url(<%= asset_path 'gridtile.png' %>)
 }
 
 .tp-dottedoverlay.twoxtwowhite {
-    background: url(../rs-plugin/assets/gridtile_white.png)
+    background: url(<%= asset_path 'gridtile_white.png' %>)
 }
 
 .tp-dottedoverlay.threexthree {
-    background: url(../rs-plugin/assets/gridtile_3x3.png)
+    background: url(<%= asset_path 'gridtile_3x3.png' %>)
 }
 
 .tp-dottedoverlay.threexthreewhite {
-    background: url(../rs-plugin/assets/gridtile_3x3_white.png)
+    background: url(<%= asset_path 'gridtile_3x3_white.png' %>)
 }
 
 .tp-shadowcover {
@@ -17240,7 +17240,7 @@ img.tp-slider-alternative-image {
     text-shadow: 0 1px 1px rgba(0, 0, 0, .6)!important;
     font-size: 15px;
     line-height: 45px!important;
-    background: url(../rs-plugin/images/gradient/g30.png) top repeat-x;
+    background: url(<%= asset_path 'g30.png' %>) top repeat-x;
     font-family: arial, sans-serif;
     font-weight: 700;
     letter-spacing: -1px;
@@ -17254,7 +17254,7 @@ img.tp-slider-alternative-image {
     padding: 9px 20px;
     font-size: 19px;
     line-height: 57px!important;
-    background: url(../rs-plugin/images/gradient/g40.png) top repeat-x
+    background: url(<%= asset_path 'g40.png' %>) top repeat-x
 }
 
 .purchase:hover,
@@ -17677,11 +17677,11 @@ img.tp-slider-alternative-image {
 .tp-caption.slidelink a div {
     width: 3000px;
     height: 1500px;
-    background: url(../rs-plugin/assets/coloredbg.png)
+    background: url(<%= asset_path 'coloredbg.png' %>)
 }
 
 .tp-caption.slidelink a span {
-    background: url(../rs-plugin/assets/coloredbg.png)
+    background: url(<%= asset_path 'coloredbg.png' %>)
 }
 
 .tp-shape {
@@ -17707,7 +17707,7 @@ img.tp-slider-alternative-image {
 }
 
 .tp-loader.spinner0 {
-    background: url(../rs-plugin/assets/loader.gif) center center no-repeat;
+    background: url(<%= asset_path 'loader.gif' %>) center center no-repeat;
     -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
     -webkit-animation: tp-rotateplane 1.2s infinite ease-in-out;
     animation: tp-rotateplane 1.2s infinite ease-in-out;
@@ -17725,7 +17725,7 @@ img.tp-slider-alternative-image {
 }
 
 .tp-loader.spinner5 {
-    background: url(../rs-plugin/assets/loader.gif) 10px 10px no-repeat #fff;
+    background: url(<%= asset_path 'loader.gif' %>) 10px 10px no-repeat #fff;
     margin: -22px;
     width: 44px;
     height: 44px;
@@ -21715,18 +21715,18 @@ img.tp-slider-alternative-image {
 }
 
 .mdl-checkbox__tick-outline {
-    -webkit-mask: url(../images/mdl/tick-mask.svg);
-    mask: url(../images/mdl/tick-mask.svg)
+    -webkit-mask: url(<%= asset_path 'tick-mask.svg' %>);
+    mask: url(<%= asset_path 'tick-mask.svg' %>)
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline,
 .mdl-checkbox.is-checked.is-disabled .mdl-checkbox__tick-outline {
-    background-image: url(../images/mdl/tick.svg)
+    background-image: url(<%= asset_path 'tick.svg' %>)
 }
 
 @supports (-webkit-appearance:none) {
     .mdl-progress:not(.mdl-progress__indeterminate):not(.mdl-progress__indeterminate)>.auxbar {
-        -webkit-mask: url(../images/mdl/buffer.svg);
-        mask: url(../images/mdl/buffer.svg)
+        -webkit-mask: url(<%= asset_path 'buffer.svg' %>);
+        mask: url(<%= asset_path 'buffer.svg' %>)
     }
 }

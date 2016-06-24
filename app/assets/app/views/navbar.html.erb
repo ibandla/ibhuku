@@ -1,6 +1,6 @@
 <div ng-controller="NavbarCtrl">
     <nav mfb-menu position="br" effect="zoomin" label="Cart Summary"
-     active-icon="ion-ios-cart" resting-icon="ion-ios-cart-outline"
+     active-icon="ion-ios-cart"  resting-icon="fa fa-shopping-cart"
      toggling-method="click">
   <button mfb-button icon="ion-android-open" ui-sref="cart" label="{{summary}}"></button>
 </nav>
@@ -54,7 +54,7 @@
 			<li><a ng-show="user.signedIn" ui-sref="purchases">My Purchases</a></li>
 			<li><a ui-sref="contact">Contact</a></li>
 			<li><a ui-sref="about">About Us</a></li>
-             <li class="hidden-xs"><a  ng-click="toggleCustom()" ><span class="glyphicon glyphicon-search"></span></a></li>
+             <li class="hidden-xs"><a  ui-sref="ebooks" ng-click="toggleCustom()" ><span class="glyphicon glyphicon-search"></span></a></li>
 			<!-- <li><div class="search-in" >
 			<div class="search" >
 						<form action="search.html">
@@ -107,13 +107,13 @@
 	         <div class="clearfix"> </div>
 	         </div>
  	</div>
+
+ 	
+
     <!-- Intro Header -->
     <div class="back" ng-hide="showbanner">
 	</div>
-<div class="container searchbar" ng-show="searchbar">
-   <nit-advanced-searchbox ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
-	
-</div>
+
    
   
    <script>

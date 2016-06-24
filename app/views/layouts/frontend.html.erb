@@ -4,25 +4,15 @@
   <title>Ibhuku</title>
   <%= stylesheet_link_tag    'frontend', media: 'all', 'data-turbolinks-track' => true, async: !Rails.env.development? %>
   <%= javascript_include_tag 'ibhuku', 'data-turbolinks-track' => true, async: !Rails.env.development? %> 
-  <%= csrf_meta_tags %> 
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
-
+  <%= csrf_meta_tags %>  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="keywords" content="Ibhuku,ebooks,books,Ibhuku online bookstore,Ibhuks,ebuks" />
-  
+  <meta name="keywords" content="Ibhuku,ebooks,books,Ibhuku online bookstore,Ibhuks,ebuks" />  
   <% if Rails.env.school? %>
   <base href="/ibandla/">
- 
-<% else %>
+  <% else %>
   <base href="/">
-  
-<% end %>
-  
-
-</head>
-<%= yield %>
+  <% end %>
+  </head>
+  <%= yield %>
 </html>

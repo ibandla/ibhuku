@@ -4,15 +4,15 @@
             <div class="container">
 
                 <div class="col-md-3 product-price">
-                      <div ng-include="'<%= path_to_asset("views/pricerange.html") %>'"></div>
+                      <!-- <div ng-include="'<%= path_to_asset("views/pricerange.html") %>'"></div> -->
         <!-- here2 -->
-                <div ng-include="'<%= path_to_asset("views/categories.html") %>'"></div>
+                <div class="rightsidebar" ng-include="'<%= path_to_asset("views/categories.html") %>'"></div>
     <!-- here2 -->
 
 
-
+  
                 <!--here-->
-                <div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div>
+                <!-- <div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div> -->
             <!-- here -->
 
                 </div>
@@ -38,46 +38,84 @@
 
                 <!-- sort by -->
 
-
+   
+	
                 <div class="product-right-top">
-                    <div class="top-product">
+                    <div  class="top-product">
+                 <nit-advanced-searchbox  ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
 
                     <!-- one product -->
-            <nit-advanced-searchbox ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
+           
 
             <div hidden="">
                 {{searchParams}}
             </div>
-                
-             <div class="col-md-4 chain-grid"  ng-repeat="(key, ebook) in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams ">
+               
+
+	 <!-- <li dir-paginate="drink in drinks | filter:q | itemsPerPage: pageSize">{{ drink }}</li> -->
+
+             <div class="col-md-4 chain-grid scrollArea" current-page="currentPage"  dir-paginate="ebook in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | itemsPerPage:pageSize"   pagination-id="ebooksPagination" >
                             
-                                <ngcart-addtocart  quantity="1" quantity-max="1" image="{{ebook.ebook_image.standard.url}}" id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+	 
+			<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" ng-src="{{ebook.ebook_image.standard.url}}" ui-sref="ebook({ebookID:{{ebook.id}}})">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{ebook.title}}<small> by {{ebook.author}}</small>
+      <i class="material-icons right">more_vert</i></span>
+      <!-- <p><a ui-sref="ebook({ebookID:{{id}}})">View</a></p>
+       <button class="ibhuku-button-add-product ibhuku-js-button-add-product mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class=material-icons>add_shopping_cart</i></button> -->
+         <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><ins><span>KES {{ebook.price}}</span></ins></strong>
+
+                <ngcart-addtocart  quantity="1" quantity-max="1"  id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+                               
+
+
+                               
+                            </div>
+
+
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{ebook.title}}<i class="material-icons right">close</i></span>
+      <p>{{ebook.description}}</p>
+    </div>
+  </div>
+
+
+
+
+				
+		
+
+
+
+
+
+
+                         
                         </div>
 
                     </div>
 
 
 
-                    <!-- one product -->
 
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"  pagination-id="ebooksPagination"></dir-pagination-controls>
 
-
-
-                <!-- end of products -->
-
-              
                 <div class="clearfix"> </div>
                 </div>
 
 
-                <div> <bgf-pagination per-page="8"
-  collection="ebooks"
-  url="'api/ebooks'">
-</bgf-pagination></div>
+                 
+        
 
+              
+        
             <div class="clearfix"> </div>
 
-        <div ng-include="'<%= path_to_asset("views/ebookfooter.html") %>'"></div>
+        <!-- <div ng-include="'<%= path_to_asset("views/ebookfooter.html") %>'"></div> -->
 
 
 

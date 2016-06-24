@@ -9,9 +9,8 @@ app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window,
   
 
     $scope.summary =  'KES '+(ngCart.totalCost())+', '+(ngCart.getTotalItems()) + ' ' + it;
-  
-
-    
+   
+   
 	 $scope.$watch(function() { return $location.path(); }, function(newVal, oldVal) {
       
        if(newVal=='/home')

@@ -2,8 +2,8 @@
 					    <div class="of-left">
 						<h3 class="cate cate-on">PRICE</h3>
 					</div>
-      <input name="minPrice" id="minPrice" ng-model="priceInfo.min" ng-hide="true" ng-model-options="{ updateOn: 'change' }">  
-      <input name="maxPrice" id="maxPrice" ng-model="priceInfo.max" ng-hide="true" ng-model-options="{ updateOn: 'change' }"> 
+      <input name="minPrice" id="minPrice" ng-model="priceInfo.min" ng-hide="false" ng-model-options="{ updateOn: 'change' }">  
+      <input name="maxPrice" id="maxPrice" ng-model="priceInfo.max" ng-hide="false" ng-model-options="{ updateOn: 'change' }"> 
       <ul class="dropdown-menu1">
             <li><a href="">
                 <p>
@@ -11,42 +11,19 @@
                      <input type="text" id="amount" style="border: 0; color: #ff5d56; font-weight: bold;" />
 
 						  </p>
-
-                   <div  id="slider-range"></div>
+    <p class="range-field">
+      <input type="range" id="slider-range" min="0" max="100" />
+    </p>
+                   <!-- <div  id="slider-range"></div> -->
                 </a></li>
 
           </ul>
 		
 		  	<div class="clearfix"> </div>
 
-
-<script type='text/javascript'>
-
- 
- $(document).load(function () {
- $( "#slider-range" ).slider({
-            range: true,
-            min: 0,
-            max: 1500,
-            values: [ 0, 1500 ],
-            click:function( event, ui ) {  $( "#amount" ).val( "KES " + ui.values[ 0 ] + " - KES " + ui.values[ 1 ] );
-            $("#minPrice").val( $( "#slider-range" ).slider( "values", 0 )).trigger('change');
-            $("#maxPrice").val( $( "#slider-range" ).slider( "values", 1 )).trigger('change');
-            },
-            slide: function( event, ui ) {  $( "#amount" ).val( "KES " + ui.values[ 0 ] + " - KES " + ui.values[ 1 ] );
-            $("#minPrice").val( $( "#slider-range" ).slider( "values", 0 )).trigger('change');
-            $("#maxPrice").val( $( "#slider-range" ).slider( "values", 1 )).trigger('change');
-            }
- });
-
-  $("#minPrice").val( $( "#slider-range" ).slider( "values", 0 )).trigger('change');
-  $("#maxPrice").val( $( "#slider-range" ).slider( "values", 1 )).trigger('change');
-$( "#amount" ).val( "KES " + $( "#slider-range" ).slider( "values", 0 ) + " - KES " + $( "#slider-range" ).slider( "values", 1 ) );
-  
-});
-
-</script>
-
-
-<!---->
 		</div>
+
+<script>
+        var url = "<%= path_to_asset("scripts/price.js") %>";
+        $.getScript(url);
+    </script>
