@@ -74,20 +74,18 @@ namespace :deploy do
       invoke 'deploy'
     end
   end
- desc 'Symbolic links'
-  task :make_links do
-  on roles(:app) do
-    execute "rm /var/www/html/ibandla/ibandla; rm /var/www/html/assets; ln -s /home/cmakamara/apps/ibhuku/shared/public/assets/ /var/www/html/; ln -s /home/cmakamara/apps/ibhuku/shared/public /var/www/html/ibandla/ibandla; "
-    execute "sed -i '18s/.*/config.relative_url_root = \"\/ibandla\"/'  /home/cmakamara/apps/ibhuku/current/config/environments/school.rb"
-  end
-end
 
-desc 'Seed application'
-  task :seed do
-    on roles(:app), in: :sequence, wait: 5 do
-      invoke 'rake:[db:seed]'
+  desc 'Seed db'
+   task :seed do
+    on roles (:app) do
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          SSHKit.config.output_verbosity = Logger::DEBUG
+          rake ['db:seed']
+        end
     end
   end
+end
 
   desc 'Restart application'
   task :restart do
@@ -101,7 +99,6 @@ desc 'Seed application'
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    :make_links
   after  :finishing,    :seed
   after  :finishing,    :restart
 
