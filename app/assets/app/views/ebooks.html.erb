@@ -1,42 +1,29 @@
 
-        <!---->
         <div class="product">
             <div class="container">
 
                 <div class="col-md-3 product-price">
-                      <!-- <div ng-include="'<%= path_to_asset("views/pricerange.html") %>'"></div> -->
-        <!-- here2 -->
-                <div class="rightsidebar" ng-include="'<%= path_to_asset("views/categories.html") %>'"></div>
-    <!-- here2 -->
+                   
+      <div class="rightsidebar">
+       <div  class=" sidebar1 span_1_of_left">
+          <div class="of-left">
+            <h3 class="cate">GENRES</h3>
+            </div>
+            <ul class="menu">
+             <li class="item1" ng-click="unsetSelected()" ng-class="{selected: genreparam == 0}" ng-cloak="">All</li>
 
+            <li ng-repeat="genre in genres" class="item1" ng-click="setSelected(genre)" ng-class="{selected: genre == selectedgenre}" ng-cloak="">{{genre.name}}</li></ul>
 
-  
-                <!--here-->
-                <!-- <div ng-include="'<%= path_to_asset("views/bestsellers.html") %>'"></div> -->
-            <!-- here -->
+          </div>
+
 
                 </div>
+   
+                </div>
 
-
-            <!---->
-
-                <!---->
                 <div class="col-md-9 product-price1">
 
-            <!-- sort by -->
-                <!--    <div class="mens-toolbar">
-                        <p class="showing">Showing 1–9 of 21 results</p>
-                     <div class="sort">
-                        <select>
-                              <option value=""> Sorting By Rate</option>
-                                <option value="">Sorting By Color </option>
-                                <option value="">Sorting By Price </option>
-                        </select>
-                     </div>
-                    <div class="clearfix"></div>
-                </div> -->
-
-                <!-- sort by -->
+     
 
    
 	
@@ -44,7 +31,7 @@
                     <div  class="top-product">
                  <nit-advanced-searchbox  ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
 
-                    <!-- one product -->
+                    
            
 
             <div hidden="">
@@ -52,9 +39,9 @@
             </div>
                
 
-	 <!-- <li dir-paginate="drink in drinks | filter:q | itemsPerPage: pageSize">{{ drink }}</li> -->
+	
 
-             <div class="col-md-4 chain-grid scrollArea" current-page="currentPage"  dir-paginate="ebook in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | itemsPerPage:pageSize"   pagination-id="ebooksPagination" >
+             <div class="col-md-4 chain-grid scrollArea" current-page="currentPage"  dir-paginate="ebook in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | genreFilter:genreparam | itemsPerPage:pageSize"   pagination-id="ebooksPagination" >
                             
 	 
 			<div class="card">

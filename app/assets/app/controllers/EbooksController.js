@@ -1,10 +1,24 @@
 
- app.controller('EbooksCtrl', function($scope,Genre,Ebook,ngCart,$rootScope) {
+ app.controller('EbooksCtrl', function($scope,Genre,$log,Ebook,ngCart,GenreBook,$rootScope) {
 
 
-    $scope.currentPage = 1;
+  $scope.currentPage = 1;
   $scope.pageSize = 9;
   $scope.genres = Genre.all();
+  $scope.genreparam = 0;
+  $scope.unsetSelected = function(){
+     $scope.selectedgenre = {};
+       $scope.genreparam = 0;
+  };
+
+  $scope.setSelected = function(genre){
+      $log.debug(genre);
+  
+       $scope.selectedgenre = genre;
+       $scope.genreparam = genre.id;
+     
+  };
+
   $scope.ebooks = Ebook.all();
   $scope.searchParams = {
       "query":""
