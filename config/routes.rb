@@ -13,6 +13,9 @@ Rails.application.routes.draw do
      resources :token, only: [:index]
      resources :titles, only: [:index]
      resources :charges, only: [:create,:new], param: :data
+     resources :genre,  only: [:index, :show], param: :genre_id do
+       resources :ebook, only: [:index, :show], param: :ebook_id
+     end
   end
   post '202047446:AAHdxPmilyrI-hC3Qat0Igl0ZrncwpjYiFQ' => 'api/hook#webhook'
   match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]

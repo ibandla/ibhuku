@@ -5,11 +5,10 @@
  	 respond_to :json 	 
 
       def index
-        max_per_page = 8
-
-        paginate Ebook.count, max_per_page do |limit, offset|
-        render json: Ebook.select('category_id','ISBN','title','author','description','price','id','ebook_image').limit(limit).offset(offset)
-      end
+       
+        ebooks = Ebook.all
+        render json: ebooks.select('category_id','ISBN','title','author','description','price','id','ebook_image')
+      
      end
     	
      # def index
@@ -19,7 +18,7 @@
 
      def show              
      	@ebook = Ebook.find(ebook_params[:ebook_id])
-		render json:@ebook, status: 418
+		render json:@ebook, status: 200
 	 end 
 
       private
