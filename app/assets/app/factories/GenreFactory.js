@@ -1,11 +1,13 @@
-app.factory('Genre', function(Restangular) {
+app.factory('Genre', function(Restangular,$log) {
    
     function all() {
      return Restangular.all('genre').getList().$object;
     }
     
     function one(id) {
-     return Restangular.one('genre', id).get().$object;
+     var x = Restangular.one('genre', id).get().$object;
+     $log.debug(x);
+     return x;
     }
     
     return {

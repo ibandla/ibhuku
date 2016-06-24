@@ -18,6 +18,10 @@
 
      def show              
      	@ebook = Ebook.find(ebook_params[:ebook_id])
+        category = Category.find(@ebook['category_id'])
+        @ebook.attributes = ({ :category_id => category.name})
+        
+        # @ebook = ebook.merge(Category.find(ebook['category_id']))
 		render json:@ebook, status: 200
 	 end 
 
