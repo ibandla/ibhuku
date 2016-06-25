@@ -1,5 +1,4 @@
 class Ebook < ActiveRecord::Base
-  attr_accessor :category_id
   belongs_to :category
   # has_many :categorizations
   # has_many :categories ,through: :categorizations

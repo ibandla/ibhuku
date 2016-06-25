@@ -6,7 +6,7 @@
 
 		 var handler = StripeCheckout.configure({
 		              name: "Ibhuku",
-		               currency: "KES",
+		              currency: "KES",
 		              token: function(token, args) {
 		              	Checkout.charge(token.id);
                     Cart.empty();
