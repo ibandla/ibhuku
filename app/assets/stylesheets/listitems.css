@@ -1,3 +1,6 @@
-ul.table_tools_segmented_control { width: 700px; text-align : center }
+ul.table_tools_segmented_control {text-align : right; }
 ul.table_tools_segmented_control  li { display: inline; white-space: nowrap; }
 ul.table_tools_segmented_control li:after { content: " \00b7"; }
+td.ebook{ padding: 15px;}
+#collection_selection_toggle_explaination{display: none;}
+div.resource_selection_toggle_panel input#collection_selection_toggle_all.toggle_all{display: none;}
