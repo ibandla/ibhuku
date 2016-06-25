@@ -45,7 +45,7 @@
 								<li><span>ISBN</span>
 								<span class="women1">: {{ebook.ISBN}}</span></li>
 								<li><span>Genre</span>
-								<span class="women1">: {{ebook.category_id}}</span></li>
+								<span class="women1">: {{ebook.category.name}}</span></li>
 								<li><span>Cart Actions</span>
 								<ngcart-addtocart  quantity="1" quantity-max="1" show="{{checkcart(ebook.id)}}" id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
 								</li>
