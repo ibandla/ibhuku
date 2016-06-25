@@ -2,7 +2,7 @@
 
    $scope.hello = "Hello World!";
    $scope.ngCart = ngCart;
-   $scope.items = ngCart.getCart().items;
+   $scope.items = ngCart.getItems;
 
 		 var handler = StripeCheckout.configure({
 		              name: "Ibhuku",

@@ -9,10 +9,9 @@
      	@amount = charge_params[:totalCost]*100 
 		charge = Stripe::Charge.create(
 			:amount      => @amount,
-			:description => 'Rails Stripe customer',
+			:description => current_user.fullname,
 			:currency    => 'KES',
-            :source => charge_params[:stripeToken]
-
+      :source => charge_params[:stripeToken]
 		)
 
       # checks if the charge is paid and creates an order to #success 
@@ -21,7 +20,7 @@
             @order.save
             @order.ebook_orders.create!(price:charge_params[:totalCost],items:charge_params[:items])
 
-            render json:["Succes"], status: 200
+            render json:["Success"], status: 200
         end
 
         rescue Stripe::CardError => e
@@ -33,6 +32,6 @@
 
         private
     def charge_params
-      params.require(:data).permit(:tax,:stripeToken,:taxRate,:subTotal,:totalCost,:items=> [ :_id,:_name,:_price,:_totalCost]).merge(user_id: current_user.id)
+      params.require(:data).permit(:tax,:stripeToken,:taxRate,:subTotal,:totalCost,:items=> [ :id,:title,:price,:author]).merge(user_id: current_user.id)
     end
 end

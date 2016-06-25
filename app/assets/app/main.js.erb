@@ -2,6 +2,7 @@ var app = angular.module('ibhuku', ['ui.router','angularUtils.directives.dirPagi
 $(document).on('ready page:load', function(arguments) {
   angular.bootstrap(document.body, ['ibhuku'])
 });
+app.constant('_', window._);
 app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProvider,$mdThemingProvider,$httpProvider,uiSelectConfig,vcRecaptchaServiceProvider,$urlRouterProvider,$authProvider,RestangularProvider,NotificationProvider,$locationProvider) {
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('altTheme')

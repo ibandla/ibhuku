@@ -1,19 +1,39 @@
-app.factory('Checkout', function(Restangular,$rootScope,ngCart,$log,$timeout) {
+app.factory('Checkout', function(_,Restangular,$rootScope,ngCart,$log,$timeout) {
    
+
+    function formatcart() {
+
+        var items = [];
+
+        angular.forEach(ngCart.getItems(), function(value, key) {
+        
+         newvalue = {
+          id: value['_id'],
+          title: value['_name'],
+          price: value['_price'],
+          author: value['_data'][1]
+         }     
+
+        this.push(newvalue);
+
+        }, items);
+
+        return items;
+
+      }
     function charge(token) {
        // $log.debug(ngCart.getCart());
-     
+
        var cart = {
         data: {
           taxRate: ngCart.getTaxRate(),
           tax: ngCart.getTax(),
-          items: ngCart.getItems(),
+          items: formatcart(),
           subTotal: ngCart.getSubTotal(),
           totalCost: ngCart.totalCost(),
           stripeToken: token
         }
        }
-       $log.debug(cart);
 
          var basecharge = Restangular.all('charges');
          basecharge.post(cart);
