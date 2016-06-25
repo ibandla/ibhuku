@@ -36,7 +36,6 @@ ActiveAdmin.register Ebook do
         row :title
         row :author
         row :description
-        row :price
         row :category
         number_row :price, as: :currency,unit: "KES"
 end

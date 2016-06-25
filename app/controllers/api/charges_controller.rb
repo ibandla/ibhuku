@@ -17,9 +17,19 @@
 
       # checks if the charge is paid and creates an order to #success 
         if charge["paid"]
+            @user = current_user.email
+
             @order =Order.new(user_id:current_user.id ,total:charge_params[:totalCost],items:charge_params[:items])
             @order.save
             @order.ebook_orders.create!(price:charge_params[:totalCost],items:charge_params[:items])
+
+            @items = charge_params[:items]
+            @items.each do |item|
+            	url = Ebook.find(item[1,1]).pdf.url
+            	# UserMailer.welcome_email(@user,url).deliver_now
+            
+            end
+           
 
             render json:["Succes"], status: 200
         end

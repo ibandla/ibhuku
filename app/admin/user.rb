@@ -31,7 +31,7 @@ actions :all,:except => [:new,:create,:destroy]
   end
   
   show do
-    attributes_table :fullname, :email,:blocked,:tokens,:ebook_orders
+    attributes_table :fullname, :email,:blocked
   end
   
   

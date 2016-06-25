@@ -7,7 +7,7 @@ app.factory('Checkout', function(Restangular,$rootScope,ngCart,$log,$timeout) {
         data: {
           taxRate: ngCart.getTaxRate(),
           tax: ngCart.getTax(),
-          items: ngCart.getItems(),
+          items:  ngCart.getCart().items,
           subTotal: ngCart.getSubTotal(),
           totalCost: ngCart.totalCost(),
           stripeToken: token

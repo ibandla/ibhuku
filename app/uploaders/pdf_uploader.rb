@@ -35,6 +35,8 @@ class PdfUploader < CarrierWave::Uploader::Base
   
   # version :standard do
   #   process :resize_to_fill => [100, 150, :north]
+    # process :convert => 'pdf'
+
   # end
   
   # version :thumb do
