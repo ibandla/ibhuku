@@ -15,7 +15,11 @@
 // @import "face_of_active_admin/base";
 //@import "active_bootstrap_skin";
 @import "active_admin/mixins";
+$am-theme-primary:rgba(254, 93, 87,1);
+$am-theme-primary-700:rgba(216, 75, 70, 1);
+$am-theme-secondary:rgba(255, 229, 82, 1);
 @import "active_material";
+
 // @import "active_admin/base";
 //$skinLogo: url("admin_logo.png") no-repeat 0 0;
 //$skinActiveColor: #001cee;
