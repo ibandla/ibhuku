@@ -13,6 +13,5 @@ Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "fo
 Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.eot *.gif *.svg *.cur *.html *.ttf *.woff *.woff2)
 Rails.application.config.assets.precompile += %w( frontend.js )
 Rails.application.config.assets.precompile += %w( frontend.css )
-Rails.application.config.assets.precompile += %w( listitems.css )
 Rails.application.config.assets.precompile += %w( ibhuku.js )
 Rails.application.config.assets.precompile += %w( scripts/main.js )
