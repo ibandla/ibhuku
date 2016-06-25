@@ -1,0 +1,3 @@
+ul.table_tools_segmented_control { width: 700px; text-align : center }
+ul.table_tools_segmented_control  li { display: inline; white-space: nowrap; }
+ul.table_tools_segmented_control li:after { content: " \00b7"; }

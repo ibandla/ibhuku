@@ -1,7 +1,5 @@
  class Api::EbooksController < Api::ApiController
- 	  
-     include CleanPagination
-
+ 	
  	 respond_to :json 	 
 
       def index
