@@ -22,19 +22,15 @@
             @order.save
             @order.ebook_orders.create!(price:charge_params[:totalCost],items:charge_params[:items])
 
-<<<<<<< HEAD
             @items = charge_params[:items]
             @items.each do |item|
-            	url = Ebook.find(item[1,1]).pdf.url
+            	url = Ebook.find(item["0"]).pdf.url
             	# UserMailer.welcome_email(@user,url).deliver_now
             
             end
            
 
             render json:["Succes"], status: 200
-=======
-            render json:["Success"], status: 200
->>>>>>> bdef7fecf24260b1079761e4c57782d46a2abfbe
         end
 
         rescue Stripe::CardError => e
