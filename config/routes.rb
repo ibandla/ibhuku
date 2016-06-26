@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
      resources :cart, only: [:index, :create, :destroy], param: :ebook_id
      resources :ebooks, only: [:index, :show], param: :ebook_id
-     get 'random' => 'ebooks#random'
+     get 'pdfdata' => 'ebooks#pdfdata'
      resources :token, only: [:index]
      resources :titles, only: [:index]
      resources :purchases, only: [:index,:show]

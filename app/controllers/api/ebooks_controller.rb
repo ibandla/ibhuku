@@ -5,17 +5,22 @@
 
       def index
        
-        ebooks = Ebook.all
+         ebooks = Ebook.all
         render json: ebooks.select(:category_id, :ISBN, :title, :author, :description, :price, :id, :ebook_image)
       
-     end
-    
-     def random
-
-         ebooks = Ebook.select(:id,:title,:author,:ebook_image).limit(5).order("RAND()")
-         render json: ebooks
       
      end
+
+     def pdfdata
+         ebooks = Ebook.all
+         result = []
+         ebooks.each  do |e|
+             result << [{"text": e.title},{"text": e.author},{"text": e.category.name},{"text": e.ISBN},{"text": e.price}]
+         end
+      
+        render json: result
+     end
+    
 
      def show
         @client = Goodreads.new()              

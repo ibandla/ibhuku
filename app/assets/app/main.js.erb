@@ -124,6 +124,19 @@ app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProv
                 }
             }
         })
+    .state('purchases', {
+            url: '/purchases',
+            controller:'PurchasesCtrl',
+            templateUrl: '<%= path_to_asset("views/purchases.html") %>',
+            onEnter: function($rootScope,$state,$location,Notification) {
+
+                if(!$rootScope.user.signedIn){
+                    $rootScope.redpage = ('/purchases');
+                    Notification.error('Please login or register first.');
+                    $state.go('login');
+                }
+            }
+        })
     .state('cart', {
             url: '/cart',
             controller:'CartCtrl',
