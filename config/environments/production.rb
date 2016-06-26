@@ -51,7 +51,7 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "noreply.ibhuku@gmail.com",
-    password: "ibandlas"
+    password: "theibandlas"
   }
 
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?

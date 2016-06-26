@@ -5,7 +5,7 @@
     def create
 
      	# render json: charge_params
-     	@user = current_user
+     	@user = User.find(current_user.id)
      	@amount = charge_params[:totalCost]*100 
 		charge = Stripe::Charge.create(
 			:amount      => @amount,
@@ -16,25 +16,18 @@
 
       # checks if the charge is paid and creates an order to #success 
         if charge["paid"]
-            @user = current_user.email
 
-            @order =Order.new(user_id:current_user.id ,total:charge_params[:totalCost],items:charge_params[:items])
-            @order.save
-            @order.ebook_orders.create!(price:charge_params[:totalCost],items:charge_params[:items])
-
-            @items = charge_params[:items]
-            @items.each do |item|
-            	url = Ebook.find(item["0"]).pdf.url
-            	# UserMailer.welcome_email(@user,url).deliver_now
-            
-            end
-           
-
-            render json:["Succes"], status: 200
+            items = charge_params[:items]
+            order =Order.create(user_id:current_user.id ,total:charge_params[:totalCost])
+            items.each do |item|
+              order.ebook_orders.create!(ebook_id:item[:id],price:item[:price])
+            end  
+            @user.cart_items.destroy_all
+            render json:["Success"], status: 200
         end
 
         rescue Stripe::CardError => e
-        flash[:error] = e.message
+        render json:["Fail"], status: 500
 
  	end
 

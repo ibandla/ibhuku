@@ -12,9 +12,10 @@ gem 'puma'
 
 gem 'cloudinary'
 
+gem 'goodreads', :github => 'dhruvg/goodreads', :branch => 'master'
+
 gem 'localtunnel'
 
-gem 'tele_notify', '~> 0.1.1'
 
 gem 'sprockets-image_compressor'
 

@@ -1,7 +1,13 @@
-app.controller('EbookCtrl', function($scope,Genre,$stateParams,Ebook) {	
+app.controller('EbookCtrl', function($scope,Genre,$stateParams,Ebook,$sce) {	
 	
-
+    $scope.$sce = $sce;
    $scope.ebook = Ebook.one($stateParams["ebookID"]);
+   $scope.number = 5;
+      $scope.getNumber = function(num) {
+          return new Array(num);   
+      }
+
+      
    
     $scope.data = {
       selectedIndex: 0,

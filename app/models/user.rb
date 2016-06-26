@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   has_many :cart_items
   has_many :orders
+  has_many :ebook_orders, :through => :orders
+  has_many :ebooks, :through => :ebook_orders
   belongs_to :title
   
   # Include default devise modules. Others available are:

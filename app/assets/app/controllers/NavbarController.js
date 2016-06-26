@@ -1,16 +1,20 @@
 app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window,ngCart) {
-    var it = "";
-  if(ngCart.getTotalItems() == 1){
-      it = "item";
-  }
-  else{
-    it = "items";
-  }
+   
   
 
-    $scope.summary =  'KES '+(ngCart.totalCost())+', '+(ngCart.getTotalItems()) + ' ' + it;
+  
+    $scope.$watch(function() { return ngCart.getTotalItems(); }, function(newVal, oldVal) {
+		       var it = "";
+		  if(ngCart.getTotalItems() == 1){
+		      it = "item";
+		  }
+		  else{
+		    it = "items";
+		  }
+       $rootScope.summary =  'KES '+(ngCart.totalCost())+', '+(ngCart.getTotalItems()) + ' ' + it;
    
-   
+    });	
+
 	 $scope.$watch(function() { return $location.path(); }, function(newVal, oldVal) {
       
        if(newVal=='/home')

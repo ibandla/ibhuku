@@ -1,4 +1,4 @@
-app.factory('Checkout', function(_,Restangular,$rootScope,ngCart,$log,$timeout) {
+app.factory('Checkout', function(Restangular,Notification,$rootScope,ngCart,$log,$timeout) {
    
 
     function formatcart() {
@@ -37,7 +37,11 @@ app.factory('Checkout', function(_,Restangular,$rootScope,ngCart,$log,$timeout) 
        }
 
          var basecharge = Restangular.all('charges');
-         basecharge.post(cart);
+         basecharge.post(cart).then(function() {
+   Notification.success("Order has been processed successfully.");
+ }, function() {
+  Notification.error("Could not process your order please contact support for re-embursment.");
+ });;
     
     }
     function all() {
