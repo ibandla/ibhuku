@@ -24,3 +24,4 @@
 //= require ./bower_components/ng-material-floating-button/src/mfb-directive
 //= require ./bower_components/angular-stripe-checkout/angular-stripe-checkout.js
 //= require ./bower_components/angularUtils-pagination/dirPagination
+//= require ./bower_components/pdfmake/pdfmake
