@@ -8,7 +8,7 @@ class User::RegistrationsController < DeviseTokenAuth::RegistrationsController
       else
         render json: {
         status: 'error',
-        errors: {"full_messages":["You have not completed the captcha, you are mad - we will never let you through!!"]}
+        errors: {"full_messages":["You have not completed the captcha. Please do so."]}
       }, status: 422
       end 
     end
