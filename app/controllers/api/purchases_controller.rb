@@ -1,10 +1,10 @@
  class Api::PurchasesController < Api::ApiController
- 	 skip_before_filter :verify_authenticity_token
- 	 # before_action :authenticate_user!
+ 	 # skip_before_filter :verify_authenticity_token
+ 	 before_action :authenticate_user!
  	 respond_to :json 	 
     	
      def index
-        user = User.find(2).ebooks
+        user = User.find(current_user.id).ebooks
         @items = user
         render json:@items, status: 200     	
      end
