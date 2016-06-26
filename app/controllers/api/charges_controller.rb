@@ -16,10 +16,11 @@
 
       # checks if the charge is paid and creates an order to #success 
         if charge["paid"]
-            @order =Order.new(user_id:current_user.id ,total:charge_params[:totalCost],items:charge_params[:items])
-            @order.save
-            @order.ebook_orders.create!(price:charge_params[:totalCost],items:charge_params[:items])
-
+            items = charge_params[:items]
+            order =Order.create(user_id:current_user.id ,total:charge_params[:totalCost])
+            items.each do |item|
+              order.ebook_orders.create!(ebook_id:item[:id],price:item[:price])
+            end  
             render json:["Success"], status: 200
         end
 
