@@ -13,7 +13,14 @@ app.run(function($rootScope, $location,Notification,Cart,$state) {
 
     $rootScope.$on('ngCart:change', function(ev) {
     	console.log ( 'Cart Manipulated' );
-  // Notification.primary('Cart Manipulated(dev notify)');
+       var it = "";
+        if(ngCart.getTotalItems() == 1){
+            it = "item";
+        }
+        else{
+          it = "items";
+        }
+        $rootScope.summary =  'KES '+(ngCart.totalCost())+', '+(ngCart.getTotalItems()) + ' ' + it;
 });
 
     $rootScope.state = $state.current.name;

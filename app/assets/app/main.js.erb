@@ -77,17 +77,17 @@ app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProv
      .state('update', {
           url: '/update',
           controller:'AuthCtrl',
-          templateUrl: '<%= path_to_asset("views/update.html") %>', 
+          templateUrl: '<%= path_to_asset("views/update.html") %>',
           onEnter: function($rootScope,$state,$location,Notification) {
 
                 if($rootScope.user.signedIn){
 
                     if($location.search().reset_password_token != undefined) {Notification.primary('You have been logged in temporarily, please reset your password.');}
-                }                
+                }
                 else{
                     $rootScope.redpage = ('/update');
                     Notification.error('Please login first.');
-                    $state.go('login');                
+                    $state.go('login');
                 }
             },
           onExit: function($rootScope,$auth,Notification,$location){
@@ -95,7 +95,7 @@ app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProv
                     Notification.error('You have been logged out without reseting your password, another reset link has been sent to '+$rootScope.user.email);
                     $auth.requestPasswordReset({email:$rootScope.user.email});
                     $auth.signOut();
-                }  
+                }
             }
         })
     .state('ebook', {
@@ -120,7 +120,7 @@ app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProv
                 if(!$rootScope.user.signedIn){
                     $rootScope.redpage = ('/checkout');
                     Notification.error('Please login or register first.');
-                    $state.go('login');                
+                    $state.go('login');
                 }
             }
         })
@@ -148,11 +148,11 @@ app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProv
                 if($rootScope.user.signedIn){
 
                     Notification.primary('You can change your title and name over here.');
-                }                
+                }
                 else{
                     $rootScope.redpage = ('/profile');
                     Notification.error('Please login first.');
-                    $state.go('login');                
+                    $state.go('login');
                 }
             }
         })
@@ -161,5 +161,5 @@ app.config(function($stateProvider,paginationTemplateProvider,StripeCheckoutProv
             controller:'ContactCtrl',
             templateUrl: '<%= path_to_asset("views/contact.html") %>'
         })
-   
+
   });

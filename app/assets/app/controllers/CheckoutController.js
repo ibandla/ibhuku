@@ -27,9 +27,9 @@
            
             handler.open(options)
               .then(function(result) {
-             Notification.success('Purchase Made');             
+             // Notification.success('Purchase Made');             
               },function() {
-             Notification.success('Payment failed please try again');
+             Notification.warning('Payment interrupted please try again');
               });
           };
    });

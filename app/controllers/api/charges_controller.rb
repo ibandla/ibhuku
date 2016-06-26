@@ -5,7 +5,7 @@
     def create
 
      	# render json: charge_params
-     	@user = current_user
+     	@user = User.find(current_user.id)
      	@amount = charge_params[:totalCost]*100 
 		charge = Stripe::Charge.create(
 			:amount      => @amount,
@@ -21,11 +21,12 @@
             items.each do |item|
               order.ebook_orders.create!(ebook_id:item[:id],price:item[:price])
             end  
+            @user.cart_items.destroy_all
             render json:["Success"], status: 200
         end
 
         rescue Stripe::CardError => e
-        flash[:error] = e.message
+        render json:["Fail"], status: 500
 
  	end
 

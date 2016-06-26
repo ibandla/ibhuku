@@ -13,10 +13,10 @@
 
   $scope.setSelected = function(genre){
       $log.debug(genre);
-  
+
        $scope.selectedgenre = genre;
        $scope.genreparam = genre.id;
-     
+
   };
 
   $scope.ebooks = Ebook.all();
@@ -30,15 +30,16 @@
           { key: "ISBN", name: "ISBN", placeholder: "ISBN..." },
           { key: "author", name: "Author", placeholder: "Author..." },
           { key: "description", name: "Description", placeholder: "Description..." }
-        ]; 
-  
+        ];
+
   $scope.pageChangeHandler = function(num) {
       console.log('drinks page changed to ' + num);
   };
 
-
-  	
-
+  $scope.priceInfo = {
+    min: 0,
+    max: 1500
+  }
     // $scope.searchParams = {
     //   "query":""
     // };
@@ -52,9 +53,4 @@
     //     ];
 
 
-    $scope.priceInfo = {
-      min: 0,
-      max: 1500
-    }
-    
-});
+    });
