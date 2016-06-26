@@ -8,12 +8,13 @@ app.factory('Ebook', function(Restangular) {
      return Restangular.all('purchases').getList().$object;
     }
     
+    
     function one(id) {
      return Restangular.one('ebooks', id).get().$object;
     }
 
-    function random() {
-     return Restangular.all('random').getList().$object;
+    function pdfdata() {
+     return Restangular.all('pdfdata').getList().$object;
     }
     
     return {

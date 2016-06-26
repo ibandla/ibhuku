@@ -1,4 +1,6 @@
-app.controller ('HomeCtrl', function($scope, $http,$auth,$rootScope,Restangular) {
+app.controller ('HomeCtrl', function($scope,Ebook,$http,$auth,$rootScope,Restangular) {
+
+  $scope.ebooks = Ebook.pdfdata();
     var docDefinition = {
       content: [
         {
