@@ -9,11 +9,6 @@
       
      end
     	
-     # def index
-     #    @ebooks = Ebook.all
-     # 	respond_with(@ebooks)
-     # end
-
      def show              
      	ebook = Ebook.select(:category_id, :ISBN, :title, :author, :description, :price, :id, :ebook_image).find(ebook_params[:ebook_id])
         ebook_image =  Hash[:url => ebook.ebook_image.url, :standard =>  Hash[:url => ebook.ebook_image.standard.url] ,:thumb => Hash[:url =>ebook.ebook_image.thumb.url]]
