@@ -34,7 +34,7 @@ app.controller ('HomeCtrl', function($scope,Ebook,$http,$auth,$rootScope,Restang
 
 
     $scope.openPdf = function() {
-        pdfMake.createPdf(dd).open();
+        pdfMake.createPdf(docDefinition).open();
       };
 
     $scope.downloadPdf = function() {
