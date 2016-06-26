@@ -4,10 +4,10 @@ app.factory('Ebook', function(Restangular) {
      return Restangular.all('ebooks').getList().$object;
     }
 
-    function purchased() {
+    function purchases() {
      return Restangular.all('purchases').getList().$object;
     }
-    
+
     
     function one(id) {
      return Restangular.one('ebooks', id).get().$object;
@@ -21,7 +21,7 @@ app.factory('Ebook', function(Restangular) {
       all: all,
       one: one,
       purchases: purchases,
-      random: random
+      pdfdata: pdfdata
     }
 
   });
