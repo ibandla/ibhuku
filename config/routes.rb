@@ -9,17 +9,18 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   namespace :api, defaults: {format: :json} do
      resources :cart, only: [:index, :create, :destroy], param: :ebook_id
-     resources :ebooks, only: [:index, :show, :rand], param: :ebook_id
+     resources :ebooks, only: [:index, :show], param: :ebook_id
+     get 'random' => 'ebooks#random'
      resources :token, only: [:index]
      resources :titles, only: [:index]
+     resources :purchases, only: [:index,:show]
      resources :charges, only: [:create,:new], param: :data
      resources :genre,  only: [:index, :show], param: :genre_id do
      resources :ebook, only: [:index, :show], param: :ebook_id
      end
   end
-  post '202047446:AAHdxPmilyrI-hC3Qat0Igl0ZrncwpjYiFQ' => 'api/hook#webhook'
-  # match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  # match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
-  # match '/*path' => 'welcome#index', via:[:get,:post]
+  match "api" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
+  match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }, via: [:get,:post]
+  match '/*path' => 'welcome#index', via:[:get,:post]
 end
 

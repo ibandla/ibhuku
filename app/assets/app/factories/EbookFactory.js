@@ -7,10 +7,15 @@ app.factory('Ebook', function(Restangular) {
     function one(id) {
      return Restangular.one('ebooks', id).get().$object;
     }
+
+    function random() {
+     return Restangular.all('random').getList().$object;
+    }
     
     return {
       all: all,
-      one: one
+      one: one,
+      random: random
     }
 
   });
