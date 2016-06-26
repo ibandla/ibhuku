@@ -2,7 +2,7 @@
 
   $scope.currentPage = 1;
   $scope.pageSize = 9;
-  $scope.ebooks = Ebook.all();
+  $scope.ebooks = Ebook.purchases();
   $scope.searchParams = {
       "query":""
     };

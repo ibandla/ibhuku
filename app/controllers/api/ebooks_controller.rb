@@ -13,7 +13,8 @@
 
      def pdfdata
          ebooks = Ebook.all
-         result = []
+         result =  [{text: 'Title', style: 'header'}, {text: 'Author', style: 'header'}, {text: 'Category', style: 'header'},
+                {text: 'ISBN', style: 'header'},{text: 'Price', style: 'header'}]
          ebooks.each  do |e|
              result << [{"text": e.title},{"text": e.author},{"text": e.category.name},{"text": e.ISBN},{"text": e.price}]
          end
