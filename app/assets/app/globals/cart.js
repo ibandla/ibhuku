@@ -13,7 +13,7 @@ app.run(function($rootScope, $location,Notification,Cart,$state) {
 
     $rootScope.$on('ngCart:change', function(ev) {
     	console.log ( 'Cart Manipulated' );
-});
+  });
 
     $rootScope.state = $state.current.name;
 

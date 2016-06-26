@@ -1,119 +1,69 @@
-
-        <div class="product">
-            <div class="container">
-
-                <div class="col-md-3 product-price">
-                   
+<div class="product">
+  <div class="container">
+    <div class="col-md-3 product-price">
+      
       <div class="rightsidebar">
-       <div  class=" sidebar1 span_1_of_left">
+        <div  class=" sidebar1 span_1_of_left">
           <div class="of-left">
             <h3 class="cate">GENRES</h3>
-            </div>
-            <ul class="menu">
-             <li class="item1" ng-click="unsetSelected()" ng-class="{selected: genreparam == 0}" ng-cloak="">All</li>
-
-            <li ng-repeat="genre in genres" class="item1" ng-click="setSelected(genre)" ng-class="{selected: genre == selectedgenre}" ng-cloak="">{{genre.name}}</li></ul>
-
           </div>
-
-
-                </div>
-   
-                </div>
-
-                <div class="col-md-9 product-price1">
-
-     
-
-   
-	
-                <div class="product-right-top">
-                    <div  class="top-product">
-                 <nit-advanced-searchbox  ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
-
-                    
-           
-
-            <div hidden="">
-                {{searchParams}}
-            </div>
-               
-
-	
-
-             <div class="col-md-4 chain-grid scrollArea" current-page="currentPage"  dir-paginate="ebook in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | genreFilter:genreparam | itemsPerPage:pageSize"   pagination-id="ebooksPagination" >
-                            
-	 
-			<div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" ng-src="{{ebook.ebook_image.standard.url}}" ui-sref="ebook({ebookID:{{ebook.id}}})">
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">{{ebook.title}}<p><small> {{ebook.author}}</small></p>
-      <i class="material-icons right">more_vert</i></span>
-   
-         <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><ins><span>KES {{ebook.price}}</span></ins></strong>
-
-                <ngcart-addtocart  quantity="1" quantity-max="1"  id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
-                               
-
-
-                               
-                            </div>
-
-
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{{ebook.title}}<i class="material-icons right">close</i></span>
-      <p>{{ebook.description}}</p>
-    </div>
-  </div>
-
-
-
-
-				
-		
-
-
-
-
-
-
-                         
-                        </div>
-
-                    </div>
-
-
-
-
-                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"  pagination-id="ebooksPagination"></dir-pagination-controls>
-
-                <div class="clearfix"> </div>
-                </div>
-
-
-                 
-        
-
-              
-        
-            <div class="clearfix"> </div>
-
-        <!-- <div ng-include="'<%= path_to_asset("views/ebookfooter.html") %>'"></div> -->
-
-
-
-                </div>
-
-            <!---->
-
+          <ul class="menu">
+            <li class="item1" ng-click="unsetSelected()" ng-class="{selected: genreparam == 0}" ng-cloak="">All</li>
+            <li ng-repeat="genre in genres" class="item1" ng-click="setSelected(genre)" ng-class="{selected: genre == selectedgenre}" ng-cloak="">{{genre.name}}</li></ul>
+          </div>
         </div>
-    <!--    <div class="bottom-grid1">
-                    <div class="fit1">
-                        <h3>HAPPY SHOPPING</h3>
-                        <p>Lorem Ipsum sit amet consectuer adipiscing elit
-sed diam nonummy nibh euismod</p>
-                    </div>
-                </div> -->
+        
+      </div>
+      <div class="col-md-9 product-price1">
+        
+        
+        
+        <div class="product-right-top">
+          <div  class="top-product">
+            <nit-advanced-searchbox  ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
+            
+            
+            <div hidden="">
+              {{searchParams}}
+            </div>
+            
+            
+            <div class="col-md-4 chain-grid scrollArea" current-page="currentPage"  dir-paginate="ebook in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | genreFilter:genreparam | itemsPerPage:pageSize"   pagination-id="ebooksPagination" >
+              
+              
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" ng-src="{{ebook.ebook_image.standard.url}}" ui-sref="ebook({ebookID:{{ebook.id}}})">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{ebook.title}}<p><small> {{ebook.author}}</small></p>
+                <i class="material-icons right">more_vert</i></span>
+                
+                <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><ins><span>KES {{ebook.price}}</span></ins></strong>
+                <ngcart-addtocart  quantity="1" quantity-max="1"  id={{ebook.id}}  name="{{ebook.title}}" price="{{ebook.price}}" data="[ebook.ebook_image.thumb.url,ebook.author]"></ngcart-addtocart>
+                
+                
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">{{ebook.title}}<i class="material-icons right">close</i></span>
+              <p>{{ebook.description}}</p>
+            </div>
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"  pagination-id="ebooksPagination"></dir-pagination-controls>
+      <div class="clearfix"> </div>
+    </div>
+    
+    
+    
+    
+    <div class="clearfix"> </div>
+    
+  </div>
+  
+</div>
