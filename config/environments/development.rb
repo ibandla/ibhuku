@@ -27,7 +27,7 @@ domain: "gmail",
 authentication: "plain",
 enable_starttls_auto: true,
 user_name: "noreply.ibhuku@gmail.com",
-password: "ibandlas"
+password: "theibandlas"
 }
 
 # # Sets environment to :development
