@@ -26,3 +26,4 @@
 //= require ./bower_components/angularUtils-pagination/dirPagination
 //= require ./bower_components/pdfmake/build/pdfmake
 //= require ./bower_components/pdfmake/build/vfs_fonts
+//= require ./bower_components/angularUtils-pagination/dirPagination
