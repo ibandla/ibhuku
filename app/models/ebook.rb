@@ -8,5 +8,5 @@ class Ebook < ActiveRecord::Base
   has_many :cart_items, :foreign_key => "ebook_id"
   mount_uploader :pdf, PdfUploader
   mount_uploader :ebook_image, ImageUploader
-  validates :title,:ISBN,:category, presence: true
+  validates :title,:price,:pdf,:description,:author,:ISBN,:category, presence: true
 end

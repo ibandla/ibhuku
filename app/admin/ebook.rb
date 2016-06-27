@@ -57,8 +57,8 @@ end
             f.input :price
             f.input :ebook_image, :as => :file, :hint => image_tag(f.object.ebook_image.url(:thumb))
             f.input :pdf ,:as => :file
-            # ,:  hint => cl_image_tag(f.object.pdf.url, :format => :png,:width => 200, :height => 250,:crop => :fill, :page => 1)
-            # f.input :pdf_cache ,as: :hidden    
+            f.input :pdf_cache, :as => :hidden 
+
         end
         f.actions
     end
