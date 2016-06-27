@@ -8,6 +8,10 @@ app.factory('Ebook', function(Restangular) {
         return Restangular.all('purchases').getList().$object;
     }
 
+    function random(){
+        return Restangular.all('random').getList().$object;
+    }
+
     function one(id) {
         return Restangular.one('ebooks', id).get().$object;
     }
@@ -63,6 +67,7 @@ app.factory('Ebook', function(Restangular) {
         one: one,
         purchases: purchases,
         downloadPdf: downloadPdf,
-        openPdf: openPdf
+        openPdf: openPdf,
+        random: random
     }
 });

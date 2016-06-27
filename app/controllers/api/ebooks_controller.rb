@@ -11,6 +11,12 @@
       
      end
 
+     def random
+         ebooks = Ebook.order("RAND()").limit(6)
+         render json: ebooks.select(:category_id, :ISBN, :title, :author, :description, :price, :id, :ebook_image)
+      
+     end
+
      def pdfdata
          ebooks = Ebook.includes(:category).all
          result =  [[{text: 'Title', style: 'header'}, {text: 'Author', style: 'header'}, {text: 'Category', style: 'header'},
