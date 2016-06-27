@@ -38,7 +38,8 @@
     "ng-material-floating-button": "ng-mfb#^0.6.2",
     "angular-stripe-checkout": "^4.0.1",
     "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
-    "angular-jk-carousel": "^0.1.4"
+    "angular-jk-carousel": "^0.1.4",
+    "angular-ellipsis": "^0.1.6"
   },
   "resolutions": {
     "angular": "1.5.5",

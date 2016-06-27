@@ -19,8 +19,8 @@
             <img class="activator" ng-src="{{ebook.ebook_image.standard.url}}" ui-sref="ebook({ebookID:{{ebook.id}}})">
           </div>
           <div class="card-content">
-            <span style="text-overflow: ellipsis;white-space: nowrap;
-  overflow: hidden;" class="card-title activator grey-text text-darken-4">{{ebook.title}}<p><small> {{ebook.author}}</small></p>
+            <span class="card-title activator grey-text text-darken-4">  <p data-ng-bind="ebook.title" data-ellipsis> </p>
+            <p><small> {{ebook.author}}</small></p>
           <i class="material-icons right">more_vert</i></span>
           
           <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><ins><span>KES {{ebook.price}}</span></ins></strong>

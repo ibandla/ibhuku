@@ -27,3 +27,4 @@
 //= require ./bower_components/angular-jk-carousel/dist/jk-carousel
 //= require ./bower_components/pdfmake/build/pdfmake
 //= require ./bower_components/pdfmake/build/vfs_fonts
+//= require ./bower_components/angular-ellipsis/src/angular-ellipsis
