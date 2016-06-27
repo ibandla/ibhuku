@@ -8,6 +8,10 @@ app.factory('Ebook', function(Restangular) {
         return Restangular.all('purchases').getList().$object;
     }
 
+    function random(){
+        return Restangular.all('random').getList().$object;
+    }
+
     function one(id) {
         return Restangular.one('ebooks', id).get().$object;
     }
@@ -15,8 +19,8 @@ app.factory('Ebook', function(Restangular) {
     function docDefinition(books) {
         return {
             content: [{
-                text: 'IBHUKU CATALOG',
-                style: 'header'
+                text: 'IBHUKU PRODUCT CATALOG',
+                style: 'blam'
             }, {
                 style: 'demoTable',
                 table: {
@@ -26,6 +30,13 @@ app.factory('Ebook', function(Restangular) {
                 layout: 'lightHorizontalLines'
             }],
             styles: {
+                blam: {
+                  bold: true,
+                  color: '#000',
+                  fontSize: 16,
+                  alignment: 'center',
+                  margin: [0, 0, 0, 10]
+                },
                 header: {
                     bold: true,
                     color: '#000',
@@ -34,7 +45,8 @@ app.factory('Ebook', function(Restangular) {
                 },
                 demoTable: {
                     color: '#666',
-                    fontSize: 10
+                    fontSize: 10,
+                    alignment: 'center'
                 }
             }
         };
@@ -63,6 +75,7 @@ app.factory('Ebook', function(Restangular) {
         one: one,
         purchases: purchases,
         downloadPdf: downloadPdf,
-        openPdf: openPdf
+        openPdf: openPdf,
+        random: random
     }
 });

@@ -86,39 +86,37 @@
         <!-- /.container -->
 
       <!--   <div class=""> -->
-           
-              
-                 
-              
-            
+
+
+
+
+
         <!-- </div> -->
     </nav>
 
     <div id="thebanner"  ng-show="showbanner" class="banner">
-  
+
 		<div class="banner-top">
 	         <h2>IBHUKU!</h2>
 	         <p>The right book will always keep you company. Spend less, read more! <span>In your favourite format.</span></p>
 </div>
 
 	<div class="now">
-	         <a class="morebtn" ui-sref="products">Explore</a>
-	         <a class="morebtn at-in" ui-sref="products">Shop Now</a>
+	         <a class="morebtn" ng-click="openPdf()">Catalog</a>
+	         <a class="morebtn at-in" ui-sref="ebooks">Shop Now</a>
 	         <div class="clearfix"> </div>
 	         </div>
  	</div>
 
- 	
+
 
     <!-- Intro Header -->
     <div class="back" ng-hide="showbanner">
 	</div>
 
-   
-  
+
+
    <script>
         var url = "<%= path_to_asset("scripts/navbar.js") %>";
         $.getScript(url);
     </script>
-
-  

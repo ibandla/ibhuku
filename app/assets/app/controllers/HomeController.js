@@ -1,10 +1,8 @@
-app.controller ('HomeCtrl', function($scope,Ebook,$http,$auth,$rootScope,Restangular) {
+app.controller ('HomeCtrl', function($scope,Ebook) {
 
-    $scope.downloadPdf = function() {
-        Ebook.downloadPdf();
-    };
-    $scope.openPdf =  function() {
-        Ebook.openPdf();
-    };
+    $scope.ebooks =  Ebook.random();
+     $scope.downloadPdf = function() {
+      Ebook.downloadPdf();
+  };
 
 });

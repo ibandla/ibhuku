@@ -11,6 +11,7 @@ Rails.application.routes.draw do
      resources :cart, only: [:index, :create, :destroy], param: :ebook_id
      resources :ebooks, only: [:index, :show], param: :ebook_id
      get 'pdfdata' => 'ebooks#pdfdata'
+     get 'random' => 'ebooks#random'
      resources :token, only: [:index]
      resources :titles, only: [:index]
      resources :purchases, only: [:index,:show]

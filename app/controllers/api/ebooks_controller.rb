@@ -11,6 +11,12 @@
       
      end
 
+     def random
+         ebooks = Ebook.order("RAND()").limit(6)
+         render json: ebooks.select(:category_id, :ISBN, :title, :author, :description, :price, :id, :ebook_image)
+      
+     end
+
      def pdfdata
          ebooks = Ebook.includes(:category).all
          result =  [[{text: 'Title', style: 'header'}, {text: 'Author', style: 'header'}, {text: 'Category', style: 'header'},
@@ -30,7 +36,13 @@
         compiled = ebook.attributes
         compiled[:ebook_image]= ebook_image
         compiled[:category]= Category.find(ebook[:category_id])
-        compiled[:goodreads] = @client.book_by_isbn(ebook[:ISBN])
+        begin
+             compiled[:goodreads] = @client.book_by_isbn(ebook[:ISBN])
+        rescue Exception => e
+             compiled[:goodreads] = ['Not found']
+        end
+       
+
 		render json:compiled, status: 200
 	 end 
 
