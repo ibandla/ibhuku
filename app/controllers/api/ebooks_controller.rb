@@ -36,7 +36,13 @@
         compiled = ebook.attributes
         compiled[:ebook_image]= ebook_image
         compiled[:category]= Category.find(ebook[:category_id])
-        compiled[:goodreads] = @client.book_by_isbn(ebook[:ISBN])
+        begin
+             compiled[:goodreads] = @client.book_by_isbn(ebook[:ISBN])
+        rescue Exception => e
+             compiled[:goodreads] = ['Not found']
+        end
+       
+
 		render json:compiled, status: 200
 	 end 
 
