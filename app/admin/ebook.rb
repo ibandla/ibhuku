@@ -62,7 +62,7 @@ end
         end
         f.actions
     end
-   index :as => :grid,columns: 10 do |ebook|
+   index :as => :grid,columns: 8 do |ebook|
     div do
       a :href => admin_ebook_path(ebook) do
         image_tag(ebook.ebook_image.url(:thumb),:width => 125, :height => 150)
