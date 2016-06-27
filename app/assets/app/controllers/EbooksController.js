@@ -1,9 +1,10 @@
 
- app.controller('EbooksCtrl', function($scope,Genre,$log,Ebook,ngCart,GenreBook,$rootScope) {
+ app.controller('EbooksCtrl', function($scope,Genre,$log,Ebook,ngCart,Restangular,GenreBook,$rootScope) {
 
 
   $scope.currentPage = 1;
   $scope.pageSize = 9;
+
   $scope.genres = Genre.all();
   $scope.genreparam = 0;
   $scope.unsetSelected = function(){
@@ -19,7 +20,11 @@
 
   };
 
-  $scope.ebooks = Ebook.all();
+   var basedata = Restangular.all('ebooks');
+        basedata.getList().then(function(books) {
+           $scope.ebooks = books;
+        });
+  
   $scope.searchParams = {
       "query":""
     };
