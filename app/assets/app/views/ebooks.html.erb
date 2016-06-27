@@ -28,7 +28,7 @@
             </div>
             
             
-            <div class="col-md-4 chain-grid scrollArea" current-page="currentPage"  dir-paginate="ebook in ebooks | priceFilter:priceInfo | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | genreFilter:genreparam | itemsPerPage:pageSize"   pagination-id="ebooksPagination" >
+            <div class="col-md-4 chain-grid scrollArea" current-page="currentPage"  dir-paginate="ebook in ebooks | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | genreFilter:genreparam | itemsPerPage:pageSize"   pagination-id="ebooksPagination" >
               
               
               <div class="card">
@@ -57,7 +57,7 @@
           
         </div>
       </div>
-      <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"  pagination-id="ebooksPagination"></dir-pagination-controls>
+      <dir-pagination-controls  pagination-id="ebooksPagination"></dir-pagination-controls>
       <div class="clearfix"> </div>
     </div>
     
