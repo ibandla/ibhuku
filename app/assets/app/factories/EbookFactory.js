@@ -15,8 +15,8 @@ app.factory('Ebook', function(Restangular) {
     function docDefinition(books) {
         return {
             content: [{
-                text: 'IBHUKU CATALOG',
-                style: 'header'
+                text: 'IBHUKU PRODUCT CATALOG',
+                style: 'blam'
             }, {
                 style: 'demoTable',
                 table: {
@@ -26,6 +26,13 @@ app.factory('Ebook', function(Restangular) {
                 layout: 'lightHorizontalLines'
             }],
             styles: {
+                blam: {
+                  bold: true,
+                  color: '#000',
+                  fontSize: 16,
+                  alignment: 'center',
+                  margin: [0, 0, 0, 10]
+                },
                 header: {
                     bold: true,
                     color: '#000',
@@ -34,7 +41,8 @@ app.factory('Ebook', function(Restangular) {
                 },
                 demoTable: {
                     color: '#666',
-                    fontSize: 10
+                    fontSize: 10,
+                    alignment: 'center'
                 }
             }
         };

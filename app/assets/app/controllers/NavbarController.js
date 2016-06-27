@@ -1,8 +1,14 @@
-app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window,ngCart) {
-   
-  
+app.controller('NavbarCtrl', function($rootScope,$scope,$auth,Ebook,$location,$window,ngCart) {
 
-  
+  $scope.openPdf =  function() {
+      Ebook.openPdf();
+  };
+
+  $scope.downloadPdf = function() {
+      Ebook.downloadPdf();
+  };
+
+
     $scope.$watch(function() { return ngCart.getTotalItems(); }, function(newVal, oldVal) {
 		       var it = "";
 		  if(ngCart.getTotalItems() == 1){
@@ -12,11 +18,11 @@ app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window,
 		    it = "items";
 		  }
        $rootScope.summary =  'KES '+(ngCart.totalCost())+', '+(ngCart.getTotalItems()) + ' ' + it;
-   
-    });	
+
+    });
 
 	 $scope.$watch(function() { return $location.path(); }, function(newVal, oldVal) {
-      
+
        if(newVal=='/home')
 		{
 			$scope.header = 'header';
@@ -25,10 +31,10 @@ app.controller('NavbarCtrl', function($rootScope,$scope,$auth,$location,$window,
 			$scope.header = 'header-product';
 			$scope.showbanner = false;
 		};
-    });	
-		
+    });
+
 	$scope.logout = function () {
 		$auth.signOut();
 	}
-	 
+
 });
