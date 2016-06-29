@@ -11,6 +11,7 @@ production:
   api_secret: KzPBjVMkhqwwcIiVvpVZz284YPs
   enhance_image_tag: true
   static_image_support: true
+  secure: true
 test:
   cloud_name: tremidus
   api_key: '236571757665743'
