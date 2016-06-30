@@ -8,6 +8,7 @@ app.controller('NavbarCtrl', function($rootScope,$scope,$auth,Ebook,$location,$w
       Ebook.downloadPdf();
   };
 
+  	$scope.myVar = 'open';
 
     $scope.$watch(function() { return ngCart.getTotalItems(); }, function(newVal, oldVal) {
 		       var it = "";
