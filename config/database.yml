@@ -12,16 +12,16 @@
 default: &default
   adapter: mysql2
   encoding: utf8
+  host: mysql
   pool: 5
   username: root
-  password: secret
+  password: root
   
 
 development:
   <<: *default
+  host: mysql
   database: ibhuku_development1
-  port: 3306
-  # password: 12345
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -30,7 +30,6 @@ test:
   <<: *default
   database: ibhuku_test1
   port: 3306
-  # password: 12345
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -52,16 +51,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: ibhuku_production
-  socket: /var/run/mysqld/mysqld.sock
-  username: root
-  password: blanchard
-
-school:
-  <<: *default
-  database: db82816
-  port: 3306
-  host: 192.168.170.15
-  username: 82816
-  password: Fezuyes3
+    url: <%= ENV['DATABASE_URL'] %>

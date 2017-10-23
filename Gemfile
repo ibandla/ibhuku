@@ -43,7 +43,7 @@ end
 gem 'activeadmin_addons'
 gem 'devise','~> 3.2'
 gem 'font-awesome-rails'
-gem 'activeadmin','1.0.0.pre2'
+gem 'activeadmin','~>1.1.0'
 gem "active_material", github: "vigetlabs/active_material", :branch => 'master'
 gem 'devise_token_auth'
 gem 'omniauth'
@@ -60,6 +60,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'carrierwave', '~> 0.9'
+
+gem 'jquery-ui-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

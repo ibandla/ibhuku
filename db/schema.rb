@@ -90,11 +90,6 @@ ActiveRecord::Schema.define(version: 20160626183019) do
 
   add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
 
-  create_table "executes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",                          null: false
@@ -103,11 +98,6 @@ ActiveRecord::Schema.define(version: 20160626183019) do
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
-
-  create_table "payments", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "telegram_users", force: :cascade do |t|
     t.integer  "telegram_id", limit: 4

@@ -259,4 +259,18 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   config.filters = true
+
+  class Footer < ActiveAdmin::Component
+    def build(namespace)
+      super :id => "footer"                                                    
+
+      para "Ibhuku #{Date.today.year}"                                       
+
+    end
+  end
+
+  ActiveAdmin.setup do |config|  
+    config.view_factory.footer = Footer
+  end
+  
 end
