@@ -20,15 +20,15 @@ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   config.web_console.whitelisted_ips = '10.0.2.2','192.168.10.1'
 
-config.action_mailer.smtp_settings = {
-address: "smtp.gmail.com",
-port: 587,
-domain: "gmail",
-authentication: "plain",
-enable_starttls_auto: true,
-user_name: "noreply.ibhuku@gmail.com",
-password: "theibandlas"
-}
+  config.action_mailer.smtp_settings = {
+    address:  ENV['SMTP_ADDRESS'],
+    port: ENV['SMTP_PORT'],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV['SMTP_USER'],
+    password: ENV['SMTP_PASSWORD']
+    }
+
 
 # # Sets environment to :development
 # pesapal = Pesapal::Merchant.new(:development)
