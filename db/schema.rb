@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626183019) do
+ActiveRecord::Schema.define(version: 20171024164950) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -26,9 +26,12 @@ ActiveRecord::Schema.define(version: 20160626183019) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.datetime "password_changed_at"
+    t.string   "unique_session_id",      limit: 20
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+  add_index "admin_users", ["password_changed_at"], name: "index_admin_users_on_password_changed_at", using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "cart_items", force: :cascade do |t|
@@ -90,6 +93,15 @@ ActiveRecord::Schema.define(version: 20160626183019) do
 
   add_index "ebooks", ["category_id"], name: "index_ebooks_on_category_id", using: :btree
 
+  create_table "old_passwords", force: :cascade do |t|
+    t.string   "encrypted_password",       limit: 255, null: false
+    t.string   "password_archivable_type", limit: 255, null: false
+    t.integer  "password_archivable_id",   limit: 4,   null: false
+    t.datetime "created_at"
+  end
+
+  add_index "old_passwords", ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable", using: :btree
+
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",                          null: false
@@ -98,6 +110,13 @@ ActiveRecord::Schema.define(version: 20160626183019) do
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
+  create_table "password_archives", force: :cascade do |t|
+    t.string   "encrypted_password",       limit: 255, null: false
+    t.string   "password_archivable_type", limit: 255, null: false
+    t.integer  "password_archivable_id",   limit: 4,   null: false
+    t.datetime "created_at"
+  end
 
   create_table "telegram_users", force: :cascade do |t|
     t.integer  "telegram_id", limit: 4

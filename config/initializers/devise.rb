@@ -262,4 +262,16 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.password_regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/
+
+  #  Number of old passwords in archive
+  config.password_archiving_count = 5
+
+  # Deny old password (true, false, count)
+  config.deny_old_passwords = true
+
+  # Password Expiry
+  config.expire_password_after = 1.months
+
+  
 end
