@@ -9,7 +9,7 @@ Devise.setup do |config|
 
   # config.secret_key = '28a12710425db26344c4a038f8cfbf2affcdbcd3d0dd154ce2d93ea83e2bc874628e2c64e8cddd0403603ddf9c4ae8cba6190dc38886c8eec3dd3a1f4eac3a12'
 
-  config.mailer_sender = 'noreply.ibhuku@gmail.com'
+  config.mailer_sender = 'noreply@ibhuku.tk'
 
 
  

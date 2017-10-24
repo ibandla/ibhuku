@@ -16,11 +16,11 @@ default: &default
   pool: 5
   username: root
   password: root
+  port: 3306
   
 
 development:
   <<: *default
-  host: mysql
   database: ibhuku_development1
 
 # Warning: The database defined as "test" will be erased and
@@ -29,7 +29,6 @@ development:
 test:
   <<: *default
   database: ibhuku_test1
-  port: 3306
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -52,3 +51,4 @@ test:
 #
 production:
     url: <%= ENV['DATABASE_URL'] %>
+
