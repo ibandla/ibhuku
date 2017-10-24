@@ -1,0 +1,60 @@
+
+
+
+ <body class="active_admin logged_out new">
+<div id="wrapper">
+
+  <div id="content_wrapper">
+      <div class="flash flash_alert">Your password has expired you need to change it before continuing.</div>
+    <div id="active_admin_content">
+      <div id="login">
+  <h2>Ibhuku Renew</h2>
+
+
+
+<%= form_for(resource, :as => resource_name, :url => [resource_name, :password_expired], :html => { :method => :put , id: "session_new"}) do |f| %>
+
+  
+
+
+
+<li style="list-style-type: none;" class="password input required stringish" id="admin_current_password_input">
+  <p><%= f.label :current_password, "Current password" %><abbr title="required">*</abbr><br />
+  <%= f.password_field :current_password %></p>
+  </li>
+
+<li style="list-style-type: none;" class="password input required stringish" id="admin_new_password_input">
+
+  <p><%= f.label :password, "New password" %><abbr title="required">*</abbr><br />
+  <%= f.password_field :password %></p>
+  </li>
+
+<li style="list-style-type: none;" class="password input required stringish" id="admin_comfirm_password_input">
+
+  <p><%= f.label :password_confirmation, "Confirm new password" %><abbr title="required">*</abbr><br />
+  <%= f.password_field :password_confirmation %></p>
+  </li>
+
+
+  <fieldset class="actions">
+  <li style="list-style-type: none;" class="action input_action " id="admin_password_submit_action">
+<%= f.submit "Change my password" %>
+  </li>
+  </fieldset>
+
+<% end %>
+
+  
+
+</div>
+
+    </div>
+  </div>
+  <div id="footer">
+  <%= devise_error_messages! %>
+
+  </div>
+</div>
+
+
+</body>

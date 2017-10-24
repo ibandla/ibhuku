@@ -138,6 +138,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise_security_extension (0.10.0)
+      devise (>= 3.0.0, < 4.0)
+      railties (>= 3.2.6, < 5.0)
     devise_token_auth (0.1.42)
       devise (> 3.5.2, <= 4.3)
       rails (< 6)
@@ -250,6 +253,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_email_validator (0.1.4)
+      activemodel (>= 3.0.0)
     railties (4.2.10)
       actionpack (= 4.2.10)
       activesupport (= 4.2.10)
@@ -377,6 +382,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   composite_primary_keys (>= 8.0.0, < 9.0.0)
   devise (~> 3.2)
+  devise_security_extension
   devise_token_auth
   dotenv-rails
   figaro
@@ -392,6 +398,7 @@ DEPENDENCIES
   omniauth
   puma
   rails (~> 4.2.6)
+  rails_email_validator
   recaptcha!
   rspec-activemodel-mocks
   rspec-its
