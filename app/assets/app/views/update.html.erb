@@ -1,38 +1,14 @@
-
-		<!---->
-		<div class="container">
-
-		<div class="account_grid">
-			   <div class=" login-right">
-			  	<h3>PASSWORD DETAILS</h3>
-{{reset}}
-			  	<form ng-submit="updatePassword(changePasswordForm)">
-  <formly-form model="changePasswordForm" fields="changePasswordForm.fields">
-  <a class="forgot" ></a>
-  <input  type="submit"  ng-model="handleRegBtnClick" value="Change your password">
-  </formly-form>
-</form>
-				        <!-- <form ng-submit="updatePassword(changePasswordForm)" role="form" ng-init="changePasswordForm = {}">
-                    <div class="form-group">
-                      <span>New Password</span>
-                      <input type="password" name="password" ng-model="changePasswordForm.password" required="required" class="form-control">
-                    </div>
-                  <div class="form-group">
-                    <span>Confirm Password</span>
-                    <input type="password" name="password_confirmation" ng-model="changePasswordForm.password_confirmation" required="required" class="form-control">
-                  </div>
-                  {{loc}}
-           <input value="sa" ng-model="changePasswordForm.reset_password_token" name="reset_password_token" type="text">
-                <button type="submit" class="btn btn-primary btn-medium">Change your password</button>
-              </form> -->
-			    </div>
-			</div>
-
-					<!-- <div class="bottom-grid1">
-
-					<div class="fit1">
-						<h3>HAPPY SHOPPING</h3>
-						<p>Lorem Ipsum sit amet consectuer adipiscing elit
-sed diam nonummy nibh euismod</p>
-					</div>
-				</div> -->
+<div class="container">
+  <div class="account_grid">
+    <div class=" login-right">
+      <h3>PASSWORD DETAILS</h3>
+      {{reset}}
+      <form ng-submit="updatePassword(changePasswordForm)">
+        <formly-form model="changePasswordForm" fields="changePasswordForm.fields">
+          <p>NOTE: New password must be at least 8 characters, contain big, small letters and digits</p>
+          <a class="forgot"></a>
+          <input type="submit" ng-model="handleRegBtnClick" value="Change your password">
+        </formly-form>
+      </form>
+    </div>
+  </div>

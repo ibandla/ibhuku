@@ -1,9 +1,9 @@
 app.run(function($rootScope, $auth, $location, Notification, ngCart, Cart) {
     $rootScope.$on('auth:login-success', function(ev, user) {
-        if($rootScope.redpage == undefined)
-        $location.path('/home');
+        if ($rootScope.redpage == undefined)
+            $location.path('/home');
         else
-        $location.path($rootScope.redpage);
+            $location.path($rootScope.redpage);
         Notification.primary('Welcome ' + user.fullname);
         Cart.restore();
     });
@@ -26,7 +26,7 @@ app.run(function($rootScope, $auth, $location, Notification, ngCart, Cart) {
     });
 
     $rootScope.$on('auth:password-change-error', function(ev, reason) {
-        Notification.error("Password change failed: " + reason.errors[0]);
+        Notification.error("Password change failed: " + reason.errors.full_messages[0]);
         $location.path('/home');
     });
 
@@ -70,7 +70,7 @@ app.run(function($rootScope, $auth, $location, Notification, ngCart, Cart) {
         Notification.error("Password reset request failed: " + resp.errors[0]);
     });
 
-    $rootScope.here =  $location.path();
+    $rootScope.here = $location.path();
 
 
 

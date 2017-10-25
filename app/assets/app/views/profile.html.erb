@@ -1,29 +1,16 @@
-
-
-		<!---->
-		<div class="container">
-		<div class="account_grid">
-			   <div class=" login-right">
-			  	<h3>UPDATE DETAILS</h3>
-			  	<p hidden>{{updateAccountForm}}</p>
+<div class="container">
+	<div class="account_grid">
+		<div class=" login-right">
+			<h3>UPDATE DETAILS</h3>
+			<p hidden>{{updateAccountForm}}</p>
 			<form ng-submit="updateAccount(updateAccountForm)">
-  <formly-form model="updateAccountForm" fields="updateAccountForm.fields">
- 
-  	<a class="forgot"></a><input class="col-xs-2" type="submit"  value="UPDATE!">
- 		 <h3 class="col-xs-1 centertext">OR</h3>
- 
-  
-				 
-	<a class="acount-btn col-xs-4 centertext"  ui-sref="update">CLICK HERE TO CHANGE PASSWORD</a>
-			  
+				<formly-form model="updateAccountForm" fields="updateAccountForm.fields">
 
-  </formly-form>
-</form>
-			   </div>
-			   
-			  
-			 </div>
-
-			</div>					
-
-
+					<a class="forgot"></a><input class="col-xs-2" type="submit" value="UPDATE!">
+					<h3 class="col-xs-1 centertext">OR</h3>
+					<a class="acount-btn col-xs-4 centertext" ui-sref="update">CLICK HERE TO CHANGE PASSWORD</a>
+				</formly-form>
+			</form>
+		</div>
+	</div>
+</div>
