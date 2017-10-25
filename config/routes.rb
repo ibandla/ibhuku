@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'charges/new'
   get 'charges/create'
   root 'welcome#index'
+  
   mount_devise_token_auth_for 'User', at: 'api/auth', controllers: { registrations: "user/registrations",passwords:"user/passwords", sessions:"user/sessions" , confirmations:"user/confirmations",token_validations:"user/token_validations"}
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

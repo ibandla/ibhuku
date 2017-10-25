@@ -9,7 +9,7 @@
 
 # Category.create!(name:'Fiction', description:"1")
 # Category.create!(name: 'Classic', description:"1")
-# Category.create!(name: 'Poetry', description:"1")
+# Category.create!(name: 'Poetry', d*.*.*.*1escription:"1")
 # Category.create!(name: 'Biographies', description:"1")
 # Category.create!(name: 'Technology', description:"1")
 # Category.create!(name: 'Psychology', description:"1")

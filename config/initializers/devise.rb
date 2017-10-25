@@ -273,5 +273,7 @@ Devise.setup do |config|
   # Password Expiry
   config.expire_password_after = 1.months
 
+  config.ga_remembertime = nil
+
   
 end

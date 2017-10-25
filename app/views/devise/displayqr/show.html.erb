@@ -1,0 +1,75 @@
+<style>
+img{
+	width:100%;
+}
+</style>
+<body class="active_admin logged_out new">
+<div id="wrapper">
+
+  <div id="content_wrapper">
+    <div id="active_admin_content">
+      <div id="login">
+
+<h2><%= I18n.t('title', {:scope => 'devise.registration'}) %></h2>
+
+
+
+<%= form_for(resource, :as => resource_name, :url => [:refresh, resource_name, :displayqr], :html => {:method => :post}) do |f|%>
+	
+	<li style="list-style-type: none;" class="password input required stringish" id="google_auth_token_qr">
+ <p>
+<%= google_authenticator_qrcode(resource) %></p>
+  </li>
+
+
+<fieldset class="actions">
+  <li style="list-style-type: none;" class="action input_action " id="google_auth_token_qr_submit">
+<%= f.submit I18n.t('newtoken', {:scope => 'devise.registration'}) %>  </li>
+  </fieldset>
+
+<% end %>
+
+<%= form_for(resource, :as => resource_name, :url => [resource_name, :displayqr], :html => { :method => :put }) do |f| %>
+	<%= devise_error_messages! %>
+	<li  style="list-style-type: none;" class="boolean input optional" id="two_factor_status">
+	<p><%= f.label :gauth_enabled, I18n.t('qrstatus', {:scope => 'devise.registration'}) %>
+	<%= f.check_box :gauth_enabled %></p>
+</li>
+	<%= f.hidden_field :tmpid, value: @tmpid %>
+
+<li style="list-style-type: none;" class="password input required stringish" id="admin_new_password_input">
+<b><%= I18n.t('nice_request', {:scope => 'devise.registration'}) %></b>
+  </li>
+
+<li style="list-style-type: none;" class="password input required stringish" id="admin_new_password_input">
+
+  <p><%= f.label :gauth_token, I18n.t('enter_token', {:scope => 'devise.registration'}) %><abbr title="required">*</abbr><br />
+  	<%= f.number_field :gauth_token, :autocomplete => :off %></p>
+  </li>
+
+
+<fieldset class="actions">
+  <li style="list-style-type: none;" class="action input_action " id="admin_password_submit_action">
+   <%= f.submit I18n.t('submit', {:scope => 'devise.registration'}) %>
+  </li>
+  </fieldset>
+  
+
+<% end %>
+
+
+</div>
+
+    </div>
+  </div>
+  <div id="footer">
+
+  </div>
+</div>
+
+
+</body>
+
+
+
+

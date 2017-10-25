@@ -64,6 +64,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'carrierwave', '~> 0.9'
 
+gem 'devise_google_authenticator', github: "ibandla/devise_google_authenticator", :tag => 'ibhuku'
+
 gem 'jquery-ui-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
