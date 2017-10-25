@@ -1,19 +1,20 @@
 <div class="col-md-12 product-price1">
-  <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"  pagination-id="ebooksPagination"></dir-pagination-controls>
+  <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="ebooksPagination"></dir-pagination-controls>
 
   <div class="product-right-top">
-    <div  class="top-product">
-      <nit-advanced-searchbox  ng-model="searchParams"  parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
-      
-      
+    <div class="top-product">
+      <nit-advanced-searchbox ng-model="searchParams" parameters="availableSearchParams" placeholder="Search..."></nit-advanced-searchbox>
+
+
       <div hidden="">
         {{searchParams}}
       </div>
-      
-      
-      <div class="col-md-2 chain-grid scrollArea" current-page="currentPage"  dir-paginate="ebook in ebooks | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | genreFilter:genreparam | itemsPerPage:pageSize"   pagination-id="ebooksPagination" >
-        
-        
+
+
+      <div class="col-md-2 chain-grid scrollArea" current-page="currentPage" dir-paginate="ebook in ebooks | searchFilter:searchParams | titleFilter:searchParams | isbnFilter:searchParams | authorFilter:searchParams | descriptionFilter:searchParams | genreFilter:genreparam | itemsPerPage:pageSize"
+        pagination-id="ebooksPagination">
+
+
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" ng-src="{{ebook.ebook_image.standard.url}}" ui-sref="ebook({ebookID:{{ebook.id}}})">
@@ -22,24 +23,24 @@
             <span class="card-title activator grey-text text-darken-4">  <p data-ng-bind="ebook.title" data-ellipsis> </p>
             <p><small> {{ebook.author}}</small></p>
           <i class="material-icons right">more_vert</i></span>
-          
-          <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><ins><span>KES {{ebook.price}}</span></ins></strong>
-          
+
+            <div class="mdl-card__actions ibhuku-card-product-actions"><strong class="mdl-typography--headline ibhuku-product-price"><ins><span>KES {{ebook.price}}</span></ins></strong>
+
+            </div>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{ebook.title}}<i class="material-icons right">close</i></span>
+            <p>{{ebook.description}}</p>
+          </div>
         </div>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">{{ebook.title}}<i class="material-icons right">close</i></span>
-        <p>{{ebook.description}}</p>
+
+
+
       </div>
     </div>
-    
-    
-    
-  </div>
-</div>
 
-<div class="clearfix"> </div>
-<dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"  pagination-id="ebooksPagination"></dir-pagination-controls>
-</div>
-<div class="clearfix"> </div>
+    <div class="clearfix"> </div>
+    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="ebooksPagination"></dir-pagination-controls>
+  </div>
+  <div class="clearfix"> </div>
 </div>

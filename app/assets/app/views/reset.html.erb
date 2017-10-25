@@ -1,36 +1,14 @@
-
-		<!---->
-		<div class="container">
-		<div class="account_grid">
-			   <div class=" login-right">
-			  <h3>Email Details:</h3>
-				<p></p>
-				<!-- <form ng-submit="requestPasswordReset(passwordResetForm)" role="form" ng-init="passwordResetForm = {}">
-  				<div class="form-group">
-    			<label>EMAIL</label>
-    			<input type="email" name="email" ng-model="passwordResetForm.email" required="required" class="form-control"/>
-  				</div>
-
-  				<button type="submit" class="btn btn-primary btn-lg">Request Password Reset</button>
-				</form> -->
-
-					<form ng-submit="requestPasswordReset(passwordResetForm)">
-				  <formly-form model="passwordResetForm" fields="passwordResetForm.fields">
-				  <a class="forgot" ></a>
-				  <input  type="submit"  value="Request Password Reset">
-				  </formly-form>
-				</form>
-			   </div>
-			    
-			 </div>
-
-			</div>
-
-					<!-- <div class="bottom-grid1">
-
-					<div class="fit1">
-						<h3>HAPPY SHOPPING</h3>
-						<p>Lorem Ipsum sit amet consectuer adipiscing elit
-sed diam nonummy nibh euismod</p>
-					</div>
-				</div> -->
+<div class="container">
+	<div class="account_grid">
+		<div class=" login-right">
+			<h3>Email Details:</h3>
+			<p></p>
+			<form ng-submit="requestPasswordReset(passwordResetForm)">
+				<formly-form model="passwordResetForm" fields="passwordResetForm.fields">
+					<a class="forgot"></a>
+					<input type="submit" value="Request Password Reset">
+				</formly-form>
+			</form>
+		</div>
+	</div>
+</div>

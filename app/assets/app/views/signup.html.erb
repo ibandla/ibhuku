@@ -1,34 +1,24 @@
-
-		<!---->
-		<div class="container">
-		<div class="account_grid">
+<div class="container">
+	<div class="account_grid">
 		<div class=" login-right">
-		<h3>INFORMATION</h3>
-		  	 
- <form ng-submit="submitRegistration(registrationForm)">
-  <formly-form model="registrationForm" fields="registrationForm.fields">
-   
-   	<div ng-hide="showsubmit" vc-recaptcha ng-model="registrationForm.grecaptcharesponse" on-success="setResponse(response)" on-expire="cbExpiration()"></div>
-   	<!-- <div class="clearfix"> -->
-			<a class="forgot" ng-show="showsubmit" ui-sref="reset">Forgot Your Password?&nbsp;</a><input ng-show="showsubmit" type="submit"  ng-model="handleRegBtnClick" value="Submit">
-  </formly-form>
-</form>
-				</div>
+			<h3>INFORMATION</h3>
+
+			<form ng-submit="submitRegistration(registrationForm)">
+				<formly-form model="registrationForm" fields="registrationForm.fields">
+				<p>NOTE: Password must be at least 8 characters, contain big, small letters and digits</p>
+
+					<div ng-hide="showsubmit" vc-recaptcha ng-model="registrationForm.grecaptcharesponse" on-success="setResponse(response)"
+					    on-expire="cbExpiration()"></div>
+					<a class="forgot" ng-show="showsubmit" ui-sref="reset">Forgot Your Password?&nbsp;</a><input ng-show="showsubmit" type="submit"
+					    ng-model="handleRegBtnClick" value="Submit">
+				</formly-form>
+			</form>
+		</div>
 		<div class="padd">
 
 
+		</div>
+
+
+	</div>
 </div>
-					
-		  
-			</div>
-			</div>
-			
-			<!---->
-				<!-- 	<div class="bottom-grid1">
-					
-					<div class="fit1">
-						<h3>HAPPY SHOPPING</h3>
-						<p>Lorem Ipsum sit amet consectuer adipiscing elit
-sed diam nonummy nibh euismod</p>
-					</div>
-				</div> -->
