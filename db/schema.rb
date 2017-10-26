@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20171026094349) do
     t.string   "gauth_enabled",          limit: 255,   default: "f"
     t.text     "gauth_tmp",              limit: 65535
     t.datetime "gauth_tmp_datetime"
+    t.integer  "role",                   limit: 4
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -53,6 +54,22 @@ ActiveRecord::Schema.define(version: 20171026094349) do
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "categorizations", force: :cascade do |t|
+    t.integer  "category_id", limit: 4
+    t.integer  "ebook_id",    limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id", using: :btree
+  add_index "categorizations", ["ebook_id"], name: "index_categorizations_on_ebook_id", using: :btree
+
+  create_table "controllers", force: :cascade do |t|
+    t.string   "charges",    limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "ebook_orders", force: :cascade do |t|
@@ -99,6 +116,16 @@ ActiveRecord::Schema.define(version: 20171026094349) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "telegram_users", force: :cascade do |t|
+    t.integer  "telegram_id", limit: 4
+    t.string   "first_name",  limit: 255
+    t.string   "username",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "telegram_users", ["telegram_id"], name: "index_telegram_users_on_telegram_id", using: :btree
+
   create_table "titles", force: :cascade do |t|
     t.text     "name",       limit: 65535
     t.datetime "created_at",               null: false
@@ -129,6 +156,7 @@ ActiveRecord::Schema.define(version: 20171026094349) do
     t.datetime "updated_at"
     t.boolean  "blocked",                              default: false,   null: false
     t.boolean  "resblock",                             default: false,   null: false
+    t.integer  "role",                   limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
@@ -138,6 +166,8 @@ ActiveRecord::Schema.define(version: 20171026094349) do
 
   add_foreign_key "cart_items", "ebooks"
   add_foreign_key "cart_items", "users"
+  add_foreign_key "categorizations", "categories"
+  add_foreign_key "categorizations", "ebooks"
   add_foreign_key "ebook_orders", "ebooks"
   add_foreign_key "ebook_orders", "orders"
   add_foreign_key "users", "titles"

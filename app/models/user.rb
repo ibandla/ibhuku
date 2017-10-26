@@ -6,6 +6,13 @@ class User < ActiveRecord::Base
   has_many :ebook_orders, :through => :orders
   has_many :ebooks, :through => :ebook_orders
   belongs_to :title
+
+  enum role: [:user, :admin, :product_manager]
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
