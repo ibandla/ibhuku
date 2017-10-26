@@ -3,6 +3,8 @@ ActiveAdmin.register Title do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
+before_filter :authorize
+
 permit_params :name
 index do
 	column :name

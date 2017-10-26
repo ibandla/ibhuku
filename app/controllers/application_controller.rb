@@ -3,7 +3,26 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 
   # protect_from_forgery with: :null_session
+  protect_from_forgery
   
+    
+  helper_method :admin?
+  
+  protected
+  
+  def admin?
+    if current_admin_user.role =="admin"
+      return true
+    end
+  end
+  
+  def authorize
+    unless admin?
+      flash[:error] = "Unauthorized Access"
+      redirect_to admin_root_url
+      false
+    end
+  end
   protect_from_forgery with: :exception,if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session,if: Proc.new { |c| c.request.format == 'application/json' }
   
