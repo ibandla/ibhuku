@@ -49,12 +49,12 @@ end
 
     form(:html => { :multipart => true }) do |f|
         f.inputs "Ebook" do
-            f.input :title
-            f.input :author
+            f.input :title, as: :string
+            f.input :author, as: :string
             f.input :category_id, as: :select, collection: Category.all
-            f.input :ISBN                 
-            f.input :description
-            f.input :price
+            f.input :ISBN, as: :string                
+            f.input :description, as: :text
+            f.input :price, as: :number
             f.input :ebook_image, :as => :file, :hint => image_tag(f.object.ebook_image.url(:thumb))
             f.input :pdf ,:as => :file
             f.input :pdf_cache, :as => :hidden 

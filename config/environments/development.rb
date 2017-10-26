@@ -64,6 +64,8 @@ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.reset_url = "http://localhost:3000/update"
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   # config.middleware.use Rack::Throttle::Minute,   :max => 60

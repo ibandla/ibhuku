@@ -11,6 +11,30 @@ GIT
       rest-client (~> 1.6)
 
 GIT
+  remote: git://github.com/ibandla/crypt_keeper.git
+  revision: 90c35d7014a80e056724179322eb786c219f8a7b
+  tag: ibhuku
+  specs:
+    crypt_keeper (1.1.1)
+      activerecord (>= 4.2, < 5.2)
+      activesupport (>= 4.2, < 5.2)
+      aes (~> 0.5.0)
+      armor (~> 0.0.2)
+
+GIT
+  remote: git://github.com/ibandla/devise.git
+  revision: 1cb94349875b93dd1c010eb0c9d432b618314a5b
+  branch: ibhuku
+  specs:
+    devise (3.5.10)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
+GIT
   remote: git://github.com/ibandla/devise_google_authenticator.git
   revision: 39c8511398ae71f59a2243359fb8a7e2607e58ae
   tag: ibhuku
@@ -87,6 +111,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    aes (0.5.0)
     airbrussh (1.3.0)
       sshkit (>= 1.6.1, != 1.7.0)
     angular_rails_csrf (2.1.1)
@@ -94,6 +119,7 @@ GEM
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (6.0.4)
+    armor (0.0.3)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
     binding_of_caller (0.7.3)
@@ -140,13 +166,6 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.2)
     debug_inspector (0.0.3)
-    devise (3.5.10)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     devise_security_extension (0.10.0)
       devise (>= 3.0.0, < 4.0)
       railties (>= 3.2.6, < 5.0)
@@ -391,7 +410,8 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.1.0)
   composite_primary_keys (>= 8.0.0, < 9.0.0)
-  devise (~> 3.2)
+  crypt_keeper!
+  devise!
   devise_google_authenticator!
   devise_security_extension
   devise_token_auth

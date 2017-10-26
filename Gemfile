@@ -41,7 +41,7 @@ group :test do
   gem 'rspec-its'
 end
 gem 'activeadmin_addons'
-gem 'devise','~> 3.2'
+gem 'devise' , github: "ibandla/devise", :branch => 'ibhuku'
 gem 'font-awesome-rails'
 gem 'activeadmin','~>1.1.0'
 gem "active_material", github: "vigetlabs/active_material", :branch => 'master'
@@ -80,6 +80,10 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.11'
+
+# gem 'attr_encrypted'
+
+gem 'crypt_keeper', github: "ibandla/crypt_keeper", :tag => 'ibhuku'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

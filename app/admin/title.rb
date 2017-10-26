@@ -20,15 +20,18 @@ controller do
       end
     end
   end  
-	
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+
+#columns that appear in the show view 
+show do
+  attributes_table :name
+end
+
+form do |f|
+  f.inputs  do
+    f.input :name, as: :string 
+  end
+  f.actions
+end
 
 
 end

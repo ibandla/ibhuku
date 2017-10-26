@@ -1,6 +1,5 @@
 
 class User < ActiveRecord::Base
-  include DeviseTokenAuth::Concerns::User
 
   has_many :cart_items
   has_many :orders
@@ -17,10 +16,21 @@ class User < ActiveRecord::Base
           # commented out:
           # :omniauthable
   
+  include DeviseTokenAuth::Concerns::User
+          
   def active_for_authentication?   
       super && !self.blocked && !self.resblock
   end
 
   
+
+  crypt_keeper   :provider,   :uid,   :reset_password_token, :sign_in_count, 
+   :current_sign_in_ip,   :last_sign_in_ip,   :confirmation_token,   
+   :unconfirmed_email,   :fullname,   :email,  
+   :encryptor => :mysql_aes_new, 
+   :key => Rails.application.secrets.secret_database_key, 
+   salt: Rails.application.secrets.secret_key_base
+  
+ 
   
 end
