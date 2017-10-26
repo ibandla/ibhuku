@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024164950) do
+ActiveRecord::Schema.define(version: 20171026054338) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20171024164950) do
     t.datetime "updated_at",                                      null: false
     t.datetime "password_changed_at"
     t.string   "unique_session_id",      limit: 20
+    t.integer  "role",                   limit: 4
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
@@ -111,13 +112,6 @@ ActiveRecord::Schema.define(version: 20171024164950) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
-  create_table "password_archives", force: :cascade do |t|
-    t.string   "encrypted_password",       limit: 255, null: false
-    t.string   "password_archivable_type", limit: 255, null: false
-    t.integer  "password_archivable_id",   limit: 4,   null: false
-    t.datetime "created_at"
-  end
-
   create_table "telegram_users", force: :cascade do |t|
     t.integer  "telegram_id", limit: 4
     t.string   "first_name",  limit: 255
@@ -158,6 +152,7 @@ ActiveRecord::Schema.define(version: 20171024164950) do
     t.datetime "updated_at"
     t.boolean  "blocked",                              default: false,   null: false
     t.boolean  "resblock",                             default: false,   null: false
+    t.integer  "role",                   limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

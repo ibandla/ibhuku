@@ -15,4 +15,5 @@
 # Category.create!(name: 'Psychology', description:"1")
 # Category.create!(name: 'Motivational', description:"1")
 # Category.create!(name: 'Politics', description:"1")
-AdminUser.create!(email: 'admin@ibhuku.tk', password: 'PassWord@2017', password_confirmation: 'PassWord@2017')
+AdminUser.create!(email: 'admin@ibhuku.tk', password: 'PassWord@2017', password_confirmation: 'PassWord@2017',role:'admin')
+AdminUser.create!(email: 'caleb@ibhuku.tk', password: 'PassWord@2017', password_confirmation: 'PassWord@2017',role:'manager')

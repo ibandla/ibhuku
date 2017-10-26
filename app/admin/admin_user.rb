@@ -1,5 +1,5 @@
 ActiveAdmin.register AdminUser do
-  before_filter :authorize, except: [:index]
+  before_filter :authorize, except: [:index,:show]
   
   permit_params :email, :password, :password_confirmation
 
@@ -8,6 +8,7 @@ ActiveAdmin.register AdminUser do
   column :current_sign_in_at
   column :sign_in_count
   column :created_at
+  column :role
   
   end
 
