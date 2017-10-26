@@ -88,6 +88,8 @@ ActiveAdmin.setup do |config|
   # (within the application controller) to return the currently logged in user.
   config.current_user_method = :current_admin_user
 
+  
+
   # == Logging Out
   #
   # Active Admin displays a logout link on each screen. These
@@ -234,6 +236,12 @@ ActiveAdmin.setup do |config|
   #
       # Only show XML & PDF options
       admin.download_links = [:csv]
+
+      admin.build_menu do |menu|
+        menu.add :label => 'Settings' do |submenu|
+          submenu.add :label => 'Two-factor authentication', :url => "/admin/displayqr"
+        end
+      end
   #
   #     # Enable/disable the links based on block
   #     #   (for example, with cancan)

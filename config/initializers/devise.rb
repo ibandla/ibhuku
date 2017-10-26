@@ -275,5 +275,7 @@ Devise.setup do |config|
 
   config.ga_remembertime = nil
 
+  config.ga_appname = "ibhuku"
+
   
 end

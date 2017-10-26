@@ -1,6 +1,39 @@
-ul.table_tools_segmented_control {text-align : right; }
-ul.table_tools_segmented_control  li { display: inline; white-space: nowrap; }
-ul.table_tools_segmented_control li:after { content: " \00b7"; }
-td.ebook{ padding: 15px;}
-#collection_selection_toggle_explaination{display: none;}
-div.resource_selection_toggle_panel input#collection_selection_toggle_all.toggle_all{display: none;}
+ul.table_tools_segmented_control {
+    text-align: right;
+}
+
+ul.table_tools_segmented_control li {
+    display: inline;
+    white-space: nowrap;
+}
+
+ul.table_tools_segmented_control li:after {
+    content: " \00b7";
+}
+
+td.ebook {
+    padding: 15px;
+}
+
+#collection_selection_toggle_explaination {
+    display: none;
+}
+
+div.resource_selection_toggle_panel input#collection_selection_toggle_all.toggle_all {
+    display: none;
+}
+
+li#settings.has_nested {
+    float: right;
+}
+
+li#settings.has_nested>ul {
+    left: initial!important;
+    top: 30px!important;
+    right: 0px;
+}
+
+li#two-factor_authentication {
+    left: inherit!important;
+    right: 30px;
+}
