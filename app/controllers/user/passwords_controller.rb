@@ -20,9 +20,6 @@ class User::PasswordsController < DeviseTokenAuth::PasswordsController
   # give redirect value from params priority
   @redirect_url = params[:redirect_url]
 
-  logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-  logger.debug @redirect_url
-
   # fall back to default value if provided
   @redirect_url ||= DeviseTokenAuth.default_password_reset_url
 

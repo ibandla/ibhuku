@@ -9,8 +9,8 @@
 
 					<div ng-hide="showsubmit" vc-recaptcha ng-model="registrationForm.grecaptcharesponse" on-success="setResponse(response)"
 					    on-expire="cbExpiration()"></div>
-						<%# ng-show="showsubmit"  %>
-					<a class="forgot" ui-sref="reset">Forgot Your Password?&nbsp;</a><input  type="submit"
+						 
+					<a class="forgot" ng-show="showsubmit" ui-sref="reset">Forgot Your Password?&nbsp;</a><input ng-show="showsubmit" type="submit"
 					    ng-model="handleRegBtnClick" value="Submit">
 				</formly-form>
 			</form>
